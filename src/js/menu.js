@@ -8,7 +8,7 @@
     constructor() {
     
       super({key : "menu"});
-    
+    this.planet;
     }
     
     
@@ -24,7 +24,10 @@
     
      this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
     
-    this.load.image("planètes","src/assets/planètes.png");
+    this.load.spritesheet("planètes","src/assets/planètes.png" ,{
+  frameWidth: 88,
+  frameHeight: 88
+ });
     
     }
     
@@ -54,14 +57,7 @@
     
      
     
-    this.anims.create({
     
-      key: "anim_planet"
-      frames: this.anims.generateFrameNumbers(start: 0 , end: 49)
-      framesRate : 5
-      repeat : -1
-    
-    });
     
      // on place les éléments de fond
     
@@ -77,14 +73,17 @@
     
      .setScale(5,3);
     
-    this.add
-    
-    .image(0,0,"planètes")
-    
-    
-    .setScale(1,1);
+    this.planet = this.physics.add.staticSprite(100,450, "planètes");
     
     //on ajoute un bouton de clic, nommé bouton_play
+    this.anims.create({
+    
+        key: "anim_planet",
+        frames: this.anims.generateFrameNumbers("planètes",{  start: 0 , end: 49  }),
+        framesRate : 5,
+        repeat : -1
+      
+      });
     
     var bouton_play = this.add.image(650, 400, "imageBoutonPlay").setDepth(1);
     
@@ -143,8 +142,10 @@
     
      
     
-    }
-    update(){
     
+    update(){
+ 
+    this.planet.anims.play("anim_planet", true);
 
     } 
+}
