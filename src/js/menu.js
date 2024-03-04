@@ -58,7 +58,7 @@
     
       key:
     
-    })
+    });
     
      // on place les éléments de fond
     
