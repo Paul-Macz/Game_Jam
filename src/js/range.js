@@ -1,51 +1,41 @@
 import Weapon from "/src/js/weapon.js"
 
 export default class Range extends Weapon{
-    constructor(scene, name, damage, range, atSpeed, speed, image){
-        super(scene, name, damage);
+    constructor(scene, name, damage, atSpeed, userSpeed, image, byPlayer, range, bulSpeed){
+        super(scene, name, damage, atSpeed, userSpeed, image,byPlayer);
         this.range=range;
-        this.atSpeed=atSpeed;
-        this.speed=speed;
-        this.image=image;
-        // this.sprite.scene.physics.add.sprite(x,y,this.image)
-        //var Bullets;  
-        
+        this.lastShotTime=0;
+        this.bulSpeed=bulSpeed;
         this.Bullets = scene.physics.add.group();  
-        //scene.physics.add.collider(this.Bullets,platforms, hit, null, scene);
-        //scene.physics.add.overlap(this.Bullets, cibles, hit, null,scene);
 
-        // instructions pour les objets surveillés en bord de monde
-        scene.physics.world.on("worldbounds", function(body) {
-        // on récupère l'objet surveillé
-        var objet = body.gameObject;
-        // s'il s'agit d'une balle
-        if (this.Bullets.contains(objet)) {
-        // on le détruit
-        objet.destroy();
-    }
-  });
+        // Use an arrow function to retain the 'this' context
+        scene.physics.world.on("worldbounds", (body) => {
+            var objet = body.gameObject;
+            if (this.Bullets.contains(objet)) {
+                objet.destroy();
+            }
+        });
     }
 
-    attack(player){
+    attack(user, userx, usery){
+        var currentTime = this.scene.time.now;
+        if (currentTime - this.lastShotTime >= this.atSpeed) {
         var coefDir;
-        if (player.direction == 'left') { coefDir = -1; } else { coefDir = 1 }
+        if (user.direction == 'left') { coefDir = -1; } else { coefDir = 1 }
         // on crée la balle a coté du joueur
-        var bullet = this.Bullets.create(player.x + (25 * coefDir), player.y - 4, 'bullet');
+        var bullet = this.Bullets.create(userx + (25 * coefDir), usery - 4, 'bullet');
+    
         // parametres physiques de la balle.
         bullet.setCollideWorldBounds(true);
         bullet.body.onWorldBounds = true;  
         bullet.body.allowGravity =false;
         bullet.setVelocity(1000 * coefDir, 0); // vitesse en x et en y
-    }
-    hit (uneBalle, uneCible) {
+
+        //Mise-a-jour temps
+        this.lastShotTime = currentTime;
+    }}
+    hit (uneBalle) {
         uneBalle.destroy(); // destruction de la balle
         // uneCible.destroy();  // destruction de la cible.   
       }  
-    // hit (bullet, cible) {
-    //     cible.pointsVie--;
-    //     if (cible.pointsVie==0) {
-    //       cible.destroy(); 
-    //     } 
-    //      bullet.destroy();
-    //   }  
 }

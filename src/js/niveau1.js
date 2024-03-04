@@ -1,5 +1,5 @@
 import * as fct from "/src/js/fonctions.js";
-  import Ennemi from "/src/js/ennemis.js";
+import Ennemi from "/src/js/ennemi.js";
 
   // création et lancement du jeu
   var calque_plateformes; 

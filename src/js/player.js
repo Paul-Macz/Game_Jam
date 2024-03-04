@@ -15,7 +15,7 @@ export default class Player {
         fontSize: "14pt"
       });
       this.gameOver=false;
-      
+      this.direction = 'right';
       
   
       scene.anims.create({
@@ -67,11 +67,11 @@ export default class Player {
       sprite.setVelocityX(0);
       if (cursors.left.isDown) {
         sprite.setVelocityX(-speedx);
-  
+        this.direction = 'left';
         //sprite.setFlipX(true);
       } else if (cursors.right.isDown) {
         sprite.setVelocityX(speedx);
-  
+        this.direction = 'right';
         //sprite.setFlipX(false);
       }
       if (cursors.up.isDown && this.sprite.body.touching.down) {
@@ -146,6 +146,6 @@ export default class Player {
         }
     }
     attack(){
-        this.equippedWeapon.attack(this);
+        this.equippedWeapon.attack(this, this.sprite.x,this.sprite.y);
     }
   }

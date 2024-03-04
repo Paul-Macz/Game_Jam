@@ -92,7 +92,7 @@ export default class selection extends Phaser.Scene {
     this.player.sprite.setCollideWorldBounds(true);
     this.player.sprite.setBounce(0.2);
 
-    this.weap = new Range(this, "bull", 1, 20, 10, 1,"bullet");
+    this.weap = new Range(this, "bull", 1, 50, 1, "bullet",true,20,100);
     this.player.pickWeapon(this.weap);
     
     /*****************************************************

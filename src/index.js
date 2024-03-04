@@ -6,7 +6,7 @@ import niveau3 from "/src/js/niveau3.js";
 
 // configuration générale du jeu
 var config = {
-  type: Phaser.AUTO,
+  type: Phaser.CANVAS,
   width: 800, // largeur en pixels
   height: 600, // hauteur en pixels
    scale: {
@@ -22,7 +22,7 @@ var config = {
       gravity: {
         y: 300 // gravité verticale : acceleration ddes corps en pixels par seconde
       },
-      debug: true // permet de voir les hitbox et les vecteurs d'acceleration quand mis à true
+      debug: false // permet de voir les hitbox et les vecteurs d'acceleration quand mis à true
     }
   },
   scene: [selection, niveau1, niveau2, niveau3]
