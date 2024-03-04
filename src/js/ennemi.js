@@ -37,48 +37,50 @@ export default class Ennemi {
     }
 
     update(velocity) {
-      if (velocity === undefined) {
-        var speedx = 90;
-        var speedy = 300;
-      } else {
-        var speedx = velocity;
-        var speedy = velocity;
-      }
-      if (ennemi.direction == "gauche" && ennemi.body.blocked.down) {
-        var coords = ennemi.getBottomLeft();
+        if (velocity === undefined) {
+            var speedx = 90;
+            var speedy = 300;
+          } else {
+            var speedx = velocity;
+            var speedy = velocity;
+          }
+          console.log("hi")
+      if (this.direction == "gauche" && this.body.blocked.down) {
+        var coords = this.getBottomLeft();
         var tuileSuivante = calque_plateformes.getTileAtWorldXY(
             coords.x,
             coords.y + 10
         );
+        console.log("hey",tuileSuivante)
         if (tuileSuivante == null) {
             // on risque de marcher dans le vide, on tourne
-            ennemi.direction = "droite";
-            ennemi.setVelocityX(90);
-            ennemi.play("anim_tourne_droite", true);
-        } else if (ennemi.body.blocked.left) {
-            ennemi.setVelocityY(-300);    
+            this.direction = "droite";
+            this.setVelocityX(velocity);
+            this.play("turn_right", true);
+        } else if (this.body.blocked.left) {
+            this.setVelocityY(-300);    
             // Déclencher le déplacement vers la gauche après quelques millisecondes
             setTimeout(function() {
-                ennemi.setVelocityX(-90);
+                this.setVelocityX(-velocity);
             }, 100); // 100 millisecondes de délai (ajustez selon vos besoins)
         }    
 
-    } else if (ennemi.direction == "droite" && ennemi.body.blocked.down) {
-        var coords = ennemi.getBottomRight();
+    } else if (this.direction == "droite" && this.body.blocked.down) {
+        var coords = this.getBottomRight();
         var tuileSuivante = calque_plateformes.getTileAtWorldXY(
             coords.x,
             coords.y + 10
         );
         if (tuileSuivante == null) {
             // on risque de marcher dans le vide, on tourne
-            ennemi.direction = "gauche";
-            ennemi.setVelocityX(-90);
-            ennemi.play("anim_tourne_gauche", true);
-        } else if (ennemi.body.blocked.right) {
-            un_ennemi.setVelocityY(-300);    
+            this.direction = "gauche";
+            this.setVelocityX(-velocity);
+            this.play("turn_left", true);
+        } else if (this.body.blocked.right) {
+            this.setVelocityY(-300);    
             // Déclencher le déplacement vers la gauche après quelques millisecondes
             setTimeout(function() {
-                ennemi.setVelocityX(90);
+                this.setVelocityX(velocity);
             }, 100); // 100 millisecondes de délai (ajustez selon vos besoins)
         }  
     }   
