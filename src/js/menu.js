@@ -9,6 +9,7 @@
     
       super({key : "menu"});
     this.planet;
+    
     }
     
     
@@ -24,7 +25,7 @@
     
      this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
     
-    this.load.spritesheet("planètes","src/assets/planètes.png" ,{
+    this.load.spritesheet("planetes","src/assets/planetes.png" ,{
   frameWidth: 88,
   frameHeight: 88
  });
@@ -54,15 +55,7 @@
      */
     
     create() {
-    
-     
-    
-    
-    
      // on place les éléments de fond
-    
-     
-    
      this.add
     
      .image(0, 0, "menu_fond")
@@ -73,7 +66,7 @@
     
      .setScale(5,3);
     
-    this.planet = this.add.sprite(100,450, "planètes");
+    this.planet = this.add.sprite(100,450, "planetes");
     this.planet.setScale(3.5,3.5);
     this.planet.setX(300);
     this.planet.setY(300);
@@ -84,7 +77,7 @@
     this.anims.create({
     
         key: "anim_planet",
-        frames: this.anims.generateFrameNumbers("planètes",{  start: 0 , end: 120  }),
+        frames: this.anims.generateFrameNumbers("planetes",{  start: 0 , end: 49  }),
         frameRate : 12,
         repeat : -1
       
@@ -92,26 +85,23 @@
     
     var bouton_play = this.add.image(650, 400, "imageBoutonPlay").setDepth(1);
     
-    bouton_play.setScale(0.2,0.3)
+    bouton_play.setScale(0.2,0.3);
+    bouton_play.setInteractive();
     
     var bouton_option = this.add.image(650,470,"imageBoutonOption").setDepth(1);
     
-    bouton_option.setScale(0.2,0.3)
+    bouton_option.setScale(0.2,0.3);
+    bouton_option.setInteractive();
     
     var bouton_quit = this.add.image(650,540,"imageBoutonQuit").setDepth(1);
     
-    bouton_quit.setScale(0.2,0.3)
+    bouton_quit.setScale(0.2,0.3);
+    bouton_quit.setInteractive();
     
     //=========================================================
     
-    //on rend les boutons interratifs
     
-    bouton_play.setInteractive();
-    bouton_option.setInteractive();
-    bouton_quit.setInteractive();
-    
-     
-    
+
     //Cas ou la souris passe sur les boutons 
     
     bouton_play.on("pointerover", () => {
@@ -165,6 +155,7 @@
 
     bouton_quit.on("pointerup", () => {
       this.scene.stop("menu");
+      window.close();
     });
 
     //Cas ou la souris clique sur le bouton option : 
@@ -176,7 +167,7 @@
      
     
     
-    update(){
+    update() {
  
     this.planet.anims.play("anim_planet", true);
 
