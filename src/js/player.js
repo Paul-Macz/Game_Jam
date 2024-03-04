@@ -1,17 +1,21 @@
+// import Melee from "/src/js/melee.js";
+// import Range from "/src/js/range.js"
 
 export default class Player {
     constructor(scene, x, y) {
       this.scene = scene;
       this.PV = 20;
       this.maxPV = 20;
-      this.inventory;
-      this.damage = 200;
+      this.inventory=[];
+      this.equippedWeapon = null;
+      this.damage = 10;
       this.defense = 0.1;
       this.txt_PV = scene.add.text(20, 15, "PV: "+this.PV+"/"+this.maxPV, {
         fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif',
         fontSize: "14pt"
       });
-      this.gameOver=false
+      this.gameOver=false;
+      this.direction = 'right';
       
   
       scene.anims.create({
@@ -45,6 +49,7 @@ export default class Player {
       this.iKey = scene.input.keyboard.addKey("I");
       this.aKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
       this.eKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
+      this.fKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
     }
     freeze() {
       this.sprite.body.moves = false;
@@ -62,11 +67,11 @@ export default class Player {
       sprite.setVelocityX(0);
       if (cursors.left.isDown) {
         sprite.setVelocityX(-speedx);
-  
+        this.direction = 'left';
         //sprite.setFlipX(true);
       } else if (cursors.right.isDown) {
         sprite.setVelocityX(speedx);
-  
+        this.direction = 'right';
         //sprite.setFlipX(false);
       }
       if (cursors.up.isDown && this.sprite.body.touching.down) {
@@ -89,6 +94,9 @@ export default class Player {
       }
       if(this.eKey.isDown){
         this.resetPV();
+      }
+      if(this.fKey.isDown){
+        this.attack();
       }
     } 
 
@@ -122,5 +130,22 @@ export default class Player {
     }
     setDam(dam){
         this.damage=dam;
+    }
+    pickWeapon(weapon){
+        this.inventory.push(weapon);
+        if(this.equippedWeapon==null){
+            this.equipWeapon(this.inventory.length-1);
+        }
+    }
+    equipWeapon(index){
+        if (index >= 0 && index < this.inventory.length) {
+            this.equippedWeapon = this.inventory[index];
+            console.log(`Equipped ${this.equippedWeapon.name}.`);
+        } else {
+            console.log("Invalid weapon index.");
+        }
+    }
+    attack(){
+        this.equippedWeapon.attack(this, this.sprite.x,this.sprite.y);
     }
   }

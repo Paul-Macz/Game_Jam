@@ -1,5 +1,7 @@
 import * as fct from "/src/js/fonctions.js";
 import Player from "/src/js/player.js";
+import Melee from "/src/js/melee.js";
+import Range from "/src/js/range.js"
 /***********************************************************************/
 /** VARIABLES GLOBALES 
 /***********************************************************************/
@@ -31,6 +33,7 @@ export default class selection extends Phaser.Scene {
     this.load.image("img_porte1", "src/assets/door1.png");
     this.load.image("img_porte2", "src/assets/door2.png");
     this.load.image("img_porte3", "src/assets/door3.png");
+    this.load.image("bullet", "src/assets/balle.png");
   }
 
   /***********************************************************************/
@@ -89,6 +92,8 @@ export default class selection extends Phaser.Scene {
     this.player.sprite.setCollideWorldBounds(true);
     this.player.sprite.setBounce(0.2);
 
+    this.weap = new Range(this, "bull", 1, 50, 1, "bullet",true,20,100);
+    this.player.pickWeapon(this.weap);
     
     /*****************************************************
      *  GESTION DES INTERATIONS ENTRE  GROUPES ET ELEMENTS *
