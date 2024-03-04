@@ -92,7 +92,13 @@ export default class selection extends Phaser.Scene {
     //  propriétées physiqyes de l'objet player :
     player.setBounce(0.2); // on donne un petit coefficient de rebond
     player.setCollideWorldBounds(true); // le player se cognera contre les bords du monde
+    player.PV=20;
+    player.MaxPV=20;
 
+    this.add.text(30, 10, "Health:"+player.PV+"/"+player.MaxPV, {
+      fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif',
+      fontSize: "14pt"
+    });
     /***************************
      *  CREATION DES ANIMATIONS *
      ****************************/
@@ -174,6 +180,6 @@ export default class selection extends Phaser.Scene {
   }
 }
 
-/***********************************************************************/
-/** CONFIGURATION GLOBALE DU JEU ET LANCEMENT 
-/***********************************************************************/
+function getHit(){
+  
+}
