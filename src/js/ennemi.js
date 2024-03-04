@@ -1,6 +1,6 @@
 export default class Ennemi {
 
-    constructor(scene, x, y) {
+    constructor(calque_plateformes,scene, x, y) {
       this.scene = scene;
       this.PV = 20;
       this.maxPV = 20;
@@ -44,7 +44,44 @@ export default class Ennemi {
         var speedx = velocity;
         var speedy = velocity;
       }
-      sprite.setVelocityX(0);
+      if (ennemi.direction == "gauche" && ennemi.body.blocked.down) {
+        var coords = ennemi.getBottomLeft();
+        var tuileSuivante = calque_plateformes.getTileAtWorldXY(
+            coords.x,
+            coords.y + 10
+        );
+        if (tuileSuivante == null) {
+            // on risque de marcher dans le vide, on tourne
+            ennemi.direction = "droite";
+            ennemi.setVelocityX(90);
+            ennemi.play("anim_tourne_droite", true);
+        } else if (ennemi.body.blocked.left) {
+            ennemi.setVelocityY(-300);    
+            // Déclencher le déplacement vers la gauche après quelques millisecondes
+            setTimeout(function() {
+                ennemi.setVelocityX(-90);
+            }, 100); // 100 millisecondes de délai (ajustez selon vos besoins)
+        }    
+
+    } else if (ennemi.direction == "droite" && ennemi.body.blocked.down) {
+        var coords = ennemi.getBottomRight();
+        var tuileSuivante = calque_plateformes.getTileAtWorldXY(
+            coords.x,
+            coords.y + 10
+        );
+        if (tuileSuivante == null) {
+            // on risque de marcher dans le vide, on tourne
+            ennemi.direction = "gauche";
+            ennemi.setVelocityX(-90);
+            ennemi.play("anim_tourne_gauche", true);
+        } else if (ennemi.body.blocked.right) {
+            un_ennemi.setVelocityY(-300);    
+            // Déclencher le déplacement vers la gauche après quelques millisecondes
+            setTimeout(function() {
+                ennemi.setVelocityX(90);
+            }, 100); // 100 millisecondes de délai (ajustez selon vos besoins)
+        }  
+    }   
     } 
 
     getHit(ennemi, damage){
@@ -55,19 +92,20 @@ export default class Ennemi {
         }
     }
 
-    resetPV(){
-        setTimeout(function() {
-            if ()
-        un_ennemi.setVelocityX(90);
-    }, 10000); //
+    resetPV() {
+        setInterval(() => {
+            if (this.damage === 0) {
+                if (this.PV < this.maxPV) {
+                    this.PV++;
+                }
+            }
+        }, 10000);
     }
-        this.PV=this.maxPV;
-        this.update_txt_PV();
-    
 
     setPV(newPV){
         this.PV=newPV;
     }
+
     setMaxPV(newMax){
         this.maxPV=newMax;
     }

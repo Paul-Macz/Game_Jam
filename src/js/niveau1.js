@@ -1,5 +1,5 @@
 import * as fct from "/src/js/fonctions.js";
-  import Player from "/src/js/player.js";
+  import Ennemi from "/src/js/ennemis.js";
 
   // création et lancement du jeu
   var calque_plateformes; 
@@ -82,21 +82,7 @@ export default class niveau1 extends Phaser.Scene {
         frames: [{ key: "img_perso", frame: 4 }],
         frameRate: 20
       }); 
-      groupe_etoiles = this.physics.add.group(); 
-      for (var i = 0; i < 10; i++) {
-        var coordX = 70 + 70 * i;
-        groupe_etoiles.create(coordX, 10, "img_etoile");
-      } 
-      this.physics.add.collider(groupe_etoiles, calque_plateformes); 
-      groupe_etoiles.children.iterate(function iterateur(etoile_i) {
-        // On tire un coefficient aléatoire de rerebond : valeur entre 0.4 et 0.8
-        var coef_rebond = Phaser.Math.FloatBetween(0.4, 0.8);
-        etoile_i.setBounceY(coef_rebond); // on attribut le coefficient de rebond à l'étoile etoile_i
-      }); 
-      this.physics.add.overlap(player, groupe_etoiles, ramasserEtoile, null, this);
-      zone_texte_score = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' }); 
-      groupe_bombes = this.physics.add.group(); 
-      
+
       calque_plateformes.setCollisionByProperty({ estSolide: true }); 
       this.physics.add.collider(player, calque_plateformes); 
       this.physics.world.setBounds(0, 0, 3200, 640);
@@ -104,12 +90,12 @@ export default class niveau1 extends Phaser.Scene {
       this.cameras.main.startFollow(player); 
     
       // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
-    const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");   
-    groupe_ennemis = this.physics.add.group();
+      const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");   
+      groupe_ennemis = this.physics.add.group();
     
-    this.physics.add.collider(groupe_ennemis, calque_plateformes); 
-    // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
-    tab_points.objects.forEach(point => {
+      this.physics.add.collider(groupe_ennemis, calque_plateformes); 
+      // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
+      tab_points.objects.forEach(point => {
         if (point.name == "ennemi") {
           var nouvel_ennemi = this.physics.add.sprite(point.x, point.y, "img_ennemi");
           nouvel_ennemi.setTint(0xff0000); 
@@ -221,27 +207,5 @@ function chocAvecBombe(un_player, une_bombe) {
   player.setTint(0xff0000);
   player.anims.play("anim_face");
   gameOver = true;
-}
-
-function predictTilemapCollision(tilemapLayer, x, y, width, height, stepWidth, stepHeight) {
-  // Convertir les coordonnées du monde en coordonnées de tuile
-  var startX = Math.floor(x / tilemapLayer.tileWidth);
-  var endX = Math.ceil((x + width) / tilemapLayer.tileWidth);
-  var startY = Math.floor(y / tilemapLayer.tileHeight);
-  var endY = Math.ceil((y + height) / tilemapLayer.tileHeight);
-
-  // Parcourir les tuiles dans la zone définie par les coordonnées
-  for (var tileY = startY; tileY < endY; tileY += stepHeight) {
-      for (var tileX = startX; tileX < endX; tileX += stepWidth) {
-          var tile = tilemapLayer.getTileAt(tileX, tileY);
-          if (tile && tile.collides) {
-              // Collision détectée
-              return true;
-          }
-      }
-  }
-
-  // Aucune collision détectée
-  return false;
 }
 
