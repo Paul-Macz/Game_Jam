@@ -1,4 +1,5 @@
 import * as fct from "/src/js/fonctions.js";
+import Player from "/src/js/player.js";
 
 export default class niveau1 extends Phaser.Scene {
   // constructeur de la classe
@@ -9,10 +10,13 @@ export default class niveau1 extends Phaser.Scene {
   }
   preload() {
   }
-
-  create() {
+  init (data){
+    this.player=data.player1;
+  }
+  create(data) {
     fct.doNothing();
     fct.doAlsoNothing();
+    this.cursors = this.input.keyboard.createCursorKeys();
 
     this.add.image(400, 300, "img_ciel");
     this.groupe_plateformes = this.physics.add.staticGroup();
@@ -25,34 +29,38 @@ export default class niveau1 extends Phaser.Scene {
     });
 
     this.porte_retour = this.physics.add.staticSprite(100, 550, "img_porte1");
-
-    this.player = this.physics.add.sprite(100, 450, "img_perso");
-    this.player.refreshBody();
-    this.player.setBounce(0.2);
-    this.player.setCollideWorldBounds(true);
-    this.clavier = this.input.keyboard.createCursorKeys();
-    this.physics.add.collider(this.player, this.groupe_plateformes);
+    
+    if(data.player1===undefined){
+      this.player = new Player(this,100,450);
+      console.log("Creation");
+    }
+    else{
+      this.player = data.pl;
+      console.log("Recovery");
+    }
+    this.player.sprite.setCollideWorldBounds(true);
+    this.player.sprite.setBounce(0.2);
+    
+    this.physics.add.collider(this.player.sprite, this.groupe_plateformes);
   }
 
   update() {
-    if (this.clavier.left.isDown) {
-      this.player.setVelocityX(-160);
-      this.player.anims.play("anim_tourne_gauche", true);
-    } else if (this.clavier.right.isDown) {
-      this.player.setVelocityX(160);
-      this.player.anims.play("anim_tourne_droite", true);
-    } else {
-      this.player.setVelocityX(0);
-      this.player.anims.play("anim_face");
-    }
-    if (this.clavier.up.isDown && this.player.body.touching.down) {
-      this.player.setVelocityY(-330);
-    }
+    this.player.update();
 
-    if (Phaser.Input.Keyboard.JustDown(this.clavier.space) == true) {
-      if (this.physics.overlap(this.player, this.porte_retour)) {
+    if (Phaser.Input.Keyboard.JustDown(this.cursors.space) == true) {
+      if (this.physics.overlap(this.player.sprite, this.porte_retour)) {
         this.scene.switch("selection");
       }
     }
-  }
+    
+  if (this.player.gameOver) {
+    this.physics.pause();
+    this.player.sprite.setTint(0xff0000);
+    this.player.sprite.anims.play("stand");
+    this.time.delayedCall(3000,this.resetMap,[],this);
+  } 
+}
+resetMap(){
+  this.scene.restart();
+}
 }

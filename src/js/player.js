@@ -5,7 +5,7 @@ export default class Player {
       this.PV = 20;
       this.maxPV = 20;
       this.inventory;
-      this.degats = 200;
+      this.damage = 200;
       this.defense = 0.1;
       this.txt_PV = scene.add.text(20, 15, "PV: "+this.PV+"/"+this.maxPV, {
         fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif',
@@ -107,5 +107,20 @@ export default class Player {
 
     update_txt_PV(){
         this.txt_PV.setText("PV: " + this.PV+'/'+this.maxPV);
+    }
+    setPV(newPV){
+        this.PV=newPV;
+    }
+    setMaxPV(newMax){
+        this.maxPV=newMax;
+    }
+    setInv(inv){
+        this.inventory=inv;
+    }
+    setDef(def){
+        this.defense=def;
+    }
+    setDam(dam){
+        this.damage=dam;
     }
   }
