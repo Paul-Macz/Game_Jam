@@ -7,6 +7,9 @@ import * as fct from "/src/js/fonctions.js";
 var player; // désigne le sprite du joueur
 var clavier; // pour la gestion du clavier
 var groupe_plateformes;
+var txt_PV;
+var gameOver = false; 
+let keyA;
 
 // définition de la classe "selection"
 export default class selection extends Phaser.Scene {
@@ -94,8 +97,7 @@ export default class selection extends Phaser.Scene {
     player.setCollideWorldBounds(true); // le player se cognera contre les bords du monde
     player.PV=20;
     player.MaxPV=20;
-
-    this.add.text(30, 10, "Health:"+player.PV+"/"+player.MaxPV, {
+    txt_PV = this.add.text(20, 15, "PV: "+player.PV+"/"+player.MaxPV, {
       fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif',
       fontSize: "14pt"
     });
@@ -139,6 +141,7 @@ export default class selection extends Phaser.Scene {
      ************************/
     // ceci permet de creer un clavier et de mapper des touches, connaitre l'état des touches
     clavier = this.input.keyboard.createCursorKeys();
+    keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
 
     /*****************************************************
      *  GESTION DES INTERATIONS ENTRE  GROUPES ET ELEMENTS *
@@ -177,9 +180,24 @@ export default class selection extends Phaser.Scene {
       if (this.physics.overlap(player, this.porte3))
         this.scene.switch("niveau3");
     }
+    if (keyA.isDown){
+      getHit(player, 1);
+      console.log('A key pressed')
+    }
+    if (gameOver) {
+      this.physics.pause();
+      player.setTint(0xff0000);
+      player.anims.play("anim_face");
+      return;
+    } 
   }
 }
 
-function getHit(){
-  
+function getHit(player, damage){
+  player.PV -= damage;
+  txt_PV.setText("PV: " + player.PV+'/'+player.MaxPV);
+  if(player.PV == 0){
+    gameOver=true;
+  }
+
 }
