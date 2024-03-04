@@ -164,7 +164,7 @@
     });
 
     bouton_quit.on("pointerup", () => {
-      this.scene.close("menu");
+      this.scene.stop("menu");
     });
 
     //Cas ou la souris clique sur le bouton option : 
