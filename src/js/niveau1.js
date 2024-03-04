@@ -1,5 +1,6 @@
 import * as fct from "/src/js/fonctions.js";
-  
+  import Player from "/src/js/player.js";
+
   // création et lancement du jeu
   var calque_plateformes; 
   var player;
