@@ -56,7 +56,10 @@
     
     this.anims.create({
     
-      key:
+      key: "anim_planet"
+      frames: this.anims.generateFrameNumbers(start: 0 , end: 49)
+      framesRate : 5
+      repeat : -1
     
     });
     
@@ -78,9 +81,8 @@
     
     .image(0,0,"planètes")
     
-     
     
-    .setScale(5,2);
+    .setScale(1,1);
     
     //on ajoute un bouton de clic, nommé bouton_play
     
@@ -142,3 +144,7 @@
      
     
     }
+    update(){
+    
+
+    } 
