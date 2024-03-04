@@ -73,14 +73,19 @@
     
      .setScale(5,3);
     
-    this.planet = this.physics.add.staticSprite(100,450, "planètes");
+    this.planet = this.add.sprite(100,450, "planètes");
+    this.planet.setScale(3.5,3.5);
+    this.planet.setX(300);
+    this.planet.setY(300);
+
+    
     
     //on ajoute un bouton de clic, nommé bouton_play
     this.anims.create({
     
         key: "anim_planet",
-        frames: this.anims.generateFrameNumbers("planètes",{  start: 0 , end: 49  }),
-        framesRate : 5,
+        frames: this.anims.generateFrameNumbers("planètes",{  start: 0 , end: 120  }),
+        frameRate : 12,
         repeat : -1
       
       });
@@ -99,27 +104,50 @@
     
     //=========================================================
     
-    //on rend le bouton interratif
+    //on rend les boutons interratifs
     
     bouton_play.setInteractive();
+    bouton_option.setInteractive();
+    bouton_quit.setInteractive();
     
      
     
-    //Cas ou la souris passe sur le bouton play
+    //Cas ou la souris passe sur les boutons 
     
     bouton_play.on("pointerover", () => {
     
       bouton_play.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
     
     });
+
+    bouton_option.on("pointerover", () => {
+    
+      bouton_option.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
+    
+    });
+    bouton_quit.on("pointerover", () => {
+    
+      bouton_quit.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
+    
+    });
     
      
     
-    //Cas ou la souris ne passe plus sur le bouton play
+    //Cas ou la souris ne passe plus sur les boutons 
     
     bouton_play.on("pointerout", () => {
     
       bouton_play.clearTint(); // Réinitialise la teinte du bouton
+    
+    });
+    bouton_option.on("pointerout", () => {
+    
+      bouton_option.clearTint(); // Réinitialise la teinte du bouton
+    
+    });
+    bouton_quit.on("pointerout", () => {
+    
+      bouton_quit.clearTint(); // Réinitialise la teinte du bouton
     
     });
     
@@ -131,12 +159,17 @@
     // on lance la selection
     
     bouton_play.on("pointerup", () => {
-    
-     
-    
      this.scene.start("selection");
     
     });
+
+    bouton_quit.on("pointerup", () => {
+      this.scene.close("menu");
+    });
+
+    //Cas ou la souris clique sur le bouton option : 
+    // on lance un menu de commande
+    
     
     }
     
