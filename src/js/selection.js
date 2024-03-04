@@ -1,15 +1,10 @@
 import * as fct from "/src/js/fonctions.js";
-
+import Player from "/src/js/player.js";
 /***********************************************************************/
 /** VARIABLES GLOBALES 
 /***********************************************************************/
 
-var player; // désigne le sprite du joueur
-var clavier; // pour la gestion du clavier
 var groupe_plateformes;
-var txt_PV;
-var gameOver = false; 
-let keyA;
 
 // définition de la classe "selection"
 export default class selection extends Phaser.Scene {
@@ -51,7 +46,7 @@ export default class selection extends Phaser.Scene {
   create() {
       fct.doNothing();
       fct.doAlsoNothing();
-
+      this.cursors = this.input.keyboard.createCursorKeys();
     /*************************************
      *  CREATION DU MONDE + PLATEFORMES  *
      *************************************/
@@ -90,65 +85,18 @@ export default class selection extends Phaser.Scene {
      ****************************/
 
     // On créée un nouveeau personnage : player
-    player = this.physics.add.sprite(100, 450, "img_perso");
-
+    this.player = new Player(this,100,450);
     //  propriétées physiqyes de l'objet player :
-    player.setBounce(0.2); // on donne un petit coefficient de rebond
-    player.setCollideWorldBounds(true); // le player se cognera contre les bords du monde
-    player.PV=20;
-    player.MaxPV=20;
-    txt_PV = this.add.text(20, 15, "PV: "+player.PV+"/"+player.MaxPV, {
-      fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif',
-      fontSize: "14pt"
-    });
-    /***************************
-     *  CREATION DES ANIMATIONS *
-     ****************************/
-    // dans cette partie, on crée les animations, à partir des spritesheet
-    // chaque animation est une succession de frame à vitesse de défilement défini
-    // une animation doit avoir un nom. Quand on voudra la jouer sur un sprite, on utilisera la méthode play()
-    // creation de l'animation "anim_tourne_gauche" qui sera jouée sur le player lorsque ce dernier tourne à gauche
-    this.anims.create({
-      key: "anim_tourne_gauche", // key est le nom de l'animation : doit etre unique poru la scene.
-      frames: this.anims.generateFrameNumbers("img_perso", {
-        start: 0,
-        end: 3
-      }), // on prend toutes les frames de img perso numerotées de 0 à 3
-      frameRate: 10, // vitesse de défilement des frames
-      repeat: -1 // nombre de répétitions de l'animation. -1 = infini
-    });
+    this.player.sprite.setCollideWorldBounds(true);
+    this.player.sprite.setBounce(0.2); // on donne un petit coefficient de rebond
 
-    // creation de l'animation "anim_tourne_face" qui sera jouée sur le player lorsque ce dernier n'avance pas.
-    this.anims.create({
-      key: "anim_face",
-      frames: [{ key: "img_perso", frame: 4 }],
-      frameRate: 20
-    });
-
-    // creation de l'animation "anim_tourne_droite" qui sera jouée sur le player lorsque ce dernier tourne à droite
-    this.anims.create({
-      key: "anim_tourne_droite",
-      frames: this.anims.generateFrameNumbers("img_perso", {
-        start: 5,
-        end: 8
-      }),
-      frameRate: 10,
-      repeat: -1
-    });
-
-    /***********************
-     *  CREATION DU CLAVIER *
-     ************************/
-    // ceci permet de creer un clavier et de mapper des touches, connaitre l'état des touches
-    clavier = this.input.keyboard.createCursorKeys();
-    keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
-
+    
     /*****************************************************
      *  GESTION DES INTERATIONS ENTRE  GROUPES ET ELEMENTS *
      ******************************************************/
 
     //  Collide the player and the groupe_etoiles with the groupe_plateformes
-    this.physics.add.collider(player, groupe_plateformes);
+    this.physics.add.collider(this.player.sprite, groupe_plateformes);
   }
 
   /***********************************************************************/
@@ -156,48 +104,24 @@ export default class selection extends Phaser.Scene {
 /***********************************************************************/
 
   update() {
-    
-    if (clavier.left.isDown) {
-      player.setVelocityX(-160);
-      player.anims.play("anim_tourne_gauche", true);
-    } else if (clavier.right.isDown) {
-      player.setVelocityX(160);
-      player.anims.play("anim_tourne_droite", true);
-    } else {
-      player.setVelocityX(0);
-      player.anims.play("anim_face");
-    }
+    this.player.update()
 
-    if (clavier.up.isDown && player.body.touching.down) {
-      player.setVelocityY(-330);
-    }
-
-    if (Phaser.Input.Keyboard.JustDown(clavier.space) == true) {
-      if (this.physics.overlap(player, this.porte1))
+    if (Phaser.Input.Keyboard.JustDown(this.cursors.space) == true) {
+      if (this.physics.overlap(this.player.sprite, this.porte1))
         this.scene.switch("niveau1");
-      if (this.physics.overlap(player, this.porte2))
+      if (this.physics.overlap(this.player.sprite, this.porte2))
         this.scene.switch("niveau2");
-      if (this.physics.overlap(player, this.porte3))
+      if (this.physics.overlap(this.player.sprite, this.porte3))
         this.scene.switch("niveau3");
     }
-    if (keyA.isDown){
-      getHit(player, 1);
-      console.log('A key pressed')
-    }
-    if (gameOver) {
+    if (this.player.gameOver) {
       this.physics.pause();
-      player.setTint(0xff0000);
-      player.anims.play("anim_face");
-      return;
+      this.player.sprite.setTint(0xff0000);
+      this.player.sprite.anims.play("stand");
+      this.time.delayedCall(3000,this.resetMap,[],this);
     } 
   }
-}
-
-function getHit(player, damage){
-  player.PV -= damage;
-  txt_PV.setText("PV: " + player.PV+'/'+player.MaxPV);
-  if(player.PV == 0){
-    gameOver=true;
+  resetMap(){
+    this.scene.restart();
   }
-
 }
