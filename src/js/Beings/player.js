@@ -56,10 +56,10 @@ export default class Player extends Character{
         }
 
         if (this.aKey.isDown){
-            this.getHit(1);
+            //this.getHit(1);
         }
         if(this.eKey.isDown){
-            this.resetPV();
+            //this.resetPV();
         }
         // if(this.fKey.isDown){
         //     this.attack();

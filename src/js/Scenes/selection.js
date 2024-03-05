@@ -23,17 +23,7 @@ export default class selection extends Phaser.Scene {
    * On y trouve surtout le chargement des assets (images, son ..)
    */
   preload() {
-    // tous les assets du jeu sont placés dans le sous-répertoire src/assets/
-    this.load.image("img_ciel", "src/assets/sky.png");
-    this.load.image("img_plateforme", "src/assets/platform.png");
-    this.load.spritesheet("img_perso", "src/assets/dude.png", {
-      frameWidth: 32,
-      frameHeight: 48
-    });
-    this.load.image("img_porte1", "src/assets/door1.png");
-    this.load.image("img_porte2", "src/assets/door2.png");
-    this.load.image("img_porte3", "src/assets/door3.png");
-    this.load.image("bullet", "src/assets/balle.png");
+
   }
 
   /***********************************************************************/
@@ -47,9 +37,8 @@ export default class selection extends Phaser.Scene {
    * ainsi que toutes les instructions permettant de planifier des evenements
    */
   create() {
-      fct.doNothing();
-      fct.doAlsoNothing();
-      this.cursors = this.input.keyboard.createCursorKeys();
+
+    this.cursors = this.input.keyboard.createCursorKeys();
     /*************************************
      *  CREATION DU MONDE + PLATEFORMES  *
      *************************************/
@@ -72,9 +61,10 @@ export default class selection extends Phaser.Scene {
     /****************************
      *  CREATION DU PERSONNAGE  *
      ****************************/
-    this.player = new Player(this,"img_perso",100,450);
+    this.player = new Player(this,"img_perso",100,542);
     this.player.sprite.setCollideWorldBounds(true);
-    this.player.sprite.setBounce(0.2);
+    this.player.sprite.setSize(32,48);
+
 
     this.weap = new Range(this, "bull", 1, 10, 1, "bullet",true,1,1000,false);
     this.player.pickWeapon(this.weap);
@@ -96,6 +86,7 @@ export default class selection extends Phaser.Scene {
 /***********************************************************************/
 
   update() {
+
     this.player.update()
 
     if (Phaser.Input.Keyboard.JustDown(this.cursors.space) == true) {

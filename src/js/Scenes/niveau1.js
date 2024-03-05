@@ -29,8 +29,10 @@ export default class niveau1 extends Phaser.Scene {
     }
 
     create() {  
-      fct.doNothing();
-      fct.doAlsoNothing();
+      this.boundx=0;
+      this.boundy=0;
+      this.boundWidth=3200;
+      this.boundHeight=640;
 
       const carteDuNiveau = this.add.tilemap("carte");
       const tileset = carteDuNiveau.addTilesetImage(
@@ -51,10 +53,7 @@ export default class niveau1 extends Phaser.Scene {
         tileset
       ); 
       calque_plateformes.setCollisionByProperty({ estSolide: true }); 
-      this.boundx=0;
-      this.boundy=0;
-      this.boundWidth=3200;
-      this.boundHeight=640;
+
 
       this.cursors = this.input.keyboard.createCursorKeys();
 
@@ -96,7 +95,6 @@ export default class niveau1 extends Phaser.Scene {
       tab_points.objects.forEach(point => {
         if (point.name == "ennemi") { 
           var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,calque_plateformes);
-          // nouvel_ennemi.sprite.setTint(0xff0000); 
           nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
           this.groupe_ennemis.add(nouvel_ennemi.sprite);
         }
