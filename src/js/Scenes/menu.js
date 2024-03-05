@@ -1,14 +1,10 @@
 
- 
-
  export default class menu extends Phaser.Scene {
-
- 
-
     constructor() {
-    
       super({key : "menu"});
+//<<<<<<< HEAD:src/js/menu.js
     this.planet;
+    
     }
     
     
@@ -24,102 +20,131 @@
     
      this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
     
-    this.load.spritesheet("planètes","src/assets/planètes.png" ,{
+    this.load.spritesheet("planetes","src/assets/planetes.png" ,{
   frameWidth: 88,
   frameHeight: 88
  });
     
+
+      this.planet;
     }
-    
-     
-    
+
+    preload() {
+      this.load.image("menu_fond", "src/assets/fond_galaxy.png");
+      this.load.image("imageBoutonPlay", "src/assets/boutonplay.png");
+      this.load.image("imageBoutonOption", "src/assets/OptionButton.png");
+      this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
+      this.load.spritesheet("planètes","src/assets/planètes.png" ,{
+        frameWidth: 88,
+        frameHeight: 88
+      });
+//>>>>>>> 40fd059926b0f71ea2ff28822dfa63f910aacbc2:src/js/Scenes/menu.js
+    }
+
     /***********************************************************************/
-    
     /** FONCTION CREATE
-    
     /***********************************************************************/
-    
-     
-    
+
     /* La fonction create est appelée lors du lancement de la scene
-    
      * si on relance la scene, elle sera appelée a nouveau
-    
      * on y trouve toutes les instructions permettant de créer la scene
-    
      * placement des peronnages, des sprites, des platesformes, création des animations
-    
      * ainsi que toutes les instructions permettant de planifier des evenements
-    
      */
     
     create() {
-    
-     
-    
-    
-    
+//<<<<<<< HEAD:src/js/menu.js
      // on place les éléments de fond
-    
-     
-    
+//=======
+
+     // on place les éléments de fond
+
+//>>>>>>> 40fd059926b0f71ea2ff28822dfa63f910aacbc2:src/js/Scenes/menu.js
      this.add
     
      .image(0, 0, "menu_fond")
     
      .setOrigin(0)
-    
-     .setDepth(0)
+         .setDepth(0)
     
      .setScale(5,3);
     
-    this.planet = this.physics.add.staticSprite(100,450, "planètes");
+    this.planet = this.add.sprite(100,450, "planetes");
+    this.planet.setScale(3.5,3.5);
+    this.planet.setX(300);
+    this.planet.setY(300);
+
+    
     
     //on ajoute un bouton de clic, nommé bouton_play
     this.anims.create({
     
         key: "anim_planet",
+//<<<<<<< HEAD:src/js/menu.js
+        frames: this.anims.generateFrameNumbers("planetes",{  start: 0 , end: 49  }),
+//=======
         frames: this.anims.generateFrameNumbers("planètes",{  start: 0 , end: 49  }),
-        framesRate : 5,
+//>>>>>>> 40fd059926b0f71ea2ff28822dfa63f910aacbc2:src/js/Scenes/menu.js
+        frameRate : 12,
         repeat : -1
       
       });
     
     var bouton_play = this.add.image(650, 400, "imageBoutonPlay").setDepth(1);
     
-    bouton_play.setScale(0.2,0.3)
+    bouton_play.setScale(0.2,0.3);
+    bouton_play.setInteractive();
     
     var bouton_option = this.add.image(650,470,"imageBoutonOption").setDepth(1);
     
-    bouton_option.setScale(0.2,0.3)
+    bouton_option.setScale(0.2,0.3);
+    bouton_option.setInteractive();
     
     var bouton_quit = this.add.image(650,540,"imageBoutonQuit").setDepth(1);
     
-    bouton_quit.setScale(0.2,0.3)
+    bouton_quit.setScale(0.2,0.3);
+    bouton_quit.setInteractive();
     
     //=========================================================
     
-    //on rend le bouton interratif
     
-    bouton_play.setInteractive();
-    
-     
-    
-    //Cas ou la souris passe sur le bouton play
+
+    //Cas ou la souris passe sur les boutons 
     
     bouton_play.on("pointerover", () => {
     
       bouton_play.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
     
     });
+
+    bouton_option.on("pointerover", () => {
+    
+      bouton_option.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
+    
+    });
+    bouton_quit.on("pointerover", () => {
+    
+      bouton_quit.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
+    
+    });
     
      
     
-    //Cas ou la souris ne passe plus sur le bouton play
+    //Cas ou la souris ne passe plus sur les boutons 
     
     bouton_play.on("pointerout", () => {
     
       bouton_play.clearTint(); // Réinitialise la teinte du bouton
+    
+    });
+    bouton_option.on("pointerout", () => {
+    
+      bouton_option.clearTint(); // Réinitialise la teinte du bouton
+    
+    });
+    bouton_quit.on("pointerout", () => {
+    
+      bouton_quit.clearTint(); // Réinitialise la teinte du bouton
     
     });
     
@@ -131,19 +156,25 @@
     // on lance la selection
     
     bouton_play.on("pointerup", () => {
-    
-     
-    
      this.scene.start("selection");
     
     });
+
+    bouton_quit.on("pointerup", () => {
+      this.scene.stop("menu");
+      window.close();
+    });
+
+    //Cas ou la souris clique sur le bouton option : 
+    // on lance un menu de commande
+    
     
     }
     
      
     
     
-    update(){
+    update() {
  
     this.planet.anims.play("anim_planet", true);
 
