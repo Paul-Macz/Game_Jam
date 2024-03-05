@@ -1,7 +1,7 @@
 import * as fct from "/src/js/fonctions.js";
-import Player from "/src/js/player.js";
-import Melee from "/src/js/melee.js";
-import Range from "/src/js/range.js"
+import Player from "/src/js/Beings/player.js";
+import Melee from "/src/js/Items/melee.js";
+import Range from "/src/js/Items/range.js"
 /***********************************************************************/
 /** VARIABLES GLOBALES 
 /***********************************************************************/
@@ -88,7 +88,7 @@ export default class selection extends Phaser.Scene {
      ****************************/
 
     // On créée un nouveeau personnage : player
-    this.player = new Player(this,100,450);
+    this.player = new Player(this,"img_perso",100,450);
     this.player.sprite.setCollideWorldBounds(true);
     this.player.sprite.setBounce(0.2);
 
@@ -112,11 +112,7 @@ export default class selection extends Phaser.Scene {
 
     if (Phaser.Input.Keyboard.JustDown(this.cursors.space) == true) {
       if (this.physics.overlap(this.player.sprite, this.porte1)){
-        
-        let pla= this.player;
-        console.log(this.player);
-        this.scene.switch("niveau1",{pla});
-        
+        this.scene.switch("niveau1");
       }
       if (this.physics.overlap(this.player.sprite, this.porte2))
         this.scene.switch("niveau2");
