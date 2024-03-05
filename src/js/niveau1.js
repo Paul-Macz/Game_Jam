@@ -1,6 +1,8 @@
 import * as fct from "/src/js/fonctions.js";
   import Ennemi from "/src/js/ennemi.js";
   import Player from "/src/js/player.js";
+  import Melee from "/src/js/melee.js";
+  import Range from "/src/js/range.js"
 
   // création et lancement du jeu
   var calque_plateformes; 
@@ -61,29 +63,15 @@ export default class niveau1 extends Phaser.Scene {
         tileset
       ); 
       
-      player = this.physics.add.sprite(100, 450, 'img_perso'); 
-      player.setCollideWorldBounds(true); 
-      
-      player.setBounce(0.2); 
-      clavier = this.input.keyboard.createCursorKeys(); 
-      this.anims.create({
-        key: "anim_tourne_gauche", // key est le nom de l'animation : doit etre unique poru la scene.
-        frames: this.anims.generateFrameNumbers("img_perso", { start: 0, end: 3 }), // on prend toutes les frames de img perso numerotées de 0 à 3
-        frameRate: 10, // vitesse de défilement des frames
-        repeat: -1 // nombre de répétitions de l'animation. -1 = infini
-      }); 
-      this.anims.create({
-        key: "anim_tourne_droite", // key est le nom de l'animation : doit etre unique poru la scene.
-        frames: this.anims.generateFrameNumbers("img_perso", { start: 5, end: 8 }), // on prend toutes les frames de img perso numerotées de 0 à 3
-        frameRate: 10, // vitesse de défilement des frames
-        repeat: -1 // nombre de répétitions de l'animation. -1 = infini
-      }); 
-      this.anims.create({
-        key: "anim_face",
-        frames: [{ key: "img_perso", frame: 4 }],
-        frameRate: 20
-      }); 
+      this.player = new Player(this,100,450);
+      this.player.sprite.setCollideWorldBounds(true);
+      this.player.sprite.setBounce(0.2);
 
+      this.weap = new Range(this, "bull", 1, 50, 1, "bullet", true, 20, 100);
+      this.player.pickWeapon(this.weap);
+
+      clavier = this.input.keyboard.createCursorKeys(); 
+      
       calque_plateformes.setCollisionByProperty({ estSolide: true }); 
       this.physics.add.collider(player, calque_plateformes); 
       this.physics.world.setBounds(0, 0, 3200, 640);
