@@ -1,8 +1,8 @@
 
 
+import Player from "/src/js/Beings/player.js";
 
 var calque_tuto;
-
 export default class niveau3 extends Phaser.Scene {
   // constructeur de la classe
   constructor() {
@@ -16,21 +16,20 @@ export default class niveau3 extends Phaser.Scene {
  * On y trouve surtout le chargement des assets (images, son ..)
  */
  preload() {
+  
   this.load.spritesheet("img_perso", "src/assets/dude.png", {
     frameWidth: 32,
-    frameHeight: 48,
-  });
-
-  // chargement de la carte
+    frameHeight: 48
+  });  
+  this.load.spritesheet("img_ennemi", "src/assets/ennemi.png", {
+    frameWidth: 32,
+    frameHeight: 48
+  });  
+  this.load.image("fond","src/assets/fond_essai.png");
   this.load.image("Phaser_tuilesdejeu", "src/assets/depart.png");
-  this.load.tilemapTiledJSON("carte", "src/assets/Tutorielmap.json");
-  
-    
-
-  
-
-
+  this.load.tilemapTiledJSON("carte", "src/assets/Tutorielmap.json"); 
 }
+
 
 /***********************************************************************/
 /** FONCTION CREATE 
@@ -44,98 +43,48 @@ export default class niveau3 extends Phaser.Scene {
  */
 create() {
   
-  // chargement de la carte
-const carteDuNiveau = this.add.tilemap("carte");
+  const carteDuNiveau = this.add.tilemap("carte");
+      const tileset = carteDuNiveau.addTilesetImage(
+        "depart",
+        "Phaser_tuilesdejeu"
+      );  
+      
+      const fond = this.add.image(0, 0, "fond").setOrigin(0, 0);
 
-// chargement du jeu de tuiles
-const tileset = carteDuNiveau.addTilesetImage(
-          "depart",
-          "Phaser_tuilesdejeu"
-        ); 
-// chargement tuiles de jeu
-// chargement du calque calque_background
-const calque_tuto = carteDuNiveau.createLayer(
-  "calque_tuto",
-  tileset
-);
+      // Obtenir les dimensions de la carte
+      const largeurCarte = carteDuNiveau.widthInPixels;
+      const hauteurCarte = carteDuNiveau.heightInPixels;
+    
+      // Ajuster la taille de l'image de fond
+      fond.setDisplaySize(largeurCarte, hauteurCarte);
+      const calque_tuto = carteDuNiveau.createLayer(
+        "calque_tuto",
+        tileset
+      );
+      calque_tuto.setCollisionByProperty({ estSolide: true }); 
 
-// définition des tuiles de plateformes qui sont solides
-// utilisation de la propriété estSolide
- calque_tuto.setCollisionByProperty({ estSolide: true }); 
+      this.cursors = this.input.keyboard.createCursorKeys();
 
-this.player = new Player(100, 450);
-this.player.sprite.setCollideWorldBounds(true);
-this.player.sprite.setBounce(0.2);
-// ajout d'une collision entre le joueur et le calque plateformes
-this.physics.add.collider(player, calque_tuto);
-// redimentionnement du monde avec les dimensions calculées via tiled
-this.physics.world.setBounds(0, 0, 4800, 1600);
-//  ajout du champs de la caméra de taille identique à celle du monde
-this.cameras.main.setBounds(0, 0, 4800, 1600);
-// ancrage de la caméra sur le joueur
-this.cameras.main.startFollow(player); 
+      this.player = new Player(this,"img_perso",100,450, calque_tuto);
+      this.physics.add.collider(this.player.sprite, calque_tuto); 
+      this.player.sprite.setCollideWorldBounds(true);
+      this.player.sprite.setBounce(0.2);
 
+     // this.weap = new Range(this, "bull", 1, 50, 1, "bullet",true,20,100);
+     // this.player.pickWeapon(this.weap);
 
-
-
-  clavier = this.input.keyboard.createCursorKeys();
-
-  // dans cette partie, on crée les animations, à partir des spritesheet
-  // chaque animation est une succession de frame à vitesse de défilement défini
-  // une animation doit avoir un nom. Quand on voudra la jouer sur un sprite, on utilisera la méthode play()
-  // creation de l'animation "anim_tourne_gauche" qui sera jouée sur le player lorsque ce dernier tourne à gauche
-  this.anims.create({
-    key: "anim_tourne_gauche", // key est le nom de l'animation : doit etre unique poru la scene.
-    frames: this.anims.generateFrameNumbers("img_perso", { start: 0, end: 3 }), // on prend toutes les frames de img perso numerotées de 0 à 3
-    frameRate: 10, // vitesse de défilement des frames
-    repeat: -1, // nombre de répétitions de l'animation. -1 = infini
-  });
-
-   // dans cette partie, on crée les animations, à partir des spritesheet
-  // chaque animation est une succession de frame à vitesse de défilement défini
-  // une animation doit avoir un nom. Quand on voudra la jouer sur un sprite, on utilisera la méthode play()
-  // creation de l'animation "anim_tourne_gauche" qui sera jouée sur le player lorsque ce dernier tourne à gauche
-  this.anims.create({
-    key: "anim_tourne_gauche", // key est le nom de l'animation : doit etre unique poru la scene.
-    frames: this.anims.generateFrameNumbers("img_perso", { start: 0, end: 3 }), // on prend toutes les frames de img perso numerotées de 0 à 3
-    frameRate: 10, // vitesse de défilement des frames
-    repeat: -1 // nombre de répétitions de l'animation. -1 = infini
-  }); 
-  this.anims.create({
-    key: "anim_tourne_droite", // key est le nom de l'animation : doit etre unique poru la scene.
-    frames: this.anims.generateFrameNumbers("img_perso", { start: 5, end: 8 }), // on prend toutes les frames de img perso numerotées de 0 à 3
-    frameRate: 10, // vitesse de défilement des frames
-    repeat: -1 // nombre de répétitions de l'animation. -1 = infini
-  }); 
-  this.anims.create({
-    key: "anim_face",
-    frames: [{ key: "img_perso", frame: 4 }],
-    frameRate: 20
-  }); 
-
-
+      
+      this.physics.add.collider(this.player, calque_tuto); 
+      this.physics.world.setBounds(0, 0, 4800, 1600);
+      this.cameras.main.setBounds(0, 0, 4800, 1600);
+      this.cameras.main.startFollow(this.player.sprite); 
+    
   
 }
 
 
  update() {
-  if (clavier.right.isDown == true) {
-    player.setVelocityX(160);
-    player.anims.play("anim_tourne_droite", true);
-  } else if (clavier.left.isDown == true) {
-    player.setVelocityX(-160);
-    player.anims.play("anim_tourne_gauche", true);
-  } else {
-    player.setVelocityX(0);
-    player.anims.play('anim_face'); 
-  }
+  this.player.update()
 
-  if (clavier.up.isDown && player.body.blocked.down) {
-    player.setVelocityY(-400);
-  } 
-  
-  if (gameOver) {
-    return;
-  } 
 }
 }
