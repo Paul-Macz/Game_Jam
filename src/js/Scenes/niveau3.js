@@ -42,21 +42,23 @@ export default class niveau3 extends Phaser.Scene {
  * ainsi que toutes les instructions permettant de planifier des evenements
  */
 create() {
-  
-  const carteDuNiveau = this.add.tilemap("carte");
+  const fond = this.add.image(0, 0, "fond").setOrigin(0, 0);
+
+      // Obtenir les dimensions de la fenêtre du jeu
+      const largeurFenetre = this.cameras.main.width;
+      const hauteurFenetre = this.cameras.main.height;
+
+      // Ajuster la taille de l'image de fond pour qu'elle corresponde à la taille de la fenêtre du jeu
+fond.setDisplaySize(largeurFenetre, hauteurFenetre);
+this.cameras.main.setScroll(0, 0);
+
+const carteDuNiveau = this.add.tilemap("carte");
       const tileset = carteDuNiveau.addTilesetImage(
         "depart",
         "Phaser_tuilesdejeu"
       );  
-      
-      const fond = this.add.image(0, 0, "fond").setOrigin(0, 0);
-
-      // Obtenir les dimensions de la carte
-      const largeurCarte = carteDuNiveau.widthInPixels;
-      const hauteurCarte = carteDuNiveau.heightInPixels;
     
-      // Ajuster la taille de l'image de fond
-      fond.setDisplaySize(largeurCarte, hauteurCarte);
+      
       const calque_tuto = carteDuNiveau.createLayer(
         "calque_tuto",
         tileset
