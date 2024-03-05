@@ -72,8 +72,9 @@ export default class selection extends Phaser.Scene {
     /****************************
      *  CREATION DU PERSONNAGE  *
      ****************************/
-    this.player = new Player(this,"img_perso",100,450);
+    this.player = new Player(this,"img_perso",100,542);
     this.player.sprite.setCollideWorldBounds(true);
+    this.player.sprite.setSize(32,48);
     this.player.sprite.setBounce(0.2);
 
     this.weap = new Range(this, "bull", 1, 10, 1, "bullet",true,1,1000,false);
