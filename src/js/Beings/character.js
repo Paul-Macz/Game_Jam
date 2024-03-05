@@ -13,31 +13,6 @@ export default class Character{
         this.image=image;
         this.calque=calque;
 
-        scene.anims.create({
-            key: "turn_left",
-            frames: scene.anims.generateFrameNumbers(this.image, {
-                start: 0,
-                end: 3
-            }),
-            frameRate: 10, // vitesse de défilement des frames
-            repeat: -1 
-        });
-  
-        scene.anims.create({
-            key: "turn_right",
-            frames: scene.anims.generateFrameNumbers(this.image, {
-                start: 5,
-                end: 8
-            }),
-            frameRate: 8,
-            repeat: -1
-        });
-        scene.anims.create({
-            key: "stand",
-            frames: [{ key: this.image, frame: 4 }],
-            frameRate: 20
-        });
-
         this.sprite = scene.physics.add.sprite(x, y, this.image);
         scene.physics.add.collider(this.sprite, this.calque); 
     }
