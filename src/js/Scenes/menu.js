@@ -34,7 +34,7 @@
       this.load.image("imageBoutonPlay", "src/assets/boutonplay.png");
       this.load.image("imageBoutonOption", "src/assets/OptionButton.png");
       this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
-      this.load.spritesheet("planètes","src/assets/planètes.png" ,{
+      this.load.spritesheet("planetes","src/assets/planetes.png" ,{
         frameWidth: 88,
         frameHeight: 88
       });
@@ -83,7 +83,7 @@
 //<<<<<<< HEAD:src/js/menu.js
         frames: this.anims.generateFrameNumbers("planetes",{  start: 0 , end: 49  }),
 //=======
-        frames: this.anims.generateFrameNumbers("planètes",{  start: 0 , end: 49  }),
+        frames: this.anims.generateFrameNumbers("planetes",{  start: 0 , end: 49  }),
 //>>>>>>> 40fd059926b0f71ea2ff28822dfa63f910aacbc2:src/js/Scenes/menu.js
         frameRate : 12,
         repeat : -1
@@ -170,10 +170,7 @@
     
     
     }
-    
-     
-    
-    
+        
     update() {
  
     this.planet.anims.play("anim_planet", true);
