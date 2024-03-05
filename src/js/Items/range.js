@@ -4,7 +4,6 @@ import Weapon from "/src/js/Items/weapon.js"
 export default class Range extends Weapon{
     constructor(scene, name, damage, atSpeed, weight, image, byPlayer, range, bulSpeed,pierce){
         super(scene, name, damage, atSpeed, weight, image, byPlayer);
-        console.log("original damage",this.damage)
         this.range=range;
         this.lastShotTime=0;
         this.bulSpeed=bulSpeed;
@@ -39,7 +38,6 @@ export default class Range extends Weapon{
         
     }}
     hit (uneBalle, target){
-        console.log(this)
         if(target!=undefined){
             if(target.ennemiObject instanceof Character){
                 

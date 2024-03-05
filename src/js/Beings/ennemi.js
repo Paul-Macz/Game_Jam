@@ -1,4 +1,5 @@
 import Character from "/src/js/Beings/character.js";
+import Weapon from "/src/js/Items/weapon.js";
 
 export default class Ennemi extends Character{
     constructor(scene, image,x, y, calque, velocity) {
@@ -8,9 +9,15 @@ export default class Ennemi extends Character{
             this.speedx = this.speedx*velocity;
         } 
         this.direction='left';
+        
+        this.pickWeapon(new Weapon(this.scene,"Hands",2,2,1,"",false));
+
     }
     getHit(damage){
         super.getHit(damage);
-        this.sprite.destroy();
+        if(this.PV==0){
+            this.validforDeletion=true;
+            this.sprite.destroy();
+        }
     }
   }

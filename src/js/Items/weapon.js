@@ -9,14 +9,10 @@ export default class Weapon{
         this.image=image;
         this.byPlayer=byPlayer;
     }
-    getDam(){
-        console.log(this.damage);
-    }
     attack(){
 
     }
     hit(target){
-        //console.log("this",this);
         target.getHit(this.damage);
     }
 }

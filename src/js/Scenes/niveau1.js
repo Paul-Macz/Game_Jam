@@ -64,7 +64,7 @@ export default class niveau1 extends Phaser.Scene {
 
       this.weap = new Range(this, "bull", 2, 10, 1, "bullet",true,1,1000,false);
       this.player.pickWeapon(this.weap);
-      this.weap.getDam();
+      
       //this.add.text(50,30,"TEST");
       
       
@@ -87,12 +87,12 @@ export default class niveau1 extends Phaser.Scene {
         }
     });  
     this.player.inventory.forEach(element => {
-      console.log(this)
-      console.log(element)
-      this.physics.add.collider(element.Bullets,calque_plateformes,element.erase, null, this);
-      this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,this);
+      this.physics.add.collider(element.Bullets,calque_plateformes,element.erase, null, element);
+      this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
     });
     
+    // this.physics.add.overlap(this.player.this.groupe_ennemis,this.player.getHit,[],this)
+
     /*****************************************************
        *  ajout du modele de mobilite des ennemis *
        ******************************************************/
@@ -106,16 +106,14 @@ export default class niveau1 extends Phaser.Scene {
 
     update() {
       this.player.update()
+
       if (this.player.gameOver) {
           this.physics.pause();
           this.player.sprite.setTint(0xff0000);
           this.player.sprite.anims.play("stand");
           this.time.delayedCall(3000,this.restartScene,[],this);
       } 
-    
-    this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
-      un_ennemi.ennemiObject.update(); 
-    });    
+       
   }
   restartScene() {
     this.scene.stop('niveau1');

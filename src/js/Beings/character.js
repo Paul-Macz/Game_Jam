@@ -42,9 +42,7 @@ export default class Character{
         scene.physics.add.collider(this.sprite, this.calque); 
     }
     getHit(damage){
-        console.log("Original PV",this.PV)
         this.PV -= damage;
-        console.log("New PV",this.PV)
         this.sprite.setTint(0xff0000);
         this.scene.time.delayedCall(500,() => this.resetColor());
     }
