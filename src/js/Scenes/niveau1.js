@@ -1,6 +1,6 @@
 import * as fct from "/src/js/fonctions.js";
-import Ennemi from "/src/js/ennemi.js";
-import Player from "/src/js/player.js";
+import Terrestre from "/src/js/Beings/terrestre.js";
+import Player from "/src/js/Beings/player.js";
 
   // création et lancement du jeu
   var calque_plateformes; 
@@ -69,14 +69,15 @@ export default class niveau1 extends Phaser.Scene {
     
       // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
       const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");   
-      //this.groupe_ennemis = this.physics.add.group();
+      this.groupe_ennemis = this.physics.add.group();
     
       this.physics.add.collider(this.groupe_ennemis, calque_plateformes); 
       // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
       tab_points.objects.forEach(point => {
         if (point.name == "ennemi") {
-          var nouvel_ennemi = new Ennemi(calque_plateformes,this,"img_perso",point.x, point.y);
+          var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,calque_plateformes);
           nouvel_ennemi.sprite.setTint(0xff0000); 
+          nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
           this.groupe_ennemis.add(nouvel_ennemi.sprite);
         }
     });  
@@ -98,48 +99,15 @@ export default class niveau1 extends Phaser.Scene {
           this.physics.pause();
           this.player.sprite.setTint(0xff0000);
           this.player.sprite.anims.play("stand");
-          this.time.delayedCall(3000,this.resetMap,[],this);
+          this.time.delayedCall(3000,this.restartScene,[],this);
       } 
     
     this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
-      if (un_ennemi.direction == "left" && un_ennemi.body.blocked.down) {
-          var coords = un_ennemi.getBottomLeft();
-          var tuileSuivante = calque_plateformes.getTileAtWorldXY(
-              coords.x,
-              coords.y + 10
-          );
-          if (tuileSuivante == null) {
-              // on risque de marcher dans le vide, on tourne
-              un_ennemi.direction = "droite";
-              un_ennemi.setVelocityX(90);
-              un_ennemi.play("turn_right", true);
-          } else if (un_ennemi.body.blocked.left) {
-              un_ennemi.setVelocityY(-300);    
-              // Déclencher le déplacement vers la gauche après quelques millisecondes
-              setTimeout(function() {
-                  un_ennemi.setVelocityX(-90);
-              }, 100); // 100 millisecondes de délai (ajustez selon vos besoins)
-          }    
-
-      } else if (un_ennemi.direction == "right" && un_ennemi.body.blocked.down) {
-          var coords = un_ennemi.getBottomRight();
-          var tuileSuivante = calque_plateformes.getTileAtWorldXY(
-              coords.x,
-              coords.y + 10
-          );
-          if (tuileSuivante == null) {
-              // on risque de marcher dans le vide, on tourne
-              un_ennemi.direction = "left";
-              un_ennemi.setVelocityX(-90);
-              un_ennemi.play("turn_left", true);
-          } else if (un_ennemi.body.blocked.right) {
-              un_ennemi.setVelocityY(-300);    
-              // Déclencher le déplacement vers la gauche après quelques millisecondes
-              setTimeout(function() {
-                  un_ennemi.setVelocityX(90);
-              }, 100); // 100 millisecondes de délai (ajustez selon vos besoins)
-          }  
-      }   
+      un_ennemi.ennemiObject.update(); 
     });    
+  }
+  restartScene() {
+    this.scene.stop('niveau1');
+    this.scene.start('niveau1');
   }
 } 

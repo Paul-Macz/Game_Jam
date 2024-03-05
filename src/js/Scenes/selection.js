@@ -1,7 +1,7 @@
 import * as fct from "/src/js/fonctions.js";
-import Player from "/src/js/player.js";
-import Melee from "/src/js/melee.js";
-import Range from "/src/js/range.js"
+import Player from "/src/js/Beings/player.js";
+import Melee from "/src/js/Items/melee.js";
+import Range from "/src/js/Items/range.js"
 /***********************************************************************/
 /** VARIABLES GLOBALES 
 /***********************************************************************/

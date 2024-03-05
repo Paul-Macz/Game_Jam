@@ -1,4 +1,4 @@
-import Weapon from "/src/js/weapon.js"
+import Weapon from "/src/js/Items/weapon.js"
 
 export default class Range extends Weapon{
     constructor(scene, name, damage, atSpeed, userSpeed, image, byPlayer, range, bulSpeed){
