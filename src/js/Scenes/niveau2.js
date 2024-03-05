@@ -1,3 +1,7 @@
+import Player from "/src/js/Beings/player.js";
+var Calque_background; 
+var calque_plateformes;
+var calque_grotte;
 export default class niveau2 extends Phaser.Scene {
   // constructeur de la classe
   constructor() {
@@ -5,49 +9,86 @@ export default class niveau2 extends Phaser.Scene {
       key: "niveau2" //  ici on précise le nom de la classe en tant qu'identifiant
     });
   }
-  preload() {}
+  preload() {
+    this.load.spritesheet("img_perso", "src/assets/dude.png", {
+      frameWidth: 32,
+      frameHeight: 48
+    }); 
+    this.load.image("Phaser_tuilesdejeu1", "src/assets/tiles.png");
+  this.load.image("Phaser_tuilesdejeu2", "src/assets/miscellaneous.png");
+  this.load.tilemapTiledJSON("carte", "src/assets/Niveau2.json"); 
+  
+}
+  
 
   create() {
-    this.add.image(400, 300, "img_ciel");
-    this.groupe_plateformes = this.physics.add.staticGroup();
-    this.groupe_plateformes.create(200, 584, "img_plateforme");
-    this.groupe_plateformes.create(600, 584, "img_plateforme");
-    // ajout d'un texte distintcif  du niveau
-    this.add.text(400, 100, "Vous êtes dans le niveau 2", {
-      fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif',
-      fontSize: "22pt"
-    });
+    const carteDuNiveau = this.add.tilemap("carte");
+  const tileset1 = carteDuNiveau.addTilesetImage(
+    "tiles",
+    "Phaser_tuilesdejeu1",
+  ); 
+  const tileset2 = carteDuNiveau.addTilesetImage(
+    "miscellaneous",
+    "Phaser_tuilesdejeu2"
+  );
 
-    this.porte_retour = this.physics.add.staticSprite(100, 550, "img_porte2");
+  const Fond_noir = carteDuNiveau.createLayer(
+    "Fond_noir",
+    tileset1,
+   
+  ); 
+  const brique_fond = carteDuNiveau.createLayer(
+    "brique_fond",
+    tileset1,
+    
+  );
+  const Calque_ladder = carteDuNiveau.createLayer(
+    "Calque_ladder",
+    tileset2
+  )
+  const calque_grotte = carteDuNiveau.createLayer(
+    "calque_grotte",
+    tileset1
+  )
+  const pics = carteDuNiveau.createLayer(
+    "pics",
+    tileset1
+  )
+  const calque_plateformes = carteDuNiveau.createLayer(
+    "calque_plateformes",
+    tileset2
+  )
+  const Calque_background = carteDuNiveau.createLayer(
+    "Calque_background",
+    tileset1,
+    
+  );
 
-    this.player = this.physics.add.sprite(100, 450, "img_perso");
-    this.player.refreshBody();
-    this.player.setBounce(0.2);
-    this.player.setCollideWorldBounds(true);
-    this.clavier = this.input.keyboard.createCursorKeys();
-    this.physics.add.collider(this.player, this.groupe_plateformes);
+  Calque_background.setCollisionByProperty({ estSolide: true });
+  calque_plateformes.setCollisionByProperty({ estSolide: true });
+  calque_grotte.setCollisionByProperty({ estSolide: true });  
+  this.cursors = this.input.keyboard.createCursorKeys();
+
+   
+
+  this.player = new Player(this,"img_perso",100,450, Calque_background);
+      this.physics.add.collider(this.player.sprite, calque_plateformes);
+      this.physics.add.collider(this.player.sprite, calque_grotte); 
+      this.physics.add.collider(this.player.sprite, Calque_background);  
+      this.player.sprite.setCollideWorldBounds(true);
+      this.player.sprite.setBounce(0.2);
+      
+
+    
+    this.physics.add.collider(this.player, calque_grotte);
+    this.physics.add.collider(this.player, calque_plateformes);
+    this.physics.add.collider(this.player, Calque_background);
+    this.physics.world.setBounds(0, 0, 4800, 3200);
+    this.cameras.main.setBounds(0, 0, 4800, 3200);
+    this.cameras.main.startFollow(this.player.sprite); 
   }
 
   update() {
-    if (this.clavier.left.isDown) {
-      this.player.setVelocityX(-160);
-      this.player.anims.play("anim_tourne_gauche", true);
-    } else if (this.clavier.right.isDown) {
-      this.player.setVelocityX(160);
-      this.player.anims.play("anim_tourne_droite", true);
-    } else {
-      this.player.setVelocityX(0);
-      this.player.anims.play("anim_face");
-    }
-    if (this.clavier.up.isDown && this.player.body.touching.down) {
-      this.player.setVelocityY(-330);
-    }
-
-    if (Phaser.Input.Keyboard.JustDown(this.clavier.space) == true) {
-      if (this.physics.overlap(this.player, this.porte_retour)) {
-        console.log("niveau 3 : retour vers selection");
-        this.scene.switch("selection");
-      }
-    }
+    this.player.update()
   }
 }
