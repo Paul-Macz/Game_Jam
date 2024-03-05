@@ -76,10 +76,11 @@ export default class Character{
     equipWeapon(index){
         if (index >= 0 && index < this.inventory.length) {
             this.equippedWeapon = this.inventory[index];
-            console.log(`Equipped ${this.equippedWeapon.name}.`);
-        } else {
-            console.log("Invalid weapon index.");
-        }
+            //console.log(`Equipped ${this.equippedWeapon.name}.`);
+        } 
+        // else {
+        //  console.log("Invalid weapon index.");
+        // }
     }
     attack(){
         this.equippedWeapon.attack(this, this.sprite.x,this.sprite.y);

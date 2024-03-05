@@ -62,6 +62,21 @@ export default class niveau1 extends Phaser.Scene {
       this.player.sprite.setCollideWorldBounds(true);
       this.player.sprite.setBounce(0.2);
 
+      this.player.sprite.body.onWorldBounds = true; 
+
+      this.player.sprite.body.world.on(
+        "worldbounds", // evenement surveillé
+        function (body, up, down, left, right) {
+          // on verifie si la hitbox qui est rentrée en collision est celle du player,
+          // et si la collision a eu lieu sur le bord inférieur du player
+          if (body.gameObject === this.player.sprite && down == true) {
+            // si oui : GAME OVER on arrete la physique et on colorie le personnage en rouge
+            this.player.gameOver=true;
+          }
+        },
+        this
+      ); 
+
       this.weap = new Range(this, "bull", 2, 10, 1, "bullet",true,1,1000,false);
       this.player.pickWeapon(this.weap);
       
@@ -109,7 +124,7 @@ export default class niveau1 extends Phaser.Scene {
 
       if (this.player.gameOver) {
           this.physics.pause();
-          this.player.sprite.setTint(0xff0000);
+          this.player.sprite.setTint(0x444444);
           this.player.sprite.anims.play("stand");
           this.time.delayedCall(3000,this.restartScene,[],this);
       } 
