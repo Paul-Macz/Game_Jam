@@ -1,68 +1,36 @@
 
- 
-
  export default class menu extends Phaser.Scene {
-
- 
-
     constructor() {
-    
       super({key : "menu"});
-    this.planet;
+      this.planet;
     }
-    
-    
-    
-    
-     preload() {
-    
-     this.load.image("menu_fond", "src/assets/fond_galaxy.png");
-    
-     this.load.image("imageBoutonPlay", "src/assets/boutonplay.png");
-    
-     this.load.image("imageBoutonOption", "src/assets/OptionButton.png");
-    
-     this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
-    
-    this.load.spritesheet("planètes","src/assets/planètes.png" ,{
-  frameWidth: 88,
-  frameHeight: 88
- });
-    
+
+    preload() {
+      this.load.image("menu_fond", "src/assets/fond_galaxy.png");
+      this.load.image("imageBoutonPlay", "src/assets/boutonplay.png");
+      this.load.image("imageBoutonOption", "src/assets/OptionButton.png");
+      this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
+      this.load.spritesheet("planètes","src/assets/planètes.png" ,{
+        frameWidth: 88,
+        frameHeight: 88
+      });
     }
-    
-     //
-    
+
     /***********************************************************************/
-    
     /** FONCTION CREATE
-    
     /***********************************************************************/
-    
-     
-    
+
     /* La fonction create est appelée lors du lancement de la scene
-    
      * si on relance la scene, elle sera appelée a nouveau
-    
      * on y trouve toutes les instructions permettant de créer la scene
-    
      * placement des peronnages, des sprites, des platesformes, création des animations
-    
      * ainsi que toutes les instructions permettant de planifier des evenements
-    
      */
     
     create() {
-    
-     
-    
-    
-    
+
      // on place les éléments de fond
-    
-     
-    
+
      this.add
     
      .image(0, 0, "menu_fond")
@@ -84,7 +52,7 @@
     this.anims.create({
     
         key: "anim_planet",
-        frames: this.anims.generateFrameNumbers("planètes",{  start: 0 , end: 120  }),
+        frames: this.anims.generateFrameNumbers("planètes",{  start: 0 , end: 49  }),
         frameRate : 12,
         repeat : -1
       

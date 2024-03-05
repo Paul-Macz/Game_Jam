@@ -1,4 +1,4 @@
-import Character from "/src/js/character.js";
+import Character from "/src/js/Beings/character.js";
 
 export default class Player extends Character{
     constructor(scene,image, x, y,calque) {
@@ -61,10 +61,12 @@ export default class Player extends Character{
         }
     } 
     getHit(damage){
-        super.getHit(damage);
-        this.update_txt_PV();
-        if(this.PV == 0){
-            this.gameOver=true;
+        if(!this.gameOver){
+            super.getHit(damage);
+            this.update_txt_PV();
+            if(this.PV == 0){
+                this.gameOver=true;
+            }
         }
     }
     resetPV(){
