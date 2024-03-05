@@ -77,12 +77,6 @@ export default class niveau2 extends Phaser.Scene {
       this.physics.add.collider(this.player.sprite, Calque_background);  
       this.player.sprite.setCollideWorldBounds(true);
       this.player.sprite.setBounce(0.2);
-      
-
-    
-    this.physics.add.collider(this.player, calque_grotte);
-    this.physics.add.collider(this.player, calque_plateformes);
-    this.physics.add.collider(this.player, Calque_background);
     this.physics.world.setBounds(0, 0, 4800, 3200);
     this.cameras.main.setBounds(0, 0, 4800, 3200);
     this.cameras.main.startFollow(this.player.sprite); 
