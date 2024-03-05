@@ -53,25 +53,11 @@ export default class selection extends Phaser.Scene {
     /*************************************
      *  CREATION DU MONDE + PLATEFORMES  *
      *************************************/
-
-    // On ajoute une simple image de fond, le ciel, au centre de la zone affichée (400, 300)
-    // Par défaut le point d'ancrage d'une image est le centre de cette derniere
     this.add.image(400, 300, "img_ciel");
 
-    // la création d'un groupes permet de gérer simultanément les éléments d'une meme famille
-    //  Le groupe groupe_plateformes contiendra le sol et deux platesformes sur lesquelles sauter
-    // notez le mot clé "staticGroup" : le static indique que ces élements sont fixes : pas de gravite,
-    // ni de possibilité de les pousser.
     groupe_plateformes = this.physics.add.staticGroup();
-    // une fois le groupe créé, on va créer les platesformes , le sol, et les ajouter au groupe groupe_plateformes
-
-    // l'image img_plateforme fait 400x32. On en met 2 à coté pour faire le sol
-    // la méthode create permet de créer et d'ajouter automatiquement des objets à un groupe
-    // on précise 2 parametres : chaque coordonnées et la texture de l'objet, et "voila!"
     groupe_plateformes.create(200, 584, "img_plateforme");
     groupe_plateformes.create(600, 584, "img_plateforme");
-
-    //  on ajoute 3 platesformes flottantes
     groupe_plateformes.create(600, 450, "img_plateforme");
     groupe_plateformes.create(50, 300, "img_plateforme");
     groupe_plateformes.create(750, 270, "img_plateforme");
@@ -86,13 +72,11 @@ export default class selection extends Phaser.Scene {
     /****************************
      *  CREATION DU PERSONNAGE  *
      ****************************/
-
-    // On créée un nouveeau personnage : player
     this.player = new Player(this,"img_perso",100,450);
     this.player.sprite.setCollideWorldBounds(true);
     this.player.sprite.setBounce(0.2);
 
-    this.weap = new Range(this, "bull", 1, 50, 1, "bullet",true,20,100);
+    this.weap = new Range(this, "bull", 1, 10, 1, "bullet",true,1,1000,false);
     this.player.pickWeapon(this.weap);
     
     /*****************************************************
@@ -101,6 +85,10 @@ export default class selection extends Phaser.Scene {
 
     //  Collide the player and the groupe_etoiles with the groupe_plateformes
     this.physics.add.collider(this.player.sprite, groupe_plateformes);
+    this.player.inventory.forEach(element => {
+      this.physics.add.collider(element.Bullets,groupe_plateformes,element.erase, null, this);
+    });
+    
   }
 
   /***********************************************************************/
@@ -121,7 +109,7 @@ export default class selection extends Phaser.Scene {
     }
     if (this.player.gameOver) {
       this.physics.pause();
-      this.player.sprite.setTint(0xff0000);
+      this.player.sprite.setTint(0x444444);
       this.player.sprite.anims.play("stand");
       this.time.delayedCall(3000,this.resetMap,[],this);
     } 

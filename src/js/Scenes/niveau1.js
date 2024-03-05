@@ -1,6 +1,7 @@
 import * as fct from "/src/js/fonctions.js";
 import Terrestre from "/src/js/Beings/terrestre.js";
 import Player from "/src/js/Beings/player.js";
+import Range from "/src/js/Items/range.js";
 
   // création et lancement du jeu
   var calque_plateformes; 
@@ -50,22 +51,26 @@ export default class niveau1 extends Phaser.Scene {
         tileset
       ); 
       calque_plateformes.setCollisionByProperty({ estSolide: true }); 
+      this.boundx=0;
+      this.boundy=0;
+      this.boundWidth=3200;
+      this.boundHeight=640;
 
       this.cursors = this.input.keyboard.createCursorKeys();
 
       this.player = new Player(this,"img_perso",100,450, calque_plateformes);
-      // this.physics.add.collider(this.player.sprite, calque_plateformes); 
       this.player.sprite.setCollideWorldBounds(true);
       this.player.sprite.setBounce(0.2);
 
-      this.weap = new Range(this, "bull", 1, 50, 1, "bullet",true,20,100);
+      this.weap = new Range(this, "bull", 2, 10, 1, "bullet",true,1,1000,false);
       this.player.pickWeapon(this.weap);
-
+      this.weap.getDam();
+      //this.add.text(50,30,"TEST");
+      
       
       this.physics.add.collider(this.player, calque_plateformes); 
-      this.physics.world.setBounds(0, 0, 3200, 640);
-      this.cameras.main.setBounds(0, 0, 3200, 640);
-      this.cameras.main.startFollow(this.player.sprite); 
+      this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundHeight);
+      
     
       // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
       const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");   
@@ -74,13 +79,19 @@ export default class niveau1 extends Phaser.Scene {
       this.physics.add.collider(this.groupe_ennemis, calque_plateformes); 
       // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
       tab_points.objects.forEach(point => {
-        if (point.name == "ennemi") {
+        if (point.name == "ennemi") { 
           var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,calque_plateformes);
-          nouvel_ennemi.sprite.setTint(0xff0000); 
+          // nouvel_ennemi.sprite.setTint(0xff0000); 
           nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
           this.groupe_ennemis.add(nouvel_ennemi.sprite);
         }
     });  
+    this.player.inventory.forEach(element => {
+      console.log(this)
+      console.log(element)
+      this.physics.add.collider(element.Bullets,calque_plateformes,element.erase, null, this);
+      this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,this);
+    });
     
     /*****************************************************
        *  ajout du modele de mobilite des ennemis *

@@ -9,5 +9,8 @@ export default class Ennemi extends Character{
         } 
         this.direction='left';
     }
-
+    getHit(damage){
+        super.getHit(damage);
+        this.sprite.destroy();
+    }
   }
