@@ -1,6 +1,6 @@
 
 
-import Player from "/src/js/player.js";
+import Player from "/src/js/Beings/player.js";
 
 var calque_tuto;
 export default class niveau3 extends Phaser.Scene {
