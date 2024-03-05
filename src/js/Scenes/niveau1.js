@@ -1,4 +1,4 @@
-import * as fct from "/src/js/fonctions.js";
+// import * as fct from "/src/js/fonctions.js";
 import Terrestre from "/src/js/Beings/terrestre.js";
 import Player from "/src/js/Beings/player.js";
 import Range from "/src/js/Items/range.js";
@@ -26,6 +26,7 @@ export default class niveau1 extends Phaser.Scene {
       });  
       this.load.image("Phaser_tuilesdejeu", "src/assets/tuilesJeu.png");
       this.load.tilemapTiledJSON("carte", "src/assets/map.json"); 
+
     }
 
     create() {  
@@ -82,7 +83,7 @@ export default class niveau1 extends Phaser.Scene {
       //this.add.text(50,30,"TEST");
       
       
-      this.physics.add.collider(this.player, calque_plateformes); 
+      //this.physics.add.collider(this.player, calque_plateformes); 
       this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundHeight);
       
     
@@ -115,6 +116,7 @@ export default class niveau1 extends Phaser.Scene {
         un_ennemi.direction = "left";
         un_ennemi.anims.play("turn_left", true);
       }); 
+
     }
 
     update() {
@@ -126,7 +128,6 @@ export default class niveau1 extends Phaser.Scene {
           this.player.sprite.anims.play("stand");
           this.time.delayedCall(3000,this.restartScene,[],this);
       } 
-       
   }
   restartScene() {
     this.scene.stop('niveau1');
