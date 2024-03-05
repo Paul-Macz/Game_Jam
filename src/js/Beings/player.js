@@ -1,4 +1,5 @@
 import Character from "/src/js/Beings/character.js";
+import Range from "/src/js/Items/range.js";
 
 export default class Player extends Character{
     constructor(scene,image, x, y,calque) {
@@ -14,6 +15,11 @@ export default class Player extends Character{
         this.aKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         this.eKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
         this.fKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
+
+        if(this.calque!=undefined){
+            this.scene.cameras.main.setBounds(this.scene.boundx, this.scene.boundy, this.scene.boundWidth, this.scene.boundHeight);
+            this.scene.cameras.main.startFollow(this.sprite); 
+        }
     }
     freeze() {
         this.sprite.body.moves = false;
@@ -48,17 +54,39 @@ export default class Player extends Character{
         } else if (this.cursors.down.isDown) {
             this.sprite.setVelocityY(speedy);
         }
-        
 
         if (this.aKey.isDown){
-            this.getHit(1);
+            //this.getHit(1);
         }
         if(this.eKey.isDown){
-            this.resetPV();
+            //this.resetPV();
         }
-        if(this.fKey.isDown){
-            this.attack();
+        // if(this.fKey.isDown){
+        //     this.attack();
+        // }
+        if(this.calque!=undefined){
+            const adjustedMouseX = this.scene.input.mousePointer.x + this.scene.cameras.main.scrollX;
+            const adjustedMouseY = this.scene.input.mousePointer.y + this.scene.cameras.main.scrollY;
+            if(this.scene.input.mousePointer.isDown){
+                if(this.equippedWeapon instanceof Range){
+                    this.attack(adjustedMouseX,adjustedMouseY);
+                }
+                else{
+                    this.attack();
+                }
+            }
         }
+        else{
+            if(this.scene.input.mousePointer.isDown){
+                if(this.equippedWeapon instanceof Range){
+                    this.attack(this.scene.input.mousePointer.x,this.scene.input.mousePointer.y);
+                }
+                else{
+                    this.attack();
+                }
+            }
+        }
+        
     } 
     getHit(damage){
         if(!this.gameOver){
