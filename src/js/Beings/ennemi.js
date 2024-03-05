@@ -7,7 +7,7 @@ export default class Ennemi extends Character{
         if (velocity != undefined) {
             this.speedx = this.speedx*velocity;
         } 
-        
+        this.direction='left';
     }
 
   }
