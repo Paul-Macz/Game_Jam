@@ -72,7 +72,7 @@
     // on lance la selection
     
     bouton_play.on("pointerup", () => {
-     this.scene.start("selection");
+     this.scene.start("tutomap");
     });
 
     bouton_quit.on("pointerup", () => {

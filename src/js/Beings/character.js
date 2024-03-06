@@ -15,7 +15,7 @@ export default class Character{
 
         this.sprite = scene.physics.add.sprite(x, y, this.image);
         this.sprite.setCollideWorldBounds(true);
-        scene.physics.add.collider(this.sprite, this.calque); 
+        this.scene.physics.add.collider(this.sprite, this.calque); 
     }
     getHit(damage){
 
@@ -57,11 +57,11 @@ export default class Character{
         if (index >= 0 && index < this.inventory.length) {
             this.equippedWeapon = this.inventory[index];
             
-            console.log(`Equipped ${this.equippedWeapon.name}.`);
+            // console.log(`Equipped ${this.equippedWeapon.name}.`);
         } 
-        else {
-        console.log("Invalid weapon index.");
-        }
+        // else {
+        // console.log("Invalid weapon index.");
+        // }
     }
     attack(){
         if(this.inventory!=[]){
@@ -70,7 +70,8 @@ export default class Character{
         }
     }
     attack(targetx,targety){
-        if(this.inventory!=[]){
+        if(this.eequippedWeapon!=null){
+            // console.log(this.inventory)
             this.equippedWeapon.attack(this, this.sprite.x,this.sprite.y,targetx,targety);
         }
     }

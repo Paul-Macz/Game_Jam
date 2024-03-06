@@ -342,7 +342,7 @@
          "draworder":"topdown",
          "id":13,
          "locked":true,
-         "name":"calque_fitgh",
+         "name":"calque_figth",
          "objects":[
                 {
                  "height":0,
@@ -353,8 +353,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":836,
-                 "y":1264
+                 "x":570,
+                 "y":1112.66666666667
                 }, 
                 {
                  "height":0,
@@ -365,8 +365,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":1544,
-                 "y":1268
+                 "x":1547,
+                 "y":1269
                 }, 
                 {
                  "height":0,
@@ -377,8 +377,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":1080,
-                 "y":856
+                 "x":1070.16666666667,
+                 "y":852.5
                 }, 
                 {
                  "height":0,
@@ -390,7 +390,7 @@
                  "visible":true,
                  "width":0,
                  "x":2200,
-                 "y":1048
+                 "y":1041.33333333333
                 }, 
                 {
                  "height":0,
@@ -401,8 +401,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2074,
-                 "y":1048
+                 "x":2076.66666666667,
+                 "y":1044
                 }, 
                 {
                  "height":0,
@@ -413,8 +413,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2328,
-                 "y":1046
+                 "x":2340.66666666667,
+                 "y":1037.66666666667
                 }, 
                 {
                  "height":0,
@@ -425,8 +425,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2490,
-                 "y":982
+                 "x":2493.33333333333,
+                 "y":981.333333333333
                 }, 
                 {
                  "height":0,
@@ -437,8 +437,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2626,
-                 "y":922
+                 "x":2629.33333333333,
+                 "y":913.333333333333
                 }, 
                 {
                  "height":0,
@@ -449,8 +449,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2320,
-                 "y":1434
+                 "x":2329,
+                 "y":1432
                 }, 
                 {
                  "height":0,
@@ -462,7 +462,7 @@
                  "visible":true,
                  "width":0,
                  "x":2472,
-                 "y":1400
+                 "y":1399
                 }, 
                 {
                  "height":0,
@@ -474,7 +474,7 @@
                  "visible":true,
                  "width":0,
                  "x":2610,
-                 "y":1338
+                 "y":1334
                 }, 
                 {
                  "height":0,
@@ -485,8 +485,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2726,
-                 "y":1276
+                 "x":2728,
+                 "y":1263.66666666667
                 }, 
                 {
                  "height":0,
@@ -497,8 +497,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2852,
-                 "y":1208
+                 "x":2854.33333333333,
+                 "y":1199.66666666667
                 }, 
                 {
                  "height":0,
@@ -509,8 +509,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":3026,
-                 "y":1146
+                 "x":3006.66666666667,
+                 "y":1145
                 }, 
                 {
                  "height":0,
@@ -521,8 +521,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2744,
-                 "y":840
+                 "x":2747.66666666667,
+                 "y":850.666666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -858,7 +858,7 @@
          "height":100,
          "id":12,
          "locked":true,
-         "name":"calque_plateformes",
+         "name":"calque_volant",
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
@@ -3065,7 +3065,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3074,7 +3074,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3083,7 +3083,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3092,7 +3092,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3344,7 +3344,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3353,7 +3353,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3362,7 +3362,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3371,7 +3371,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3623,7 +3623,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3632,7 +3632,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3641,7 +3641,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3650,7 +3650,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3903,7 +3903,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3912,7 +3912,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3921,7 +3921,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3930,7 +3930,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4182,7 +4182,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4191,7 +4191,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4200,7 +4200,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4209,7 +4209,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4740,7 +4740,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4749,7 +4749,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4758,7 +4758,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4767,7 +4767,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5019,7 +5019,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5028,7 +5028,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5037,7 +5037,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5046,7 +5046,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 },
             
@@ -5299,7 +5299,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5308,7 +5308,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5317,7 +5317,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5326,7 +5326,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5578,7 +5578,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5587,7 +5587,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5596,7 +5596,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5605,7 +5605,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {

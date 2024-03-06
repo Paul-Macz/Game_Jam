@@ -13,12 +13,12 @@ export default class Melee extends Weapon{
     }
     
     attack(user, userx, usery,userh){
-        var currentTime = this.scene.time.now;
-        if ((currentTime - this.lastAttack)*this.atSpeed >= 1000 || this.lastAttack==0) {
-            this.attackHitbox = this.scene.add.rectangle(100, 100, 100, 100, 0x000000, 0);
-            this.scene.physics.world.enable(this.attackHitbox);
-            // this.scene.attackHitbox.body.setCollideWorldBounds(true);
-        }
+        // var currentTime = this.scene.time.now;
+        // if ((currentTime - this.lastAttack)*this.atSpeed >= 1000 || this.lastAttack==0) {
+        //     this.attackHitbox = this.scene.add.rectangle(100, 100, 100, 100, 0x000000, 0);
+        //     this.scene.physics.world.enable(this.attackHitbox);
+        //     // this.scene.attackHitbox.body.setCollideWorldBounds(true);
+        // }
     }
 
     disablehitbox(){
