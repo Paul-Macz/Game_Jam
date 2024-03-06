@@ -2,6 +2,7 @@
 import Terrestre from "/src/js/Beings/terrestre.js";
 import Player from "/src/js/Beings/player.js";
 import Range from "/src/js/Items/range.js";
+import Character from "/src/js/Beings/character.js";
 
 // création et lancement du jeu
 var calque_plateformes;
@@ -48,7 +49,7 @@ export default class niveau1 extends Phaser.Scene {
 
         this.player.sprite.body.world.on("worldbounds", function(body, up, down, left, right) {
             if (body.gameObject === this.player.sprite && down == true) {
-                this.player.gameOver = true;
+                this.player.gameOver = false;
             }
         }, this);
 
@@ -74,9 +75,9 @@ export default class niveau1 extends Phaser.Scene {
             this.physics.add.overlap(element.Bullets, this.groupe_ennemis, element.hit, null, element);
         });
 
-        this.physics.add.collider(this.groupe_ennemis, this.player.sprite, this.handlePlayerEnnemiCollision, null, this);
+        this.physics.add.collider(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);
 
-        this.groupe_ennemis.children.iterate(function(un_ennemi,iterateur) {
+        this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
             un_ennemi.setVelocityX(-90);
             un_ennemi.direction = "left";
             un_ennemi.anims.play("turn_left", true);
@@ -85,16 +86,17 @@ export default class niveau1 extends Phaser.Scene {
         this.hit = 0;
     }
 
-    handlePlayerEnnemiCollision(ennemiSp, player) {
+    handlePlayerEnnemiCollision(player, ennemiSp) {
         if (ennemiSp.ennemiObject instanceof Character) {
             console.log("check")
         }
+        console.log(ennemiSp)
         const dx = this.player.sprite.x - ennemiSp.x;
         const dy = this.player.sprite.y - ennemiSp.y;
         const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
         this.player.sprite.setVelocity(dir.x, dir.y)
         this.hit = 1
-        this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
+        this.player.getHit(ennemiSp.ennemiObject.equipWeapon.damage)
     }
 
     update() {
@@ -108,7 +110,7 @@ export default class niveau1 extends Phaser.Scene {
             this.time.delayedCall(3000, this.restartScene, [], this);
         }
 
-        this.groupe_ennemis.children.iterate(function(un_ennemi,iterateur) {
+        this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
             un_ennemi.ennemiObject.update();
         });
     }
