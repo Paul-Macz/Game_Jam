@@ -1,4 +1,4 @@
-import * as fct from "/src/js/fonctions.js";
+// import * as fct from "/src/js/fonction.js";
 import Player from "/src/js/Beings/player.js";
 import Melee from "/src/js/Items/melee.js";
 import Range from "/src/js/Items/range.js"
@@ -62,12 +62,14 @@ export default class selection extends Phaser.Scene {
      *  CREATION DU PERSONNAGE  *
      ****************************/
     this.player = new Player(this,"img_perso",100,542);
-    this.player.sprite.setCollideWorldBounds(true);
+    //this.player.sprite.setCollideWorldBounds(true);
     this.player.sprite.setSize(32,48);
 
-
-    this.weap = new Range(this, "bull", 1, 10, 1, "bullet",true,1,1000,false);
+    // this.weap = new Range(this, "bull", 1, 10, 1, "bullet",true,1,1000,false);
+    // this.player.pickWeapon(this.weap);
+    this.weap = new Melee(this,'test', 1, 10, 1, "bullet", true, 10);
     this.player.pickWeapon(this.weap);
+    
     
     /*****************************************************
      *  GESTION DES INTERATIONS ENTRE  GROUPES ET ELEMENTS *
@@ -76,7 +78,9 @@ export default class selection extends Phaser.Scene {
     //  Collide the player and the groupe_etoiles with the groupe_plateformes
     this.physics.add.collider(this.player.sprite, groupe_plateformes);
     this.player.inventory.forEach(element => {
-      this.physics.add.collider(element.Bullets,groupe_plateformes,element.erase, null, this);
+      if(element instanceof Range){
+        this.physics.add.collider(element.Bullets,groupe_plateformes,element.erase, null, this);
+      }
     });
     
   }
@@ -86,9 +90,8 @@ export default class selection extends Phaser.Scene {
 /***********************************************************************/
 
   update() {
-
     this.player.update()
-
+    
     if (Phaser.Input.Keyboard.JustDown(this.cursors.space) == true) {
       if (this.physics.overlap(this.player.sprite, this.porte1)){
         this.scene.switch("niveau1");
@@ -98,12 +101,14 @@ export default class selection extends Phaser.Scene {
       if (this.physics.overlap(this.player.sprite, this.porte3))
         this.scene.switch("niveau3");
     }
+    
     if (this.player.gameOver) {
       this.physics.pause();
       this.player.sprite.setTint(0x444444);
       this.player.sprite.anims.play("stand");
       this.time.delayedCall(3000,this.resetMap,[],this);
     } 
+
   }
   resetMap(){
     this.scene.restart();

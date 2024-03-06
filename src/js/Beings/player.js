@@ -1,5 +1,6 @@
 import Character from "/src/js/Beings/character.js";
 import Range from "/src/js/Items/range.js";
+import Melee from "/src/js/Items/melee.js";
 
 export default class Player extends Character{
     constructor(scene,image, x, y,calque) {
@@ -9,7 +10,7 @@ export default class Player extends Character{
             fontSize: "14pt"
         });
         this.gameOver=false;
-
+        this.sprite.setCollideWorldBounds(true);
         this.cursors = scene.input.keyboard.createCursorKeys();
         this.iKey = scene.input.keyboard.addKey("I");
         this.aKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -20,14 +21,24 @@ export default class Player extends Character{
             this.scene.cameras.main.setBounds(this.scene.boundx, this.scene.boundy, this.scene.boundWidth, this.scene.boundHeight);
             this.scene.cameras.main.startFollow(this.sprite); 
         }
+
     }
     freeze() {
         this.sprite.body.moves = false;
+
     }
     update(velocity) {
+
         if (velocity === undefined) {
-            var speedx = 250;
-            var speedy = 300;
+            if(this.equippedWeapon==null){          
+                var speedx = 250;
+                var speedy = 300;
+            }
+            else{
+                var speedx = 250*this.equippedWeapon.weight;
+                var speedy = 300;
+
+            }
         } else {
             var speedx = velocity;
             var speedy = velocity;
@@ -65,6 +76,7 @@ export default class Player extends Character{
         //     this.attack();
         // }
         if(this.calque!=undefined){
+            
             const adjustedMouseX = this.scene.input.mousePointer.x + this.scene.cameras.main.scrollX;
             const adjustedMouseY = this.scene.input.mousePointer.y + this.scene.cameras.main.scrollY;
             if(this.scene.input.mousePointer.isDown){
@@ -86,9 +98,10 @@ export default class Player extends Character{
                 }
             }
         }
-        
+
     } 
     getHit(damage){
+
         if(!this.gameOver){
             super.getHit(damage);
             this.update_txt_PV();
@@ -98,11 +111,12 @@ export default class Player extends Character{
         }
     }
     resetPV(){
+
         super.resetPV();
         this.update_txt_PV();
     }
     update_txt_PV(){
-        
+
         this.txt_PV.setText("PV: " + this.PV+'/'+this.maxPV);
     }
     
