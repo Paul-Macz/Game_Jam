@@ -105,7 +105,7 @@ export default class Animations extends Phaser.Scene{
           this.anims.create({
             key:'battlemage_crouchAttack',
             frames: this.anims.generateFrameNames('battlemage', {start:1, end:7,prefix:'Battlemage (Separeted Frames)/Crouch Attack/Battlemage Crouch Attack', suffix:'.png'}),
-            repeat:-1,
+            repeat:0,
             frameRate:15
           });
           this.anims.create({
@@ -135,6 +135,6 @@ export default class Animations extends Phaser.Scene{
 
     }
     update(){
-        this.scene.start("niveau4");
+        this.scene.start("niveau2");
     }
 }

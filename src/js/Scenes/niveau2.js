@@ -2,7 +2,7 @@
 import Terrestre from "/src/js/Beings/terrestre.js";
 import Player from "/src/js/Beings/player.js";
 import Range from "/src/js/Items/range.js";
-
+import Melee from "/src/js/Items/melee.js"
 var Calque_background; 
 var calque_volant;
 var calque_grotte;
@@ -85,12 +85,12 @@ export default class niveau2 extends Phaser.Scene {
   this.cursors = this.input.keyboard.createCursorKeys();
 
    
-// extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
-const tab_points = carteDuNiveau.getObjectLayer("calque_figth"); 
-this.groupe_ennemis = this.physics.add.group();
+  // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
+  const tab_points = carteDuNiveau.getObjectLayer("calque_figth"); 
+  this.groupe_ennemis = this.physics.add.group();
 
 
-  this.player = new Player(this,"img_perso",90,1360, Calque_background);
+  this.player = new Player(this,"battlemage",90,1360, Calque_background);
       this.physics.add.collider(this.player.sprite, calque_volant);
       this.physics.add.collider(this.player.sprite, calque_grotte); 
       this.physics.add.collider(this.player.sprite, Calque_background);  
@@ -110,8 +110,9 @@ this.groupe_ennemis = this.physics.add.group();
         },
         this
       ); 
+      
 
-      this.weap = new Range(this, "bull", 2, 10, 1, "bullet",true,1,1000,false);
+      this.weap = new Melee(this, "bull", 2, 10, 1, "bullet",true,10);
       this.player.pickWeapon(this.weap);
       
 
@@ -126,9 +127,12 @@ this.groupe_ennemis = this.physics.add.group();
       }
   });  
   this.player.inventory.forEach(element => {
+    if(element instanceof Range){
     this.physics.add.collider(element.Bullets,Calque_background,element.erase, null, element);
     this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
+    }
   });
+  this.physics.add.collider(this.player.swordHitbox,this.groupe_ennemis)
 
 /*****************************************************
        *  ajout du modele de mobilite des ennemis *
