@@ -1,5 +1,4 @@
 
-import * as fct from "/src/js/fonctions.js";
 import Terrestre from "/src/js/Beings/terrestre.js";
 import Player from "/src/js/Beings/player.js";
 import Range from "/src/js/Items/range.js";
@@ -30,6 +29,12 @@ export default class niveau2 extends Phaser.Scene {
   
 
   create() {
+    this.boundx=0;
+      this.boundy=0;
+      this.boundWidth=4800;
+      this.boundHeight=3200;
+
+
     const carteDuNiveau = this.add.tilemap("carte");
   const tileset1 = carteDuNiveau.addTilesetImage(
     "tiles",
@@ -89,7 +94,26 @@ this.groupe_ennemis = this.physics.add.group();
       this.physics.add.collider(this.player.sprite, Calque_background);  
       this.player.sprite.setCollideWorldBounds(true);
       this.player.sprite.setBounce(0.2);
-    this.physics.world.setBounds(0, 0, 4800, 3200);
+      this.player.sprite.body.onWorldBounds = true; 
+
+      this.player.sprite.body.world.on(
+        "worldbounds", // evenement surveillé
+        function (body, up, down, left, right) {
+          // on verifie si la hitbox qui est rentrée en collision est celle du player,
+          // et si la collision a eu lieu sur le bord inférieur du player
+          if (body.gameObject === this.player.sprite && down == true) {
+            // si oui : GAME OVER on arrete la physique et on colorie le personnage en rouge
+            this.player.gameOver=true;
+          }
+        },
+        this
+      ); 
+
+      this.weap = new Range(this, "bull", 2, 10, 1, "bullet",true,1,1000,false);
+      this.player.pickWeapon(this.weap);
+      
+
+      this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundHeight);
     this.cameras.main.setBounds(0, 0, 4800, 3200);
     this.cameras.main.startFollow(this.player.sprite); 
 
@@ -101,6 +125,10 @@ this.groupe_ennemis = this.physics.add.group();
         this.groupe_ennemis.add(nouvel_ennemi.sprite);
       }
   });  
+  this.player.inventory.forEach(element => {
+    this.physics.add.collider(element.Bullets,calque_plateformes,element.erase, null, element);
+    this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
+  });
 
 /*****************************************************
        *  ajout du modele de mobilite des ennemis *

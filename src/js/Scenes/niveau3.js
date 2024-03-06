@@ -1,7 +1,6 @@
 
 
 import Player from "/src/js/Beings/player.js";
-import * as fct from "/src/js/fonctions.js";
 import Terrestre from "/src/js/Beings/terrestre.js";
 import Range from "/src/js/Items/range.js";
 var calque_rochers;
@@ -31,6 +30,13 @@ export default class niveau3 extends Phaser.Scene {
   }
 
   create() {
+    this.boundx=0;
+      this.boundy=0;
+      this.boundWidth=4800;
+      this.boundHeight=3200;
+
+
+
     const carteDuNiveau = this.make.tilemap({ key: "carte" });
 
     const tileset1 = carteDuNiveau.addTilesetImage("tileset2", "Phaser_tuiles1");
