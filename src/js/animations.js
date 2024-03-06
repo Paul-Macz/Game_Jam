@@ -137,6 +137,18 @@ export default class Animations extends Phaser.Scene{
             frameRate:15
           });
 
+          this.anims.create({
+            key: "anim_ouvreporte",
+            frames: this.anims.generateFrameNumbers("porte_ouvrante", { start: 0, end: 5 }),
+            frameRate: 50,
+            repeat: 0
+          }); 
+          this.anims.create({
+            key: "anim_fermeporte",
+            frames: this.anims.generateFrameNumbers("porte_ouvrante", { start: 5, end: 0 }),
+            frameRate: 50,
+            repeat: 0
+          }); 
     }
     update(){
         this.scene.start("niveau3");
