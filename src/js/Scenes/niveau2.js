@@ -1,4 +1,8 @@
+
+import * as fct from "/src/js/fonctions.js";
+import Terrestre from "/src/js/Beings/terrestre.js";
 import Player from "/src/js/Beings/player.js";
+import Range from "/src/js/Items/range.js";
 var Calque_background; 
 var calque_plateformes;
 var calque_grotte;
@@ -14,6 +18,10 @@ export default class niveau2 extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 48
     }); 
+    this.load.spritesheet("img_ennemi", "src/assets/ennemi.png", {
+      frameWidth: 32,
+      frameHeight: 48
+    });  
     this.load.image("Phaser_tuilesdejeu1", "src/assets/tiles.png");
   this.load.image("Phaser_tuilesdejeu2", "src/assets/miscellaneous.png");
   this.load.tilemapTiledJSON("carte", "src/assets/Niveau2.json"); 
@@ -70,6 +78,10 @@ export default class niveau2 extends Phaser.Scene {
   this.cursors = this.input.keyboard.createCursorKeys();
 
    
+// extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
+const tab_points = carteDuNiveau.getObjectLayer("calque_fitgh"); 
+this.groupe_ennemis = this.physics.add.group();
+
 
   this.player = new Player(this,"img_perso",100,450, Calque_background);
       this.physics.add.collider(this.player.sprite, calque_plateformes);
@@ -80,9 +92,40 @@ export default class niveau2 extends Phaser.Scene {
     this.physics.world.setBounds(0, 0, 4800, 3200);
     this.cameras.main.setBounds(0, 0, 4800, 3200);
     this.cameras.main.startFollow(this.player.sprite); 
+
+    // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
+    tab_points.objects.forEach(point => {
+      if (point.name == "figther") { 
+        var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,Calque_background);
+        nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
+        this.groupe_ennemis.add(nouvel_ennemi.sprite);
+      }
+  });  
+
+/*****************************************************
+       *  ajout du modele de mobilite des ennemis *
+       ******************************************************/
+      // par défaut, on va a gauche en utilisant la meme animation que le personnage
+      this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
+        un_ennemi.setVelocityX(-90);
+        un_ennemi.direction = "left";
+        un_ennemi.anims.play("turn_left", true);
+      }); 
   }
 
   update() {
     this.player.update()
+
+
+    if (this.player.gameOver) {
+      this.physics.pause();
+      this.player.sprite.setTint(0x444444);
+      this.player.sprite.anims.play("stand");
+      this.time.delayedCall(3000,this.restartScene,[],this);
+  } 
+  }
+  restartScene() {
+    this.scene.stop('niveau2');
+    this.scene.start('niveau2');
   }
 }

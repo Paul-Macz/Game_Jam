@@ -1,7 +1,11 @@
 
 
 import Player from "/src/js/Beings/player.js";
+import * as fct from "/src/js/fonctions.js";
+import Terrestre from "/src/js/Beings/terrestre.js";
+import Range from "/src/js/Items/range.js";
 var calque_rochers;
+var calque_nature;
 export default class niveau3 extends Phaser.Scene {
   constructor() {
     super({ key: "niveau3" });
@@ -12,6 +16,10 @@ export default class niveau3 extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 48
     });  
+    this.load.spritesheet("img_ennemi", "src/assets/ennemi.png", {
+      frameWidth: 32,
+      frameHeight: 48
+    }); 
 
     this.load.image("Phaser_tuiles1", "src/assets/tileset2.png");
     this.load.image("Phaser_tuiles2", "src/assets/clouds2.png");
@@ -42,7 +50,11 @@ export default class niveau3 extends Phaser.Scene {
     calque_rochers.setCollisionByProperty({ estSolide: true }); 
 
     this.cursors = this.input.keyboard.createCursorKeys();
-
+    
+    // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
+    const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis"); 
+    this.groupe_ennemis = this.physics.add.group();
+    
     this.player = new Player(this, "img_perso", 100, 450, calque_nature);
     this.physics.add.collider(this.player.sprite, calque_nature);
     this.physics.add.collider(this.player.sprite, calque_rochers);  
@@ -51,11 +63,47 @@ export default class niveau3 extends Phaser.Scene {
 
     this.physics.world.setBounds(0, 0, carteDuNiveau.widthInPixels, carteDuNiveau.heightInPixels);
     this.cameras.main.setBounds(0, 0, carteDuNiveau.widthInPixels, carteDuNiveau.heightInPixels);
-    this.cameras.main.startFollow(this.player.sprite); 
+    this.cameras.main.startFollow(this.player.sprite);
+
+        // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
+        tab_points.objects.forEach(point => {
+          if (point.name == "ennemi") { 
+            var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,calque_nature,calque_rochers);
+            nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
+            this.groupe_ennemis.add(nouvel_ennemi.sprite);
+          } else if (point.name == "ennemi2") { 
+                var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,calque_nature,calque_rochers);
+                nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
+                this.groupe_ennemis.add(nouvel_ennemi.sprite);
+              }
+          });   
+ 
+
+      /*****************************************************
+       *  ajout du modele de mobilite des ennemis *
+       ******************************************************/
+      // par défaut, on va a gauche en utilisant la meme animation que le personnage
+      this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
+        un_ennemi.setVelocityX(-90);
+        un_ennemi.direction = "left";
+        un_ennemi.anims.play("turn_left", true);
+      });
   }
 
   update() {
-    this.player.update();
+    this.player.update()
+
+
+    if (this.player.gameOver) {
+      this.physics.pause();
+      this.player.sprite.setTint(0x444444);
+      this.player.sprite.anims.play("stand");
+      this.time.delayedCall(3000,this.restartScene,[],this);
+  } 
+  }
+  restartScene() {
+    this.scene.stop('niveau2');
+    this.scene.start('niveau2');
   }
 }
 
