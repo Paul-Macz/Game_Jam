@@ -2,9 +2,11 @@
 import Terrestre from "/src/js/Beings/terrestre.js";
 import Player from "/src/js/Beings/player.js";
 import Range from "/src/js/Items/range.js";
+
 var Calque_background; 
-var calque_plateformes;
+var calque_volant;
 var calque_grotte;
+
 export default class niveau2 extends Phaser.Scene {
   // constructeur de la classe
   constructor() {
@@ -59,7 +61,7 @@ export default class niveau2 extends Phaser.Scene {
     "Calque_ladder",
     tileset2
   )
-  const calque_grotte = carteDuNiveau.createLayer(
+   calque_grotte = carteDuNiveau.createLayer(
     "calque_grotte",
     tileset1
   )
@@ -67,18 +69,18 @@ export default class niveau2 extends Phaser.Scene {
     "pics",
     tileset1
   )
-  const calque_plateformes = carteDuNiveau.createLayer(
-    "calque_plateformes",
+   calque_volant = carteDuNiveau.createLayer(
+    "calque_volant",
     tileset2
   )
-  const Calque_background = carteDuNiveau.createLayer(
+  Calque_background = carteDuNiveau.createLayer(
     "Calque_background",
     tileset1,
     
   );
 
   Calque_background.setCollisionByProperty({ estSolide: true });
-  calque_plateformes.setCollisionByProperty({ estSolide: true });
+  calque_volant.setCollisionByProperty({ estSolide: true });
   calque_grotte.setCollisionByProperty({ estSolide: true });  
   this.cursors = this.input.keyboard.createCursorKeys();
 
@@ -89,7 +91,7 @@ this.groupe_ennemis = this.physics.add.group();
 
 
   this.player = new Player(this,"img_perso",100,450, Calque_background);
-      this.physics.add.collider(this.player.sprite, calque_plateformes);
+      this.physics.add.collider(this.player.sprite, calque_volant);
       this.physics.add.collider(this.player.sprite, calque_grotte); 
       this.physics.add.collider(this.player.sprite, Calque_background);  
       this.player.sprite.setCollideWorldBounds(true);
@@ -114,9 +116,7 @@ this.groupe_ennemis = this.physics.add.group();
       
 
       this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundHeight);
-    this.cameras.main.setBounds(0, 0, 4800, 3200);
-    this.cameras.main.startFollow(this.player.sprite); 
-
+   
     // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
     tab_points.objects.forEach(point => {
       if (point.name == "figther") { 
@@ -126,7 +126,7 @@ this.groupe_ennemis = this.physics.add.group();
       }
   });  
   this.player.inventory.forEach(element => {
-    this.physics.add.collider(element.Bullets,calque_plateformes,element.erase, null, element);
+    this.physics.add.collider(element.Bullets,Calque_background,element.erase, null, element);
     this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
   });
 
@@ -150,7 +150,13 @@ this.groupe_ennemis = this.physics.add.group();
       this.player.sprite.setTint(0x444444);
       this.player.sprite.anims.play("stand");
       this.time.delayedCall(3000,this.restartScene,[],this);
+
+       
   } 
+  this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
+    un_ennemi.ennemiObject.update();
+   
+  }); 
   }
   restartScene() {
     this.scene.stop('niveau2');

@@ -121,13 +121,16 @@ export default class niveau1 extends Phaser.Scene {
 
     update() {
       this.player.update()
-
       if (this.player.gameOver) {
           this.physics.pause();
           this.player.sprite.setTint(0x444444);
           this.player.sprite.anims.play("stand");
           this.time.delayedCall(3000,this.restartScene,[],this);
       } 
+      this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
+        un_ennemi.ennemiObject.update();
+       
+      }); 
   }
   restartScene() {
     this.scene.stop('niveau1');
