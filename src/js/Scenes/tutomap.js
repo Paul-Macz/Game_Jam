@@ -5,7 +5,7 @@ import Terrestre from "/src/js/Beings/terrestre.js";
 import Range from "/src/js/Items/range.js";
 var calque_rochers;
 var calque_nature;
-
+var porte_ouvrante; 
 export default class tutomap extends Phaser.Scene {
   constructor() {
     super({ key: "tutomap" });
@@ -20,7 +20,7 @@ export default class tutomap extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 48
     }); 
-
+    
     this.load.image("Phaser_tuiles1", "src/assets/tileset2.png");
     this.load.image("Phaser_tuiles2", "src/assets/clouds2.png");
     this.load.image("Phaser_tuiles3", "src/assets/sky2.png");
@@ -55,33 +55,47 @@ export default class tutomap extends Phaser.Scene {
 
     calque_nature.setCollisionByProperty({ estSolide: true });
     calque_rochers.setCollisionByProperty({ estSolide: true }); 
-
+    this.porte_ouvrante = this.physics.add.staticSprite(4540, 740, "porte_ouvrante"); 
+    this.porte_ouvrante.ouverte = false; 
     this.cursors = this.input.keyboard.createCursorKeys();
     
     // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
     const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis"); 
     this.groupe_ennemis = this.physics.add.group();
     
-    this.player = new Player(this, "img_perso", 100, 450, calque_nature);
+    this.player = new Player(this, "img_perso", 100, 1350, calque_nature);
+    
+    this.player.sprite.body.onWorldBounds = true;
     this.physics.add.collider(this.player.sprite, calque_nature);
     this.physics.add.collider(this.player.sprite, calque_rochers);  
     this.player.sprite.setCollideWorldBounds(true);
     this.player.sprite.setBounce(0.2);
 
+    this.player.sprite.body.world.on("worldbounds", function(body, up, down, left, right) {
+      if (body.gameObject === this.player.sprite && down == true) {
+          this.player.gameOver = true;
+      }
+  }, this);
+    
+  this.weap = new Range(this, "bull", 2, 10, 1, "bullet", true, 1, 1000, false);
+  this.player.pickWeapon(this.weap);
+
     this.physics.world.setBounds(0, 0, carteDuNiveau.widthInPixels, carteDuNiveau.heightInPixels);
     this.cameras.main.setBounds(0, 0, carteDuNiveau.widthInPixels, carteDuNiveau.heightInPixels);
     this.cameras.main.startFollow(this.player.sprite);
 
+    
+
         // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
         tab_points.objects.forEach(point => {
           if (point.name == "ennemi") { 
-            var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,calque_nature,calque_rochers);
-            nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
-            this.groupe_ennemis.add(nouvel_ennemi.sprite);
+            var nouvel_ennemi1 = new Terrestre(this,"img_perso",point.x, point.y,calque_nature,calque_rochers);
+            nouvel_ennemi1.sprite.ennemiObject = nouvel_ennemi1;
+            this.groupe_ennemis.add(nouvel_ennemi1.sprite);
           } else if (point.name == "ennemi2") { 
-                var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,calque_nature,calque_rochers);
-                nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
-                this.groupe_ennemis.add(nouvel_ennemi.sprite);
+                var nouvel_ennemi2 = new Terrestre(this,"img_perso",point.x, point.y,calque_nature,calque_rochers);
+                nouvel_ennemi2.sprite.ennemiObject = nouvel_ennemi2;
+                this.groupe_ennemis.add(nouvel_ennemi2.sprite);
               }
           });   
  
@@ -95,17 +109,35 @@ export default class tutomap extends Phaser.Scene {
         un_ennemi.direction = "left";
         un_ennemi.anims.play("turn_left", true);
       });
-
-      this.player.sprite.body.world.on("worldbounds", function(body, up, down, left, right) {
-        if (body.gameObject === this.player.sprite && down == true) {
-            this.player.gameOver = true;
-        }
-    }, this);
+    
+      
   }
-
+  handlePlayerEnnemiCollision(ennemiSp, player) {
+    if (ennemiSp.ennemiObject instanceof Character) {
+        console.log("check")
+    }
+    const dx = this.player.sprite.x - ennemiSp.x;
+    const dy = this.player.sprite.y - ennemiSp.y;
+    const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
+    this.player.sprite.setVelocity(dir.x, dir.y)
+    this.hit = 1
+    this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
+}
   update() {
     this.player.update()
 
+    if ( Phaser.Input.Keyboard.JustDown(this.cursors.space) == true &&
+    this.physics.overlap(this.player.sprite, this.porte_ouvrante) == true) {
+   // le personnage est sur la porte et vient d'appuyer sur espace
+   if (this.porte_ouvrante.ouverte == false) {
+    this.porte_ouvrante.anims.play("anim_ouvreporte");
+    this.porte_ouvrante.ouverte = true;
+    this.scene.start("menu2");
+  } else {
+    this.porte_ouvrante.anims.play("anim_fermeporte");
+    this.porte_ouvrante.ouverte = false;
+  }
+  } 
 
     if (this.player.gameOver) {
       this.physics.pause();
@@ -113,10 +145,15 @@ export default class tutomap extends Phaser.Scene {
       this.player.sprite.anims.play("stand");
       this.time.delayedCall(3000,this.restartScene,[],this);
   } 
+  this.groupe_ennemis.children.iterate(function(iterateur, un_ennemi) {
+    
+});
+
   }
+
   restartScene() {
     this.scene.stop('tutomap');
-    this.scene.start('tutomap');
+    this.scene.start('menu');
   }
 }
 

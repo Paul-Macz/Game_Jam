@@ -26,6 +26,10 @@ export default class Animations extends Phaser.Scene{
         this.load.image("bouton_niv2", "src/assets/bouton_niv2.png");
         this.load.image("bouton_niv3", "src/assets/bouton_niv3.png");
         this.load.image("img_ciel", "src/assets/sky.png");
+        this.load.spritesheet("porte_ouvrante" , "src/assets/porte_ouvrante.png", {
+        frameWidth: 96,
+        frameHeight: 120
+            }); 
         this.load.image("img_plateforme", "src/assets/platform.png");
         this.load.spritesheet("img_perso", "src/assets/dude.png", {
         frameWidth: 32,
@@ -39,6 +43,7 @@ export default class Animations extends Phaser.Scene{
             frameWidth:440,
             frameHeight:330
           });
+        this.load.atlas('battlemage', "src/assets/texture.png" ,"src/assets/texture.json");
     }
     create(){
         this.anims.create({
@@ -89,6 +94,49 @@ export default class Animations extends Phaser.Scene{
             frameRate : 12,
             repeat : -1
           });
+          this.anims.create({
+            key:'battlemage_death',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:12,prefix:"Battlemage (Separeted Frames)/Death/Battlemage Death", suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_factMagic',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:10,prefix:'Battlemage (Separeted Frames)/Fast Magic/Battlemage Fast Magic', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_crouchAttack',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:7,prefix:'Battlemage (Separeted Frames)/Crouch Attack/Battlemage Crouch Attack', suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_crouch',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:8,prefix:'Battlemage (Separeted Frames)/Crouch/Battlemage Crouch', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_sustainMagic',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:11,prefix:'Battlemage (Separeted Frames)/Sustain Magic/Battlemage Magic Sustain', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_idle',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:8,prefix:'Battlemage (Separeted Frames)/Idle/Battlemage Idle', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_run',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:8,prefix:'Battlemage (Separeted Frames)/Running/Battlemage Running', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+
     }
     update(){
         this.scene.start("niveau1");

@@ -1,9 +1,6 @@
 // chargement des librairies
 import animations from "/src/js/animations.js";
-
 import menu from "/src/js/Scenes/menu.js";
-
-
 import tutomap from "/src/js/Scenes/tutomap.js";
 import menu2 from "/src/js/Scenes/menu2.js";
 import niveau1 from "/src/js/Scenes/niveau1.js";
