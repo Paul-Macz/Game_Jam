@@ -21,6 +21,10 @@ export default class Animations extends Phaser.Scene{
             frameWidth: 325,
             frameHeight: 325
           });
+          this.load.spritesheet("planete_bleu","src/assets/planete_bleu.png" ,{
+            frameWidth: 325,
+            frameHeight: 325
+          });
 
         this.load.image("bouton_niv1", "src/assets/bouton_niv1.png");
         this.load.image("bouton_niv2", "src/assets/bouton_niv2.png");
@@ -82,18 +86,26 @@ export default class Animations extends Phaser.Scene{
             frameRate : 12,
             repeat : -1
           });
+          
           this.anims.create({
-            key: "anim_planet1",
-            frames: this.anims.generateFrameNumbers("planetes_rouge",{  start: 0 , end: 49 }),
+           key: "anim_planet1",
+           frames: this.anims.generateFrameNumbers("planetes_rouge",{  start: 0 , end: 49 }),
             frameRate : 12,
             repeat : -1
           });
           this.anims.create({
            key: "anim_planet2",
             frames: this.anims.generateFrameNumbers("planete_verte",{  start: 0 , end: 49  }),
-            frameRate : 12,
+           frameRate : 12,
             repeat : -1
           });
+          
+          this.anims.create({
+            key: "anim_planet3",
+             frames: this.anims.generateFrameNumbers("planete_bleu",{  start: 0 , end: 49  }),
+             frameRate : 12,
+             repeat : -1
+           });
           this.anims.create({
             key:'battlemage_death',
             frames: this.anims.generateFrameNames('battlemage', {start:1, end:12,prefix:"Battlemage (Separeted Frames)/Death/Battlemage Death", suffix:'.png'}),
@@ -151,6 +163,6 @@ export default class Animations extends Phaser.Scene{
           }); 
     }
     update(){
-        this.scene.start("menu");
+        this.scene.start("menu2");
     }
 }

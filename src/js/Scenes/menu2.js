@@ -4,6 +4,7 @@ export default class menu2 extends Phaser.Scene {
       super({key : "menu2"});
       this.planet1;
       this.planet2;
+      this.planet3;
     }
     
     preload() {
@@ -16,15 +17,20 @@ export default class menu2 extends Phaser.Scene {
 
         this.add.image(0, 0, "menu_fond").setOrigin(0).setDepth(0).setScale(5,3);
 
-        this.planet1 = this.add.sprite(10,45, "planetes_rouge");
-      this.planet1.setScale(0.5,0.5);
-      this.planet1.setX(400);
+       this.planet1 = this.add.sprite(100,450, "planetes_rouge");
+     this.planet1.setScale(0.5,0.5);
+     this.planet1.setX(400);
       this.planet1.setY(250);
 
-        this.planet2 = this.add.sprite(10,45, "planetes_verte");
+        this.planet2 = this.add.sprite(100,450, "planete_verte");
         this.planet2.setScale(0.5,0.5);
         this.planet2.setX(600);
-        this.planet2.setY(250);
+       this.planet2.setY(250);
+
+        this.planet3 = this.add.sprite(100,450, "planete_bleu");
+        this.planet3.setScale(0.5,0.5);
+        this.planet3.setX(200);
+        this.planet3.setY(250);
 
         var bouton_nv1 = this.add.image(200, 400, "bouton_niv1").setDepth(1);
         bouton_nv1.setScale(0.3,0.3);
@@ -88,5 +94,6 @@ export default class menu2 extends Phaser.Scene {
        
         this.planet1.anims.play("anim_planet1", true);
        this.planet2.anims.play("anim_planet2", true);
+       this.planet3.anims.play("anim_planet3", true);
     }
 }
