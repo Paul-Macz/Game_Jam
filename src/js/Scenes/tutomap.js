@@ -27,7 +27,7 @@ export default class tutomap extends Phaser.Scene {
     this.load.image("Phaser_tuiles4", "src/assets/sea2.png");
     this.load.image("Phaser_tuiles5", "src/assets/far-grounds2.png");
 
-    this.load.tilemapTiledJSON("carte", "src/assets/Tutorielmap.json"); 
+    this.load.tilemapTiledJSON("carte_tuto", "src/assets/Tutorielmap.json"); 
   }
 
   create() {
@@ -38,7 +38,7 @@ export default class tutomap extends Phaser.Scene {
 
 
 
-    const carteDuNiveau = this.make.tilemap({ key: "carte" });
+    const carteDuNiveau = this.make.tilemap({ key: "carte_tuto" });
 
     const tileset1 = carteDuNiveau.addTilesetImage("tileset2", "Phaser_tuiles1");
     const tileset6 = carteDuNiveau.addTilesetImage("clouds2", "Phaser_tuiles2");
@@ -61,8 +61,9 @@ export default class tutomap extends Phaser.Scene {
     
     // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
     const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis"); 
+
     this.groupe_ennemis = this.physics.add.group();
-    
+   
     this.player = new Player(this, "img_perso", 100, 1340, calque_nature);
     
     this.player.sprite.body.onWorldBounds = true;
@@ -99,7 +100,7 @@ export default class tutomap extends Phaser.Scene {
               }
           });   
  
-
+         
       /*****************************************************
        *  ajout du modele de mobilite des ennemis *
        ******************************************************/
