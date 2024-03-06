@@ -16,8 +16,8 @@ export default class niveau3 extends Phaser.Scene {
           frameHeight: 48
         });  
     
-        this.load.image("Phaser_tuiles1", "src/assets/castle.png");
-        this.load.image("Phaser_tuiles2", "src/assets/greencastle.png");
+        this.load.image("Phaser_tuilesDeJEU1", "src/assets/castle.png");
+        this.load.image("Phaser_tuilesDeJEU2", "src/assets/greencastle.png");
 
         this.load.tilemapTiledJSON("carte", "src/assets/sidemoon_level.json");
        
@@ -25,14 +25,14 @@ export default class niveau3 extends Phaser.Scene {
   create() {
       const carteDuNiveau = this.make.tilemap({ key: "carte" });
 
-      const tileset = carteDuNiveau.addTilesetImage("castle", "Phaser_tuiles1");
-      const tileset1 = carteDuNiveau.addTilesetImage("greencastle", "Phaser_tuiles2");
+      const tileset = carteDuNiveau.addTilesetImage("castle", "Phaser_tuilesDeJEU1");
+      const tileset1 = carteDuNiveau.addTilesetImage("greencastle", "Phaser_tuilesDeJEU2");
       
-      const black_background =  carteDuNiveau.createLayer("black", tileset);
+      const black_background =  carteDuNiveau.createLayer("black_background", tileset);
       
-      const green_background = carteDuNiveau.createLayer("green", tileset);
+      const green_background = carteDuNiveau.createLayer("green_background", tileset);
       
-      const grey_background = carteDuNiveau.createLayer("grey", tileset);
+      const grey_background = carteDuNiveau.createLayer("grey_brackground", tileset);
      
       const ground = carteDuNiveau.createLayer("ground", [tileset, tileset1]);
 

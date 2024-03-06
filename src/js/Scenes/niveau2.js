@@ -132,7 +132,7 @@ export default class niveau2 extends Phaser.Scene {
     this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
     }
   });
-  this.physics.add.collider(this.player.swordHitbox,this.groupe_ennemis)
+  this.physics.add.overlap(this.player.swordHitbox,this.groupe_ennemis,this.player.attack,null,this.player);
 
 /*****************************************************
        *  ajout du modele de mobilite des ennemis *
