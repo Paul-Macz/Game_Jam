@@ -34,7 +34,7 @@ export default class Terrestre extends Ennemi{
                     this.sprite.setVelocityX(-this.speedx);
                     this.sprite.anims.play("turn_left", true);
                 }
-            }
+            }   
         }
     }
 }
