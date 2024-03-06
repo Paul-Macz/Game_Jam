@@ -10,20 +10,15 @@ export default class niveau3 extends Phaser.Scene {
       super({key: "niveau3" })
   }
 
-  preload(){
-      this.load.spritesheet("img_perso", "src/assets/dude.png", {
-          frameWidth: 32,
-          frameHeight: 48
-        });  
-    
+  preload(){    
         this.load.image("Phaser_tuilesDeJEU1", "src/assets/castle.png");
         this.load.image("Phaser_tuilesDeJEU2", "src/assets/greencastle.png");
 
-        this.load.tilemapTiledJSON("carteT", "src/assets/sidemoon_level.json");
+        this.load.tilemapTiledJSON("carte3", "src/assets/sidemoon_level.json");
        
   }
   create() {
-      const carteDuNiveau = this.make.tilemap({ key: "carteT" });
+      const carteDuNiveau = this.make.tilemap({ key: "carte3" });
 
       const tileset = carteDuNiveau.addTilesetImage("castle", "Phaser_tuilesDeJEU1");
       const tileset1 = carteDuNiveau.addTilesetImage("greencastle", "Phaser_tuilesDeJEU2");
@@ -36,7 +31,7 @@ export default class niveau3 extends Phaser.Scene {
      
       const ground = carteDuNiveau.createLayer("ground", [tileset, tileset1]);
 
-      const playground = carteDuNiveau.createLayer("playground", [tileset, tileset1]); 
+      const playground = carteDuNiveau.createLayer("playground", [tileset, tileset1]);
 
       grey_background.setTint(0x4a4a4a)
 
@@ -54,7 +49,7 @@ export default class niveau3 extends Phaser.Scene {
       const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis"); 
       this.groupe_ennemis = this.physics.add.group();
 
-      this.player = new Player(this, "img_perso", 170, 30, playground);
+      this.player = new Player(this, "battlemage", 170, 30, playground);
       this.physics.add.collider(this.player.sprite, playground);
       this.player.sprite.setCollideWorldBounds(true);
       this.player.sprite.setBounce(0.2);
