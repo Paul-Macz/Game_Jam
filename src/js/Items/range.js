@@ -38,9 +38,10 @@ export default class Range extends Weapon{
         
     }}
     hit (uneBalle, target){
+        console.log(uneBalle);
+        
         if(target!=undefined){
             if(target.ennemiObject instanceof Character){
-                
                 super.hit(target.ennemiObject);
                 if(!this.pierce){
                     uneBalle.destroy();

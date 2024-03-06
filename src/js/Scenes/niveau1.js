@@ -104,7 +104,7 @@ export default class niveau1 extends Phaser.Scene {
       this.physics.add.collider(element.Bullets,calque_plateformes,element.erase, null, element);
       this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
     });
-    
+    this.physics.add.collider(this.groupe_ennemis, this.player.sprite,this.handlePlayerEnnemiCollision,null, this); 
     // this.physics.add.overlap(this.player.this.groupe_ennemis,this.player.getHit,[],this)
 
     /*****************************************************
@@ -112,22 +112,46 @@ export default class niveau1 extends Phaser.Scene {
        ******************************************************/
       // par défaut, on va a gauche en utilisant la meme animation que le personnage
       this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
+
         un_ennemi.setVelocityX(-90);
         un_ennemi.direction = "left";
         un_ennemi.anims.play("turn_left", true);
       }); 
+      this.hit=0;
+    }
+    handlePlayerEnnemiCollision(ennemiSp,player){
+      //const ennemi=ennemiSp.ennemiObject;
+      console.log(ennemiSp)
+      if(ennemiSp.ennemiObject instanceof Character){
+        console.log("check")
+      }
+      const dx = this.player.sprite.x - ennemiSp.x;
+      const dy = this.player.sprite.y - ennemiSp.y;
 
+
+      const dir= new Phaser.Math.Vector2(dx,dy).normalize().scale(200)
+
+      this.player.sprite.setVelocity(dir.x,dir.y)
+      this.hit=1
+      this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
     }
 
     update() {
-      this.player.update()
+      if(this.hit>0){
 
+      }
+      this.player.update()
+      
       if (this.player.gameOver) {
           this.physics.pause();
           this.player.sprite.setTint(0x444444);
           this.player.sprite.anims.play("stand");
           this.time.delayedCall(3000,this.restartScene,[],this);
       } 
+      this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
+        un_ennemi.ennemiObject.update();
+       
+      }); 
   }
   restartScene() {
     this.scene.stop('niveau1');
