@@ -75,7 +75,7 @@ export default class niveau1 extends Phaser.Scene {
             this.physics.add.overlap(element.Bullets, this.groupe_ennemis, element.hit, null, element);
         });
 
-        this.physics.add.collider(this.groupe_ennemis, this.player.sprite, this.handlePlayerEnnemiCollision, null, this);
+        this.physics.add.collider(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);
 
         this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
             un_ennemi.setVelocityX(-90);
@@ -86,16 +86,17 @@ export default class niveau1 extends Phaser.Scene {
         this.hit = 0;
     }
 
-    handlePlayerEnnemiCollision(ennemiSp, player) {
+    handlePlayerEnnemiCollision(player, ennemiSp) {
         if (ennemiSp.ennemiObject instanceof Character) {
             console.log("check")
         }
+        console.log(ennemiSp)
         const dx = this.player.sprite.x - ennemiSp.x;
         const dy = this.player.sprite.y - ennemiSp.y;
         const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
         this.player.sprite.setVelocity(dir.x, dir.y)
         this.hit = 1
-        this.player.getHit(ennemiSp.ennemiObject.damage)
+        this.player.getHit(ennemiSp.ennemiObject.equipWeapon.damage)
     }
 
     update() {
