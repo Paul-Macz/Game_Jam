@@ -64,7 +64,7 @@ export default class tutomap extends Phaser.Scene {
 
     this.groupe_ennemis = this.physics.add.group();
    
-    this.player = new Player(this, "img_perso", 100, 1340, calque_nature);
+    this.player = new Player(this, "battlemage", 100, 1340, calque_nature);
     
     this.player.sprite.body.onWorldBounds = true;
     this.physics.add.collider(this.player.sprite, calque_nature);
