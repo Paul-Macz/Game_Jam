@@ -4,8 +4,6 @@ import Character from "/src/js/Beings/character.js";
 import Flying from "/src/js/Beings/flying.js"
 import Terrestre from "/src/js/Beings/terrestre.js";
 import Player from "/src/js/Beings/player.js";
-import Range from "/src/js/Items/range.js";
-import Character from "/src/js/Beings/character.js";
 
 // création et lancement du jeu
 var ice;
