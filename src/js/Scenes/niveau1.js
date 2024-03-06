@@ -3,7 +3,7 @@ import Terrestre from "/src/js/Beings/terrestre.js";
 import Player from "/src/js/Beings/player.js";
 import Range from "/src/js/Items/range.js";
 import Character from "/src/js/Beings/character.js";
-
+import Flying from "/src/js/Beings/player.js";
 // création et lancement du jeu
 var ice;
 var porte_ouvrante1;
@@ -65,7 +65,7 @@ export default class niveau1 extends Phaser.Scene {
             }
         }, this);
 
-        this.weap = new Range(this, "bull", 2, 10, 1, "bullet", true, 1, 1000, false);
+        // this.weap = new Range(this, "bull", 2, 10, 1, "bullet", true, 1, 1000, false);
         this.player.pickWeapon(this.weap);
 
         const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");

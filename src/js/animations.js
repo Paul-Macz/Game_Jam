@@ -226,7 +226,6 @@ export default class Animations extends Phaser.Scene{
             repeat:-1,
             frameRate:15
           });
-
           this.anims.create({
             key: "anim_ouvreporte",
             frames: this.anims.generateFrameNumbers("porte_ouvrante", { start: 0, end: 5 }),
@@ -239,8 +238,29 @@ export default class Animations extends Phaser.Scene{
             frameRate: 50,
             repeat: 0
           }); 
-    }
+          this.anims.create({
+            key:'squelet_walk1',
+            frames: this.anims.generateFrameNames('walk_squelette_1', { start:0, end: 5}),
+            frameRate: 15,
+            repeat: 0
+          });
+          this.anims.create({
+            key:'squelet_walk2',
+            frames: this.anims.generateFrameNames('walk_squelette_2', { start:0, end: 5}),
+            frameRate: 15,
+            repeat: 0
+          });
+    }this.anims.create({
+      key:'squelet_walk3',
+      frames: this.anims.generateFrameNames('walk_squelette_3', { start:0, end: 5}),
+      frameRate: 15,
+      repeat: 0
+    });
+
+
+
+    
     update(){
-        this.scene.start("niveau2");
+        this.scene.start("niveau1");
     }
 }
