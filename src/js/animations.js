@@ -26,6 +26,10 @@ export default class Animations extends Phaser.Scene{
         this.load.image("bouton_niv2", "src/assets/bouton_niv2.png");
         this.load.image("bouton_niv3", "src/assets/bouton_niv3.png");
         this.load.image("img_ciel", "src/assets/sky.png");
+        this.load.spritesheet("porte_ouvrante" , "src/assets/porte_ouvrante.png", {
+        frameWidth: 96,
+        frameHeight: 120
+            }); 
         this.load.image("img_plateforme", "src/assets/platform.png");
         this.load.spritesheet("img_perso", "src/assets/dude.png", {
         frameWidth: 32,
