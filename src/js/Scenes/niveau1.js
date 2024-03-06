@@ -22,8 +22,12 @@ export default class niveau1 extends Phaser.Scene {
             frameWidth: 32,
             frameHeight: 48
         });
-        this.load.image("Phaser_tuilesdejeu", "src/assets/tuilesJeu.png");
-        this.load.tilemapTiledJSON("carte", "src/assets/map.json");
+        this.load.image("Phaser_tuilesdejeu", "src/assets/snow.png");
+        this.load.image("Phaser_tuilesdejeu1", "src/assets/ice.png");
+        this.load.image("Phaser_tuilesdejeu2", "src/assets/neige.png");
+
+
+        this.load.tilemapTiledJSON("Ice", "src/assets/niveauIce.json");
     }
 
     create() {
@@ -32,13 +36,20 @@ export default class niveau1 extends Phaser.Scene {
         this.boundWidth = 3200;
         this.boundHeight = 640;
 
-        const carteDuNiveau = this.add.tilemap("carte");
-        const tileset = carteDuNiveau.addTilesetImage("tuiles_de_jeu", "Phaser_tuilesdejeu");
+        const carteDuNiveau = this.add.tilemap("Ice");
+        const tileset = carteDuNiveau.addTilesetImage("ice", "Phaser_tuilesdejeu");
+        const tileset1 = carteDuNiveau.addTilesetImage("snow", "Phaser_tuilesdejeu1");
+        const tileset2 = carteDuNiveau.addTilesetImage("ice", "Phaser_tuilesdejeu2");
 
-        const calque_background = carteDuNiveau.createLayer("calque_background", tileset);
-        const calque_background_2 = carteDuNiveau.createLayer("calque_background_2", tileset);
-        calque_plateformes = carteDuNiveau.createLayer("calque_plateformes", tileset);
-        calque_plateformes.setCollisionByProperty({ estSolide: true });
+
+
+        const fond = carteDuNiveau.createLayer("calque_background", tileset);
+        const fond_blanc = carteDuNiveau.createLayer("calque_background_1", tileset);
+        const object = carteDuNiveau.createLayer("calque_background_2", tileset);
+        const ice = carteDuNiveau.createLayer("calque_background_3", tileset);
+
+        ice = carteDuNiveau.createLayer("calque_background_3", [tileset,tileset1,tileset2]);
+        ice.setCollisionByProperty({ estSolide: true });
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
