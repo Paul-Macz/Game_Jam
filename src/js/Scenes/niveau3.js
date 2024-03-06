@@ -1,6 +1,8 @@
 import Player from "/src/js/Beings/player.js";
-
-
+import Terrestre from "/src/js/Beings/terrestre.js";
+import Range from "/src/js/Items/range.js";
+var calque_nature;
+var calque_rochers;
 
 export default class niveau3 extends Phaser.Scene {
     constructor(){
