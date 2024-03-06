@@ -12,10 +12,7 @@ export default class tutomap extends Phaser.Scene {
   }
 
   preload() {
-    this.load.spritesheet("img_perso", "src/assets/dude.png", {
-      frameWidth: 32,
-      frameHeight: 48
-    });  
+
     this.load.spritesheet("img_ennemi", "src/assets/ennemi.png", {
       frameWidth: 32,
       frameHeight: 48

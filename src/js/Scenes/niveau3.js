@@ -10,12 +10,7 @@ export default class niveau3 extends Phaser.Scene {
       super({key: "niveau3" })
   }
 
-  preload(){
-      this.load.spritesheet("img_perso", "src/assets/dude.png", {
-          frameWidth: 32,
-          frameHeight: 48
-        });  
-    
+  preload(){    
         this.load.image("Phaser_tuilesDeJEU1", "src/assets/castle.png");
         this.load.image("Phaser_tuilesDeJEU2", "src/assets/greencastle.png");
 
@@ -54,7 +49,7 @@ export default class niveau3 extends Phaser.Scene {
       const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis"); 
       this.groupe_ennemis = this.physics.add.group();
 
-      this.player = new Player(this, "img_perso", 170, 30, playground);
+      this.player = new Player(this, "battlemage", 170, 30, playground);
       this.physics.add.collider(this.player.sprite, playground);
       this.player.sprite.setCollideWorldBounds(true);
       this.player.sprite.setBounce(0.2);

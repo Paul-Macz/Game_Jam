@@ -14,10 +14,6 @@ export default class niveau1 extends Phaser.Scene {
     }
 
     preload() {
-        this.load.spritesheet("img_perso", "src/assets/dude.png", {
-            frameWidth: 32,
-            frameHeight: 48
-        });
         this.load.spritesheet("img_ennemi", "src/assets/ennemi.png", {
             frameWidth: 32,
             frameHeight: 48
@@ -52,7 +48,7 @@ export default class niveau1 extends Phaser.Scene {
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
-        this.player = new Player(this, "img_perso", 80, 2500, ice);
+        this.player = new Player(this, "battlemage", 80, 2500, ice);
         this.player.sprite.setCollideWorldBounds(true);
         this.player.sprite.setBounce(0.2);
         this.player.sprite.body.onWorldBounds = true;
