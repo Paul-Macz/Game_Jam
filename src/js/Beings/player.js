@@ -22,7 +22,7 @@ export default class Player extends Character{
         this.sprite.setCollideWorldBounds(true);
         this.swordHitbox =this.scene.add.rectangle(x,y,35,64,"0xffffff",0.5)
         this.scene.physics.add.existing(this.swordHitbox)
-        this.swordHitbox.setBounce(0);
+        // this.swordHitbox.setBounce(0);
         // console.log(this.swordHitbox)
         this.scene.physics.world.enable(this.swordHitbox);
         this.swordHitbox.body.setAllowGravity(false);
