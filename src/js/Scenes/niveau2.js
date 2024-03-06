@@ -84,7 +84,7 @@ export default class niveau2 extends Phaser.Scene {
 
    
 // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
-const tab_points = carteDuNiveau.getObjectLayer("calque_fitgh"); 
+const tab_points = carteDuNiveau.getObjectLayer("calque_figth"); 
 this.groupe_ennemis = this.physics.add.group();
 
 

@@ -342,7 +342,7 @@
          "draworder":"topdown",
          "id":13,
          "locked":true,
-         "name":"calque_fitgh",
+         "name":"calque_figth",
          "objects":[
                 {
                  "height":0,
@@ -3065,7 +3065,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3074,7 +3074,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3083,7 +3083,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3092,7 +3092,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3344,7 +3344,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3353,7 +3353,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3362,7 +3362,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3371,7 +3371,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3623,7 +3623,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3632,7 +3632,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3641,7 +3641,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3650,7 +3650,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3903,7 +3903,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3912,7 +3912,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3921,7 +3921,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -3930,7 +3930,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4182,7 +4182,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4191,7 +4191,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4200,7 +4200,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4209,7 +4209,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4740,7 +4740,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4749,7 +4749,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4758,7 +4758,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4767,7 +4767,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5019,7 +5019,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5028,7 +5028,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5037,7 +5037,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5046,7 +5046,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 },
             
@@ -5299,7 +5299,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5308,7 +5308,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5317,7 +5317,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5326,7 +5326,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5578,7 +5578,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5587,7 +5587,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5596,7 +5596,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -5605,7 +5605,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
