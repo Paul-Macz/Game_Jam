@@ -12,10 +12,7 @@ export default class tutomap extends Phaser.Scene {
   }
 
   preload() {
-    this.load.spritesheet("img_perso", "src/assets/dude.png", {
-      frameWidth: 32,
-      frameHeight: 48
-    });  
+
     this.load.spritesheet("img_ennemi", "src/assets/ennemi.png", {
       frameWidth: 32,
       frameHeight: 48
@@ -64,7 +61,7 @@ export default class tutomap extends Phaser.Scene {
 
     this.groupe_ennemis = this.physics.add.group();
    
-    this.player = new Player(this, "img_perso", 100, 1340, calque_nature);
+    this.player = new Player(this, "battlemage", 100, 1340, calque_nature);
     
     this.player.sprite.body.onWorldBounds = true;
     this.physics.add.collider(this.player.sprite, calque_nature);

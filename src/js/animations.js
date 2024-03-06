@@ -241,6 +241,6 @@ export default class Animations extends Phaser.Scene{
           }); 
     }
     update(){
-        this.scene.start("menu2");
+        this.scene.start("menu");
     }
 }
