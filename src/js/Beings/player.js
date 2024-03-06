@@ -22,7 +22,7 @@ export default class Player extends Character{
         this.sprite.setCollideWorldBounds(true);
         this.swordHitbox =this.scene.add.rectangle(x,y,35,64,"0xffffff",0.5)
         this.scene.physics.add.existing(this.swordHitbox)
-        this.swordHitbox.setBounce(0);
+        // this.swordHitbox.body.setBounce(0);
         // console.log(this.swordHitbox)
         this.scene.physics.world.enable(this.swordHitbox);
         this.swordHitbox.body.setAllowGravity(false);
@@ -98,16 +98,17 @@ export default class Player extends Character{
         if(this.calque!=undefined){
             const adjustedMouseX = this.scene.input.mousePointer.x + this.scene.cameras.main.scrollX;
             const adjustedMouseY = this.scene.input.mousePointer.y + this.scene.cameras.main.scrollY;
+            //attack
             if(this.scene.input.mousePointer.isDown){
-
+                //Range attack
                 if(this.equippedWeapon instanceof Range){
                     this.attack(adjustedMouseX,adjustedMouseY);
                 }
                 else{
-                    
+                    //Melee attack
                     var currentTime = this.scene.time.now;
                     this.sprite.anims.play("battlemage_crouchAttack", true);
-                    console.log(this.attackState)
+
                     if ((currentTime - this.timeLastAttack)*this.equippedWeapon.atSpeed >= 1000 || this.timeLastAttack==0) {
                         this.swordHitbox.setActive(true)
                         this.attackState=true;
@@ -122,7 +123,6 @@ export default class Player extends Character{
                             this.swordHitbox.x=this.sprite.x+1.8*this.width
                             this.swordHitbox.y=this.sprite.y+0.5*this.height 
                         }
-                        this.attack();
                         this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_crouchAttack",()=>{
                             this.sprite.anims.play("battlemage_idle", true);
                         })
@@ -170,7 +170,7 @@ export default class Player extends Character{
 
     } 
     animationComplete(animation, frame) {
-        if (animation.key === 'battlemage_crouchAttack') {
+        if (animation.key === 'battlemage_crouch    ') {
             this.attackState=false;
             this.swordHitbox.setActive(false)
         }
