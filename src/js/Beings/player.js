@@ -52,6 +52,9 @@ export default class Player extends Character{
 
     }
     update(velocity) {
+        let velocityX = this.sprite.body.velocity.x; // Get the velocity along the x-axis
+        let velocityY = this.sprite.body.velocity.y; // Get the velocity along the y-axis
+        
         if(this.direction == 'left'){
             this.sprite.flipX=true;
         }
@@ -76,22 +79,46 @@ export default class Player extends Character{
         if (this.qKey.isDown) {
             this.sprite.setVelocityX(-speedx);
             this.direction = 'left';
-            this.sprite.anims.play("battlemage_run", true);
-
-        } else if (this.dKey.isDown) {
+            if(velocityY==0){
+                this.sprite.anims.play("battlemage_run", true);
+            }
+            else(
+                this.sprite.anims.play("battlemage_jumpFowardUp", true)
+            )
+        } 
+        else if (this.dKey.isDown) {
             this.sprite.setVelocityX(speedx);
             this.direction = 'right';
-            this.sprite.anims.play("battlemage_run", true);
+            if(velocityY==0){
+                this.sprite.anims.play("battlemage_run", true);
+            }
+            else(
+                this.sprite.anims.play("battlemage_jumpFowardUp", true)
+            )
         }
         else {
             this.sprite.setVelocityX(0);
-            if (!this.attackState && !this.deathState) {
-                this.sprite.anims.play("battlemage_idle", true);
+            if (!this.attackState && !this.deathState && (this.sprite.body.touching.down || this.sprite.body.blocked.down)) {
+                if(velocityX==0 && velocityY==0){
+                    this.sprite.anims.play("battlemage_idle", true);
+                }
             }
         }
         var coords = this.sprite.getBottomLeft();
         if ((this.zKey.isDown && this.sprite.body.touching.down)|| (this.zKey.isDown && this.sprite.body.blocked.down)) {
             this.sprite.setVelocityY(-speedy);
+            if(velocityX==0){
+                this.sprite.anims.play("battlemage_jumpNeutralUp", true);
+                this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_jumpNeutralUp",()=>{
+                    this.sprite.anims.play("battlemage_jumpNeutralDown", true);
+                })
+                if(this.sprite.body.touching.down || this.sprite.body.blocked.down){
+                    this.sprite.anims.play("battlemage_jumpNeutralGround", true);
+                }
+            }
+            else{
+                this.sprite.anims.play("battlemage_jumpFowardUp", true);
+            }
         }
 
         if (this.aKey.isDown){
@@ -119,6 +146,7 @@ export default class Player extends Character{
                 else{
                     //Melee attack
                     var currentTime = this.scene.time.now;
+                    // this.sprite.anims.play("battlemage_jumpFowardUP", true);
                     this.sprite.anims.play("battlemage_crouchAttack", true);
                     if ((currentTime - this.timeLastAttack)*this.equippedWeapon.atSpeed >= 1000 || this.timeLastAttack==0) {
                         this.scene.physics.world.add(this.swordHitbox.body)
@@ -145,7 +173,12 @@ export default class Player extends Character{
             }
 
     } 
+    startJumpFoward(){
 
+    }
+    endJumpFoward(){
+
+    }
     getHit(damage){
 
         if(!this.gameOver){
