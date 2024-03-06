@@ -5,6 +5,7 @@ import Terrestre from "/src/js/Beings/terrestre.js";
 import Range from "/src/js/Items/range.js";
 var calque_rochers;
 var calque_nature;
+
 export default class tutomap extends Phaser.Scene {
   constructor() {
     super({ key: "tutomap" });
