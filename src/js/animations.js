@@ -13,6 +13,18 @@ export default class Animations extends Phaser.Scene{
           frameWidth: 88,
           frameHeight: 88
         });
+        this.load.spritesheet("planetes_rouge","src/assets/planetes_rouge.png" ,{
+            frameWidth: 325,
+            frameHeight: 325
+          });
+          this.load.spritesheet("planete_verte","src/assets/planete_verte.png" ,{
+            frameWidth: 325,
+            frameHeight: 325
+          });
+
+        this.load.image("bouton_niv1", "src/assets/bouton_niv1.png");
+        this.load.image("bouton_niv2", "src/assets/bouton_niv2.png");
+        this.load.image("bouton_niv3", "src/assets/bouton_niv3.png");
         this.load.image("img_ciel", "src/assets/sky.png");
         this.load.image("img_plateforme", "src/assets/platform.png");
         this.load.spritesheet("img_perso", "src/assets/dude.png", {
@@ -62,6 +74,18 @@ export default class Animations extends Phaser.Scene{
         this.anims.create({
             key: "anim_planet",
             frames: this.anims.generateFrameNumbers("planetes",{  start: 0 , end: 49  }),
+            frameRate : 12,
+            repeat : -1
+          });
+          this.anims.create({
+            key: "anim_planet1",
+            frames: this.anims.generateFrameNumbers("planetes_rouge",{  start: 0 , end: 49 }),
+            frameRate : 12,
+            repeat : -1
+          });
+          this.anims.create({
+           key: "anim_planet2",
+            frames: this.anims.generateFrameNumbers("planete_verte",{  start: 0 , end: 49  }),
             frameRate : 12,
             repeat : -1
           });

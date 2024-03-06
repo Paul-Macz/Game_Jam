@@ -90,7 +90,7 @@ const tab_points = carteDuNiveau.getObjectLayer("calque_figth");
 this.groupe_ennemis = this.physics.add.group();
 
 
-  this.player = new Player(this,"img_perso",100,450, Calque_background);
+  this.player = new Player(this,"img_perso",90,1360, Calque_background);
       this.physics.add.collider(this.player.sprite, calque_volant);
       this.physics.add.collider(this.player.sprite, calque_grotte); 
       this.physics.add.collider(this.player.sprite, Calque_background);  
