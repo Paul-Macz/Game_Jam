@@ -7,6 +7,7 @@ import Player from "/src/js/Beings/player.js";
 
 // création et lancement du jeu
 var ice;
+var porte_ouvrante1;
 
 export default class niveau1 extends Phaser.Scene {
     // constructeur de la classe
@@ -24,7 +25,7 @@ export default class niveau1 extends Phaser.Scene {
         this.load.image("Phaser_tuilesdejeu2", "src/assets/neige.png");
 
 
-        this.load.tilemapTiledJSON("Ice", "src/assets/niveauIce.json");
+        this.load.tilemapTiledJSON("Iced", "src/assets/niveauIced.json");
     }
 
     create() {
@@ -33,7 +34,7 @@ export default class niveau1 extends Phaser.Scene {
         this.boundWidth = 3200;
         this.boundHeight = 3200;
 
-        const carteDuNiveau = this.add.tilemap("Ice");
+        const carteDuNiveau = this.add.tilemap("Iced");
         const tileset = carteDuNiveau.addTilesetImage("snow", "Phaser_tuilesdejeu");
         const tileset1 = carteDuNiveau.addTilesetImage("ice", "Phaser_tuilesdejeu1");
         const tileset2 = carteDuNiveau.addTilesetImage("neige", "Phaser_tuilesdejeu2");
@@ -46,6 +47,11 @@ export default class niveau1 extends Phaser.Scene {
         const object = carteDuNiveau.createLayer("object", [tileset,tileset1,tileset2]);
         const ice = carteDuNiveau.createLayer("ice", [tileset,tileset1,tileset2]);
         ice.setCollisionByProperty({ estSolide: true });
+
+
+        this.porte_ouvrante1 = this.physics.add.staticSprite(560, 580, "porte_ouvrante"); 
+        this.porte_ouvrante1.ouverte = false; 
+
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
@@ -65,18 +71,27 @@ export default class niveau1 extends Phaser.Scene {
         this.player.pickWeapon(this.weap);
 
         const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");
+        const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");
 
+        this.groupe_ennemis = this.physics.add.group();
         this.groupe_ennemis = this.physics.add.group();
 
         this.physics.add.collider(this.groupe_ennemis, ice);
         this.physics.world.setBounds(this.boundx,this.boundy,this.boundWidth,this.boundHeight)
-        // tab_points.objects.forEach(point => {
-        //    if (point.name == "ennemi") {
-        //        var nouvel_ennemi = new Terrestre(this, "img_perso", point.x, point.y, ice);
-        //        nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
-        //        this.groupe_ennemis.add(nouvel_ennemi.sprite);
-        //    }
-        // });
+        tab_points.objects.forEach(point => {
+            if (point.name == "ennemi_sol") {
+                var nouvel_ennemi = new Terrestre(this, "img_perso", point.x, point.y, ice);
+                nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
+               this.groupe_ennemis.add(nouvel_ennemi.sprite);
+           }
+        });
+        tab_points.objects.forEach(point => {
+            if (point.name == "ennemi_air") {
+                var nouvel_ennemi = new Flying(this, "img_perso", point.x, point.y, ice);
+                nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
+               this.groupe_ennemis.add(nouvel_ennemi.sprite);
+           }
+        });
 
        this.player.inventory.forEach(element => {
         if(element instanceof Range){
@@ -111,6 +126,30 @@ export default class niveau1 extends Phaser.Scene {
     update() {
         this.player.update()
 
+        if (this.player.gameOver) {
+            this.physics.pause();
+            this.player.sprite.setTint(0x444444);
+            this.player.sprite.anims.play("stand");
+            this.time.delayedCall(3000, this.restartScene, [], this);
+        }
+
+        if ( Phaser.Input.Keyboard.JustDown(this.cursors.space) == true &&
+        this.physics.overlap(this.player.sprite, this.porte_ouvrante) == true) {
+       // le personnage est sur la porte et vient d'appuyer sur espace
+       if (this.porte_ouvrante.ouverte == false) {
+        this.porte_ouvrante.anims.play("anim_ouvreporte");
+        this.porte_ouvrante.ouverte = true;
+        this.scene.start("niveau2");
+      } else {
+        this.porte_ouvrante.anims.play("anim_fermeporte");
+        this.porte_ouvrante.ouverte = false;
+      }
+      } 
+
+        this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
+            un_ennemi.ennemiObject.update();
+        });
+    }
     if (this.player.gameOver) {
         this.player.death++;
         if(this.player.death==1){
