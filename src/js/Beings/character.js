@@ -65,6 +65,7 @@ export default class Character{
     }
     attack(){
         if(this.inventory!=[]){
+            //this.sprite.anims.play("attack");
             this.equippedWeapon.attack(this, this.sprite.x,this.sprite.y,this.sprite.height);
         }
     }
