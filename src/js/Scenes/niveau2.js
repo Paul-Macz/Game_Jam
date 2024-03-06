@@ -1,8 +1,11 @@
-
-import Terrestre from "/src/js/Beings/terrestre.js";
-import Player from "/src/js/Beings/player.js";
 import Range from "/src/js/Items/range.js";
 import Melee from "/src/js/Items/melee.js"
+import Character from "/src/js/Beings/character.js";
+import Flying from "/src/js/Beings/flying.js"
+import Terrestre from "/src/js/Beings/terrestre.js";
+import Player from "/src/js/Beings/player.js";
+
+
 var Calque_background; 
 var calque_volant;
 var calque_grotte;
@@ -78,13 +81,13 @@ export default class niveau2 extends Phaser.Scene {
     tileset1,
     
   );
-
   Calque_background.setCollisionByProperty({ estSolide: true });
   calque_volant.setCollisionByProperty({ estSolide: true });
   calque_grotte.setCollisionByProperty({ estSolide: true });  
   this.cursors = this.input.keyboard.createCursorKeys();
 
-   
+  this.hit=0 
+
   // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
   const tab_points = carteDuNiveau.getObjectLayer("calque_figth"); 
   this.groupe_ennemis = this.physics.add.group();
@@ -95,7 +98,7 @@ export default class niveau2 extends Phaser.Scene {
       this.physics.add.collider(this.player.sprite, calque_grotte); 
       this.physics.add.collider(this.player.sprite, Calque_background);  
       this.player.sprite.setCollideWorldBounds(true);
-      this.player.sprite.setBounce(0.2);
+      // this.player.sprite.setBounce(0.2);
       this.player.sprite.body.onWorldBounds = true; 
 
       this.player.sprite.body.world.on(
@@ -108,7 +111,6 @@ export default class niveau2 extends Phaser.Scene {
             this.player.gameOver=true;
           }
         },
-        this
       ); 
       
 
@@ -117,22 +119,26 @@ export default class niveau2 extends Phaser.Scene {
       
 
       this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundHeight);
-   
+      
     // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
     tab_points.objects.forEach(point => {
       if (point.name == "figther") { 
         var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,Calque_background);
+        nouvel_ennemi.sprite.setCollideWorldBounds(true);
         nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
         this.groupe_ennemis.add(nouvel_ennemi.sprite);
       }
   });  
+  
   this.player.inventory.forEach(element => {
     if(element instanceof Range){
     this.physics.add.collider(element.Bullets,Calque_background,element.erase, null, element);
     this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
     }
   });
-  this.physics.add.overlap(this.player.swordHitbox,this.groupe_ennemis,this.player.attack,null,this.player);
+  this.physics.add.overlap(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);
+
+  this.physics.add.overlap(this.player.swordHitbox,this.groupe_ennemis,this.handleSwordEnnemiCollision,null,this);
 
 /*****************************************************
        *  ajout du modele de mobilite des ennemis *
@@ -146,15 +152,23 @@ export default class niveau2 extends Phaser.Scene {
   }
 
   update() {
+    if(this.hit>0){
+      ++this.hit
+      if(this.hit>5){
+        this.hit=0
+      }
+    }
     this.player.update()
 
-
     if (this.player.gameOver) {
-      this.physics.pause();
-      this.player.sprite.setTint(0x444444);
-      this.player.sprite.anims.play("stand");
-      this.time.delayedCall(3000,this.restartScene,[],this);
-
+      this.player.death++;
+      if(this.player.death==1){
+        this.physics.pause();
+        this.player.deathState=true
+        this.player.sprite.anims.play("battlemage_death",true);
+        // this.player.sprite.setTint(0x444444);
+        this.time.delayedCall(3000,this.restartScene,[],this);
+      }
        
   } 
   this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
@@ -162,6 +176,35 @@ export default class niveau2 extends Phaser.Scene {
    
   }); 
   }
+  handlePlayerEnnemiCollision(player, ennemiSp) {
+
+    const dx = this.player.sprite.x - ennemiSp.x;
+    const dy = this.player.sprite.y - ennemiSp.y;
+    // console.log(dx,dy)
+    const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
+    this.player.sprite.setVelocity(dir.x, dir.y)
+    this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
+    // this.time.delayedCall(500,() => this.resetSpeed(this.player));
+    this.hit=1
+}
+  handleSwordEnnemiCollision(sword,ennemiSp){
+    if(!(ennemiSp.ennemiObject instanceof Flying)){
+    const dx = ennemiSp.x - sword.x;
+    const dy = ennemiSp.y - sword.y;
+    
+    const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
+    ennemiSp.setVelocity(dir.x, dir.y)
+    ennemiSp.ennemiObject.getHit(this.player.equippedWeapon.damage)
+    // this.time.delayedCall(500,() => this.resetSpeed(ennemiSp.ennemiObject));
+    this.hit=1
+    }
+  }
+
+  // resetSpeed(entity){
+  //   entity.sprite.setVelocity(0,0)
+  // }
+
+  
   restartScene() {
     this.scene.stop('niveau2');
     this.scene.start('niveau2');

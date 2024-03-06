@@ -5,7 +5,7 @@ import Range from "/src/js/Items/range.js";
 import Character from "/src/js/Beings/character.js";
 
 // création et lancement du jeu
-var calque_plateformes;
+var ice;
 
 export default class niveau1 extends Phaser.Scene {
     // constructeur de la classe
@@ -14,35 +14,41 @@ export default class niveau1 extends Phaser.Scene {
     }
 
     preload() {
-        this.load.spritesheet("img_perso", "src/assets/dude.png", {
-            frameWidth: 32,
-            frameHeight: 48
-        });
         this.load.spritesheet("img_ennemi", "src/assets/ennemi.png", {
             frameWidth: 32,
             frameHeight: 48
         });
-        this.load.image("Phaser_tuilesdejeu", "src/assets/tuilesJeu.png");
-        this.load.tilemapTiledJSON("carte", "src/assets/map.json");
+        this.load.image("Phaser_tuilesdejeu", "src/assets/snow.png");
+        this.load.image("Phaser_tuilesdejeu1", "src/assets/ice.png");
+        this.load.image("Phaser_tuilesdejeu2", "src/assets/neige.png");
+
+
+        this.load.tilemapTiledJSON("Ice", "src/assets/niveauIce.json");
     }
 
     create() {
         this.boundx = 0;
         this.boundy = 0;
         this.boundWidth = 3200;
-        this.boundHeight = 640;
+        this.boundHeight = 3200;
 
-        const carteDuNiveau = this.add.tilemap("carte");
-        const tileset = carteDuNiveau.addTilesetImage("tuiles_de_jeu", "Phaser_tuilesdejeu");
+        const carteDuNiveau = this.add.tilemap("Ice");
+        const tileset = carteDuNiveau.addTilesetImage("snow", "Phaser_tuilesdejeu");
+        const tileset1 = carteDuNiveau.addTilesetImage("ice", "Phaser_tuilesdejeu1");
+        const tileset2 = carteDuNiveau.addTilesetImage("neige", "Phaser_tuilesdejeu2");
 
-        const calque_background = carteDuNiveau.createLayer("calque_background", tileset);
-        const calque_background_2 = carteDuNiveau.createLayer("calque_background_2", tileset);
-        calque_plateformes = carteDuNiveau.createLayer("calque_plateformes", tileset);
-        calque_plateformes.setCollisionByProperty({ estSolide: true });
+
+
+        const fond = carteDuNiveau.createLayer("fond",[tileset1, tileset2]);
+        fond.setTint(0x6b6b6b)
+        const fond_blanc = carteDuNiveau.createLayer("fond_blanc",[ tileset,tileset1,tileset2]);
+        const object = carteDuNiveau.createLayer("object", [tileset,tileset1,tileset2]);
+        const ice = carteDuNiveau.createLayer("ice", [tileset,tileset1,tileset2]);
+        ice.setCollisionByProperty({ estSolide: true });
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
-        this.player = new Player(this, "img_perso", 100, 450, calque_plateformes);
+        this.player = new Player(this, "battlemage", 80, 2500, ice);
         this.player.sprite.setCollideWorldBounds(true);
         this.player.sprite.setBounce(0.2);
         this.player.sprite.body.onWorldBounds = true;
@@ -56,34 +62,33 @@ export default class niveau1 extends Phaser.Scene {
         this.weap = new Range(this, "bull", 2, 10, 1, "bullet", true, 1, 1000, false);
         this.player.pickWeapon(this.weap);
 
-        const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");
+        //const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");
 
-        this.groupe_ennemis = this.physics.add.group();
+     //   this.groupe_ennemis = this.physics.add.group();
 
-        this.physics.add.collider(this.groupe_ennemis, calque_plateformes);
-
-        tab_points.objects.forEach(point => {
-            if (point.name == "ennemi") {
-                var nouvel_ennemi = new Terrestre(this, "img_perso", point.x, point.y, calque_plateformes);
-                nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
-                this.groupe_ennemis.add(nouvel_ennemi.sprite);
-            }
-        });
+       // this.physics.add.collider(this.groupe_ennemis, calque_plateformes);
+this.physics.world.setBounds(this.boundx,this.boundy,this.boundWidth,this.boundHeight)
+       // tab_points.objects.forEach(point => {
+           // if (point.name == "ennemi") {
+            //    var nouvel_ennemi = new Terrestre(this, "img_perso", point.x, point.y, calque_plateformes);
+            //    nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
+            //    this.groupe_ennemis.add(nouvel_ennemi.sprite);
+          //  }
+      //  });
 
         this.player.inventory.forEach(element => {
-            this.physics.add.collider(element.Bullets, calque_plateformes, element.erase, null, element);
-            this.physics.add.overlap(element.Bullets, this.groupe_ennemis, element.hit, null, element);
+            this.physics.add.collider(element.Bullets, ice, element.erase, null, element);
+          //  this.physics.add.overlap(element.Bullets, this.groupe_ennemis, element.hit, null, element);
         });
 
         this.physics.add.collider(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);
 
-        this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
-            un_ennemi.setVelocityX(-90);
-            un_ennemi.direction = "left";
-            un_ennemi.anims.play("turn_left", true);
-        });
+       // this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
+        //    un_ennemi.setVelocityX(-90);
+        //    un_ennemi.direction = "left";
+        //    un_ennemi.anims.play("turn_left", true);
+      //  });
 
-        this.hit = 0;
     }
 
     handlePlayerEnnemiCollision(player, ennemiSp) {
@@ -95,12 +100,10 @@ export default class niveau1 extends Phaser.Scene {
         const dy = this.player.sprite.y - ennemiSp.y;
         const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
         this.player.sprite.setVelocity(dir.x, dir.y)
-        this.hit = 1
         this.player.getHit(ennemiSp.ennemiObject.equipWeapon.damage)
     }
 
     update() {
-        if (this.hit > 0) {}
         this.player.update()
 
         if (this.player.gameOver) {
@@ -110,9 +113,9 @@ export default class niveau1 extends Phaser.Scene {
             this.time.delayedCall(3000, this.restartScene, [], this);
         }
 
-        this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
-            un_ennemi.ennemiObject.update();
-        });
+      //  this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
+       //     un_ennemi.ennemiObject.update();
+       // });
     }
 
     restartScene() {

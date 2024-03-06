@@ -10,20 +10,21 @@ export default class Terrestre extends Ennemi{
         if(this.sprite.body.blocked.down){
             
             if (this.direction == "left") {
-                
                 var coords = this.sprite.getBottomLeft();
                 var tuileSuivante = this.calque.getTileAtWorldXY(
                     coords.x,
                     coords.y + 10
                 );
-                //console.log(tuileSuivante);
                 if (tuileSuivante == null || this.sprite.body.blocked.left) {
                     
                     // on risque de marcher dans le vide, on tourne
                     this.direction = "right";
                     this.sprite.setVelocityX(this.speedx);
                     this.sprite.anims.play("turn_right", true);
-                }     
+                }
+                else{
+                    this.sprite.setVelocityX(-this.speedx)
+                } 
             } 
             else if (this.direction == "right") {
                 var coords = this.sprite.getBottomRight();
@@ -37,6 +38,9 @@ export default class Terrestre extends Ennemi{
                     this.sprite.setVelocityX(-this.speedx);
                     this.sprite.anims.play("turn_left", true);
                 }
+                else{
+                    this.sprite.setVelocityX(this.speedx)
+                } 
             }   
         }
     }

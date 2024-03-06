@@ -59,7 +59,7 @@
          "name":"calque_ciel",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":150,
          "x":0,
          "y":0
@@ -121,7 +121,7 @@
          "name":"calque_nuages",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":150,
          "x":0,
          "y":0
@@ -183,7 +183,7 @@
          "name":"calque_mer",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":150,
          "x":0,
          "y":0
@@ -245,7 +245,7 @@
          "name":"calque_ile",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":150,
          "x":0,
          "y":0
@@ -409,9 +409,249 @@
          "width":150,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":15,
+         "locked":true,
+         "name":"calque_texte",
+         "objects":[
+                {
+                 "height":37.9873425936483,
+                 "id":6,
+                 "name":"texte",
+                 "rotation":359.895318424311,
+                 "text":
+                    {
+                     "fontfamily":"Gill Sans Ultra Bold Condensed",
+                     "halign":"center",
+                     "text":"Pour attaquer, vous pouvez utiliser la souris ou le pad. ",
+                     "valign":"center",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":285.026720881937,
+                 "x":1344.03333982506,
+                 "y":1054.46857876038
+                }, 
+                {
+                 "height":17.9873759743236,
+                 "id":18,
+                 "name":"texte",
+                 "rotation":359.895318424311,
+                 "text":
+                    {
+                     "fontfamily":"Gill Sans Ultra Bold",
+                     "halign":"center",
+                     "text":"Tuez le !!",
+                     "valign":"center",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":95.0246019488236,
+                 "x":1437.05033873425,
+                 "y":1100.43931505957
+                }, 
+                {
+                 "height":86.333333333333,
+                 "id":8,
+                 "name":"texte",
+                 "rotation":0,
+                 "text":
+                    {
+                     "fontfamily":"Gill Sans Ultra Bold",
+                     "halign":"center",
+                     "text":"Bienvenue dans notre jeu Ekho Expanse !",
+                     "valign":"center",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":299,
+                 "x":38.1666666666666,
+                 "y":1254.83333333333
+                }, 
+                {
+                 "height":88.9999999999998,
+                 "id":9,
+                 "name":"texte",
+                 "rotation":0,
+                 "text":
+                    {
+                     "fontfamily":"Gill Sans Ultra Bold",
+                     "halign":"center",
+                     "text":"Voici les commandes :   -> (avancer) ; <- (reculer) ; \u00ee (sauter)  ",
+                     "valign":"center",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":420.333333333333,
+                 "x":415.5,
+                 "y":1218.83333333333
+                }, 
+                {
+                 "height":58,
+                 "id":10,
+                 "name":"texte",
+                 "rotation":0,
+                 "text":
+                    {
+                     "fontfamily":"Gill Sans Ultra Bold Condensed",
+                     "halign":"center",
+                     "text":"Attention un ennemi en approche ! ",
+                     "valign":"center",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":253,
+                 "x":945.5,
+                 "y":1140.16666666667
+                }, 
+                {
+                 "height":82.3333333333333,
+                 "id":11,
+                 "name":"texte",
+                 "rotation":0,
+                 "text":
+                    {
+                     "fontfamily":"Gill Sans Ultra Bold",
+                     "halign":"center",
+                     "text":"Grimpez la montagne en sautant !",
+                     "valign":"center",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":199.666666666667,
+                 "x":1850.16666666667,
+                 "y":970.166666666667
+                }, 
+                {
+                 "height":95.6666666666667,
+                 "id":12,
+                 "name":"texte",
+                 "rotation":0,
+                 "text":
+                    {
+                     "fontfamily":"Gill Sans Ultra Bold",
+                     "halign":"center",
+                     "text":"Aller vous y \u00eates presque !",
+                     "valign":"center",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":141,
+                 "x":2111.5,
+                 "y":767.5
+                }, 
+                {
+                 "height":37,
+                 "id":13,
+                 "name":"texte",
+                 "rotation":0,
+                 "text":
+                    {
+                     "fontfamily":"Gill Sans Ultra Bold",
+                     "halign":"center",
+                     "text":"Encore un petit effort ! ",
+                     "valign":"center",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":142.333333333333,
+                 "x":2354.16666666667,
+                 "y":634.166666666667
+                }, 
+                {
+                 "height":95.6666666666666,
+                 "id":14,
+                 "name":"texte",
+                 "rotation":0,
+                 "text":
+                    {
+                     "fontfamily":"Gill Sans Ultra Bold",
+                     "halign":"center",
+                     "text":"Attention de ne pas tomber vous risqueriez de devoir recommencer...",
+                     "valign":"center",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":205,
+                 "x":2788.83333333333,
+                 "y":500.833333333333
+                }, 
+                {
+                 "height":74.3333333333333,
+                 "id":15,
+                 "name":"",
+                 "rotation":0,
+                 "text":
+                    {
+                     "fontfamily":"Gill Sans Ultra Bold",
+                     "halign":"center",
+                     "text":"Voici un autre ennemi plus puiisant ! Dechenez-vous sur lui !",
+                     "valign":"center",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":254.333333333333,
+                 "x":3099.5,
+                 "y":466.166666666667
+                }, 
+                {
+                 "height":41.0000000000001,
+                 "id":16,
+                 "name":"texte",
+                 "rotation":0,
+                 "text":
+                    {
+                     "fontfamily":"Gill Sans Ultra Bold",
+                     "halign":"center",
+                     "text":"Encore un saut et le tutoriel sera fini !",
+                     "valign":"center",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":247.666666666667,
+                 "x":4024.83333333333,
+                 "y":490.166666666667
+                }, 
+                {
+                 "height":90.3333333333334,
+                 "id":17,
+                 "name":"texte",
+                 "rotation":0,
+                 "text":
+                    {
+                     "fontfamily":"Gill Sans Ultra Bold",
+                     "halign":"center",
+                     "text":"Appuyez sur la barre d'espace pour ouvrir la porte !",
+                     "valign":"center",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":199.666666666666,
+                 "x":4264.83333333333,
+                 "y":670.166666666667
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":15,
- "nextobjectid":6,
+ "nextlayerid":16,
+ "nextobjectid":19,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
