@@ -8,10 +8,9 @@ export default class Weapon{
         this.weight=weight;
         this.image=image;
         this.byPlayer=byPlayer;
-    }
-    attack(){
 
     }
+
     hit(target){
         target.getHit(this.damage);
     }
