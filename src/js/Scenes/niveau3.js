@@ -19,7 +19,7 @@ export default class niveau3 extends Phaser.Scene {
         this.load.image("Phaser_tuilesDeJEU1", "src/assets/castle.png");
         this.load.image("Phaser_tuilesDeJEU2", "src/assets/greencastle.png");
 
-        this.load.tilemapTiledJSON("carteT", "src/assets/sidemoon_level.json");
+        this.load.tilemapTiledJSON("carteT", "src/assets/niveau4.json");
        
   }
   create() {
@@ -38,9 +38,9 @@ export default class niveau3 extends Phaser.Scene {
 
       const playground = carteDuNiveau.createLayer("playground", [tileset, tileset1]); 
 
-      grey_background.setTint(0x4a4a4a)
-
       green_background.setTint(0x588f71)
+      
+      grey_background.setTint(0x4a4a4a)
 
       playground.setCollisionByProperty({ estSolide: true });
   
@@ -97,18 +97,3 @@ restartScene() {
   this.scene.start('niveau3');
  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
