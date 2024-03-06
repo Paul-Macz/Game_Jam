@@ -47,7 +47,7 @@ export default class Animations extends Phaser.Scene{
             frameWidth:440,
             frameHeight:330
           });
-        this.load.atlas('battlemage', "src/assets/texture.png" ,"src/assets/texture.json");
+        this.load.atlas('battlemage', "src/assets/battlemage.png" ,"src/assets/battlemage.json");
     }
     create(){
         this.anims.create({
@@ -109,13 +109,13 @@ export default class Animations extends Phaser.Scene{
           this.anims.create({
             key:'battlemage_death',
             frames: this.anims.generateFrameNames('battlemage', {start:1, end:12,prefix:"Battlemage (Separeted Frames)/Death/Battlemage Death", suffix:'.png'}),
-            repeat:-1,
+            repeat:0,
             frameRate:15
           });
           this.anims.create({
-            key:'battlemage_factMagic',
+            key:'battlemage_fastMagic',
             frames: this.anims.generateFrameNames('battlemage', {start:1, end:10,prefix:'Battlemage (Separeted Frames)/Fast Magic/Battlemage Fast Magic', suffix:'.png'}),
-            repeat:-1,
+            repeat:0,
             frameRate:15
           });
           this.anims.create({
@@ -133,7 +133,85 @@ export default class Animations extends Phaser.Scene{
           this.anims.create({
             key:'battlemage_sustainMagic',
             frames: this.anims.generateFrameNames('battlemage', {start:1, end:11,prefix:'Battlemage (Separeted Frames)/Sustain Magic/Battlemage Magic Sustain', suffix:'.png'}),
-            repeat:-1,
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_jumpAttack',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:5,prefix:'Battlemage (Separeted Frames)/Jump Attack/Battlemage Jump attack', suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_spinAttack',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:11,prefix:'Battlemage (Separeted Frames)/Spin Attack/Battlemage SpinAttack', suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_attack3',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:9,prefix:'Battlemage (Separeted Frames)/Attack 3/Battlemage Attack C', suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_attack2',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:8,prefix:'Battlemage (Separeted Frames)/Attack 2/Battlemage Attack B', suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_attack1',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:8,prefix:'Battlemage (Separeted Frames)/Attack 1/Battlemage Attack ', suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_dash',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:7,prefix:'Battlemage (Separeted Frames)/Dash/Battlemage Dash', suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_stop',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:5,prefix:'Battlemage (Separeted Frames)/Stop/Battlemage Stop', suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_jumpFowardUP',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:2,prefix:'Battlemage (Separeted Frames)/Jump Foward/Going Up/Battlemage Foward up', suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_jumpFowardDown',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:5,prefix:'Battlemage (Separeted Frames)/Jump Foward/Going Down/Battlemage Foward down', suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_jumpFowardGround',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:4,prefix:'Battlemage (Separeted Frames)/Jump Foward/Grounded/Battlemage Foward Grounded', suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_jumpNeutralUp',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:3,prefix:'Battlemage (Separeted Frames)/Jump Neutral/Going Up/Battlemage Neutral up', suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_jumpNeutralDown',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:3,prefix:'Battlemage (Separeted Frames)/Jump Neutral/Going Down/Battlemage Neutral Down', suffix:'.png'}),
+            repeat:0,
+            frameRate:10
+          });
+          this.anims.create({
+            key:'battlemage_jumpNeutralGround',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:4,prefix:'Battlemage (Separeted Frames)/Jump Neutral/Grounded/Battlemage Neutra Grounded', suffix:'.png'}),
+            repeat:0,
             frameRate:15
           });
           this.anims.create({
@@ -144,7 +222,7 @@ export default class Animations extends Phaser.Scene{
           });
           this.anims.create({
             key:'battlemage_run',
-            frames: this.anims.generateFrameNames('battlemage', {start:1, end:8,prefix:'Battlemage (Separeted Frames)/Running/Battlemage Running', suffix:'.png'}),
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:10,prefix:'Battlemage (Separeted Frames)/Running/Battlemage Running', suffix:'.png'}),
             repeat:-1,
             frameRate:15
           });
