@@ -150,6 +150,7 @@ export default class niveau1 extends Phaser.Scene {
       } 
       this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
         un_ennemi.ennemiObject.update();
+       
       }); 
   }
   restartScene() {
