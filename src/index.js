@@ -1,11 +1,14 @@
 // chargement des librairies
-import menu from "/src/js/Scenes/menu.js";
 import animations from "/src/js/animations.js";
-import selection from "/src/js/Scenes/selection.js";
+
+import menu from "/src/js/Scenes/menu.js";
+
+
+import tutomap from "/src/js/Scenes/tutomap.js";
+import menu2 from "/src/js/Scenes/menu2.js";
 import niveau1 from "/src/js/Scenes/niveau1.js";
 import niveau2 from "/src/js/Scenes/niveau2.js";
 import niveau3 from "/src/js/Scenes/niveau3.js";
-import niveau4 from "/src/js/Scenes/niveau4.js";
 
 // configuration générale du jeu
 var config = {
@@ -28,7 +31,7 @@ var config = {
       debug: true // permet de voir les hitbox et les vecteurs d'acceleration quand mis à true
     }
   },
-  scene: [animations, menu,selection, niveau1, niveau2,niveau3,niveau4]
+  scene: [animations, menu,tutomap,menu2,niveau1, niveau2,niveau3]
 };
 
 // création et lancement du jeu
