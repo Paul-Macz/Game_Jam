@@ -43,6 +43,7 @@ export default class Animations extends Phaser.Scene{
             frameWidth:440,
             frameHeight:330
           });
+        this.load.atlas('battlemage', "src/assets/texture.png" ,"src/assets/texture.json");
     }
     create(){
         this.anims.create({
@@ -93,20 +94,8 @@ export default class Animations extends Phaser.Scene{
             frameRate : 12,
             repeat : -1
           });
-          this.anims.create({
-            key: "anim_ouvreporte",
-            frames: this.anims.generateFrameNumbers("porte_ouvrante", { start: 0, end: 5 }),
-            frameRate: 50,
-            repeat: 0
-          }); 
-          this.anims.create({
-            key: "anim_fermeporte",
-            frames: this.anims.generateFrameNumbers("porte_ouvrante", { start: 5, end: 0 }),
-            frameRate: 50,
-            repeat: 0
-          }); 
     }
     update(){
-        this.scene.start("menu");
+        this.scene.start("niveau4");
     }
 }
