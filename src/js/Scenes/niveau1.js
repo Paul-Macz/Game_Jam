@@ -71,7 +71,6 @@ export default class niveau1 extends Phaser.Scene {
         this.player.pickWeapon(this.weap);
 
         const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");
-        const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");
 
         this.groupe_ennemis = this.physics.add.group();
         this.groupe_ennemis = this.physics.add.group();
@@ -127,12 +126,15 @@ export default class niveau1 extends Phaser.Scene {
         this.player.update()
 
         if (this.player.gameOver) {
+            this.player.death++;
+            if(this.player.death==1){
             this.physics.pause();
-            this.player.sprite.setTint(0x444444);
-            this.player.sprite.anims.play("stand");
-            this.time.delayedCall(3000, this.restartScene, [], this);
+            this.player.deathState=true
+            this.player.sprite.anims.play("battlemage_death",true);
+            // this.player.sprite.setTint(0x444444);
+            this.time.delayedCall(3000,this.restartScene,[],this);
+          }
         }
-
         if ( Phaser.Input.Keyboard.JustDown(this.cursors.space) == true &&
         this.physics.overlap(this.player.sprite, this.porte_ouvrante) == true) {
        // le personnage est sur la porte et vient d'appuyer sur espace
@@ -150,21 +152,7 @@ export default class niveau1 extends Phaser.Scene {
             un_ennemi.ennemiObject.update();
         });
     }
-    if (this.player.gameOver) {
-        this.player.death++;
-        if(this.player.death==1){
-        this.physics.pause();
-        this.player.deathState=true
-        this.player.sprite.anims.play("battlemage_death",true);
-        // this.player.sprite.setTint(0x444444);
-        this.time.delayedCall(3000,this.restartScene,[],this);
-      } 
-    } 
-    this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
-        un_ennemi.ennemiObject.update();
-        
-    }); 
-    }
+ 
     handlePlayerEnnemiCollision(player, ennemiSp) {
 
         const dx = this.player.sprite.x - ennemiSp.x;
