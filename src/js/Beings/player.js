@@ -9,8 +9,24 @@ export default class Player extends Character{
             fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif',
             fontSize: "14pt"
         });
+        this.width=20;
+        this.height=32;
+
+        this.timeLastAttack=0;
+        this.attackState=false;
+
+        this.sprite.setScale(2);
+        this.sprite.setSize(this.width,this.height,true);
+        this.sprite.setOffset(18,16);
         this.gameOver=false;
         this.sprite.setCollideWorldBounds(true);
+        this.swordHitbox =this.scene.add.rectangle(x,y,35,64,"0xffffff",0.5)
+        this.scene.physics.add.existing(this.swordHitbox)
+        this.swordHitbox.setBounce(0);
+        // console.log(this.swordHitbox)
+        this.scene.physics.world.enable(this.swordHitbox);
+        this.swordHitbox.body.setAllowGravity(false);
+
         this.cursors = scene.input.keyboard.createCursorKeys();
         this.iKey = scene.input.keyboard.addKey("I");
         this.aKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -28,7 +44,12 @@ export default class Player extends Character{
 
     }
     update(velocity) {
-
+        if(this.direction == 'left'){
+            this.sprite.flipX=true;
+        }
+        else{
+            this.sprite.flipX=false;
+        }
         if (velocity === undefined) {
             if(this.equippedWeapon==null){          
                 var speedx = 250;
@@ -47,17 +68,16 @@ export default class Player extends Character{
         if (this.cursors.left.isDown) {
             this.sprite.setVelocityX(-speedx);
             this.direction = 'left';
-            this.sprite.anims.play("turn_left",true);
-            //sprite.setFlipX(true);
+
         } else if (this.cursors.right.isDown) {
             this.sprite.setVelocityX(speedx);
             this.direction = 'right';
-            this.sprite.anims.play("turn_right",true);
-            //sprite.setFlipX(false);
         }
         else {
             this.sprite.setVelocityX(0);
-            this.sprite.anims.play("stand", true);
+            if (!this.attackState) {
+                this.sprite.anims.play("battlemage_idle", true);
+            }
         }
         var coords = this.sprite.getBottomLeft();
         if ((this.cursors.up.isDown && this.sprite.body.touching.down)|| this.cursors.up.isDown && this.sprite.body.blocked.down) {
@@ -76,15 +96,41 @@ export default class Player extends Character{
         //     this.attack();
         // }
         if(this.calque!=undefined){
-            
             const adjustedMouseX = this.scene.input.mousePointer.x + this.scene.cameras.main.scrollX;
             const adjustedMouseY = this.scene.input.mousePointer.y + this.scene.cameras.main.scrollY;
             if(this.scene.input.mousePointer.isDown){
+
                 if(this.equippedWeapon instanceof Range){
                     this.attack(adjustedMouseX,adjustedMouseY);
                 }
                 else{
-                    this.attack();
+                    
+                    var currentTime = this.scene.time.now;
+                    this.sprite.anims.play("battlemage_crouchAttack", true);
+                    console.log(this.attackState)
+                    if ((currentTime - this.timeLastAttack)*this.equippedWeapon.atSpeed >= 1000 || this.timeLastAttack==0) {
+                        this.swordHitbox.setActive(true)
+                        this.attackState=true;
+                        // this.sprite.on(Phaser.Animations.Events.ANIMATION_UPDATE, (anim, frame)=>{
+                        //     frame.index
+                        // })
+                        if(this.direction == 'left'){
+                            this.swordHitbox.x=this.sprite.x-1.8*this.width
+                            this.swordHitbox.y=this.sprite.y+0.5*this.height
+                        }
+                        else{
+                            this.swordHitbox.x=this.sprite.x+1.8*this.width
+                            this.swordHitbox.y=this.sprite.y+0.5*this.height 
+                        }
+                        this.attack();
+                        this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_crouchAttack",()=>{
+                            this.sprite.anims.play("battlemage_idle", true);
+                        })
+                        this.timeLastAttack=currentTime;
+                        this.sprite.on('animationcomplete', this.animationComplete, this);
+                    }
+                    
+                    
                 }
             }
         }
@@ -94,12 +140,41 @@ export default class Player extends Character{
                     this.attack(this.scene.input.mousePointer.x,this.scene.input.mousePointer.y);
                 }
                 else{
-                    this.attack();
+                    var currentTime = this.scene.time.now;
+                    this.sprite.anims.play("battlemage_crouchAttack", true);
+                    if ((currentTime - this.timeLastAttack)*this.equippedWeapon.atSpeed >= 1000 || this.timeLastAttack==0) {
+                        this.swordHitbox.setActive(true)
+                        this.attackState=true;
+                        // this.sprite.on(Phaser.Animations.Events.ANIMATION_UPDATE, (anim, frame)=>{
+                        //     frame.index
+                        // })
+                        if(this.direction == 'left'){
+                            this.swordHitbox.x=this.sprite.x-1.8*this.width
+                            this.swordHitbox.y=this.sprite.y+0.5*this.height
+                        }
+                        else{
+                            this.swordHitbox.x=this.sprite.x+1.8*this.width
+                            this.swordHitbox.y=this.sprite.y+0.5*this.height 
+                        }
+                        this.attack();
+                        this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_crouchAttack",()=>{
+                            this.sprite.anims.play("battlemage_idle", true);
+                        })
+                        this.timeLastAttack=currentTime;
+                        this.sprite.on('animationcomplete', this.animationComplete, this);
+                    }
+                    
                 }
             }
         }
 
     } 
+    animationComplete(animation, frame) {
+        if (animation.key === 'battlemage_crouchAttack') {
+            this.attackState=false;
+            this.swordHitbox.setActive(false)
+        }
+    }
     getHit(damage){
 
         if(!this.gameOver){

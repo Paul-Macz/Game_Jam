@@ -95,6 +95,49 @@ export default class Animations extends Phaser.Scene{
             repeat : -1
           });
           this.anims.create({
+            key:'battlemage_death',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:12,prefix:"Battlemage (Separeted Frames)/Death/Battlemage Death", suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_factMagic',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:10,prefix:'Battlemage (Separeted Frames)/Fast Magic/Battlemage Fast Magic', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_crouchAttack',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:7,prefix:'Battlemage (Separeted Frames)/Crouch Attack/Battlemage Crouch Attack', suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_crouch',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:8,prefix:'Battlemage (Separeted Frames)/Crouch/Battlemage Crouch', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_sustainMagic',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:11,prefix:'Battlemage (Separeted Frames)/Sustain Magic/Battlemage Magic Sustain', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_idle',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:8,prefix:'Battlemage (Separeted Frames)/Idle/Battlemage Idle', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_run',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:8,prefix:'Battlemage (Separeted Frames)/Running/Battlemage Running', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+
+          this.anims.create({
             key: "anim_ouvreporte",
             frames: this.anims.generateFrameNumbers("porte_ouvrante", { start: 0, end: 5 }),
             frameRate: 50,
@@ -108,6 +151,6 @@ export default class Animations extends Phaser.Scene{
           }); 
     }
     update(){
-        this.scene.start("menu");
+        this.scene.start("niveau4");
     }
 }
