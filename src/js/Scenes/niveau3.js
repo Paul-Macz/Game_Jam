@@ -3,8 +3,9 @@
 import Player from "/src/js/Beings/player.js";
 import Terrestre from "/src/js/Beings/terrestre.js";
 import Range from "/src/js/Items/range.js";
-var calque_rochers;
 var calque_nature;
+var calque_rochers;
+
 export default class niveau3 extends Phaser.Scene {
   constructor() {
     super({ key: "niveau3" });
@@ -108,8 +109,8 @@ export default class niveau3 extends Phaser.Scene {
   } 
   }
   restartScene() {
-    this.scene.stop('niveau2');
-    this.scene.start('niveau2');
+    this.scene.stop('niveau3');
+    this.scene.start('niveau3');
   }
 }
 

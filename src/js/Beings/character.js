@@ -70,7 +70,8 @@ export default class Character{
         }
     }
     attack(targetx,targety){
-        if(this.inventory!=[]){
+        if(this.eequippedWeapon!=null){
+            // console.log(this.inventory)
             this.equippedWeapon.attack(this, this.sprite.x,this.sprite.y,targetx,targety);
         }
     }
