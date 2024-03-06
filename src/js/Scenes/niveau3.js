@@ -28,11 +28,11 @@ export default class niveau3 extends Phaser.Scene {
       const tileset = carteDuNiveau.addTilesetImage("castle", "Phaser_tuilesDeJEU1");
       const tileset1 = carteDuNiveau.addTilesetImage("greencastle", "Phaser_tuilesDeJEU2");
       
-      const black_background =  carteDuNiveau.createLayer("black", tileset);
+      const black_background =  carteDuNiveau.createLayer("black_background", tileset);
       
-      const green_background = carteDuNiveau.createLayer("green", tileset);
+      const green_background = carteDuNiveau.createLayer("green_background", tileset);
       
-      const grey_background = carteDuNiveau.createLayer("grey", tileset);
+      const grey_background = carteDuNiveau.createLayer("grey_brackground", tileset);
      
       const ground = carteDuNiveau.createLayer("ground", [tileset, tileset1]);
 

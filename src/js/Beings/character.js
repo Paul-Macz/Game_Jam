@@ -64,13 +64,13 @@ export default class Character{
         // }
     }
     attack(){
-        if(this.inventory!=[]){
+        if(this.equippedWeapon!=null){
             //this.sprite.anims.play("attack");
             this.equippedWeapon.attack(this, this.sprite.x,this.sprite.y,this.sprite.height);
         }
     }
     attack(targetx,targety){
-        if(this.eequippedWeapon!=null){
+        if(this.equippedWeapon!=null){
             // console.log(this.inventory)
             this.equippedWeapon.attack(this, this.sprite.x,this.sprite.y,targetx,targety);
         }
