@@ -179,19 +179,19 @@ export default class Animations extends Phaser.Scene{
             frameRate:15
           });
           this.anims.create({
-            key:'battlemage_jumpFowardUP',
+            key:'battlemage_jumpForwardUp',
             frames: this.anims.generateFrameNames('battlemage', {start:1, end:2,prefix:'Battlemage (Separeted Frames)/Jump Foward/Going Up/Battlemage Foward up', suffix:'.png'}),
             repeat:0,
-            frameRate:15
+            frameRate:10
           });
           this.anims.create({
-            key:'battlemage_jumpFowardDown',
+            key:'battlemage_jumpForwardDown',
             frames: this.anims.generateFrameNames('battlemage', {start:1, end:5,prefix:'Battlemage (Separeted Frames)/Jump Foward/Going Down/Battlemage Foward down', suffix:'.png'}),
             repeat:0,
             frameRate:15
           });
           this.anims.create({
-            key:'battlemage_jumpFowardGround',
+            key:'battlemage_jumpForwardGround',
             frames: this.anims.generateFrameNames('battlemage', {start:1, end:4,prefix:'Battlemage (Separeted Frames)/Jump Foward/Grounded/Battlemage Foward Grounded', suffix:'.png'}),
             repeat:0,
             frameRate:15
@@ -200,19 +200,19 @@ export default class Animations extends Phaser.Scene{
             key:'battlemage_jumpNeutralUp',
             frames: this.anims.generateFrameNames('battlemage', {start:1, end:3,prefix:'Battlemage (Separeted Frames)/Jump Neutral/Going Up/Battlemage Neutral up', suffix:'.png'}),
             repeat:0,
-            frameRate:15
+            frameRate:10
           });
           this.anims.create({
             key:'battlemage_jumpNeutralDown',
             frames: this.anims.generateFrameNames('battlemage', {start:1, end:3,prefix:'Battlemage (Separeted Frames)/Jump Neutral/Going Down/Battlemage Neutral Down', suffix:'.png'}),
             repeat:0,
-            frameRate:10
+            frameRate:15
           });
           this.anims.create({
             key:'battlemage_jumpNeutralGround',
             frames: this.anims.generateFrameNames('battlemage', {start:1, end:4,prefix:'Battlemage (Separeted Frames)/Jump Neutral/Grounded/Battlemage Neutra Grounded', suffix:'.png'}),
             repeat:0,
-            frameRate:15
+            frameRate:10
           });
           this.anims.create({
             key:'battlemage_idle',
@@ -241,6 +241,6 @@ export default class Animations extends Phaser.Scene{
           }); 
     }
     update(){
-        this.scene.start("menu");
+        this.scene.start("niveau2");
     }
 }

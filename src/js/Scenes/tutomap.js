@@ -1,8 +1,10 @@
-
-
-import Player from "/src/js/Beings/player.js";
-import Terrestre from "/src/js/Beings/terrestre.js";
 import Range from "/src/js/Items/range.js";
+import Melee from "/src/js/Items/melee.js"
+import Character from "/src/js/Beings/character.js";
+import Flying from "/src/js/Beings/flying.js"
+import Terrestre from "/src/js/Beings/terrestre.js";
+import Player from "/src/js/Beings/player.js";
+
 var calque_rochers;
 var calque_nature;
 var porte_ouvrante; 
@@ -67,7 +69,7 @@ export default class tutomap extends Phaser.Scene {
     this.physics.add.collider(this.player.sprite, calque_nature);
     this.physics.add.collider(this.player.sprite, calque_rochers);  
     this.player.sprite.setCollideWorldBounds(true);
-    this.player.sprite.setBounce(0.2);
+    // this.player.sprite.setBounce(0.2);
 
     this.player.sprite.body.world.on("worldbounds", function(body, up, down, left, right) {
       if (body.gameObject === this.player.sprite && down == true) {
@@ -75,8 +77,10 @@ export default class tutomap extends Phaser.Scene {
       }
   }, this);
     
-  this.weap = new Range(this, "bull", 2, 10, 1, "bullet", true, 1, 1000, false);
-  this.player.pickWeapon(this.weap);
+    // this.weap = new Range(this, "bull", 2, 10, 1, "bullet", true, 1, 1000, false);
+    this.weap = new Melee(this, "bull", 2, 10, 1, "bullet",true,10);
+
+    this.player.pickWeapon(this.weap);
 
     this.physics.world.setBounds(0, 0, carteDuNiveau.widthInPixels, carteDuNiveau.heightInPixels);
     this.cameras.main.setBounds(0, 0, carteDuNiveau.widthInPixels, carteDuNiveau.heightInPixels);

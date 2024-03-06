@@ -49,10 +49,10 @@ export default class niveau3 extends Phaser.Scene {
       const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis"); 
       this.groupe_ennemis = this.physics.add.group();
 
-      this.player = new Player(this, "battlemage", 170, 30, playground);
+      this.player = new Player(this,"battlemage", 170, 30, playground);
       this.physics.add.collider(this.player.sprite, playground);
       this.player.sprite.setCollideWorldBounds(true);
-      this.player.sprite.setBounce(0.2);
+      // this.player.sprite.setBounce(0.2);
       
 
       this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundsHeight);

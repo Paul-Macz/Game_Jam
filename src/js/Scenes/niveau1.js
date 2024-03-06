@@ -48,9 +48,9 @@ export default class niveau1 extends Phaser.Scene {
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
-        this.player = new Player(this, "battlemage", 80, 2500, ice);
+        this.player = new Player(this,"battlemage", 80, 2500, ice);
         this.player.sprite.setCollideWorldBounds(true);
-        this.player.sprite.setBounce(0.2);
+        // this.player.sprite.setBounce(0.2);
         this.player.sprite.body.onWorldBounds = true;
 
         this.player.sprite.body.world.on("worldbounds", function(body, up, down, left, right) {
