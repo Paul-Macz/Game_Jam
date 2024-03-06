@@ -83,7 +83,6 @@ export default class niveau1 extends Phaser.Scene {
             un_ennemi.anims.play("turn_left", true);
         });
 
-        this.hit = 0;
     }
 
     handlePlayerEnnemiCollision(player, ennemiSp) {
@@ -95,12 +94,10 @@ export default class niveau1 extends Phaser.Scene {
         const dy = this.player.sprite.y - ennemiSp.y;
         const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
         this.player.sprite.setVelocity(dir.x, dir.y)
-        this.hit = 1
         this.player.getHit(ennemiSp.ennemiObject.equipWeapon.damage)
     }
 
     update() {
-        if (this.hit > 0) {}
         this.player.update()
 
         if (this.player.gameOver) {

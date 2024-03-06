@@ -9,18 +9,21 @@ export default class Player extends Character{
             fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif',
             fontSize: "14pt"
         });
-        this.width=20;
-        this.height=32;
-
+        this.owidth=10;
+        this.oheight=16;
+        this.scale=1.3;
+        this.width=this.owidth*this.scale;
+        this.height=this.oheight*this.scale;
         this.timeLastAttack=0;
         this.attackState=false;
+        this.deathState=false
 
-        this.sprite.setScale(2);
-        this.sprite.setSize(this.width,this.height,true);
-        this.sprite.setOffset(18,16);
+        this.sprite.setScale(this.scale);
+        this.sprite.setSize(this.width*(2.9-this.scale),this.height*(2.9-this.scale),true);
+        this.sprite.setOffset((this.width-1)*(this.scale+0.1),this.oheight/(this.scale-0.1));
         this.gameOver=false;
         this.sprite.setCollideWorldBounds(true);
-        this.swordHitbox =this.scene.add.rectangle(x,y,35,64,"0xffffff",0.5)
+        this.swordHitbox =this.scene.add.rectangle(x,y,this.width*1.75,this.height*2,"0xffffff",0)
         this.scene.physics.add.existing(this.swordHitbox)
         // this.swordHitbox.body.setBounce(0);
         // console.log(this.swordHitbox)
@@ -32,12 +35,17 @@ export default class Player extends Character{
         this.aKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         this.eKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
         this.fKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
+        this.zKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Z);
+        this.qKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Q);
+        this.sKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+        this.dKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 
         if(this.calque!=undefined){
             this.scene.cameras.main.setBounds(this.scene.boundx, this.scene.boundy, this.scene.boundWidth, this.scene.boundHeight);
+            this.scene.cameras.main.setZoom(1.5);
             this.scene.cameras.main.startFollow(this.sprite); 
         }
-
+        this.death=0;
     }
     freeze() {
         this.sprite.body.moves = false;
@@ -65,25 +73,25 @@ export default class Player extends Character{
             var speedy = velocity;
         }
         
-        if (this.cursors.left.isDown) {
+        if (this.qKey.isDown) {
             this.sprite.setVelocityX(-speedx);
             this.direction = 'left';
+            this.sprite.anims.play("battlemage_run", true);
 
-        } else if (this.cursors.right.isDown) {
+        } else if (this.dKey.isDown) {
             this.sprite.setVelocityX(speedx);
             this.direction = 'right';
+            this.sprite.anims.play("battlemage_run", true);
         }
         else {
             this.sprite.setVelocityX(0);
-            if (!this.attackState) {
+            if (!this.attackState && !this.deathState) {
                 this.sprite.anims.play("battlemage_idle", true);
             }
         }
         var coords = this.sprite.getBottomLeft();
-        if ((this.cursors.up.isDown && this.sprite.body.touching.down)|| this.cursors.up.isDown && this.sprite.body.blocked.down) {
+        if ((this.zKey.isDown && this.sprite.body.touching.down)|| (this.zKey.isDown && this.sprite.body.blocked.down)) {
             this.sprite.setVelocityY(-speedy);
-        } else if (this.cursors.down.isDown) {
-            this.sprite.setVelocityY(speedy);
         }
 
         if (this.aKey.isDown){
@@ -95,26 +103,26 @@ export default class Player extends Character{
         // if(this.fKey.isDown){
         //     this.attack();
         // }
-        if(this.calque!=undefined){
-            const adjustedMouseX = this.scene.input.mousePointer.x + this.scene.cameras.main.scrollX;
-            const adjustedMouseY = this.scene.input.mousePointer.y + this.scene.cameras.main.scrollY;
+        
             //attack
             if(this.scene.input.mousePointer.isDown){
                 //Range attack
                 if(this.equippedWeapon instanceof Range){
+                    if(this.calque!=undefined){
+                        const adjustedMouseX = this.scene.input.mousePointer.x + this.scene.cameras.main.scrollX;
+                        const adjustedMouseY = this.scene.input.mousePointer.y + this.scene.cameras.main.scrollY;
+                    }
+                    const adjustedMouseX = this.scene.input.mousePointer.x
+                    const adjustedMouseY = this.scene.input.mousePointer.y
                     this.attack(adjustedMouseX,adjustedMouseY);
                 }
                 else{
                     //Melee attack
                     var currentTime = this.scene.time.now;
                     this.sprite.anims.play("battlemage_crouchAttack", true);
-
                     if ((currentTime - this.timeLastAttack)*this.equippedWeapon.atSpeed >= 1000 || this.timeLastAttack==0) {
-                        this.swordHitbox.setActive(true)
+                        this.scene.physics.world.add(this.swordHitbox.body)
                         this.attackState=true;
-                        // this.sprite.on(Phaser.Animations.Events.ANIMATION_UPDATE, (anim, frame)=>{
-                        //     frame.index
-                        // })
                         if(this.direction == 'left'){
                             this.swordHitbox.x=this.sprite.x-1.8*this.width
                             this.swordHitbox.y=this.sprite.y+0.5*this.height
@@ -124,57 +132,20 @@ export default class Player extends Character{
                             this.swordHitbox.y=this.sprite.y+0.5*this.height 
                         }
                         this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_crouchAttack",()=>{
-                            this.sprite.anims.play("battlemage_idle", true);
+                            // this.sprite.anims.play("battlemage_idle", true);
+                            this.attackState=false;
+                            this.swordHitbox.x=0;
+                            this.swordHitbox.y=0
                         })
                         this.timeLastAttack=currentTime;
-                        this.sprite.on('animationcomplete', this.animationComplete, this);
                     }
                     
                     
                 }
             }
-        }
-        else{
-            if(this.scene.input.mousePointer.isDown){
-                if(this.equippedWeapon instanceof Range){
-                    this.attack(this.scene.input.mousePointer.x,this.scene.input.mousePointer.y);
-                }
-                else{
-                    var currentTime = this.scene.time.now;
-                    this.sprite.anims.play("battlemage_crouchAttack", true);
-                    if ((currentTime - this.timeLastAttack)*this.equippedWeapon.atSpeed >= 1000 || this.timeLastAttack==0) {
-                        this.swordHitbox.setActive(true)
-                        this.attackState=true;
-                        // this.sprite.on(Phaser.Animations.Events.ANIMATION_UPDATE, (anim, frame)=>{
-                        //     frame.index
-                        // })
-                        if(this.direction == 'left'){
-                            this.swordHitbox.x=this.sprite.x-1.8*this.width
-                            this.swordHitbox.y=this.sprite.y+0.5*this.height
-                        }
-                        else{
-                            this.swordHitbox.x=this.sprite.x+1.8*this.width
-                            this.swordHitbox.y=this.sprite.y+0.5*this.height 
-                        }
-                        this.attack();
-                        this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_crouchAttack",()=>{
-                            this.sprite.anims.play("battlemage_idle", true);
-                        })
-                        this.timeLastAttack=currentTime;
-                        this.sprite.on('animationcomplete', this.animationComplete, this);
-                    }
-                    
-                }
-            }
-        }
 
     } 
-    animationComplete(animation, frame) {
-        if (animation.key === 'battlemage_crouch    ') {
-            this.attackState=false;
-            this.swordHitbox.setActive(false)
-        }
-    }
+
     getHit(damage){
 
         if(!this.gameOver){

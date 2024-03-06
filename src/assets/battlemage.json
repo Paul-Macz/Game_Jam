@@ -1,0 +1,3022 @@
+{
+	"textures": [
+		{
+			"image": "battlemage",
+			"format": "RGBA8888",
+			"size": {
+				"w": 465,
+				"h": 355
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 2/Battlemage Attack B5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 17,
+						"w": 53,
+						"h": 31
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 53,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 2/Battlemage Attack B6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 18,
+						"w": 53,
+						"h": 30
+					},
+					"frame": {
+						"x": 53,
+						"y": 0,
+						"w": 53,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 2/Battlemage Attack B7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 19,
+						"w": 53,
+						"h": 29
+					},
+					"frame": {
+						"x": 106,
+						"y": 0,
+						"w": 53,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 2/Battlemage Attack B4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 17,
+						"w": 52,
+						"h": 31
+					},
+					"frame": {
+						"x": 159,
+						"y": 0,
+						"w": 52,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 2/Battlemage Attack B8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 19,
+						"w": 46,
+						"h": 29
+					},
+					"frame": {
+						"x": 106,
+						"y": 29,
+						"w": 46,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 3/Battlemage Attack C3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 19,
+						"w": 41,
+						"h": 29
+					},
+					"frame": {
+						"x": 53,
+						"y": 30,
+						"w": 41,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Attack/Battlemage Jump attack5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 16,
+						"w": 40,
+						"h": 31
+					},
+					"frame": {
+						"x": 0,
+						"y": 31,
+						"w": 40,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Attack/Battlemage Jump attack3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 17,
+						"w": 40,
+						"h": 29
+					},
+					"frame": {
+						"x": 211,
+						"y": 0,
+						"w": 40,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Attack/Battlemage Jump attack4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 17,
+						"w": 40,
+						"h": 29
+					},
+					"frame": {
+						"x": 251,
+						"y": 0,
+						"w": 40,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 3/Battlemage Attack C8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 3,
+						"w": 39,
+						"h": 45
+					},
+					"frame": {
+						"x": 291,
+						"y": 0,
+						"w": 39,
+						"h": 45
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 3/Battlemage Attack C7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 4,
+						"w": 39,
+						"h": 44
+					},
+					"frame": {
+						"x": 211,
+						"y": 29,
+						"w": 39,
+						"h": 44
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 3/Battlemage Attack C6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 6,
+						"w": 39,
+						"h": 42
+					},
+					"frame": {
+						"x": 250,
+						"y": 29,
+						"w": 39,
+						"h": 42
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Death/Battlemage Death11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 40,
+						"w": 39,
+						"h": 8
+					},
+					"frame": {
+						"x": 152,
+						"y": 31,
+						"w": 39,
+						"h": 8
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Running/Battlemage Running8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 17,
+						"w": 20,
+						"h": 31
+					},
+					"frame": {
+						"x": 191,
+						"y": 31,
+						"w": 20,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 3/Battlemage Attack C5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 6,
+						"w": 38,
+						"h": 42
+					},
+					"frame": {
+						"x": 152,
+						"y": 39,
+						"w": 38,
+						"h": 42
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 1/Battlemage Attack 1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 17,
+						"w": 21,
+						"h": 31
+					},
+					"frame": {
+						"x": 190,
+						"y": 62,
+						"w": 21,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 3/Battlemage Attack C9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 2,
+						"w": 37,
+						"h": 46
+					},
+					"frame": {
+						"x": 94,
+						"y": 58,
+						"w": 37,
+						"h": 46
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Running/Battlemage Running3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 17,
+						"w": 21,
+						"h": 31
+					},
+					"frame": {
+						"x": 131,
+						"y": 58,
+						"w": 21,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 1/Battlemage Attack 8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 20,
+						"w": 37,
+						"h": 28
+					},
+					"frame": {
+						"x": 152,
+						"y": 81,
+						"w": 37,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Sustain Magic/Battlemage Magic Sustain11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 17,
+						"w": 21,
+						"h": 31
+					},
+					"frame": {
+						"x": 131,
+						"y": 93,
+						"w": 21,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 1/Battlemage Attack 7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 21,
+						"w": 37,
+						"h": 27
+					},
+					"frame": {
+						"x": 40,
+						"y": 59,
+						"w": 37,
+						"h": 27
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Idle/Battlemage Idle4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 17,
+						"w": 17,
+						"h": 31
+					},
+					"frame": {
+						"x": 77,
+						"y": 59,
+						"w": 17,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Death/Battlemage Death10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 38,
+						"w": 37,
+						"h": 10
+					},
+					"frame": {
+						"x": 0,
+						"y": 62,
+						"w": 37,
+						"h": 10
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 1/Battlemage Attack 4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 9,
+						"w": 36,
+						"h": 39
+					},
+					"frame": {
+						"x": 0,
+						"y": 72,
+						"w": 36,
+						"h": 39
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 2/Battlemage Attack B3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 21,
+						"w": 36,
+						"h": 27
+					},
+					"frame": {
+						"x": 36,
+						"y": 86,
+						"w": 36,
+						"h": 27
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Death/Battlemage Death8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 34,
+						"w": 36,
+						"h": 14
+					},
+					"frame": {
+						"x": 0,
+						"y": 111,
+						"w": 36,
+						"h": 14
+					}
+				},
+				{
+					"filename": "Hurt 1 n 2/Hurt 2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 17,
+						"w": 22,
+						"h": 31
+					},
+					"frame": {
+						"x": 72,
+						"y": 90,
+						"w": 22,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Death/Battlemage Death9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 37,
+						"w": 36,
+						"h": 11
+					},
+					"frame": {
+						"x": 36,
+						"y": 113,
+						"w": 36,
+						"h": 11
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 1/Battlemage Attack 5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 23,
+						"w": 35,
+						"h": 25
+					},
+					"frame": {
+						"x": 94,
+						"y": 104,
+						"w": 35,
+						"h": 25
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Sustain Magic/Battlemage Magic Sustain10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 18,
+						"w": 22,
+						"h": 30
+					},
+					"frame": {
+						"x": 72,
+						"y": 121,
+						"w": 22,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 1/Battlemage Attack 6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 26,
+						"w": 35,
+						"h": 22
+					},
+					"frame": {
+						"x": 36,
+						"y": 124,
+						"w": 35,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch Attack/Battlemage Crouch Attack4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 26,
+						"w": 35,
+						"h": 22
+					},
+					"frame": {
+						"x": 0,
+						"y": 125,
+						"w": 35,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Death/Battlemage Death7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 29,
+						"w": 35,
+						"h": 19
+					},
+					"frame": {
+						"x": 35,
+						"y": 146,
+						"w": 35,
+						"h": 19
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch Attack/Battlemage Crouch Attack2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 25,
+						"w": 34,
+						"h": 23
+					},
+					"frame": {
+						"x": 0,
+						"y": 147,
+						"w": 34,
+						"h": 23
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch Attack/Battlemage Crouch Attack3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 26,
+						"w": 34,
+						"h": 22
+					},
+					"frame": {
+						"x": 330,
+						"y": 0,
+						"w": 34,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch Attack/Battlemage Crouch Attack5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 26,
+						"w": 34,
+						"h": 22
+					},
+					"frame": {
+						"x": 364,
+						"y": 0,
+						"w": 34,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch Attack/Battlemage Crouch Attack6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 26,
+						"w": 34,
+						"h": 22
+					},
+					"frame": {
+						"x": 398,
+						"y": 0,
+						"w": 34,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Sustain Magic/Battlemage Magic Sustain7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 16,
+						"w": 33,
+						"h": 32
+					},
+					"frame": {
+						"x": 432,
+						"y": 0,
+						"w": 33,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Sustain Magic/Battlemage Magic Sustain8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 16,
+						"w": 33,
+						"h": 32
+					},
+					"frame": {
+						"x": 330,
+						"y": 22,
+						"w": 33,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 3/Battlemage Attack C4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 17,
+						"w": 33,
+						"h": 31
+					},
+					"frame": {
+						"x": 289,
+						"y": 45,
+						"w": 33,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Death/Battlemage Death4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 13,
+						"w": 33,
+						"h": 30
+					},
+					"frame": {
+						"x": 250,
+						"y": 71,
+						"w": 33,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Sustain Magic/Battlemage Magic Sustain6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 14,
+						"w": 32,
+						"h": 34
+					},
+					"frame": {
+						"x": 211,
+						"y": 73,
+						"w": 32,
+						"h": 34
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Dash/Battlemage Dash6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 20,
+						"w": 22,
+						"h": 28
+					},
+					"frame": {
+						"x": 189,
+						"y": 93,
+						"w": 22,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Attack/Battlemage Jump attack2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 17,
+						"w": 22,
+						"h": 28
+					},
+					"frame": {
+						"x": 189,
+						"y": 121,
+						"w": 22,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Death/Battlemage Death6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 23,
+						"w": 32,
+						"h": 23
+					},
+					"frame": {
+						"x": 152,
+						"y": 109,
+						"w": 32,
+						"h": 23
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Foward/Going Down/Battlemage Foward down3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 13,
+						"w": 23,
+						"h": 32
+					},
+					"frame": {
+						"x": 129,
+						"y": 124,
+						"w": 23,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Sustain Magic/Battlemage Magic Sustain5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 16,
+						"w": 31,
+						"h": 32
+					},
+					"frame": {
+						"x": 94,
+						"y": 129,
+						"w": 31,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Stop/Battlemage Stop3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 18,
+						"w": 24,
+						"h": 30
+					},
+					"frame": {
+						"x": 70,
+						"y": 151,
+						"w": 24,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Running/Battlemage Running4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 17,
+						"w": 23,
+						"h": 31
+					},
+					"frame": {
+						"x": 70,
+						"y": 181,
+						"w": 23,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Spin Attack/Battlemage SpinAttack5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 20,
+						"w": 31,
+						"h": 28
+					},
+					"frame": {
+						"x": 34,
+						"y": 165,
+						"w": 31,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Death/Battlemage Death5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 19,
+						"w": 31,
+						"h": 24
+					},
+					"frame": {
+						"x": 0,
+						"y": 170,
+						"w": 31,
+						"h": 24
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Sustain Magic/Battlemage Magic Sustain4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 17,
+						"w": 30,
+						"h": 31
+					},
+					"frame": {
+						"x": 152,
+						"y": 132,
+						"w": 30,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Fast Magic/Battlemage Fast Magic6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 18,
+						"w": 27,
+						"h": 30
+					},
+					"frame": {
+						"x": 125,
+						"y": 156,
+						"w": 27,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Spin Attack/Battlemage SpinAttack8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 21,
+						"w": 27,
+						"h": 27
+					},
+					"frame": {
+						"x": 125,
+						"y": 186,
+						"w": 27,
+						"h": 27
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Running/Battlemage Running5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 19,
+						"w": 26,
+						"h": 29
+					},
+					"frame": {
+						"x": 125,
+						"y": 213,
+						"w": 26,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 3/Battlemage Attack C2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 19,
+						"w": 30,
+						"h": 29
+					},
+					"frame": {
+						"x": 94,
+						"y": 161,
+						"w": 30,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Dash/Battlemage Dash2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 19,
+						"w": 29,
+						"h": 29
+					},
+					"frame": {
+						"x": 93,
+						"y": 190,
+						"w": 29,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Dash/Battlemage Dash3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 19,
+						"w": 29,
+						"h": 29
+					},
+					"frame": {
+						"x": 31,
+						"y": 193,
+						"w": 29,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Spin Attack/Battlemage SpinAttack6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 19,
+						"w": 29,
+						"h": 29
+					},
+					"frame": {
+						"x": 0,
+						"y": 212,
+						"w": 29,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Dash/Battlemage Dash4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 20,
+						"w": 29,
+						"h": 28
+					},
+					"frame": {
+						"x": 60,
+						"y": 212,
+						"w": 29,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Spin Attack/Battlemage SpinAttack7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 20,
+						"w": 29,
+						"h": 28
+					},
+					"frame": {
+						"x": 29,
+						"y": 222,
+						"w": 29,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Dash/Battlemage Dash1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 21,
+						"w": 29,
+						"h": 27
+					},
+					"frame": {
+						"x": 0,
+						"y": 241,
+						"w": 29,
+						"h": 27
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 1/Battlemage Attack 3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 17,
+						"w": 28,
+						"h": 31
+					},
+					"frame": {
+						"x": 89,
+						"y": 219,
+						"w": 28,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Death/Battlemage Death3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 14,
+						"w": 28,
+						"h": 30
+					},
+					"frame": {
+						"x": 58,
+						"y": 240,
+						"w": 28,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Sustain Magic/Battlemage Magic Sustain9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 18,
+						"w": 28,
+						"h": 30
+					},
+					"frame": {
+						"x": 29,
+						"y": 250,
+						"w": 28,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 1/Battlemage Attack 2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 17,
+						"w": 25,
+						"h": 31
+					},
+					"frame": {
+						"x": 0,
+						"y": 268,
+						"w": 25,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Fast Magic/Battlemage Fast Magic5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 18,
+						"w": 25,
+						"h": 30
+					},
+					"frame": {
+						"x": 363,
+						"y": 22,
+						"w": 25,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Stop/Battlemage Stop1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 18,
+						"w": 25,
+						"h": 30
+					},
+					"frame": {
+						"x": 388,
+						"y": 22,
+						"w": 25,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Foward/Going Down/Battlemage Foward down5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 8,
+						"w": 19,
+						"h": 39
+					},
+					"frame": {
+						"x": 413,
+						"y": 22,
+						"w": 19,
+						"h": 39
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Death/Battlemage Death2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 17,
+						"w": 25,
+						"h": 29
+					},
+					"frame": {
+						"x": 363,
+						"y": 52,
+						"w": 25,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Fast Magic/Battlemage Fast Magic7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 18,
+						"w": 23,
+						"h": 30
+					},
+					"frame": {
+						"x": 388,
+						"y": 52,
+						"w": 23,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Fast Magic/Battlemage Fast Magic8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 18,
+						"w": 23,
+						"h": 30
+					},
+					"frame": {
+						"x": 322,
+						"y": 54,
+						"w": 23,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Neutral/Going Down/Battlemage Neutral Down3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 11,
+						"w": 18,
+						"h": 36
+					},
+					"frame": {
+						"x": 345,
+						"y": 54,
+						"w": 18,
+						"h": 36
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Stop/Battlemage Stop2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 18,
+						"w": 23,
+						"h": 30
+					},
+					"frame": {
+						"x": 363,
+						"y": 81,
+						"w": 23,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Dash/Battlemage Dash5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 20,
+						"w": 23,
+						"h": 28
+					},
+					"frame": {
+						"x": 283,
+						"y": 76,
+						"w": 23,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Fast Magic/Battlemage Fast Magic10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 18,
+						"w": 16,
+						"h": 30
+					},
+					"frame": {
+						"x": 306,
+						"y": 76,
+						"w": 16,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Foward/Going Down/Battlemage Foward down2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 17,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 283,
+						"y": 104,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "Hurt 1 n 2/Hurt 1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 21,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 322,
+						"y": 84,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Idle/Battlemage Idle5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 17,
+						"w": 17,
+						"h": 31
+					},
+					"frame": {
+						"x": 305,
+						"y": 106,
+						"w": 17,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Idle/Battlemage Idle7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 17,
+						"w": 17,
+						"h": 31
+					},
+					"frame": {
+						"x": 305,
+						"y": 137,
+						"w": 17,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Fast Magic/Battlemage Fast Magic2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 18,
+						"w": 17,
+						"h": 30
+					},
+					"frame": {
+						"x": 305,
+						"y": 168,
+						"w": 17,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Foward/Going Down/Battlemage Foward down4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 10,
+						"w": 19,
+						"h": 37
+					},
+					"frame": {
+						"x": 344,
+						"y": 90,
+						"w": 19,
+						"h": 37
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Neutral/Going Down/Battlemage Neutral Down2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 14,
+						"w": 19,
+						"h": 32
+					},
+					"frame": {
+						"x": 344,
+						"y": 127,
+						"w": 19,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Dash/Battlemage Dash7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 19,
+						"w": 21,
+						"h": 29
+					},
+					"frame": {
+						"x": 322,
+						"y": 111,
+						"w": 21,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Attack/Battlemage Jump attack1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 18,
+						"w": 21,
+						"h": 29
+					},
+					"frame": {
+						"x": 322,
+						"y": 140,
+						"w": 21,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Running/Battlemage Running6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 19,
+						"w": 21,
+						"h": 29
+					},
+					"frame": {
+						"x": 243,
+						"y": 101,
+						"w": 21,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Neutral/Grounded/Battlemage Neutra Grounded1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 17,
+						"w": 19,
+						"h": 31
+					},
+					"frame": {
+						"x": 264,
+						"y": 101,
+						"w": 19,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Spin Attack/Battlemage SpinAttack4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 27,
+						"y": 19,
+						"w": 21,
+						"h": 29
+					},
+					"frame": {
+						"x": 283,
+						"y": 131,
+						"w": 21,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Spin Attack/Battlemage SpinAttack9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 19,
+						"w": 21,
+						"h": 29
+					},
+					"frame": {
+						"x": 211,
+						"y": 107,
+						"w": 21,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Running/Battlemage Running9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 17,
+						"w": 20,
+						"h": 31
+					},
+					"frame": {
+						"x": 232,
+						"y": 130,
+						"w": 20,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Running/Battlemage Running7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 18,
+						"w": 20,
+						"h": 30
+					},
+					"frame": {
+						"x": 211,
+						"y": 136,
+						"w": 20,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Foward/Going Up/Battlemage Foward up2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 18,
+						"w": 20,
+						"h": 29
+					},
+					"frame": {
+						"x": 182,
+						"y": 161,
+						"w": 20,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch Attack/Battlemage Crouch Attack1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 26,
+						"w": 20,
+						"h": 22
+					},
+					"frame": {
+						"x": 152,
+						"y": 163,
+						"w": 20,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Sustain Magic/Battlemage Magic Sustain3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 17,
+						"w": 19,
+						"h": 31
+					},
+					"frame": {
+						"x": 152,
+						"y": 185,
+						"w": 19,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Fast Magic/Battlemage Fast Magic4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 18,
+						"w": 19,
+						"h": 30
+					},
+					"frame": {
+						"x": 252,
+						"y": 132,
+						"w": 19,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Foward/Grounded/Battlemage Foward Grounded1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 18,
+						"w": 19,
+						"h": 30
+					},
+					"frame": {
+						"x": 231,
+						"y": 161,
+						"w": 19,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Spin Attack/Battlemage SpinAttack10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 18,
+						"w": 19,
+						"h": 30
+					},
+					"frame": {
+						"x": 202,
+						"y": 166,
+						"w": 19,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Stop/Battlemage Stop4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 18,
+						"w": 19,
+						"h": 30
+					},
+					"frame": {
+						"x": 202,
+						"y": 196,
+						"w": 19,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Stop/Battlemage Stop5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 18,
+						"w": 19,
+						"h": 30
+					},
+					"frame": {
+						"x": 202,
+						"y": 226,
+						"w": 19,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 3/Battlemage Attack C1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 19,
+						"w": 19,
+						"h": 29
+					},
+					"frame": {
+						"x": 202,
+						"y": 256,
+						"w": 19,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Foward/Grounded/Battlemage Foward Grounded2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 19,
+						"w": 19,
+						"h": 29
+					},
+					"frame": {
+						"x": 202,
+						"y": 285,
+						"w": 19,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Neutral/Grounded/Battlemage Neutra Grounded4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 19,
+						"w": 19,
+						"h": 29
+					},
+					"frame": {
+						"x": 202,
+						"y": 314,
+						"w": 19,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Spin Attack/Battlemage SpinAttack1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 20,
+						"w": 19,
+						"h": 28
+					},
+					"frame": {
+						"x": 171,
+						"y": 190,
+						"w": 19,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 2/Battlemage Attack B2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 21,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 151,
+						"y": 216,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Foward/Going Down/Battlemage Foward down1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 18,
+						"w": 19,
+						"h": 26
+					},
+					"frame": {
+						"x": 151,
+						"y": 243,
+						"w": 19,
+						"h": 26
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Idle/Battlemage Idle6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 17,
+						"w": 18,
+						"h": 31
+					},
+					"frame": {
+						"x": 170,
+						"y": 218,
+						"w": 18,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Neutral/Going Up/Battlemage Neutral up1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 17,
+						"w": 14,
+						"h": 31
+					},
+					"frame": {
+						"x": 188,
+						"y": 218,
+						"w": 14,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Neutral/Going Up/Battlemage Neutral up2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 19,
+						"w": 14,
+						"h": 29
+					},
+					"frame": {
+						"x": 188,
+						"y": 249,
+						"w": 14,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Death/Battlemage Death1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 18,
+						"w": 18,
+						"h": 30
+					},
+					"frame": {
+						"x": 170,
+						"y": 249,
+						"w": 18,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Neutral/Going Up/Battlemage Neutral up3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 19,
+						"w": 14,
+						"h": 29
+					},
+					"frame": {
+						"x": 188,
+						"y": 278,
+						"w": 14,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Foward/Grounded/Battlemage Foward Grounded3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 18,
+						"w": 18,
+						"h": 30
+					},
+					"frame": {
+						"x": 117,
+						"y": 242,
+						"w": 18,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Fast Magic/Battlemage Fast Magic3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 18,
+						"w": 16,
+						"h": 30
+					},
+					"frame": {
+						"x": 135,
+						"y": 242,
+						"w": 16,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Running/Battlemage Running2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 18,
+						"w": 18,
+						"h": 30
+					},
+					"frame": {
+						"x": 151,
+						"y": 269,
+						"w": 18,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Sustain Magic/Battlemage Magic Sustain2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 18,
+						"w": 18,
+						"h": 30
+					},
+					"frame": {
+						"x": 169,
+						"y": 279,
+						"w": 18,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Foward/Going Up/Battlemage Foward up1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 17,
+						"w": 15,
+						"h": 30
+					},
+					"frame": {
+						"x": 187,
+						"y": 307,
+						"w": 15,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch/Battlemage Crouch1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 19,
+						"w": 18,
+						"h": 29
+					},
+					"frame": {
+						"x": 86,
+						"y": 250,
+						"w": 18,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Idle/Battlemage Idle8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 19,
+						"w": 18,
+						"h": 29
+					},
+					"frame": {
+						"x": 57,
+						"y": 272,
+						"w": 18,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Neutral/Grounded/Battlemage Neutra Grounded2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 19,
+						"w": 18,
+						"h": 29
+					},
+					"frame": {
+						"x": 25,
+						"y": 280,
+						"w": 18,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Spin Attack/Battlemage SpinAttack3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 19,
+						"w": 14,
+						"h": 29
+					},
+					"frame": {
+						"x": 43,
+						"y": 299,
+						"w": 14,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Neutral/Grounded/Battlemage Neutra Grounded3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 19,
+						"w": 18,
+						"h": 29
+					},
+					"frame": {
+						"x": 0,
+						"y": 299,
+						"w": 18,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Running/Battlemage Running10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 19,
+						"w": 18,
+						"h": 29
+					},
+					"frame": {
+						"x": 18,
+						"y": 309,
+						"w": 18,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Attack 2/Battlemage Attack B1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 21,
+						"w": 18,
+						"h": 27
+					},
+					"frame": {
+						"x": 0,
+						"y": 328,
+						"w": 18,
+						"h": 27
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch/Battlemage Crouch2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 22,
+						"w": 18,
+						"h": 26
+					},
+					"frame": {
+						"x": 271,
+						"y": 160,
+						"w": 18,
+						"h": 26
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Foward/Grounded/Battlemage Foward Grounded4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 18,
+						"w": 16,
+						"h": 30
+					},
+					"frame": {
+						"x": 289,
+						"y": 160,
+						"w": 16,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Fast Magic/Battlemage Fast Magic1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 19,
+						"w": 16,
+						"h": 29
+					},
+					"frame": {
+						"x": 289,
+						"y": 190,
+						"w": 16,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Idle/Battlemage Idle2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 19,
+						"w": 16,
+						"h": 29
+					},
+					"frame": {
+						"x": 289,
+						"y": 219,
+						"w": 16,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch/Battlemage Crouch3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 25,
+						"w": 18,
+						"h": 23
+					},
+					"frame": {
+						"x": 250,
+						"y": 162,
+						"w": 18,
+						"h": 23
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch/Battlemage Crouch4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 26,
+						"w": 18,
+						"h": 22
+					},
+					"frame": {
+						"x": 250,
+						"y": 185,
+						"w": 18,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch/Battlemage Crouch5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 26,
+						"w": 18,
+						"h": 22
+					},
+					"frame": {
+						"x": 268,
+						"y": 191,
+						"w": 18,
+						"h": 22
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Fast Magic/Battlemage Fast Magic9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 18,
+						"w": 17,
+						"h": 30
+					},
+					"frame": {
+						"x": 221,
+						"y": 191,
+						"w": 17,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Sustain Magic/Battlemage Magic Sustain1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 18,
+						"w": 17,
+						"h": 30
+					},
+					"frame": {
+						"x": 221,
+						"y": 221,
+						"w": 17,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Idle/Battlemage Idle1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 19,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 238,
+						"y": 207,
+						"w": 17,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Running/Battlemage Running1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 19,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 238,
+						"y": 236,
+						"w": 17,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Jump Neutral/Going Down/Battlemage Neutral Down1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 19,
+						"w": 17,
+						"h": 28
+					},
+					"frame": {
+						"x": 221,
+						"y": 251,
+						"w": 17,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch/Battlemage Crouch6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 27,
+						"w": 17,
+						"h": 21
+					},
+					"frame": {
+						"x": 221,
+						"y": 279,
+						"w": 17,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch/Battlemage Crouch7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 27,
+						"w": 17,
+						"h": 21
+					},
+					"frame": {
+						"x": 255,
+						"y": 213,
+						"w": 17,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Idle/Battlemage Idle3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 19,
+						"w": 16,
+						"h": 29
+					},
+					"frame": {
+						"x": 272,
+						"y": 213,
+						"w": 16,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Spin Attack/Battlemage SpinAttack2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 19,
+						"w": 16,
+						"h": 29
+					},
+					"frame": {
+						"x": 255,
+						"y": 234,
+						"w": 16,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch Attack/Battlemage Crouch Attack7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 27,
+						"w": 16,
+						"h": 21
+					},
+					"frame": {
+						"x": 271,
+						"y": 242,
+						"w": 16,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Spin Attack/Battlemage SpinAttack11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 18,
+						"w": 15,
+						"h": 30
+					},
+					"frame": {
+						"x": 104,
+						"y": 272,
+						"w": 15,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch/Battlemage Crouch8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 27,
+						"w": 17,
+						"h": 21
+					},
+					"frame": {
+						"x": 255,
+						"y": 213,
+						"w": 17,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Crouch/Battlemage Crouch9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 27,
+						"w": 17,
+						"h": 21
+					},
+					"frame": {
+						"x": 255,
+						"y": 213,
+						"w": 17,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Battlemage (Separeted Frames)/Death/Battlemage Death12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 40,
+						"w": 39,
+						"h": 8
+					},
+					"frame": {
+						"x": 152,
+						"y": 31,
+						"w": 39,
+						"h": 8
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}
