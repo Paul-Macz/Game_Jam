@@ -315,6 +315,7 @@
         {
          "draworder":"topdown",
          "id":14,
+         "locked":true,
          "name":"calque_ennemis",
          "objects":[
                 {
@@ -448,7 +449,6 @@
         {
          "draworder":"topdown",
          "id":15,
-         "locked":true,
          "name":"calque_texte",
          "objects":[
                 {
@@ -8255,7 +8255,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -9984,7 +9984,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -10561,7 +10561,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -11137,7 +11137,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -11714,7 +11714,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -12290,7 +12290,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -12866,7 +12866,7 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
