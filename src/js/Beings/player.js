@@ -1,7 +1,7 @@
 import Character from "/src/js/Beings/character.js";
 import Range from "/src/js/Items/range.js";
 import Melee from "/src/js/Items/melee.js";
-
+// var ekho_death;
 export default class Player extends Character{
     constructor(scene,image, x, y,calque) {
         super(scene, image,x,y,calque)
@@ -22,6 +22,7 @@ export default class Player extends Character{
         this.jumpNeutral=false;
         this.animState=false;
         
+
         this.sprite.setScale(this.scale);
         this.sprite.setSize(this.width*(2.9-this.scale),this.height*(2.9-this.scale),true);
         this.sprite.setOffset((this.width-1)*(this.scale+0.1),this.oheight/(this.scale-0.1));
@@ -51,10 +52,18 @@ export default class Player extends Character{
         }
         this.death=0;
         this.sprite.anims.play("battlemage_idle", true);
+
+        this.tuto_ost = this.scene.sound.add('tuto_ost');
+        // this.tuto_ost.play(); 
+        this.ekho_death=this.scene.sound.add('ekho_death')
     }
     freeze() {
         this.sprite.body.moves = false;
-
+    }
+    deaths(){
+        this.gameOver=true;
+        this.ekho_death.play();
+        
     }
     update(velocity) {
         let velocityX = this.sprite.body.velocity.x; // Get the velocity along the x-axis
@@ -254,6 +263,7 @@ if (this.zKey.isDown && this.jumpState < 2) {
             }
 
     } 
+
     startJumpFoward(){
 
     }
@@ -266,7 +276,9 @@ if (this.zKey.isDown && this.jumpState < 2) {
             super.getHit(damage);
             this.update_txt_PV();
             if(this.PV == 0){
-                this.gameOver=true;
+                this.death();
+
+
             }
         }
     }

@@ -10,7 +10,7 @@
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "squelette_épée/attack-A4.png",
+					"filename": "squelette_epee/attack-A4.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -31,7 +31,7 @@
 					}
 				},
 				{
-					"filename": "squelette_épée/attack-A5.png",
+					"filename": "squelette_epee/attack-A5.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -52,7 +52,7 @@
 					}
 				},
 				{
-					"filename": "squelette_épée/attack-B8.png",
+					"filename": "squelette_epee/attack-B8.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -850,7 +850,7 @@
 					}
 				},
 				{
-					"filename": "squelette_épée/attack-B10.png",
+					"filename": "squelette_epee/attack-B10.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -871,7 +871,7 @@
 					}
 				},
 				{
-					"filename": "squelette_épée/dead-2.png",
+					"filename": "squelette_epee/dead-2.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {

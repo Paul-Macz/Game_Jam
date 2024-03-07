@@ -16,12 +16,15 @@ export default class Character{
         this.sprite = scene.physics.add.sprite(x, y, this.image);
         this.sprite.setCollideWorldBounds(true);
         this.scene.physics.add.collider(this.sprite, this.calque); 
+        this.damage_speed=this.scene.sound.add('damage_speed');
     }
+
     getHit(damage){
 
         this.PV -= damage;
         this.sprite.setTint(0xff0000);
         this.scene.time.delayedCall(500,() => this.resetColor());
+        this.damage_speed.play();
     }
     resetColor(){
         this.sprite.clearTint();

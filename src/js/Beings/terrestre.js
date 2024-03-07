@@ -116,8 +116,8 @@ export default class Terrestre extends Ennemi{
         if(this.image=="petit_squelette"){
             this.sprite.anims.play("petit_squelette/dead_near", true);
         }
-        //if(this.image=="squelette_épée"){
-        //    this.sprite.anims.play("squelette_épée_/walk", true);
-        //}  
+        if(this.image=="squelette_epee"){
+           this.sprite.anims.play("squelette_epee_/walk", true);
+        }  
     }
 }
