@@ -37,7 +37,13 @@ export default class Animations extends Phaser.Scene{
             frameHeight: 325
           });
 
-        
+        this.load.image("Z","src/assets/keyboard_z_outline.png");
+        this.load.image("D","src/assets/keyboard_d_outline.png");
+        this.load.image("Q","src/assets/keyboard_q_outline.png");
+        this.load.image("1","src/assets/keyboard_1_outline.png");
+        this.load.image("2","src/assets/keyboard_2_outline.png");
+        this.load.image("3","src/assets/keyboard_3_outline.png");
+        this.load.image("Left_click","src/assets/mouse_left_outline.png")
         this.load.image("img_ciel", "src/assets/sky.png");
         this.load.spritesheet("porte_ouvrante" , "src/assets/porte_ouvrante.png", {
         frameWidth: 96,
@@ -80,8 +86,12 @@ export default class Animations extends Phaser.Scene{
         this.load.audio('tuto_ost',"src/assets/audio/dofus.mp3");
         this.load.audio('menu_ost',"src/assets/audio/Deep.mp3");
         this.load.audio('niv2',"src/assets/audio/Gerudo.mp3");
-        this.load.audio('niv3',"src/assets/audio/Eldenring.mp3");
-        
+        this.load.audio('niv1',"src/assets/audio/Eldenring.mp3");
+        this.load.audio('niv3',"src/assets/audio/hyrule.mp3");
+
+
+
+
         
     } 
     create(){
@@ -656,4 +666,3 @@ export default class Animations extends Phaser.Scene{
         this.scene.start("menu");
     }
 }
-//a toi

@@ -8,6 +8,7 @@ import Player from "/src/js/Beings/player.js";
 // création et lancement du jeu
 var ice;
 var porte_ouvrante1;
+var niv1;
 
 export default class niveau1 extends Phaser.Scene {
     // constructeur de la classe
@@ -16,7 +17,8 @@ export default class niveau1 extends Phaser.Scene {
     }
 
     preload() {
-        
+        niv1=this.sound.add('niv1');
+        niv1.play();
         this.load.spritesheet("img_ennemi", "src/assets/ennemi.png", {
             frameWidth: 32,
             frameHeight: 48
@@ -26,7 +28,7 @@ export default class niveau1 extends Phaser.Scene {
         this.load.image("Phaser_tuilesdejeu2", "src/assets/neige.png");
 
 
-        this.load.tilemapTiledJSON("Iced", "src/assets/niveauIced.json");
+        this.load.tilemapTiledJSON("Iced", "src/assets/niveauIce.json");
     }
 
     create() {
@@ -46,7 +48,7 @@ export default class niveau1 extends Phaser.Scene {
 
 
         const fond = carteDuNiveau.createLayer("fond",[tileset1, tileset2]);
-        fond.setTint(0x6b6b6b)
+       fond.setTint(0x6b6b6b)
         const fond_blanc = carteDuNiveau.createLayer("fond_blanc",[ tileset,tileset1,tileset2]);
         const object = carteDuNiveau.createLayer("object", [tileset,tileset1,tileset2]);
         const ice = carteDuNiveau.createLayer("ice", [tileset,tileset1,tileset2]);
@@ -83,20 +85,30 @@ export default class niveau1 extends Phaser.Scene {
         this.physics.add.collider(this.groupe_ennemis, ice);
         this.physics.world.setBounds(this.boundx,this.boundy,this.boundWidth,this.boundHeight)
         tab_points.objects.forEach(point => {
-            if (point.name == "ennemi") {
-                var nouvel_ennemi = new Terrestre(this, "hache_rouge", point.x, point.y, ice);
-                nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
-                this.groupe_ennemis.add(nouvel_ennemi.sprite);
-           }
-        });
-        tab_points.objects.forEach(point => {
-            if (point.name == "ennemi_air") {
-                var nouvel_ennemi = new Flying(this, "img_perso", point.x, point.y, ice);
-                nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
-               this.groupe_ennemis.add(nouvel_ennemi.sprite);
-           }
-        });
-
+            const randomNumber = Math.random();
+            // console.log(randomNumber)
+            var image;
+            // Distribution aléatoire de l'item
+            if (randomNumber < 0.33 && point.name == "ennemi_sol") {
+                image="slime"
+                
+            //   nouvel_ennemi = new Terrestre(this,"slime",point.x, point.y,Calque_background);
+            } else if (randomNumber > 0.33 && randomNumber < 0.66 && point.name == "ennemi_sol") {
+                image="viking"
+            //   nouvel_ennemi = new Terrestre(this,"viking",point.x, point.y,Calque_background);
+            } else if (randomNumber > 0.66 && randomNumber < 1 &&  point.name == "ennemi_sol") {
+                image="hache_rouge"
+            //   nouvel_ennemi = new Terrestre(this,"hache_rouge",point.x, point.y,Calque_background);
+            }
+            console.log(image)
+            var nouvel_ennemi = new Terrestre(this,image,point.x, point.y,ice);
+            // console.log(nouvel_ennemi)
+            nouvel_ennemi.sprite.setCollideWorldBounds(true);
+            console.log(nouvel_ennemi.image)
+            nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
+            this.groupe_ennemis.add(nouvel_ennemi.sprite);
+      });
+      this.cameras.main.setZoom(0.5)
        this.player.inventory.forEach(element => {
         if(element instanceof Range){
         this.physics.add.collider(element.Bullets,Calque_background,element.erase, null, element);
@@ -131,6 +143,7 @@ export default class niveau1 extends Phaser.Scene {
 
         if (this.player.gameOver) {
             this.player.death++;
+            niv1.stop()
             if(this.player.death==1){
             this.physics.pause();
             this.player.deathState=true
@@ -157,6 +170,7 @@ export default class niveau1 extends Phaser.Scene {
             un_ennemi.ennemiObject.update();
         });
     }openDoor(){
+        niv1.stop()
     this.scene.start("fin_niveau1");
     }
     
