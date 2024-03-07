@@ -633,7 +633,7 @@ export default class Animations extends Phaser.Scene{
       });
     }
     update(){
-        this.scene.start("menu");
+        this.scene.start("niveau1");
     }
 }
 //a toi
