@@ -16,6 +16,7 @@ export default class Character{
         this.sprite.setCollideWorldBounds(true);
         this.scene.physics.add.collider(this.sprite, this.calque); 
         this.slash=this.scene.sound.add('slash');
+        this.jump=this.scene.sound.add('jump');
     }
 
     getHit(damage){
