@@ -10,7 +10,7 @@ var Calque_background;
 var calque_volant;
 var calque_grotte;
 var light;
-
+var niv2;
 export default class niveau2 extends Phaser.Scene {
   // constructeur de la classe
   constructor() {
@@ -19,10 +19,6 @@ export default class niveau2 extends Phaser.Scene {
     });
   }
   preload() {
-  
-  //this.load.atlas('slime',"src/assets/ennemis/slime/slime.png","src/assets/ennemis/slime/slime.json");
-  //this.load.atlas('viking',"src/assets/ennemis/viking/viking.png","src/assets/ennemis/viking/viking.json");
-  //this.load.atlas('hache_rouge',"src/assets/ennemis/hache_rouge/hache_rouge.png","src/assets/ennemis/hache_rouge/hache_rouge.json");
   this.load.image("Phaser_tuilesdejeu1", "src/assets/tiles.png");
   this.load.image("Phaser_tuilesdejeu2", "src/assets/miscellaneous.png");
   this.load.tilemapTiledJSON("carte", "src/assets/Niveau2.json"); 
@@ -31,6 +27,8 @@ export default class niveau2 extends Phaser.Scene {
   
 
   create() {
+   niv2 = this.sound.add('niv2')
+   niv2.play();
     this.boundx=0;
       this.boundy=0;
       this.boundWidth=4800;
@@ -94,7 +92,9 @@ export default class niveau2 extends Phaser.Scene {
   this.player = new Player(this,"battlemage",90,1360, Calque_background);
       this.physics.add.collider(this.player.sprite, calque_volant);
       this.physics.add.collider(this.player.sprite, calque_grotte); 
-      this.physics.add.collider(this.player.sprite, Calque_background);  
+      this.physics.add.collider(this.player.sprite, Calque_background);
+      this.physics.add.collider(this.player.sprite, pics);
+    
       this.player.sprite.setCollideWorldBounds(true);
       // this.player.sprite.setBounce(0.2);
       this.player.sprite.body.onWorldBounds = true; 
@@ -153,17 +153,15 @@ export default class niveau2 extends Phaser.Scene {
     this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
         un_ennemi.setVelocityX(-30);
         un_ennemi.direction = "left";
-        un_ennemi.anims.play('squelette_hache_walk', true);
-        un_ennemi.anims.play
       }); 
 
       this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
         if(this.player.sprite.x < un_ennemi.x) {
           un_ennemi.setVelocityX(-60);
-          un_ennemi.anims.play("squelet_walk1",true)
+          // un_ennemi.anims.play("squelet_walk1",true)
         } else if(this.player.sprite.x > un_ennemi.x) {
           un_ennemi.setVelocityX(60);
-          un_ennemi.anims.play("squelet_walk2",true)
+          // un_ennemi.anims.play("squelet_walk2",true)
         } else {
           un_ennemi.setVelocityX(0);
         }
@@ -217,7 +215,9 @@ export default class niveau2 extends Phaser.Scene {
 
 }
 openDoor(){
+  niv2.stop();
   this.scene.start("fin_niveau2");
+ 
 }
   handlePlayerEnnemiCollision(player, ennemiSp) {
 

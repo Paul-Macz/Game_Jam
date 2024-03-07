@@ -73,8 +73,12 @@ export default class Animations extends Phaser.Scene{
         this.load.audio('heal_bonus',"src/assets/audio/heal_bonus.mp3");
         this.load.audio('jump',"src/assets/audio/jump.mp3");
         this.load.audio('slash',"src/assets/audio/slash.mp3");
-        this.load.audio('tuto_ost',"src/assets/audio/Dofus 2.0_Incarnam.mp3");
+        this.load.audio('tuto_ost',"src/assets/audio/dofus.mp3");
         this.load.audio('menu_ost',"src/assets/audio/Deep.mp3");
+        this.load.audio('niv2',"src/assets/audio/Gerudo.mp3");
+        this.load.audio('niv3',"src/assets/audio/Eldenring.mp3");
+
+
 
         
     } 
@@ -271,43 +275,43 @@ export default class Animations extends Phaser.Scene{
             key:'slime_idle',
             frames: this.anims.generateFrameNames('slime', {start:1, end:4,prefix:'slime/idle-', suffix:'.png'}),
             repeat:-1,
-            frameRate:15
+            frameRate:10
           });
           this.anims.create({
             key:'slime_attackA',
             frames: this.anims.generateFrameNames('slime', {start:1, end:10,prefix:'slime/attack-A', suffix:'.png'}),
             repeat:-1,
-            frameRate:15
+            frameRate:10
           });
           this.anims.create({
             key:'slime_attackB',
             frames: this.anims.generateFrameNames('slime', {start:1, end:11,prefix:'slime/attack-B', suffix:'.png'}),
             repeat:-1,
-            frameRate:15
+            frameRate:10
           });
           this.anims.create({
             key:'slime_attackC',
             frames: this.anims.generateFrameNames('slime', {start:1, end:8,prefix:'slime/attack-C', suffix:'.png'}),
             repeat:-1,
-            frameRate:15
+            frameRate:10
           });
           this.anims.create({
             key:'slime_walk',
             frames: this.anims.generateFrameNames('slime', {start:1, end:4,prefix:'slime/walk-', suffix:'.png'}),
             repeat:-1,
-            frameRate:15
+            frameRate:10
           });
           this.anims.create({
             key:'slime_death',
             frames: this.anims.generateFrameNames('slime', {start:1, end:4,prefix:'slime/dead-', suffix:'.png'}),
             repeat:-1,
-            frameRate:15
+            frameRate:10
           });
           this.anims.create({
             key:'slime_hit',
             frames: this.anims.generateFrameNames('slime', {start:1, end:3,prefix:'slime/hit-', suffix:'.png'}),
             repeat:-1,
-            frameRate:15
+            frameRate:10
           });
           this.anims.create({
             key:'viking_attack1',
