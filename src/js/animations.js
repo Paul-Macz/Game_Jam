@@ -9,6 +9,17 @@ export default class Animations extends Phaser.Scene{
         this.load.image("imageBoutonPlay", "src/assets/boutonplay.png");
         this.load.image("imageBoutonOption", "src/assets/OptionButton.png");
         this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
+        this.load.image("imageBoutonContinuer", "src/assets/ContinueButton.png");
+        this.load.image("imageBoutonMenu", "src/assets/MenuButton.png");
+        this.load.image("imageBoutonNewGame", "src/assets/NewGameButton.png");
+        this.load.image("imageBoutonBack", "src/assets/BackButton.png");
+        this.load.image("imageBoutonPause", "src/assets/PauseSquareButton.png");
+        this.load.image("imageBoutonSon", "src/assets/AudioSquareButton.png");
+
+        this.load.image("bouton_niv1", "src/assets/bouton_niv1.png");
+        this.load.image("bouton_niv2", "src/assets/bouton_niv2.png");
+        this.load.image("bouton_niv3", "src/assets/bouton_niv3.png");
+
         this.load.spritesheet("planetes","src/assets/planetes.png" ,{
           frameWidth: 88,
           frameHeight: 88
@@ -26,9 +37,7 @@ export default class Animations extends Phaser.Scene{
             frameHeight: 325
           });
 
-        this.load.image("bouton_niv1", "src/assets/bouton_niv1.png");
-        this.load.image("bouton_niv2", "src/assets/bouton_niv2.png");
-        this.load.image("bouton_niv3", "src/assets/bouton_niv3.png");
+        
         this.load.image("img_ciel", "src/assets/sky.png");
         this.load.spritesheet("porte_ouvrante" , "src/assets/porte_ouvrante.png", {
         frameWidth: 96,
@@ -370,6 +379,6 @@ export default class Animations extends Phaser.Scene{
       });
     }
     update(){
-        this.scene.start("niveau1");
+        this.scene.start("menu");
     }
 }
