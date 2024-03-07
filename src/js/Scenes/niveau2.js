@@ -31,13 +31,12 @@ export default class niveau2 extends Phaser.Scene {
    niv2 = this.sound.add('niv2')
    niv2.play();
     this.boundx=0;
-      this.boundy=0;
-      this.boundWidth=4800;
-      this.boundHeight=3200;
-
+    this.boundy=0;
+    this.boundWidth=4800;
+    this.boundHeight=3200;
 
     const carteDuNiveau = this.add.tilemap("carte");
-  const tileset1 = carteDuNiveau.addTilesetImage(
+    const tileset1 = carteDuNiveau.addTilesetImage(
     "tiles",
     "Phaser_tuilesdejeu1",
   ); 
@@ -105,8 +104,10 @@ export default class niveau2 extends Phaser.Scene {
       
     
 
-      this.weap = new Melee(this, "bull", 2, 10, 1, "bullet",true,10);
+      this.weap = new Melee(this, "bull", 2, 10, 1, "fireball",true,10);
+      this.magic = new Range(this, "magic", 2, 10, 1, "fireball", true, 1, 500, false);
       this.player.pickWeapon(this.weap);
+      this.player.pickWeapon(this.magic);
 
       this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundHeight);
       
@@ -164,6 +165,7 @@ export default class niveau2 extends Phaser.Scene {
 
         }
       },this);
+      
   }
 
   update() {
@@ -172,6 +174,7 @@ export default class niveau2 extends Phaser.Scene {
 
     if (this.player.gameOver) {
       this.player.death++;
+      niv2.stop()
       if(this.player.death==1){
         this.physics.pause();
         this.player.deathState=true

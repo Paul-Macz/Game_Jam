@@ -50,8 +50,10 @@ export default class Terrestre extends Ennemi{
        else{
             this.sprite.flipX=false;
         }
+     
+       
+
         if(this.sprite.body.blocked.down){
-            
             if (this.direction == "left") {
                 var coords = this.sprite.getBottomLeft();
                 var tuileSuivante = this.calque.getTileAtWorldXY(
@@ -67,6 +69,19 @@ export default class Terrestre extends Ennemi{
                 }
                 else{
                     this.sprite.setVelocityX(-this.speedx)
+                    const directionX = this.scene.player.sprite.x - this.sprite.x;
+                    const directionY = this.scene.player.sprite.y - this.sprite.y;
+                    // Normalisation de la direction
+                    const norm = Math.sqrt(directionX * directionX + directionY * directionY);
+                    // Vérification si le boss doit suivre le joueur
+                    const distanceMinimale = 600; // Distance minimale pour que le boss commence à suivre le joueur
+                    if (norm < distanceMinimale) {
+                    // Ajustement de la vélocité du boss pour qu'il se déplace vers le joueur
+                    const vitesse = 100; // Vitesse de déplacement du boss
+                    const velocityX = directionX / norm * vitesse;
+                    const velocityY = directionY / norm * vitesse;
+                    this.sprite.setVelocityX(velocityX);
+                    } 
                 } 
             } 
             else if (this.direction == "right") {
@@ -82,6 +97,22 @@ export default class Terrestre extends Ennemi{
                 }
                 else{
                     this.sprite.setVelocityX(this.speedx)
+                    const directionX = this.scene.player.sprite.x - this.sprite.x;
+                    const directionY = this.scene.player.sprite.y - this.sprite.y;
+                    // Normalisation de la direction
+                    const norm = Math.sqrt(directionX * directionX + directionY * directionY);
+                    // Vérification si le boss doit suivre le joueur
+                    const distanceMinimale = 600; // Distance minimale pour que le boss commence à suivre le joueur
+                    if (norm < distanceMinimale) {
+                        // Ajustement de la vélocité du boss pour qu'il se déplace vers le joueur
+                        const vitesse = 100; // Vitesse de déplacement du boss
+                        const velocityX = directionX / norm * vitesse;
+                        const velocityY = directionY / norm * vitesse;
+                        this.sprite.setVelocityX(velocityX);
+                        // if (norm < 60) {
+                        //     this.attackAnim();
+                        // }
+                    } 
                 } 
             }   
         }
@@ -104,6 +135,60 @@ export default class Terrestre extends Ennemi{
         }
         if(this.image=="archer"){
             this.sprite.anims.play("archer_run", true);
+        }
+        if(this.image=="squelette_lance"){
+            this.sprite.anims.play("squelette_lance_walk", true);
+        }
+        if(this.image=="squelette_hache"){
+            this.sprite.anims.play("squelette_hache_walk",true);
+        }
+        if(this.image=="petit_squelette"){
+            this.sprite.anims.play("petit_squelette/walk", true);
+        }
+        if(this.image=="squelette_épée"){
+            this.sprite.anims.play("squelette_epee_/walk", true);
+        }
+    }
+    attackAnim(){
+        console.log("pitie")
+        var rand = Math.random()
+        if(this.image=="battlemage"){
+            this.sprite.anims.play("battlemage_run", true);
+        }
+        if(this.image=="slime"){
+            if(rand<0.33){
+                this.sprite.anims.play("slime_attackA", true);
+            }
+            else if(rand>0.33 && rand<0.66){
+                this.sprite.anims.play("slime_attackB", true);
+            }
+            if(rand>0.66){
+                this.sprite.anims.play("slime_attackC", true);
+            }
+        }
+        if(this.image=="viking"){
+            if(rand<0.5){
+                this.sprite.anims.play("viking_attack1", true);
+            }
+            else{
+                this.sprite.anims.play("viking_attack2", true);
+            }
+        }
+        if(this.image=="hache_rouge"){
+            if(rand<0.5){
+                this.sprite.anims.play("hache_rouge_attack1", true);
+            }
+            else{
+                this.sprite.anims.play("hache_rouge_attack2", true);
+            }
+        }
+        if(this.image=="archer"){
+            if(rand<0.5){
+                this.sprite.anims.play("archer_attackA", true);
+            }
+            else{
+                this.sprite.anims.play("archer_attackB", true);
+            }
         }
         if(this.image=="squelette_lance"){
             this.sprite.anims.play("squelette_lance_walk", true);

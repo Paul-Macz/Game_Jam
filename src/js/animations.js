@@ -56,6 +56,10 @@ export default class Animations extends Phaser.Scene{
             frameWidth:440,
             frameHeight:330
           });
+        this.load.spritesheet("fire-ball", "src/assets/heros/Wizard Pack/fire_ball.png",{
+          frameWidth:46,
+          frameHeight:46
+        });
         this.load.atlas('battlemage', "src/assets/battlemage.png" ,"src/assets/battlemage.json");
         this.load.atlas('viking',"src/assets/ennemis/viking/viking.png","src/assets/ennemis/viking/viking.json");
         this.load.atlas('archer',"src/assets/ennemis/archer/archer.png","src/assets/ennemis/archer/archer.json");
@@ -77,12 +81,16 @@ export default class Animations extends Phaser.Scene{
         this.load.audio('menu_ost',"src/assets/audio/Deep.mp3");
         this.load.audio('niv2',"src/assets/audio/Gerudo.mp3");
         this.load.audio('niv3',"src/assets/audio/Eldenring.mp3");
-
-
-
+        
         
     } 
     create(){
+      this.anims.create({
+        key: 'fireball',
+        frames: this.anims.generateFrameNumbers('fire-ball', { start:0, end: 6}), // Frames for walk animation
+        frameRate: 10,
+        repeat: -1
+      });
         this.anims.create({
             key: 'walk',
             frames: this.anims.generateFrameNumbers('test', { start:0, end: 5}), // Frames for walk animation
@@ -208,6 +216,12 @@ export default class Animations extends Phaser.Scene{
           this.anims.create({
             key:'battlemage_stop',
             frames: this.anims.generateFrameNames('battlemage', {start:1, end:5,prefix:'Battlemage (Separeted Frames)/Stop/Battlemage Stop', suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'battlemage_hit',
+            frames: this.anims.generateFrameNames('battlemage', {start:1, end:2,prefix:'Hurt 1 n 2/Hurt ', suffix:'.png'}),
             repeat:0,
             frameRate:15
           });
@@ -639,7 +653,7 @@ export default class Animations extends Phaser.Scene{
       });
     }
     update(){
-        this.scene.start("tutomap");
+        this.scene.start("menu");
     }
 }
 //a toi

@@ -70,9 +70,10 @@ export default class niveau1 extends Phaser.Scene {
             }
         }, this);
 
-        // this.weap = new Range(this, "bull", 2, 10, 1, "bullet", true, 1, 1000, false);
-        this.weap = new Melee(this, "bull", 2, 10, 1, "bullet",true,10);
-        this.player.pickWeapon(this.weap);
+        this.magic = new Range(this, "magic", 2, 10, 1, "bullet", true, 1, 1000, false);
+        this.sword = new Melee(this, "sword", 2, 10, 1, "bullet",true,10);
+        this.player.pickWeapon(this.sword);
+        this.player.pickWeapon(this.magic);
 
         const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");
 
