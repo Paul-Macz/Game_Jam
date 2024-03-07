@@ -341,6 +341,7 @@
         {
          "draworder":"topdown",
          "id":13,
+         "locked":true,
          "name":"calque_ennemis",
          "objects":[
                 {
@@ -400,8 +401,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":153,
-                 "y":948
+                 "x":307,
+                 "y":942
                 }, 
                 {
                  "height":0,
@@ -484,8 +485,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2474,
-                 "y":1370
+                 "x":2460,
+                 "y":1356
                 }, 
                 {
                  "height":0,
@@ -496,8 +497,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2610,
-                 "y":1304
+                 "x":2602,
+                 "y":1290
                 }, 
                 {
                  "height":0,
@@ -508,8 +509,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2728,
-                 "y":1233.67
+                 "x":2730,
+                 "y":1217.67
                 }, 
                 {
                  "height":0,
@@ -520,8 +521,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2854.33,
-                 "y":1178.67
+                 "x":2848.33,
+                 "y":1164.67
                 }, 
                 {
                  "height":0,
@@ -533,7 +534,7 @@
                  "visible":true,
                  "width":0,
                  "x":3006.67,
-                 "y":1106
+                 "y":1096
                 }, 
                 {
                  "height":0,
@@ -557,7 +558,7 @@
                  "visible":true,
                  "width":0,
                  "x":2816.67,
-                 "y":1501
+                 "y":1483
                 }, 
                 {
                  "height":0,
@@ -569,7 +570,7 @@
                  "visible":true,
                  "width":0,
                  "x":3008.67,
-                 "y":1493
+                 "y":1485
                 }, 
                 {
                  "height":0,
@@ -593,7 +594,7 @@
                  "visible":true,
                  "width":0,
                  "x":2998.67,
-                 "y":1723
+                 "y":1705
                 }, 
                 {
                  "height":0,
@@ -604,8 +605,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2772.67,
-                 "y":1723
+                 "x":2774.67,
+                 "y":1711
                 }, 
                 {
                  "height":0,
@@ -616,8 +617,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":3224.67,
-                 "y":1721
+                 "x":3222.67,
+                 "y":1705
                 }, 
                 {
                  "height":0,
@@ -628,8 +629,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":3448.67,
-                 "y":1721
+                 "x":3444.67,
+                 "y":1701
                 }, 
                 {
                  "height":0,
@@ -808,8 +809,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":3624.67,
-                 "y":1707
+                 "x":3626.67,
+                 "y":1701
                 }, 
                 {
                  "height":0,

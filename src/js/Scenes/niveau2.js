@@ -117,7 +117,7 @@ export default class niveau2 extends Phaser.Scene {
         nouvel_ennemi.sprite.setCollideWorldBounds(true);
         nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
         this.groupe_ennemis.add(nouvel_ennemi.sprite);
-      }else if (point.name == "figther2"){
+      }else if (point.name == "boss"){
         var nouvel_ennemi2 = new Terrestre(this,"petit_squelette",point.x, point.y,Calque_background);
         nouvel_ennemi2.sprite.setCollideWorldBounds(true);
         nouvel_ennemi2.sprite.ennemiObject = nouvel_ennemi2;

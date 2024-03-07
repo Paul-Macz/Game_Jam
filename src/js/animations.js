@@ -647,6 +647,6 @@ export default class Animations extends Phaser.Scene{
       });
     }
     update(){
-        this.scene.start("tutomap");
+        this.scene.start("menu");
     }
 }
