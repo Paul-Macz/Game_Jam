@@ -6,6 +6,8 @@ export default class Items {
         this.givenAttackSpeed = givenAttackSpeed;
         this.givenDamage = givenDamage;
         this.givenPV = givenPV;
+        this.item = this.scene.add.rectangle(x, y, this.width * 1.75, this.height * 2, 0xffffff, 0);
+
     }
 
     applyDamageBoost(player) {

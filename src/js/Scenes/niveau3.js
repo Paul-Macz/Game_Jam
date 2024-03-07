@@ -18,7 +18,7 @@ export default class niveau3 extends Phaser.Scene {
         this.load.image("Phaser_tuilesDeJEU1", "src/assets/castle.png");
         this.load.image("Phaser_tuilesDeJEU2", "src/assets/greencastle.png");
 
-        this.load.tilemapTiledJSON("carte3", "src/assets/niveau4.json");
+        this.load.tilemapTiledJSON("carte3", "src/assets/niveau3.json");
        
   }
   create() {
@@ -72,7 +72,7 @@ export default class niveau3 extends Phaser.Scene {
               // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
               tab_points.objects.forEach(point => {
                 if (point.name == "terrestre") { 
-                  var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,calque_nature,calque_rochers);
+                  var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,playground);
                   nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
                   this.groupe_ennemis.add(nouvel_ennemi.sprite);
                     }

@@ -257,4 +257,5 @@ export default class Player extends Character{
         this.txt_PV.setText("PV: " + this.PV+'/'+this.maxPV);
     }
     
+    
   }
