@@ -8,6 +8,7 @@ import Player from "/src/js/Beings/player.js";
 // création et lancement du jeu
 var ice;
 var porte_ouvrante1;
+var niv1;
 
 export default class niveau1 extends Phaser.Scene {
     // constructeur de la classe
@@ -16,7 +17,8 @@ export default class niveau1 extends Phaser.Scene {
     }
 
     preload() {
-        
+        niv1=this.sound.add('niv1');
+        niv1.play();
         this.load.spritesheet("img_ennemi", "src/assets/ennemi.png", {
             frameWidth: 32,
             frameHeight: 48
@@ -130,6 +132,7 @@ export default class niveau1 extends Phaser.Scene {
 
         if (this.player.gameOver) {
             this.player.death++;
+            niv1.stop()
             if(this.player.death==1){
             this.physics.pause();
             this.player.deathState=true
@@ -156,6 +159,7 @@ export default class niveau1 extends Phaser.Scene {
             un_ennemi.ennemiObject.update();
         });
     }openDoor(){
+        niv1.stop()
     this.scene.start("fin_niveau1");
     }
     
