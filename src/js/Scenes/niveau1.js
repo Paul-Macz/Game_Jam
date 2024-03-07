@@ -1,11 +1,13 @@
-// import * as fct from "/src/js/fonctions.js";
+import Range from "/src/js/Items/range.js";
+import Melee from "/src/js/Items/melee.js"
+import Character from "/src/js/Beings/character.js";
+import Flying from "/src/js/Beings/flying.js"
 import Terrestre from "/src/js/Beings/terrestre.js";
 import Player from "/src/js/Beings/player.js";
-import Range from "/src/js/Items/range.js";
-import Character from "/src/js/Beings/character.js";
 
 // création et lancement du jeu
 var ice;
+var porte_ouvrante1;
 
 export default class niveau1 extends Phaser.Scene {
     // constructeur de la classe
@@ -23,7 +25,7 @@ export default class niveau1 extends Phaser.Scene {
         this.load.image("Phaser_tuilesdejeu2", "src/assets/neige.png");
 
 
-        this.load.tilemapTiledJSON("Ice", "src/assets/niveauIce.json");
+        this.load.tilemapTiledJSON("Iced", "src/assets/niveauIced.json");
     }
 
     create() {
@@ -32,7 +34,7 @@ export default class niveau1 extends Phaser.Scene {
         this.boundWidth = 3200;
         this.boundHeight = 3200;
 
-        const carteDuNiveau = this.add.tilemap("Ice");
+        const carteDuNiveau = this.add.tilemap("Iced");
         const tileset = carteDuNiveau.addTilesetImage("snow", "Phaser_tuilesdejeu");
         const tileset1 = carteDuNiveau.addTilesetImage("ice", "Phaser_tuilesdejeu1");
         const tileset2 = carteDuNiveau.addTilesetImage("neige", "Phaser_tuilesdejeu2");
@@ -46,11 +48,16 @@ export default class niveau1 extends Phaser.Scene {
         const ice = carteDuNiveau.createLayer("ice", [tileset,tileset1,tileset2]);
         ice.setCollisionByProperty({ estSolide: true });
 
+
+        this.porte_ouvrante1 = this.physics.add.staticSprite(560, 580, "porte_ouvrante"); 
+        this.porte_ouvrante1.ouverte = false; 
+
+
         this.cursors = this.input.keyboard.createCursorKeys();
 
-        this.player = new Player(this, "battlemage", 80, 2500, ice);
+        this.player = new Player(this,"battlemage", 80, 2500, ice);
         this.player.sprite.setCollideWorldBounds(true);
-        this.player.sprite.setBounce(0.2);
+        // this.player.sprite.setBounce(0.2);
         this.player.sprite.body.onWorldBounds = true;
 
         this.player.sprite.body.world.on("worldbounds", function(body, up, down, left, right) {
@@ -59,35 +66,47 @@ export default class niveau1 extends Phaser.Scene {
             }
         }, this);
 
-        this.weap = new Range(this, "bull", 2, 10, 1, "bullet", true, 1, 1000, false);
+        // this.weap = new Range(this, "bull", 2, 10, 1, "bullet", true, 1, 1000, false);
+        this.weap = new Melee(this, "bull", 2, 10, 1, "bullet",true,10);
         this.player.pickWeapon(this.weap);
 
-        //const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");
+        const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");
 
-     //   this.groupe_ennemis = this.physics.add.group();
+        this.groupe_ennemis = this.physics.add.group();
+        this.groupe_ennemis = this.physics.add.group();
 
-       // this.physics.add.collider(this.groupe_ennemis, calque_plateformes);
-this.physics.world.setBounds(this.boundx,this.boundy,this.boundWidth,this.boundHeight)
-       // tab_points.objects.forEach(point => {
-           // if (point.name == "ennemi") {
-            //    var nouvel_ennemi = new Terrestre(this, "img_perso", point.x, point.y, calque_plateformes);
-            //    nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
-            //    this.groupe_ennemis.add(nouvel_ennemi.sprite);
-          //  }
-      //  });
-
-        this.player.inventory.forEach(element => {
-            this.physics.add.collider(element.Bullets, ice, element.erase, null, element);
-          //  this.physics.add.overlap(element.Bullets, this.groupe_ennemis, element.hit, null, element);
+        this.physics.add.collider(this.groupe_ennemis, ice);
+        this.physics.world.setBounds(this.boundx,this.boundy,this.boundWidth,this.boundHeight)
+        tab_points.objects.forEach(point => {
+            if (point.name == "ennemi_sol") {
+                var nouvel_ennemi = new Terrestre(this, "walk_squelette_1", point.x, point.y, ice);
+                nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
+               this.groupe_ennemis.add(nouvel_ennemi.sprite);
+           }
+        });
+        tab_points.objects.forEach(point => {
+            if (point.name == "ennemi_air") {
+                var nouvel_ennemi = new Flying(this, "img_perso", point.x, point.y, ice);
+                nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
+               this.groupe_ennemis.add(nouvel_ennemi.sprite);
+           }
         });
 
-        this.physics.add.collider(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);
-
-       // this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
-        //    un_ennemi.setVelocityX(-90);
-        //    un_ennemi.direction = "left";
+       this.player.inventory.forEach(element => {
+        if(element instanceof Range){
+        this.physics.add.collider(element.Bullets,Calque_background,element.erase, null, element);
+        this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
+        }
+      });
+      this.physics.add.overlap(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);
+    
+      this.physics.add.overlap(this.player.swordHitbox,this.groupe_ennemis,this.handleSwordEnnemiCollision,null,this);
+    
+       this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
+           un_ennemi.setVelocityX(-90);
+           un_ennemi.direction = "left";
         //    un_ennemi.anims.play("turn_left", true);
-      //  });
+       });
 
     }
 
@@ -107,16 +126,53 @@ this.physics.world.setBounds(this.boundx,this.boundy,this.boundWidth,this.boundH
         this.player.update()
 
         if (this.player.gameOver) {
+            this.player.death++;
+            if(this.player.death==1){
             this.physics.pause();
-            this.player.sprite.setTint(0x444444);
-            this.player.sprite.anims.play("stand");
-            this.time.delayedCall(3000, this.restartScene, [], this);
+            this.player.deathState=true
+            this.player.sprite.anims.play("battlemage_death",true);
+            // this.player.sprite.setTint(0x444444);
+            this.time.delayedCall(3000,this.restartScene,[],this);
+          }
         }
+        if ( Phaser.Input.Keyboard.JustDown(this.cursors.space) == true &&
+        this.physics.overlap(this.player.sprite, this.porte_ouvrante) == true) {
+       // le personnage est sur la porte et vient d'appuyer sur espace
+       if (this.porte_ouvrante.ouverte == false) {
+        this.porte_ouvrante.anims.play("anim_ouvreporte");
+        this.porte_ouvrante.ouverte = true;
+        this.scene.start("niveau2");
+      } else {
+        this.porte_ouvrante.anims.play("anim_fermeporte");
+        this.porte_ouvrante.ouverte = false;
+      }
+      } 
 
-      //  this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
-       //     un_ennemi.ennemiObject.update();
-       // });
+        this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
+            un_ennemi.ennemiObject.update();
+        });
     }
+ 
+    handlePlayerEnnemiCollision(player, ennemiSp) {
+
+        const dx = this.player.sprite.x - ennemiSp.x;
+        const dy = this.player.sprite.y - ennemiSp.y;
+        // console.log(dx,dy)
+        const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
+        this.player.sprite.setVelocity(dir.x, dir.y)
+        this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
+    
+    }
+      handleSwordEnnemiCollision(sword,ennemiSp){
+        if(!(ennemiSp.ennemiObject instanceof Flying)){
+        const dx = ennemiSp.x - sword.x;
+        const dy = ennemiSp.y - sword.y;
+        
+        const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
+        ennemiSp.setVelocity(dir.x, dir.y)
+        ennemiSp.ennemiObject.getHit(this.player.equippedWeapon.damage)
+        }
+      }
 
     restartScene() {
         this.scene.stop('niveau1');
