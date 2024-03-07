@@ -59,7 +59,7 @@ export default class tutomap extends Phaser.Scene {
 
     this.groupe_ennemis = this.physics.add.group();
    
-    this.player = new Player(this, "battlemage", 100, 500, calque_nature);
+    this.player = new Player(this, "battlemage", 80, 1340, calque_nature);
     
     this.player.sprite.body.onWorldBounds = true;
     this.physics.add.collider(this.player.sprite, calque_nature);
@@ -159,12 +159,14 @@ export default class tutomap extends Phaser.Scene {
 
   }
   openDoor(){
+    tuto_ost.stop()
     this.scene.start("menu2");
   }
 
   restartScene() {
     this.scene.stop('tutomap');
-    this.scene.start('menu');
+    tuto_ost.stop()
+    this.scene.start('tutomap');
   }
 }
 
