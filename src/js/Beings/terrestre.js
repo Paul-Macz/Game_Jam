@@ -66,5 +66,8 @@ export default class Terrestre extends Ennemi{
         if(this.image=="walk_squelette_1"){
             this.sprite.anims.play("squelet_walk1", true);
         }
+        if(this.image=="run"){
+            this.sprite.anims.play("HeroM", true);
+        }
     }
 }

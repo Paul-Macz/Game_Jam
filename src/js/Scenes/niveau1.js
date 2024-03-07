@@ -79,7 +79,7 @@ export default class niveau1 extends Phaser.Scene {
         this.physics.world.setBounds(this.boundx,this.boundy,this.boundWidth,this.boundHeight)
         tab_points.objects.forEach(point => {
             if (point.name == "ennemi_sol") {
-                var nouvel_ennemi = new Terrestre(this, "walk_squelette_1", point.x, point.y, ice);
+                var nouvel_ennemi = new Terrestre(this, "heroM", point.x, point.y, ice);
                 nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
                this.groupe_ennemis.add(nouvel_ennemi.sprite);
            }

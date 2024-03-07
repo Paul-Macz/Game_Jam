@@ -124,12 +124,13 @@ export default class tutomap extends Phaser.Scene {
     this.player.sprite.setVelocity(dir.x, dir.y)
     this.hit = 1
     this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
+
+    this.eKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
 }
   update() {
     this.player.update()
 
-    if ( Phaser.Input.Keyboard.JustDown(this.cursors.space) == true &&
-    this.physics.overlap(this.player.sprite, this.porte_ouvrante) == true) {
+    if (this.eKey.isDown && this.physics.overlap(this.player.sprite, this.porte_ouvrante) == true) {
    // le personnage est sur la porte et vient d'appuyer sur espace
    if (this.porte_ouvrante.ouverte == false) {
     this.porte_ouvrante.anims.play("anim_ouvreporte");

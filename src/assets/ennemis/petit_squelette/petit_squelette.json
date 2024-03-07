@@ -1,0 +1,1111 @@
+{
+	"textures": [
+		{
+			"image": "petit_squelette",
+			"format": "RGBA8888",
+			"size": {
+				"w": 237,
+				"h": 234
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "petit_squelette/attack2_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 29,
+						"w": 64,
+						"h": 30
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 30
+					}
+				},
+				{
+					"filename": "petit_squelette/dead_far_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 35,
+						"w": 49,
+						"h": 7
+					},
+					"frame": {
+						"x": 64,
+						"y": 0,
+						"w": 49,
+						"h": 7
+					}
+				},
+				{
+					"filename": "petit_squelette/attack1_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 31,
+						"w": 47,
+						"h": 28
+					},
+					"frame": {
+						"x": 113,
+						"y": 0,
+						"w": 47,
+						"h": 28
+					}
+				},
+				{
+					"filename": "petit_squelette/dead_near_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 35,
+						"w": 47,
+						"h": 7
+					},
+					"frame": {
+						"x": 64,
+						"y": 7,
+						"w": 47,
+						"h": 7
+					}
+				},
+				{
+					"filename": "petit_squelette/dead_near_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 30,
+						"w": 43,
+						"h": 12
+					},
+					"frame": {
+						"x": 64,
+						"y": 14,
+						"w": 43,
+						"h": 12
+					}
+				},
+				{
+					"filename": "petit_squelette/attack1_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 31,
+						"w": 42,
+						"h": 28
+					},
+					"frame": {
+						"x": 64,
+						"y": 26,
+						"w": 42,
+						"h": 28
+					}
+				},
+				{
+					"filename": "petit_squelette/dead_near_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 21,
+						"w": 41,
+						"h": 19
+					},
+					"frame": {
+						"x": 0,
+						"y": 30,
+						"w": 41,
+						"h": 19
+					}
+				},
+				{
+					"filename": "petit_squelette/attack1_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 30,
+						"y": 30,
+						"w": 23,
+						"h": 29
+					},
+					"frame": {
+						"x": 41,
+						"y": 30,
+						"w": 23,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/dead_far_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 26,
+						"w": 41,
+						"h": 15
+					},
+					"frame": {
+						"x": 0,
+						"y": 49,
+						"w": 41,
+						"h": 15
+					}
+				},
+				{
+					"filename": "petit_squelette/attack2_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 30,
+						"w": 36,
+						"h": 29
+					},
+					"frame": {
+						"x": 160,
+						"y": 0,
+						"w": 36,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/dead_far_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 16,
+						"w": 36,
+						"h": 22
+					},
+					"frame": {
+						"x": 106,
+						"y": 28,
+						"w": 36,
+						"h": 22
+					}
+				},
+				{
+					"filename": "petit_squelette/ready_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 12,
+						"w": 18,
+						"h": 30
+					},
+					"frame": {
+						"x": 142,
+						"y": 28,
+						"w": 18,
+						"h": 30
+					}
+				},
+				{
+					"filename": "petit_squelette/dead_near_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 16,
+						"w": 32,
+						"h": 26
+					},
+					"frame": {
+						"x": 106,
+						"y": 50,
+						"w": 32,
+						"h": 26
+					}
+				},
+				{
+					"filename": "petit_squelette/dead_far_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 12,
+						"w": 29,
+						"h": 28
+					},
+					"frame": {
+						"x": 64,
+						"y": 58,
+						"w": 29,
+						"h": 28
+					}
+				},
+				{
+					"filename": "petit_squelette/run_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 7,
+						"w": 12,
+						"h": 35
+					},
+					"frame": {
+						"x": 93,
+						"y": 58,
+						"w": 12,
+						"h": 35
+					}
+				},
+				{
+					"filename": "petit_squelette/dead_near_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 10,
+						"w": 22,
+						"h": 31
+					},
+					"frame": {
+						"x": 41,
+						"y": 59,
+						"w": 22,
+						"h": 31
+					}
+				},
+				{
+					"filename": "petit_squelette/attack1_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 30,
+						"w": 27,
+						"h": 29
+					},
+					"frame": {
+						"x": 63,
+						"y": 86,
+						"w": 27,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/corpse_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 35,
+						"w": 27,
+						"h": 7
+					},
+					"frame": {
+						"x": 0,
+						"y": 64,
+						"w": 27,
+						"h": 7
+					}
+				},
+				{
+					"filename": "petit_squelette/run_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 13,
+						"w": 24,
+						"h": 29
+					},
+					"frame": {
+						"x": 0,
+						"y": 71,
+						"w": 24,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/attack1_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 30,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 24,
+						"y": 71,
+						"w": 17,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/run_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 12,
+						"w": 22,
+						"h": 30
+					},
+					"frame": {
+						"x": 41,
+						"y": 90,
+						"w": 22,
+						"h": 30
+					}
+				},
+				{
+					"filename": "petit_squelette/corpse_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 33,
+						"w": 24,
+						"h": 9
+					},
+					"frame": {
+						"x": 0,
+						"y": 100,
+						"w": 24,
+						"h": 9
+					}
+				},
+				{
+					"filename": "petit_squelette/dead_far_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 13,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 24,
+						"y": 100,
+						"w": 17,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/dead_far_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 9,
+						"w": 21,
+						"h": 31
+					},
+					"frame": {
+						"x": 0,
+						"y": 109,
+						"w": 21,
+						"h": 31
+					}
+				},
+				{
+					"filename": "petit_squelette/run_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 13,
+						"w": 21,
+						"h": 29
+					},
+					"frame": {
+						"x": 196,
+						"y": 0,
+						"w": 21,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/attack2_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 29,
+						"y": 24,
+						"w": 20,
+						"h": 35
+					},
+					"frame": {
+						"x": 217,
+						"y": 0,
+						"w": 20,
+						"h": 35
+					}
+				},
+				{
+					"filename": "petit_squelette/jump_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 11,
+						"w": 20,
+						"h": 32
+					},
+					"frame": {
+						"x": 160,
+						"y": 29,
+						"w": 20,
+						"h": 32
+					}
+				},
+				{
+					"filename": "petit_squelette/run_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 12,
+						"w": 20,
+						"h": 30
+					},
+					"frame": {
+						"x": 138,
+						"y": 58,
+						"w": 20,
+						"h": 30
+					}
+				},
+				{
+					"filename": "petit_squelette/hit_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 14,
+						"w": 20,
+						"h": 28
+					},
+					"frame": {
+						"x": 138,
+						"y": 88,
+						"w": 20,
+						"h": 28
+					}
+				},
+				{
+					"filename": "petit_squelette/reborn_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 23,
+						"w": 20,
+						"h": 19
+					},
+					"frame": {
+						"x": 105,
+						"y": 76,
+						"w": 20,
+						"h": 19
+					}
+				},
+				{
+					"filename": "petit_squelette/walk_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 11,
+						"w": 15,
+						"h": 31
+					},
+					"frame": {
+						"x": 90,
+						"y": 93,
+						"w": 15,
+						"h": 31
+					}
+				},
+				{
+					"filename": "petit_squelette/run_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 11,
+						"w": 19,
+						"h": 31
+					},
+					"frame": {
+						"x": 63,
+						"y": 115,
+						"w": 19,
+						"h": 31
+					}
+				},
+				{
+					"filename": "petit_squelette/attack1_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 30,
+						"y": 30,
+						"w": 19,
+						"h": 29
+					},
+					"frame": {
+						"x": 41,
+						"y": 124,
+						"w": 19,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/attack2_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 31,
+						"w": 19,
+						"h": 28
+					},
+					"frame": {
+						"x": 21,
+						"y": 129,
+						"w": 19,
+						"h": 28
+					}
+				},
+				{
+					"filename": "petit_squelette/jump_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 17,
+						"w": 19,
+						"h": 25
+					},
+					"frame": {
+						"x": 0,
+						"y": 140,
+						"w": 19,
+						"h": 25
+					}
+				},
+				{
+					"filename": "petit_squelette/ready_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 12,
+						"w": 18,
+						"h": 30
+					},
+					"frame": {
+						"x": 105,
+						"y": 95,
+						"w": 18,
+						"h": 30
+					}
+				},
+				{
+					"filename": "petit_squelette/walk_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 11,
+						"w": 15,
+						"h": 31
+					},
+					"frame": {
+						"x": 123,
+						"y": 95,
+						"w": 15,
+						"h": 31
+					}
+				},
+				{
+					"filename": "petit_squelette/hit_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 13,
+						"w": 18,
+						"h": 29
+					},
+					"frame": {
+						"x": 82,
+						"y": 124,
+						"w": 18,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/ready_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 13,
+						"w": 18,
+						"h": 29
+					},
+					"frame": {
+						"x": 60,
+						"y": 146,
+						"w": 18,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/reborn_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 17,
+						"w": 18,
+						"h": 25
+					},
+					"frame": {
+						"x": 40,
+						"y": 153,
+						"w": 18,
+						"h": 25
+					}
+				},
+				{
+					"filename": "petit_squelette/hit_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 13,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 40,
+						"y": 178,
+						"w": 17,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/jump_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 13,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 19,
+						"y": 157,
+						"w": 17,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/reborn_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 13,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 0,
+						"y": 165,
+						"w": 17,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/jump_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 11,
+						"w": 16,
+						"h": 31
+					},
+					"frame": {
+						"x": 17,
+						"y": 186,
+						"w": 16,
+						"h": 31
+					}
+				},
+				{
+					"filename": "petit_squelette/jump_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 11,
+						"w": 16,
+						"h": 31
+					},
+					"frame": {
+						"x": 0,
+						"y": 194,
+						"w": 16,
+						"h": 31
+					}
+				},
+				{
+					"filename": "petit_squelette/walk_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 13,
+						"w": 16,
+						"h": 29
+					},
+					"frame": {
+						"x": 100,
+						"y": 125,
+						"w": 16,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/walk_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 12,
+						"w": 15,
+						"h": 30
+					},
+					"frame": {
+						"x": 78,
+						"y": 153,
+						"w": 15,
+						"h": 30
+					}
+				},
+				{
+					"filename": "petit_squelette/walk_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 12,
+						"w": 15,
+						"h": 30
+					},
+					"frame": {
+						"x": 58,
+						"y": 175,
+						"w": 15,
+						"h": 30
+					}
+				},
+				{
+					"filename": "petit_squelette/walk_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 13,
+						"w": 15,
+						"h": 29
+					},
+					"frame": {
+						"x": 58,
+						"y": 205,
+						"w": 15,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/attack2_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 30,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 24,
+						"y": 71,
+						"w": 17,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/attack2_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 30,
+						"w": 27,
+						"h": 29
+					},
+					"frame": {
+						"x": 63,
+						"y": 86,
+						"w": 27,
+						"h": 29
+					}
+				},
+				{
+					"filename": "petit_squelette/dead_near_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 13,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 24,
+						"y": 100,
+						"w": 17,
+						"h": 29
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}

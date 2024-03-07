@@ -1,0 +1,796 @@
+{
+	"textures": [
+		{
+			"image": "squelette_lance",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1068,
+				"h": 316
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "squelette_lance/attack-B8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 39,
+						"w": 99,
+						"h": 57
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 99,
+						"h": 57
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-B6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 39,
+						"w": 96,
+						"h": 57
+					},
+					"frame": {
+						"x": 99,
+						"y": 0,
+						"w": 96,
+						"h": 57
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-A3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 39,
+						"w": 90,
+						"h": 57
+					},
+					"frame": {
+						"x": 195,
+						"y": 0,
+						"w": 90,
+						"h": 57
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-B3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 39,
+						"w": 90,
+						"h": 57
+					},
+					"frame": {
+						"x": 285,
+						"y": 0,
+						"w": 90,
+						"h": 57
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-A5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 41,
+						"w": 81,
+						"h": 55
+					},
+					"frame": {
+						"x": 375,
+						"y": 0,
+						"w": 81,
+						"h": 55
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-A4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 40,
+						"w": 80,
+						"h": 56
+					},
+					"frame": {
+						"x": 456,
+						"y": 0,
+						"w": 80,
+						"h": 56
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-B4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 40,
+						"w": 80,
+						"h": 56
+					},
+					"frame": {
+						"x": 375,
+						"y": 55,
+						"w": 80,
+						"h": 56
+					}
+				},
+				{
+					"filename": "squelette_lance/dead-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 79,
+						"w": 78,
+						"h": 17
+					},
+					"frame": {
+						"x": 0,
+						"y": 57,
+						"w": 78,
+						"h": 17
+					}
+				},
+				{
+					"filename": "squelette_lance/dead-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 84,
+						"w": 78,
+						"h": 12
+					},
+					"frame": {
+						"x": 78,
+						"y": 57,
+						"w": 78,
+						"h": 12
+					}
+				},
+				{
+					"filename": "squelette_lance/walk-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 34,
+						"w": 76,
+						"h": 62
+					},
+					"frame": {
+						"x": 156,
+						"y": 57,
+						"w": 76,
+						"h": 62
+					}
+				},
+				{
+					"filename": "squelette_lance/walk-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 34,
+						"w": 76,
+						"h": 62
+					},
+					"frame": {
+						"x": 78,
+						"y": 69,
+						"w": 76,
+						"h": 62
+					}
+				},
+				{
+					"filename": "squelette_lance/walk-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 34,
+						"w": 76,
+						"h": 62
+					},
+					"frame": {
+						"x": 0,
+						"y": 74,
+						"w": 76,
+						"h": 62
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-A1 - Copie.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 35,
+						"w": 76,
+						"h": 61
+					},
+					"frame": {
+						"x": 232,
+						"y": 57,
+						"w": 76,
+						"h": 61
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-B1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 35,
+						"w": 76,
+						"h": 61
+					},
+					"frame": {
+						"x": 536,
+						"y": 0,
+						"w": 76,
+						"h": 61
+					}
+				},
+				{
+					"filename": "squelette_lance/idle-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 35,
+						"w": 76,
+						"h": 61
+					},
+					"frame": {
+						"x": 455,
+						"y": 56,
+						"w": 76,
+						"h": 61
+					}
+				},
+				{
+					"filename": "squelette_lance/idle-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 35,
+						"w": 76,
+						"h": 61
+					},
+					"frame": {
+						"x": 455,
+						"y": 117,
+						"w": 76,
+						"h": 61
+					}
+				},
+				{
+					"filename": "squelette_lance/jump-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 35,
+						"w": 76,
+						"h": 61
+					},
+					"frame": {
+						"x": 308,
+						"y": 111,
+						"w": 76,
+						"h": 61
+					}
+				},
+				{
+					"filename": "squelette_lance/jump-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 35,
+						"w": 76,
+						"h": 61
+					},
+					"frame": {
+						"x": 232,
+						"y": 118,
+						"w": 76,
+						"h": 61
+					}
+				},
+				{
+					"filename": "squelette_lance/walk-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 35,
+						"w": 76,
+						"h": 61
+					},
+					"frame": {
+						"x": 154,
+						"y": 119,
+						"w": 76,
+						"h": 61
+					}
+				},
+				{
+					"filename": "squelette_lance/walk-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 35,
+						"w": 76,
+						"h": 61
+					},
+					"frame": {
+						"x": 76,
+						"y": 131,
+						"w": 76,
+						"h": 61
+					}
+				},
+				{
+					"filename": "squelette_lance/walk-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 35,
+						"w": 76,
+						"h": 61
+					},
+					"frame": {
+						"x": 0,
+						"y": 136,
+						"w": 76,
+						"h": 61
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-A2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 36,
+						"w": 76,
+						"h": 60
+					},
+					"frame": {
+						"x": 308,
+						"y": 172,
+						"w": 76,
+						"h": 60
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-B2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 36,
+						"w": 76,
+						"h": 60
+					},
+					"frame": {
+						"x": 230,
+						"y": 179,
+						"w": 76,
+						"h": 60
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-B5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 36,
+						"w": 76,
+						"h": 60
+					},
+					"frame": {
+						"x": 230,
+						"y": 239,
+						"w": 76,
+						"h": 60
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-B7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 36,
+						"w": 76,
+						"h": 60
+					},
+					"frame": {
+						"x": 152,
+						"y": 180,
+						"w": 76,
+						"h": 60
+					}
+				},
+				{
+					"filename": "squelette_lance/hit-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 36,
+						"w": 76,
+						"h": 60
+					},
+					"frame": {
+						"x": 76,
+						"y": 192,
+						"w": 76,
+						"h": 60
+					}
+				},
+				{
+					"filename": "squelette_lance/hit-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 36,
+						"w": 76,
+						"h": 60
+					},
+					"frame": {
+						"x": 0,
+						"y": 197,
+						"w": 76,
+						"h": 60
+					}
+				},
+				{
+					"filename": "squelette_lance/hit-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 37,
+						"w": 76,
+						"h": 59
+					},
+					"frame": {
+						"x": 152,
+						"y": 240,
+						"w": 76,
+						"h": 59
+					}
+				},
+				{
+					"filename": "squelette_lance/jump-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 37,
+						"w": 76,
+						"h": 59
+					},
+					"frame": {
+						"x": 76,
+						"y": 252,
+						"w": 76,
+						"h": 59
+					}
+				},
+				{
+					"filename": "squelette_lance/jump-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 37,
+						"w": 76,
+						"h": 59
+					},
+					"frame": {
+						"x": 0,
+						"y": 257,
+						"w": 76,
+						"h": 59
+					}
+				},
+				{
+					"filename": "squelette_lance/dead-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 38,
+						"w": 76,
+						"h": 58
+					},
+					"frame": {
+						"x": 612,
+						"y": 0,
+						"w": 76,
+						"h": 58
+					}
+				},
+				{
+					"filename": "squelette_lance/jump-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 35,
+						"w": 76,
+						"h": 58
+					},
+					"frame": {
+						"x": 688,
+						"y": 0,
+						"w": 76,
+						"h": 58
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-A6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 39,
+						"w": 76,
+						"h": 57
+					},
+					"frame": {
+						"x": 764,
+						"y": 0,
+						"w": 76,
+						"h": 57
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-B9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 39,
+						"w": 76,
+						"h": 57
+					},
+					"frame": {
+						"x": 840,
+						"y": 0,
+						"w": 76,
+						"h": 57
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-B10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 40,
+						"w": 76,
+						"h": 56
+					},
+					"frame": {
+						"x": 916,
+						"y": 0,
+						"w": 76,
+						"h": 56
+					}
+				},
+				{
+					"filename": "squelette_lance/dead-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 50,
+						"w": 76,
+						"h": 46
+					},
+					"frame": {
+						"x": 992,
+						"y": 0,
+						"w": 76,
+						"h": 46
+					}
+				},
+				{
+					"filename": "squelette_lance/attack-A1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 35,
+						"w": 76,
+						"h": 61
+					},
+					"frame": {
+						"x": 232,
+						"y": 57,
+						"w": 76,
+						"h": 61
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}

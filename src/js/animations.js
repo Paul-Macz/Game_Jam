@@ -48,14 +48,15 @@ export default class Animations extends Phaser.Scene{
             frameHeight:330
           });
         this.load.atlas('battlemage', "src/assets/battlemage.png" ,"src/assets/battlemage.json");
-
-
-        this.load.spritesheet("walk_squelette_1", "src/assets/ennemis/squelette1/walk_squelette_1.png",{
-        frameWidth: 128,
-        frameHeight: 96
-    });
-    }
-    
+        this.load.atlas('viking',"src/assets/ennemis/viking/viking.png","src/assets/ennemis/viking/viking.json");
+        this.load.atlas('archer',"src/assets/ennemis/archer/archer.png","src/assets/ennemis/archer/archer.json");
+        this.load.atlas('hache_rouge',"src/assets/ennemis/hache_rouge/hache_rouge.png","src/assets/ennemis/hache_rouge/hache_rouge.json");
+        this.load.atlas('petit_squelette',"src/assets/ennemis/petit_squelette/petit_squelette.png","src/assets/ennemis/petit_squelette/petit_squelette.json");
+        this.load.atlas('slime',"src/assets/ennemis/slime/slime.png","src/assets/ennemis/slime/slime.json");
+        this.load.atlas('squelette_epee',"src/assets/ennemis/squelette_epee/squelette_epee.png","src/assets/ennemis/squelette_epee/squelette_epee.json");
+        this.load.atlas('squelette_hache',"src/assets/ennemis/squelette_hache/squelette_hache.png","src/assets/ennemis/squelette_hache/squelette_hache.json");
+        this.load.atlas('squelette_lance',"src/assets/ennemis/squelette_lance/squelette_lance.png","src/assets/ennemis/squelette_lance/squelette_lance.json");
+    } 
     create(){
         this.anims.create({
             key: 'walk',
@@ -246,31 +247,58 @@ export default class Animations extends Phaser.Scene{
             repeat: 0
           }); 
           this.anims.create({
-            key:'squelet_walk1',
-            frames: this.anims.generateFrameNames('walk_squelette_1', { start:0, end: 5}),
-            frameRate: 15,
-            repeat: 0
+            key:'slime_idle',
+            frames: this.anims.generateFrameNames('slime', {start:1, end:4,prefix:'slime/idle-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
           });
           this.anims.create({
-            key:'squelet_walk2',
-            frames: this.anims.generateFrameNames('walk_squelette_2', { start:0, end: 5}),
-            frameRate: 15,
-            repeat: 0
+            key:'slime_attackA',
+            frames: this.anims.generateFrameNames('slime', {start:1, end:10,prefix:'slime/attack-A', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
           });
-    
-    this.anims.create({
-      key:'squelet_walk3',
-      frames: this.anims.generateFrameNames('walk_squelette_3', { start:0, end: 5}),
-      frameRate: 15,
-      repeat: 0
-    });
-    
-  
           this.anims.create({
-           key:'squelet_walk3',
-            frames: this.anims.generateFrameNames('walk_squelette_3', { start:0, end: 5}),
-            frameRate: 15,
-            repeat: 0
+            key:'slime_attackB',
+            frames: this.anims.generateFrameNames('slime', {start:1, end:11,prefix:'slime/attack-B', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'slime_attackC',
+            frames: this.anims.generateFrameNames('slime', {start:1, end:8,prefix:'slime/attack-C', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'slime_walk',
+            frames: this.anims.generateFrameNames('slime', {start:1, end:4,prefix:'slime/walk-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'slime_death',
+            frames: this.anims.generateFrameNames('slime', {start:1, end:4,prefix:'slime/dead-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'slime_hit',
+            frames: this.anims.generateFrameNames('slime', {start:1, end:3,prefix:'slime/hit-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'viking_attack1',
+            frames: this.anims.generateFrameNames('viking', {start:1, end:6,prefix:'viking/attack2_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'viking_attack2',
+            frames: this.anims.generateFrameNames('viking', {start:1, end:6,prefix:'viking/attack2_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
           });
          }
 
