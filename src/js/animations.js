@@ -594,8 +594,8 @@ export default class Animations extends Phaser.Scene{
         frameRate:15
       });
       this.anims.create({
-        key:'squelette_épée/attack-A',
-        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:8,prefix:'squelette_épée/attack-A/_', suffix:'.png'}),
+        key:'squelette_epee/attack-A',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:8,prefix:'squelette_epee/attack-A/_', suffix:'.png'}),
         repeat:-1,
         frameRate:15
       });
