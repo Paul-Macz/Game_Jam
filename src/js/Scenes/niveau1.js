@@ -72,10 +72,12 @@ export default class niveau1 extends Phaser.Scene {
             }
         }, this);
 
-        this.magic = new Range(this, "magic", 2, 10, 1, "bullet", true, 1, 1000, false);
-        this.sword = new Melee(this, "sword", 2, 10, 1, "bullet",true,10);
-        this.player.pickWeapon(this.sword);
-        this.player.pickWeapon(this.magic);
+        this.weap = new Melee(this, "bull", 2, 10, 1, "fire-ball",true,10);
+      this.magic = new Range(this, "magic", 2, 10, 1, "fire-ball", true, 1, 500, false);
+      this.player.pickWeapon(this.weap);
+      this.player.pickWeapon(this.magic);
+      this.magic2 = new Range(this, "magic2", 5,50, 1, "holy-ball", true, 1, 700, false);
+      this.player.pickWeapon(this.magic2);
 
         const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");
 
@@ -92,13 +94,10 @@ export default class niveau1 extends Phaser.Scene {
             if (randomNumber < 0.33 && point.name == "ennemi_sol") {
                 image="slime"
                 
-            //   nouvel_ennemi = new Terrestre(this,"slime",point.x, point.y,Calque_background);
             } else if (randomNumber > 0.33 && randomNumber < 0.66 && point.name == "ennemi_sol") {
                 image="viking"
-            //   nouvel_ennemi = new Terrestre(this,"viking",point.x, point.y,Calque_background);
             } else if (randomNumber > 0.66 && randomNumber < 1 &&  point.name == "ennemi_sol") {
                 image="hache_rouge"
-            //   nouvel_ennemi = new Terrestre(this,"hache_rouge",point.x, point.y,Calque_background);
             }
             console.log(image)
             var nouvel_ennemi = new Terrestre(this,image,point.x, point.y,ice);
@@ -108,10 +107,10 @@ export default class niveau1 extends Phaser.Scene {
             nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
             this.groupe_ennemis.add(nouvel_ennemi.sprite);
       });
-      this.cameras.main.setZoom(0.5)
+      this.cameras.main.setZoom(1)
        this.player.inventory.forEach(element => {
         if(element instanceof Range){
-        this.physics.add.collider(element.Bullets,Calque_background,element.erase, null, element);
+        this.physics.add.collider(element.Bullets,ice,element.erase, null, element);
         this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
         }
       });

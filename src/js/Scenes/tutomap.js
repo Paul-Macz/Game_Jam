@@ -130,10 +130,12 @@ export default class tutomap extends Phaser.Scene {
       }
   }, this);
     
-    // this.weap = new Range(this, "bull", 2, 10, 1, "bullet", true, 1, 1000, false);
-    this.weap = new Melee(this, "bull", 2, 10, 1, "bullet",true,10);
-
-    this.player.pickWeapon(this.weap);
+    this.weap = new Melee(this, "bull", 2, 10, 1, "fire-ball",true,10);
+  this.magic = new Range(this, "magic", 2, 10, 1, "fire-ball", true, 1, 500, false);
+  this.player.pickWeapon(this.weap);
+  this.player.pickWeapon(this.magic);
+  this.magic2 = new Range(this, "magic2", 5,50, 1, "holy-ball", true, 1, 700, false);
+  this.player.pickWeapon(this.magic2);
 
     this.physics.world.setBounds(0, 0, carteDuNiveau.widthInPixels, carteDuNiveau.heightInPixels);
     this.cameras.main.setBounds(0, 0, carteDuNiveau.widthInPixels, carteDuNiveau.heightInPixels);
@@ -163,7 +165,8 @@ export default class tutomap extends Phaser.Scene {
     });
     this.player.inventory.forEach(element => {
       if(element instanceof Range){
-      this.physics.add.collider(element.Bullets,Calque_background,element.erase, null, element);
+      this.physics.add.collider(element.Bullets,calque_nature,element.erase, null, element);
+      this.physics.add.collider(element.Bullets,calque_rochers,element.erase, null, element);
       this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
       }
     });

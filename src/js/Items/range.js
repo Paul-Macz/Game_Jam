@@ -25,10 +25,13 @@ export default class Range extends Weapon{
         if ((currentTime - this.lastShotTime)*this.atSpeed >= 1000 || this.lastShotTime==0) {
         var angle = Phaser.Math.Angle.Between(userx, usery,targetx, targety);
         // on crée la balle a coté du joueur
-        var bullet = this.Bullets.create(userx, usery-4, 'fireball');
+        var bullet = this.Bullets.create(userx, usery-4, this.image);
         bullet.setScale(2)
         bullet.setSize(10,10)
-        bullet.anims.play("fireball",true)
+        if(this.image=="fire-ball"){
+            bullet.anims.play("fireball",true)
+        }
+        else{bullet.anims.play("holyball",true)}
         // parametres physiques de la balle.
         bullet.timer=this.scene.time.delayedCall(this.range*1000-0.5*this.bulSpeed,this.erase,[bullet],this.scene);
         bullet.setCollideWorldBounds(true);
