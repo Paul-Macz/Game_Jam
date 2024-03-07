@@ -535,12 +535,10 @@ export default class Animations extends Phaser.Scene{
           });
           this.anims.create({
             key:'squelette_hache_dead',
-            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:4,prefix:'squelette_hache/dead-2', suffix:'.png'}),
+            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:4,prefix:'squelette_hache/dead-', suffix:'.png'}),
             repeat:-1,
             frameRate:15
           });
-         
-        
        this.anims.create({
         key:'petit_squelette/attack2',
         frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/attack2_', suffix:'.png'}),
@@ -603,7 +601,31 @@ export default class Animations extends Phaser.Scene{
       });
       this.anims.create({
         key:'squelette_epee/attack-A',
-        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:8,prefix:'squelette_epee/attack-A/_', suffix:'.png'}),
+        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:8,prefix:'squelette_epee/attack-A', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'squelette_epee/attack-B',
+        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:8,prefix:'squelette_epee/attack-B', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'squelette_epee/walk',
+        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:6,prefix:'squelette_epee/walk-', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'squelette_epee/idle',
+        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:4,prefix:'squelette_epee/idle-', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'squelette_epee/death',
+        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:4,prefix:'squelette_epee/dead-', suffix:'.png'}),
         repeat:-1,
         frameRate:15
       });
