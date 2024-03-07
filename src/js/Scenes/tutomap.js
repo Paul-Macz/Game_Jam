@@ -134,10 +134,11 @@ export default class tutomap extends Phaser.Scene {
    if (this.porte_ouvrante.ouverte == false) {
     this.porte_ouvrante.anims.play("anim_ouvreporte");
     this.porte_ouvrante.ouverte = true;
-    this.scene.start("menu2");
+    this.time.delayedCall(1000,this.openDoor,[],this)
   } else {
-    this.porte_ouvrante.anims.play("anim_fermeporte");
-    this.porte_ouvrante.ouverte = false;
+  this.porte_ouvrante.anims.play("anim_fermeporte");
+  this.porte_ouvrante.ouverte = false;
+
   }
   } 
 
@@ -151,6 +152,9 @@ export default class tutomap extends Phaser.Scene {
     
 });
 
+  }
+  openDoor(){
+    this.scene.start("menu2");
   }
 
   restartScene() {
