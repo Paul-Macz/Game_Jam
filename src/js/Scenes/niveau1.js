@@ -82,19 +82,19 @@ export default class niveau1 extends Phaser.Scene {
         this.physics.add.collider(this.groupe_ennemis, ice);
         this.physics.world.setBounds(this.boundx,this.boundy,this.boundWidth,this.boundHeight)
         tab_points.objects.forEach(point => {
-            if (point.name == "ennemi") {
-                var nouvel_ennemi = new Terrestre(this, "hache_rouge", point.x, point.y, ice);
-                nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
-                this.groupe_ennemis.add(nouvel_ennemi.sprite);
-           }
-        });
-        tab_points.objects.forEach(point => {
-            if (point.name == "ennemi_air") {
-                var nouvel_ennemi = new Flying(this, "img_perso", point.x, point.y, ice);
-                nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
-               this.groupe_ennemis.add(nouvel_ennemi.sprite);
-           }
-        });
+            const randomNumber = Math.random();
+            // Distribution aléatoire de l'item
+            if (randomNumber < 0.33 && point.name == "ennemi") {
+              var nouvel_ennemi = new Terrestre(this,"slime",point.x, point.y,Calque_background);
+            } else if (randomNumber > 0.33 && randomNumber < 0.66 && point.name == "ennemi") {
+              var nouvel_ennemi = new Terrestre(this,"viking",point.x, point.y,Calque_background);
+            } else if (randomNumber > 0.66 && randomNumber < 1 &&  point.name == "ennemi") {
+              var nouvel_ennemi = new Terrestre(this,"hache_rouge",point.x, point.y,Calque_background);
+            }
+            nouvel_ennemi.sprite.setCollideWorldBounds(true);
+            nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
+            this.groupe_ennemis.add(nouvel_ennemi.sprite);
+      });
 
        this.player.inventory.forEach(element => {
         if(element instanceof Range){

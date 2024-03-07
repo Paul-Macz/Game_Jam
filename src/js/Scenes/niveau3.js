@@ -78,12 +78,19 @@ export default class niveau3 extends Phaser.Scene {
       this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundsHeight);
               // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
               tab_points.objects.forEach(point => {
-                if (point.name == "terrestre") { 
-                  var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,playground);
-                  nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
-                  this.groupe_ennemis.add(nouvel_ennemi.sprite);
-                    }
-                });   
+                const randomNumber = Math.random();
+                // Distribution aléatoire de l'item
+                if (randomNumber < 0.33 && point.name == "fighter") {
+                  var nouvel_ennemi = new Terrestre(this,"slime",point.x, point.y,Calque_background);
+                } else if (randomNumber > 0.33 && randomNumber < 0.66 && point.name == "fighter") {
+                  var nouvel_ennemi = new Terrestre(this,"viking",point.x, point.y,Calque_background);
+                } else if (randomNumber > 0.66 && randomNumber < 1 &&  point.name == "fighter") {
+                  var nouvel_ennemi = new Terrestre(this,"hache_rouge",point.x, point.y,Calque_background);
+                }
+                nouvel_ennemi.sprite.setCollideWorldBounds(true);
+                nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
+                this.groupe_ennemis.add(nouvel_ennemi.sprite);
+          });  
                 this.player.sprite.body.world.on(
         "worldbounds", // evenement surveillé
         function (body, up, down, left, right) {
