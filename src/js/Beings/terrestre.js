@@ -3,26 +3,53 @@ import Ennemi from "/src/js/Beings/ennemi.js";
 export default class Terrestre extends Ennemi{
     constructor(scene, image,x, y, calque){
         super(scene, image,x, y, calque);
-        this.sprite.setVelocityX(-this.speedx);
+        // this.sprite.setVelocityX(-this.speedx);
         this.walkAnim();
-        this.owidth=0;
-        this.oheight=30;
-        this.scale=1;
-        this.width=this.owidth*this.scale;
-        this.height=this.oheight*this.scale;
+        switch(image){
+            case "viking":
+                this.owidth=10;
+                this.oheight=15;
+                this.scale=2;
+                this.width=this.owidth*this.scale;
+                this.height=this.oheight*this.scale;
 
-        this.sprite.setScale(this.scale);
-        this.sprite.setSize(20,this.height*(2.9-this.scale),true);
-        this.sprite.setOffset(40,this.oheight/(this.scale-0.1));
+                this.sprite.setScale(this.scale);
+                this.sprite.setSize(this.owidth*(this.scale-0.8),this.height,true);
+                this.sprite.setOffset(this.owidth*1.7,this.oheight/(this.scale-0.6));
+                break;
+            case "hache_rouge":
+                this.owidth=10;
+                this.oheight=15;
+                this.scale=2;
+                this.width=this.owidth*this.scale;
+                this.height=this.oheight*this.scale;
+
+                this.sprite.setScale(this.scale);
+                this.sprite.setSize(this.owidth*(this.scale-0.7),this.height,true);
+                this.sprite.setOffset(this.width*(this.scale+0.15),this.oheight*(this.scale+0.5));
+                break;
+            case"slime":
+                this.owidth=10;
+                this.oheight=15;
+                this.scale=1.5;
+                this.width=this.owidth*this.scale;
+                this.height=this.oheight*this.scale;
+
+                this.sprite.setScale(this.scale);
+                this.sprite.setSize(this.owidth*(this.scale+2),this.oheight*(this.scale-0.4),true);
+                this.sprite.setOffset(this.owidth*5,this.oheight*(this.scale+3.8));
+                break;
+        }
+        
     }
     update(){
         //ennemi touching the floor
-       // if(this.direction == 'left'){
-         //   this.sprite.flipX=true;
-       // }
-       // else{
-          //  this.sprite.flipX=false;
-       // }
+       if(this.direction == 'left'){
+           this.sprite.flipX=true;
+       }
+       else{
+           this.sprite.flipX=false;
+       }
         if(this.sprite.body.blocked.down){
             
             if (this.direction == "left") {
@@ -88,7 +115,7 @@ export default class Terrestre extends Ennemi{
             this.sprite.anims.play("petit_squelette/walk", true);
         }
         if(this.image=="squelette_épée"){
-            this.sprite.anims.play("squelette_épée_/walk", true);
+            this.sprite.anims.play("squelette_epee_/walk", true);
         }
     }
     deathAnim(){
@@ -117,7 +144,7 @@ export default class Terrestre extends Ennemi{
             this.sprite.anims.play("petit_squelette/dead_near", true);
         }
         if(this.image=="squelette_epee"){
-           this.sprite.anims.play("squelette_epee_/walk", true);
+           this.sprite.anims.play("squelette_epee_/dead", true);
         }  
     }
 }
