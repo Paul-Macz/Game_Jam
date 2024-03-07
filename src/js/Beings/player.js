@@ -17,6 +17,10 @@ export default class Player extends Character{
         this.timeLastAttack=0;
         this.attackState=false;
         this.deathState=false
+        this.jumpState=0;
+        this.jumpForward=false;
+        this.jumpNeutral=false;
+        this.animState=false;
 
         this.sprite.setScale(this.scale);
         this.sprite.setSize(this.width*(2.9-this.scale),this.height*(2.9-this.scale),true);
@@ -46,6 +50,7 @@ export default class Player extends Character{
             this.scene.cameras.main.startFollow(this.sprite); 
         }
         this.death=0;
+        this.sprite.anims.play("battlemage_idle", true);
     }
     freeze() {
         this.sprite.body.moves = false;
@@ -75,16 +80,23 @@ export default class Player extends Character{
             var speedx = velocity;
             var speedy = velocity;
         }
-        
         if (this.qKey.isDown) {
+            
             this.sprite.setVelocityX(-speedx);
             this.direction = 'left';
             if(velocityY==0){
                 this.sprite.anims.play("battlemage_run", true);
             }
-            else(
-                this.sprite.anims.play("battlemage_jumpFowardUp", true)
-            )
+            else{
+                // this.jumpState=1;
+                if(!this.jumpForward){
+                    this.sprite.anims.play("battlemage_jumpForwardUp", true);
+                }
+                this.jumpForward=true;
+                this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_jumpForwardUp",()=>{
+                    this.sprite.anims.play("battlemage_jumpForwardDown", true);
+                })
+            }
         } 
         else if (this.dKey.isDown) {
             this.sprite.setVelocityX(speedx);
@@ -92,32 +104,78 @@ export default class Player extends Character{
             if(velocityY==0){
                 this.sprite.anims.play("battlemage_run", true);
             }
-            else(
-                this.sprite.anims.play("battlemage_jumpFowardUp", true)
-            )
+            else{
+                // this.jumpState=1;
+                if(!this.jumpForward){
+                    this.sprite.anims.play("battlemage_jumpForwardUp", true);
+                }
+                this.jumpForward=true;
+                this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_jumpForwardUp",()=>{
+                    this.sprite.anims.play("battlemage_jumpForwardDown", true);
+                })
+                
+            }
         }
         else {
             this.sprite.setVelocityX(0);
             if (!this.attackState && !this.deathState && (this.sprite.body.touching.down || this.sprite.body.blocked.down)) {
                 if(velocityX==0 && velocityY==0){
-                    this.sprite.anims.play("battlemage_idle", true);
+                    if(this.jumpState==0 && !this.animState){
+                        this.sprite.anims.play("battlemage_idle", true);
+                    }
+                    else{
+                        if(this.jumpNeutral){
+                            // console.log("hi")
+                            this.sprite.anims.play("battlemage_jumpNeutralGround", true);
+                            this.jumpNeutral=false
+                            this.animState=true
+                            this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_jumpNeutralGround",()=>{
+                                // this.sprite.anims.play("battlemage_jumpNeutralDown", true);
+                                // console.log("hey")
+                                this.animState=false
+                            })
+                        }
+                        else{
+                            // console.log("hi")
+                            this.sprite.anims.play("battlemage_jumpForwardGround", true);
+                            this.jumpForward=false
+                            this.animState=true
+                            this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_jumpForwardGround",()=>{
+                                // this.sprite.anims.play("battlemage_jumpForwardDown", true);
+                                // console.log("hey")
+                                this.animState=false
+                            })
+                        }
+                        this.jumpState=0;
+                    }
                 }
             }
         }
         var coords = this.sprite.getBottomLeft();
-        if ((this.zKey.isDown && this.sprite.body.touching.down)|| (this.zKey.isDown && this.sprite.body.blocked.down)) {
+        if (((this.zKey.isDown && this.sprite.body.touching.down)|| (this.zKey.isDown && this.sprite.body.blocked.down)) ||
+            this.jumpState==1 ) {
             this.sprite.setVelocityY(-speedy);
+            if(this.jumpState==1){
+                this.jumpState=1;
+            }
+            else{
+                this.jumpState=2;
+            }
+            
             if(velocityX==0){
+                this.jumpNeutral=true;
                 this.sprite.anims.play("battlemage_jumpNeutralUp", true);
                 this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_jumpNeutralUp",()=>{
                     this.sprite.anims.play("battlemage_jumpNeutralDown", true);
+                    // console.log("hey")
                 })
-                if(this.sprite.body.touching.down || this.sprite.body.blocked.down){
-                    this.sprite.anims.play("battlemage_jumpNeutralGround", true);
-                }
             }
             else{
-                this.sprite.anims.play("battlemage_jumpFowardUp", true);
+                this.jumpForward=true;
+                this.sprite.anims.play("battlemage_jumpForwardUp", true);
+                this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_jumpForwardUp",()=>{
+                    this.sprite.anims.play("battlemage_jumpForwardDown", true);
+                })
             }
         }
 

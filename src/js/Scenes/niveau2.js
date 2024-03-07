@@ -18,10 +18,6 @@ export default class niveau2 extends Phaser.Scene {
     });
   }
   preload() {
-    this.load.spritesheet("img_perso", "src/assets/dude.png", {
-      frameWidth: 32,
-      frameHeight: 48
-    }); 
     this.load.spritesheet("img_ennemi", "src/assets/ennemi.png", {
       frameWidth: 32,
       frameHeight: 48
@@ -85,8 +81,6 @@ export default class niveau2 extends Phaser.Scene {
   calque_volant.setCollisionByProperty({ estSolide: true });
   calque_grotte.setCollisionByProperty({ estSolide: true });  
   this.cursors = this.input.keyboard.createCursorKeys();
-
-  this.hit=0 
 
   // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
   const tab_points = carteDuNiveau.getObjectLayer("calque_figth"); 
@@ -152,12 +146,7 @@ export default class niveau2 extends Phaser.Scene {
   }
 
   update() {
-    if(this.hit>0){
-      ++this.hit
-      if(this.hit>5){
-        this.hit=0
-      }
-    }
+
     this.player.update()
 
     if (this.player.gameOver) {
@@ -184,8 +173,7 @@ export default class niveau2 extends Phaser.Scene {
     const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
     this.player.sprite.setVelocity(dir.x, dir.y)
     this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
-    // this.time.delayedCall(500,() => this.resetSpeed(this.player));
-    this.hit=1
+
 }
   handleSwordEnnemiCollision(sword,ennemiSp){
     if(!(ennemiSp.ennemiObject instanceof Flying)){
@@ -195,8 +183,6 @@ export default class niveau2 extends Phaser.Scene {
     const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
     ennemiSp.setVelocity(dir.x, dir.y)
     ennemiSp.ennemiObject.getHit(this.player.equippedWeapon.damage)
-    // this.time.delayedCall(500,() => this.resetSpeed(ennemiSp.ennemiObject));
-    this.hit=1
     }
   }
 
