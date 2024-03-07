@@ -521,7 +521,13 @@ export default class Animations extends Phaser.Scene{
           });
           this.anims.create({
             key:'squelette_hache_shieldBlock',
-            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:2,prefix:'squelette_hache/shield-block-', suffix:'.png'}),
+            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:4,prefix:'squelette_hache/shield-block-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_hache_dead',
+            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:4,prefix:'squelette_hache/dead-2', suffix:'.png'}),
             repeat:-1,
             frameRate:15
           });
