@@ -300,10 +300,75 @@ export default class Animations extends Phaser.Scene{
             repeat:-1,
             frameRate:15
           });
-         }
-
-
-    
+         
+        
+       this.anims.create({
+        key:'petit_squelette/attack2',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/attack2_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/dead_far',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/dead_far_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/attack1',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/attack1_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/dead_near',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/dead_near_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/run',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/run_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/corpse',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:2,prefix:'petit_squelette/corpse_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/jump',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:5,prefix:'petit_squelette/jump_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/hit',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:3,prefix:'petit_squelette/hit_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/walk',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/walk_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/ready',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:3,prefix:'petit_squelette/ready_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'squelette_épée/attack-A',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:8,prefix:'squelette_épée/attack-A/_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+    }
     update(){
         this.scene.start("niveau2");
     }
