@@ -85,7 +85,7 @@ export default class Animations extends Phaser.Scene{
   
         this.anims.create({
             key: "turn_right",
-            frames: this.anims.generateFrameNumbers("img_perso", {
+            frames: this.anims.generateFrameNumbers("battlemage", {
                 start: 5,
                 end: 8
             }),
@@ -94,7 +94,7 @@ export default class Animations extends Phaser.Scene{
         });
         this.anims.create({
             key: "stand",
-            frames: [{ key: "img_perso", frame: 4 }],
+            frames: [{ key: "battlemage", frame: 4 }],
             frameRate: 20
         });
         this.anims.create({

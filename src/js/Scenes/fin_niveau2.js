@@ -33,9 +33,7 @@ export default class fin_niveau2 extends Phaser.Scene {
         bouton_quit.setScale(0.2,0.3);
         bouton_quit.setInteractive();
 
-        var bouton_back = this.add.image(400, 180, "imageBoutonBack").setDepth(1);
-       bouton_back.setScale(0.2,0.3);
-       bouton_back.setInteractive();
+        
    
        //Cas ou la souris passe sur les boutons 
        
@@ -52,9 +50,7 @@ export default class fin_niveau2 extends Phaser.Scene {
        bouton_quit.on("pointerover", () => {
         bouton_quit.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
       });
-      bouton_back.on("pointerover", () => {
-        bouton_back.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
-      });
+      
    
        //Cas ou la souris ne passe plus sur les boutons 
        
@@ -70,9 +66,7 @@ export default class fin_niveau2 extends Phaser.Scene {
        bouton_quit.on("pointerout", () => {
         bouton_quit.clearTint(); // Réinitialise la teinte du bouton
       });
-      bouton_back.on("pointerout", () => {
-        bouton_back.clearTint(); // Réinitialise la teinte du bouton
-      });
+      
        
   
    
@@ -92,9 +86,7 @@ export default class fin_niveau2 extends Phaser.Scene {
          this.scene.stop("fin_niveau2");
          window.close();
        });
-       bouton_back.on("pointerup", () => {
-        
-       });
+      
    
        //Cas ou la souris clique sur le bouton option : 
        // on lance un menu de commande
