@@ -101,7 +101,7 @@ export default class niveau2 extends Phaser.Scene {
       
     
 
-      this.weap = new Melee(this, "bull", 2, 10, 1, "fire-ball",true,10);
+      this.weap = new Melee(this, "bull", 20, 20, 1, "fire-ball",true,10);
       this.magic = new Range(this, "magic", 2, 10, 1, "fire-ball", true, 1, 500, false);
       this.player.pickWeapon(this.weap);
       this.player.pickWeapon(this.magic);
