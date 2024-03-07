@@ -15,11 +15,8 @@ export default class tutomap extends Phaser.Scene {
 
   preload() {
 
-    this.load.spritesheet("img_ennemi", "src/assets/ennemi.png", {
-      frameWidth: 32,
-      frameHeight: 48
-    }); 
-    
+    this.load.atlas('hache_rouge',"src/assets/ennemis/hache_rouge/hache_rouge.png","src/assets/ennemis/hache_rouge/hache_rouge.json");
+    this.load.atlas('petit_squelette',"src/assets/ennemis/petit_squelette/petit_squelette.png","src/assets/ennemis/petit_squelette/petit_squelette.json");
     this.load.image("Phaser_tuiles1", "src/assets/tileset2.png");
     this.load.image("Phaser_tuiles2", "src/assets/clouds2.png");
     this.load.image("Phaser_tuiles3", "src/assets/sky2.png");
@@ -54,6 +51,7 @@ export default class tutomap extends Phaser.Scene {
 
     calque_nature.setCollisionByProperty({ estSolide: true });
     calque_rochers.setCollisionByProperty({ estSolide: true }); 
+
     this.porte_ouvrante = this.physics.add.staticSprite(4540, 740, "porte_ouvrante"); 
     this.porte_ouvrante.ouverte = false; 
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -63,7 +61,7 @@ export default class tutomap extends Phaser.Scene {
 
     this.groupe_ennemis = this.physics.add.group();
    
-    this.player = new Player(this, "battlemage", 100, 1340, calque_nature);
+    this.player = new Player(this, "battlemage", 100, 500, calque_nature);
     
     this.player.sprite.body.onWorldBounds = true;
     this.physics.add.collider(this.player.sprite, calque_nature);
@@ -92,13 +90,13 @@ export default class tutomap extends Phaser.Scene {
         // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
         tab_points.objects.forEach(point => {
           if (point.name == "ennemi") { 
-            var nouvel_ennemi1 = new Terrestre(this,"img_perso",point.x, point.y,calque_nature,calque_rochers);
+            var nouvel_ennemi1 = new Terrestre(this,"hache_rouge",point.x, point.y,calque_nature,calque_rochers);
             nouvel_ennemi1.sprite.ennemiObject = nouvel_ennemi1;
             this.groupe_ennemis.add(nouvel_ennemi1.sprite);
           } else if (point.name == "ennemi2") { 
-                var nouvel_ennemi2 = new Terrestre(this,"img_perso",point.x, point.y,calque_nature,calque_rochers);
-                nouvel_ennemi2.sprite.ennemiObject = nouvel_ennemi2;
-                this.groupe_ennemis.add(nouvel_ennemi2.sprite);
+              var nouvel_ennemi2 = new Terrestre(this,"petit_squelette",point.x, point.y,calque_nature,calque_rochers);
+              nouvel_ennemi2.sprite.ennemiObject = nouvel_ennemi2;
+              this.groupe_ennemis.add(nouvel_ennemi2.sprite);
               }
           });   
  
@@ -108,10 +106,12 @@ export default class tutomap extends Phaser.Scene {
        ******************************************************/
       // par défaut, on va a gauche en utilisant la meme animation que le personnage
       this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
-        un_ennemi.setVelocityX(-90);
+        un_ennemi.setVelocityX(-50); // L'ennemi va vers la gauche
         un_ennemi.direction = "left";
-        un_ennemi.anims.play("turn_left", true);
-      });
+        un_ennemi.anims.play("hache_rouge_walk", true); // Joue l'animation de marche
+        // Inverse l'échelle horizontale pour retourner l'animation
+    });
+    
     
       
   }
@@ -127,6 +127,10 @@ export default class tutomap extends Phaser.Scene {
     this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
 
     this.eKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
+
+    this.physics.add.collider(this.groupe_ennemis, calque_nature);
+    this.physics.add.collider(this.groupe_ennemis, calque_rochers);
+
 }
   update() {
     this.player.update()
@@ -150,9 +154,10 @@ export default class tutomap extends Phaser.Scene {
       this.player.sprite.anims.play("stand");
       this.time.delayedCall(3000,this.restartScene,[],this);
   } 
-  this.groupe_ennemis.children.iterate(function(iterateur, un_ennemi) {
-    
-});
+  this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
+    un_ennemi.ennemiObject.update();
+   
+  });
 
   }
   openDoor(){

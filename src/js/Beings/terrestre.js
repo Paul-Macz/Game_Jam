@@ -63,7 +63,61 @@ export default class Terrestre extends Ennemi{
         if(this.image=="battlemage"){
             this.sprite.anims.play("battlemage_run", true);
         }
-        
-        
+        if(this.image=="walk_squelette_1"){
+            this.sprite.anims.play("squelet_walk1", true);
+        }
+        if(this.image=="slime"){
+            this.sprite.anims.play("slime_walk", true);
+        }
+        if(this.image=="viking"){
+            this.sprite.anims.play("viking_walk", true);
+        }
+        if(this.image=="hache_rouge"){
+            this.sprite.anims.play("hache_rouge_walk", true);
+        }
+        if(this.image=="archer"){
+            this.sprite.anims.play("archer_run", true);
+        }
+        if(this.image=="squelette_lance"){
+            this.sprite.anims.play("squelette_lance_walk", true);
+        }
+        if(this.image=="squelette_hache"){
+            this.sprite.anims.play("squelette_hache_walk",true);
+        }
+        if(this.image=="petit_squelette"){
+            this.sprite.anims.play("petit_squelette/walk", true);
+        }
+        if(this.image=="squelette_épée"){
+            this.sprite.anims.play("squelette_épée_/walk", true);
+        }
+    }
+    deathAnim(){
+        if(this.image=="battlemage"){
+            this.sprite.anims.play("battlemage_death", true);
+        }
+        if(this.image=="slime"){
+            this.sprite.anims.play("slime_death", true);
+        }
+        if(this.image=="viking"){
+            this.sprite.anims.play("viking_dead", true);
+        }
+        if(this.image=="hache_rouge"){
+            this.sprite.anims.play("hache_rouge_dead", true);
+        }
+        if(this.image=="archer"){
+            this.sprite.anims.play("archer_dead", true);
+        }
+        if(this.image=="squelette_lance"){
+            this.sprite.anims.play("squelette_lance_dead", true);
+        }
+        if(this.image=="squelette_hache"){
+            this.sprite.anims.play("squelette_hache_dead",true);
+        }
+        if(this.image=="petit_squelette"){
+            this.sprite.anims.play("petit_squelette/dead_near", true);
+        }
+        //if(this.image=="squelette_épée"){
+        //    this.sprite.anims.play("squelette_épée_/walk", true);
+        //}  
     }
 }

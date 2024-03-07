@@ -82,10 +82,10 @@ export default class niveau1 extends Phaser.Scene {
         this.physics.add.collider(this.groupe_ennemis, ice);
         this.physics.world.setBounds(this.boundx,this.boundy,this.boundWidth,this.boundHeight)
         tab_points.objects.forEach(point => {
-            if (point.name == "ennemi_sol") {
-                var nouvel_ennemi = new Terrestre(this, "heroM", point.x, point.y, ice);
+            if (point.name == "ennemi") {
+                var nouvel_ennemi = new Terrestre(this, "hache_rouge", point.x, point.y, ice);
                 nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
-               this.groupe_ennemis.add(nouvel_ennemi.sprite);
+                this.groupe_ennemis.add(nouvel_ennemi.sprite);
            }
         });
         tab_points.objects.forEach(point => {
@@ -103,12 +103,11 @@ export default class niveau1 extends Phaser.Scene {
         }
       });
       this.physics.add.overlap(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);
-    
       this.physics.add.overlap(this.player.swordHitbox,this.groupe_ennemis,this.handleSwordEnnemiCollision,null,this);
     
-       this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
-           un_ennemi.setVelocityX(-90);
-           un_ennemi.direction = "left";
+      this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
+          un_ennemi.setVelocityX(-90);
+          un_ennemi.direction = "left";
         //    un_ennemi.anims.play("turn_left", true);
        });
 
