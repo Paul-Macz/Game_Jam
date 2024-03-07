@@ -66,6 +66,10 @@ export default class Animations extends Phaser.Scene{
           frameWidth:46,
           frameHeight:46
         });
+        this.load.spritesheet("holy-ball", "src/assets/Holy VFX 01 Repeatable.png",{
+          frameWidth:32,
+          frameHeight:32
+        });
         this.load.atlas('battlemage', "src/assets/battlemage.png" ,"src/assets/battlemage.json");
         this.load.atlas('viking',"src/assets/ennemis/viking/viking.png","src/assets/ennemis/viking/viking.json");
         this.load.atlas('archer',"src/assets/ennemis/archer/archer.png","src/assets/ennemis/archer/archer.json");
@@ -98,6 +102,12 @@ export default class Animations extends Phaser.Scene{
       this.anims.create({
         key: 'fireball',
         frames: this.anims.generateFrameNumbers('fire-ball', { start:0, end: 6}), // Frames for walk animation
+        frameRate: 10,
+        repeat: -1
+      });
+      this.anims.create({
+        key: 'holyball',
+        frames: this.anims.generateFrameNumbers('holy-ball', { start:0, end: 8}), // Frames for walk animation
         frameRate: 10,
         repeat: -1
       });

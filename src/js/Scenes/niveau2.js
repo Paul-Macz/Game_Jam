@@ -101,35 +101,30 @@ export default class niveau2 extends Phaser.Scene {
       
     
 
-      this.weap = new Melee(this, "bull", 2, 10, 1, "fireball",true,10);
-      this.magic = new Range(this, "magic", 2, 10, 1, "fireball", true, 1, 500, false);
+      this.weap = new Melee(this, "bull", 2, 10, 1, "fire-ball",true,10);
+      this.magic = new Range(this, "magic", 2, 10, 1, "fire-ball", true, 1, 500, false);
       this.player.pickWeapon(this.weap);
       this.player.pickWeapon(this.magic);
+      this.magic2 = new Range(this, "magic2", 5,50, 1, "holy-ball", true, 1, 700, false);
+      this.player.pickWeapon(this.magic2);
 
       this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundHeight);
       
     // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
     tab_points.objects.forEach(point => {
       const randomNumber = Math.random();
-      // console.log(randomNumber)
       var image;
       // Distribution aléatoire de l'item
       if (randomNumber < 0.33 && point.name == "figther") {
           image="slime"
           
-      //   nouvel_ennemi = new Terrestre(this,"slime",point.x, point.y,Calque_background);
       } else if (randomNumber > 0.33 && randomNumber < 0.66 && point.name == "figther") {
           image="viking"
-      //   nouvel_ennemi = new Terrestre(this,"viking",point.x, point.y,Calque_background);
       } else if (randomNumber > 0.66 && randomNumber < 1 &&  point.name == "figther") {
           image="hache_rouge"
-      //   nouvel_ennemi = new Terrestre(this,"hache_rouge",point.x, point.y,Calque_background);
       }
-      console.log(image)
       var nouvel_ennemi = new Terrestre(this,image,point.x, point.y,Calque_background);
-      // console.log(nouvel_ennemi)
       nouvel_ennemi.sprite.setCollideWorldBounds(true);
-      console.log(nouvel_ennemi.image)
       nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
       this.groupe_ennemis.add(nouvel_ennemi.sprite);
 });
@@ -224,7 +219,6 @@ openDoor(){
 
     const dx = this.player.sprite.x - ennemiSp.x;
     const dy = this.player.sprite.y - ennemiSp.y;
-    // console.log(dx,dy)
     const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
     this.player.sprite.setVelocity(dir.x, dir.y)
     this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)

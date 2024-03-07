@@ -45,6 +45,7 @@ export default class Player extends Character{
         this.dKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         this.ONEKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
         this.TWOKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TWO);
+        this.THREEKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.THREE);
 
         if(this.calque!=undefined){
             this.scene.cameras.main.setBounds(this.scene.boundx, this.scene.boundy, this.scene.boundWidth, this.scene.boundHeight);
@@ -55,6 +56,7 @@ export default class Player extends Character{
         this.sprite.anims.play("battlemage_idle", true);
 
         this.ekho_death=this.scene.sound.add('ekho_death')
+        this.jump=this.scene.sound.add("jump")
     }
     freeze() {
         this.sprite.body.moves = false;
@@ -185,7 +187,7 @@ if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
         this.sprite.setVelocityY(-speedy);
         this.jumpState++;
     }
-    this.jumpForward.play();
+    this.jump.play();
     
             if(velocityX==0){
                 this.jumpNeutral=true;
@@ -213,6 +215,9 @@ if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
         }
         if(Phaser.Input.Keyboard.JustDown(this.TWOKey)){
             this.equipWeapon(1)
+        }
+        if(Phaser.Input.Keyboard.JustDown(this.THREEKey)){
+            this.equipWeapon(2)
         }
 
         
@@ -283,12 +288,6 @@ if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
         }
     } 
 
-    startJumpFoward(){
-
-    }
-    endJumpFoward(){
-
-    }
     getHit(damage){
 
         if(!this.gameOver){

@@ -67,33 +67,33 @@ export default class niveau3 extends Phaser.Scene {
         function (body, up, down, left, right) {
           // on verifie si la hitbox qui est rentrée en collision est celle du player,
           // et si la collision a eu lieu sur le bord inférieur du player
-          if (body.gameObject === this.player.sprite && down == true) {
-            // si oui : GAME OVER on arrete la physique et on colorie le personnage en rouge
-            this.player.gameOver=true;
-          }
+          // if (body.gameObject === this.player.sprite && down == true) {
+          //   // si oui : GAME OVER on arrete la physique et on colorie le personnage en rouge
+          //   this.player.gameOver=true;
+          // }
         },
       ); 
-      this.weap = new Melee(this, "bull", 2, 10, 1, "bullet",true,10);
+      this.weap = new Melee(this, "bull", 2, 10, 1, "fire-ball",true,10);
+      this.magic = new Range(this, "magic", 2, 10, 1, "fire-ball", true, 1, 500, false);
       this.player.pickWeapon(this.weap);
+      this.player.pickWeapon(this.magic);
         this.cameras.main.setZoom(1);
+        this.magic2 = new Range(this, "magic2", 5,50, 1, "holy-ball", true, 1, 700, false);
+        this.player.pickWeapon(this.magic2);
 
       this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundsHeight);
               // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
               tab_points.objects.forEach(point => {
                 const randomNumber = Math.random();
-                // console.log(randomNumber)
                 var image;
                 // Distribution aléatoire de l'item
                 if (randomNumber < 0.33 && point.name == "terrestre") {
                     image="slime"
                     
-                //   nouvel_ennemi = new Terrestre(this,"slime",point.x, point.y,Calque_background);
                 } else if (randomNumber > 0.33 && randomNumber < 0.66 && point.name == "terrestre") {
                     image="viking"
-                //   nouvel_ennemi = new Terrestre(this,"viking",point.x, point.y,Calque_background);
                 } else if (randomNumber > 0.66 && randomNumber < 1 &&  point.name == "terrestre") {
                     image="hache_rouge"
-                //   nouvel_ennemi = new Terrestre(this,"hache_rouge",point.x, point.y,Calque_background);
                 }
                 //console.log(image)
                 var nouvel_ennemi = new Terrestre(this,image,point.x, point.y,playground);
@@ -108,16 +108,16 @@ export default class niveau3 extends Phaser.Scene {
         function (body, up, down, left, right) {
           // on verifie si la hitbox qui est rentrée en collision est celle du player,
           // et si la collision a eu lieu sur le bord inférieur du player
-          if (body.gameObject === this.player.sprite && down == true) {
-            // si oui : GAME OVER on arrete la physique et on colorie le personnage en rouge
-            this.player.gameOver=true;
-          }
+          // if (body.gameObject === this.player.sprite && down == true) {
+          //   // si oui : GAME OVER on arrete la physique et on colorie le personnage en rouge
+          //   this.player.gameOver=true;
+          // }
         },
       ); 
         
                 this.player.inventory.forEach(element => {
                   if(element instanceof Range){
-                  this.physics.add.collider(element.Bullets,Calque_background,element.erase, null, element);
+                  this.physics.add.collider(element.Bullets,playground,element.erase, null, element);
                   this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
                   }
                 });
