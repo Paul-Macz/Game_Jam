@@ -8,21 +8,18 @@ import Player from "/src/js/Beings/player.js";
 var calque_rochers;
 var calque_nature;
 var porte_ouvrante; 
+var tuto_ost
 export default class tutomap extends Phaser.Scene {
   constructor() {
     super({ key: "tutomap" });
   }
 
   preload() {
-
-    this.load.atlas('hache_rouge',"src/assets/ennemis/hache_rouge/hache_rouge.png","src/assets/ennemis/hache_rouge/hache_rouge.json");
-    this.load.atlas('petit_squelette',"src/assets/ennemis/petit_squelette/petit_squelette.png","src/assets/ennemis/petit_squelette/petit_squelette.json");
     this.load.image("Phaser_tuiles1", "src/assets/tileset2.png");
     this.load.image("Phaser_tuiles2", "src/assets/clouds2.png");
     this.load.image("Phaser_tuiles3", "src/assets/sky2.png");
     this.load.image("Phaser_tuiles4", "src/assets/sea2.png");
     this.load.image("Phaser_tuiles5", "src/assets/far-grounds2.png");
-
     this.load.tilemapTiledJSON("carte_tuto", "src/assets/Tutorielmap.json"); 
   }
 
@@ -32,7 +29,8 @@ export default class tutomap extends Phaser.Scene {
       this.boundWidth=4800;
       this.boundHeight=3200;
 
-
+      tuto_ost = this.sound.add('tuto_ost');
+      tuto_ost.play(); 
 
     const carteDuNiveau = this.make.tilemap({ key: "carte_tuto" });
 
@@ -61,7 +59,7 @@ export default class tutomap extends Phaser.Scene {
 
     this.groupe_ennemis = this.physics.add.group();
    
-    this.player = new Player(this, "battlemage", 100, 500, calque_nature);
+    this.player = new Player(this, "battlemage", 80, 1340, calque_nature);
     
     this.player.sprite.body.onWorldBounds = true;
     this.physics.add.collider(this.player.sprite, calque_nature);
@@ -161,12 +159,14 @@ export default class tutomap extends Phaser.Scene {
 
   }
   openDoor(){
+    tuto_ost.stop()
     this.scene.start("menu2");
   }
 
   restartScene() {
     this.scene.stop('tutomap');
-    this.scene.start('menu');
+    tuto_ost.stop()
+    this.scene.start('tutomap');
   }
 }
 
