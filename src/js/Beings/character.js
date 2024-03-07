@@ -16,12 +16,20 @@ export default class Character{
         this.sprite = scene.physics.add.sprite(x, y, this.image);
         this.sprite.setCollideWorldBounds(true);
         this.scene.physics.add.collider(this.sprite, this.calque); 
+
+    }
+    preload(){
+        this.load.audio('damage_speed',"src/assets/audio/damage_and_speed_bonus.mp3");
+    }
+    create(){
+        damage_speed=this.sound.add('damage_speed')
     }
     getHit(damage){
 
         this.PV -= damage;
         this.sprite.setTint(0xff0000);
         this.scene.time.delayedCall(500,() => this.resetColor());
+        damage_speed.play();
     }
     resetColor(){
         this.sprite.clearTint();

@@ -1,7 +1,7 @@
 import Character from "/src/js/Beings/character.js";
 import Range from "/src/js/Items/range.js";
 import Melee from "/src/js/Items/melee.js";
-
+var ekho_death;
 export default class Player extends Character{
     constructor(scene,image, x, y,calque) {
         super(scene, image,x,y,calque)
@@ -51,10 +51,23 @@ export default class Player extends Character{
         }
         this.death=0;
         this.sprite.anims.play("battlemage_idle", true);
+
+
+    }
+    preload(){
+        this.load.audio('ekho_death',"src/assets/audio/ekho_death.mp3");
+
     }
     freeze() {
         this.sprite.body.moves = false;
-
+    }
+    create(){
+    ekho_death=this.sound.add('ekho_death')
+    }
+    deaths(){
+        this.gameOver=true;
+        ekho_death.play();
+        
     }
     update(velocity) {
         let velocityX = this.sprite.body.velocity.x; // Get the velocity along the x-axis
@@ -230,6 +243,7 @@ export default class Player extends Character{
             }
 
     } 
+
     startJumpFoward(){
 
     }
@@ -242,7 +256,9 @@ export default class Player extends Character{
             super.getHit(damage);
             this.update_txt_PV();
             if(this.PV == 0){
-                this.gameOver=true;
+                this.death();
+
+
             }
         }
     }
