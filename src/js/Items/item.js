@@ -21,18 +21,23 @@ export default class Items {
     }
 
     spawnItem(x, y) {
-        // Fait apparaître l'objet à la position (x, y) sur la carte
+        this.sprite = this.scene.physics.add.sprite(x, y, this.image);
+
     }
 
     removeItem() {
         // Supprime l'objet du monde du jeu
+        this.destroy();
     }
 
-    checkCollisionWithPlayer(player) {
+    checkCollisionWithPlayer(player,item) {
         // Vérifie si l'objet entre en collision avec le joueur
+        return this.scene.physics.overlap(player, this);
     }
 
     update() {
-        // Met à jour l'état de l'objet
+        // applique un effet de rebond à l'item
+        this.sprite.setBounceY(10)
     }
 }
+

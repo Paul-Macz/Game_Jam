@@ -2,8 +2,8 @@ import Player from "/src/js/Beings/player.js";
 import Terrestre from "/src/js/Beings/terrestre.js";
 import Range from "/src/js/Items/range.js";
 
-var calque_nature;
-var calque_rochers;
+var castle;
+var greencastle;
 
 export default class niveau3 extends Phaser.Scene {
   constructor(){
@@ -14,7 +14,7 @@ export default class niveau3 extends Phaser.Scene {
         this.load.image("Phaser_tuilesDeJEU1", "src/assets/castle.png");
         this.load.image("Phaser_tuilesDeJEU2", "src/assets/greencastle.png");
 
-        this.load.tilemapTiledJSON("carteT", "src/assets/niveau4.json");
+        this.load.tilemapTiledJSON("carteT", "src/assets/niveau3.json");
        
   }
   create() {
