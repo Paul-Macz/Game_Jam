@@ -88,7 +88,7 @@ export default class niveau2 extends Phaser.Scene {
   this.porte_ouvrante2.ouverte = false; 
 
   // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
-  const tab_points = carteDuNiveau.getObjectLayer("calque_figth"); 
+  const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis"); 
   this.groupe_ennemis = this.physics.add.group();
 
 
@@ -144,11 +144,34 @@ export default class niveau2 extends Phaser.Scene {
        *  ajout du modele de mobilite des ennemis *
        ******************************************************/
       // par défaut, on va a gauche en utilisant la meme animation que le personnage
+      //this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
+      //  un_ennemi.setVelocityX(-90);
+      //  un_ennemi.direction = "left";
+     //   un_ennemi.anims.play('squelet_walk1', true);
+    //  }); 
+
       this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
-        un_ennemi.setVelocityX(-90);
-        un_ennemi.direction = "left";
-        un_ennemi.anims.play('squelet_walk1', true);
-      }); 
+        if(this.player.sprite.x < un_ennemi.x) {
+          un_ennemi.setVelocityX(-60);
+          un_ennemi.anims.play("squelet_walk1",true)
+        } else if(this.player.sprite.x > un_ennemi.x) {
+          un_ennemi.setVelocityX(60);
+          un_ennemi.anims.play("squelet_walk2",true)
+        } else {
+          un_ennemi.setVelocityX(0);
+        }
+        if(this.player.sprite.y < un_ennemi.y) {
+          un_ennemi.setVelocityY(-70);
+          
+        } else if(this.player.sprite.y > un_ennemi.y) {
+          un_ennemi.setVelocityY(60);
+          
+        } else {
+          un_ennemi.setVelocityY(0);
+        } if (this.physics.world.overlap(this.player.sprite,un_ennemi)) {
+
+        }
+      },this);
   }
 
   update() {
@@ -187,7 +210,7 @@ export default class niveau2 extends Phaser.Scene {
 
 }
 openDoor(){
-  this.scene.start("menu");
+  this.scene.start("fin_niveau2");
 }
   handlePlayerEnnemiCollision(player, ennemiSp) {
 

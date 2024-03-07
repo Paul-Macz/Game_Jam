@@ -16,6 +16,7 @@ export default class niveau1 extends Phaser.Scene {
     }
 
     preload() {
+        
         this.load.spritesheet("img_ennemi", "src/assets/ennemi.png", {
             frameWidth: 32,
             frameHeight: 48
@@ -29,11 +30,14 @@ export default class niveau1 extends Phaser.Scene {
     }
 
     create() {
+
+       
+
         this.boundx = 0;
         this.boundy = 0;
         this.boundWidth = 3200;
         this.boundHeight = 3200;
-
+        
         const carteDuNiveau = this.add.tilemap("Iced");
         const tileset = carteDuNiveau.addTilesetImage("snow", "Phaser_tuilesdejeu");
         const tileset1 = carteDuNiveau.addTilesetImage("ice", "Phaser_tuilesdejeu1");
@@ -153,7 +157,7 @@ export default class niveau1 extends Phaser.Scene {
             un_ennemi.ennemiObject.update();
         });
     }openDoor(){
-    this.scene.start("niveau2");
+    this.scene.start("fin_niveau1");
     }
     
     handlePlayerEnnemiCollision(player, ennemiSp) {

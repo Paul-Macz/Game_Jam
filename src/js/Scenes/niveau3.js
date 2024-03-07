@@ -155,7 +155,7 @@ export default class niveau3 extends Phaser.Scene {
 
 }
 openDoor(){
-  this.scene.start("menu");
+  this.scene.start("fin_niveau3");
 }
 handlePlayerEnnemiCollision(player, ennemiSp) {
 
