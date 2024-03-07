@@ -130,7 +130,7 @@ export default class tutomap extends Phaser.Scene {
   update() {
     this.player.update()
 
-    if (this.eKey.isDown && this.physics.overlap(this.player.sprite, this.porte_ouvrante) == true) {
+    if (Phaser.Input.Keyboard.JustDown(this.cursors.space) == true  && this.physics.overlap(this.player.sprite, this.porte_ouvrante) == true) {
    // le personnage est sur la porte et vient d'appuyer sur espace
    if (this.porte_ouvrante.ouverte == false) {
     this.porte_ouvrante.anims.play("anim_ouvreporte");
