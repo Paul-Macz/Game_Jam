@@ -48,7 +48,8 @@ export default class Animations extends Phaser.Scene{
             frameHeight:330
           });
         this.load.atlas('battlemage', "src/assets/battlemage.png" ,"src/assets/battlemage.json");
-        this.load.atlas('run_hero', "src/assets/ennemis/Martial Hero 2/run.png");
+        this.load.spritesheet('run_hero', "src/assets/ennemis/Martial Hero 2/Sprites/run.png",{frameWidth:440,
+          frameHeight:330});
 
 
         this.load.spritesheet("walk_squelette_1", "src/assets/ennemis/squelette1/walk_squelette_1.png",{
