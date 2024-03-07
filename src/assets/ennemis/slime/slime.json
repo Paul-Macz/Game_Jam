@@ -1,0 +1,964 @@
+{
+	"textures": [
+		{
+			"image": "slime",
+			"format": "RGBA8888",
+			"size": {
+				"w": 661,
+				"h": 138
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "slime/attack-A7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 43,
+						"w": 93,
+						"h": 53
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 93,
+						"h": 53
+					}
+				},
+				{
+					"filename": "slime/attack-A8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 63,
+						"w": 75,
+						"h": 33
+					},
+					"frame": {
+						"x": 93,
+						"y": 0,
+						"w": 75,
+						"h": 33
+					}
+				},
+				{
+					"filename": "slime/attack-C5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 51,
+						"w": 60,
+						"h": 45
+					},
+					"frame": {
+						"x": 168,
+						"y": 0,
+						"w": 60,
+						"h": 45
+					}
+				},
+				{
+					"filename": "slime/attack-B5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 71,
+						"w": 55,
+						"h": 25
+					},
+					"frame": {
+						"x": 93,
+						"y": 33,
+						"w": 55,
+						"h": 25
+					}
+				},
+				{
+					"filename": "slime/attack-A6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 41,
+						"w": 50,
+						"h": 55
+					},
+					"frame": {
+						"x": 0,
+						"y": 53,
+						"w": 50,
+						"h": 55
+					}
+				},
+				{
+					"filename": "slime/attack-A9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 37,
+						"y": 44,
+						"w": 43,
+						"h": 52
+					},
+					"frame": {
+						"x": 50,
+						"y": 53,
+						"w": 43,
+						"h": 52
+					}
+				},
+				{
+					"filename": "slime/attack-B6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 71,
+						"w": 48,
+						"h": 25
+					},
+					"frame": {
+						"x": 228,
+						"y": 0,
+						"w": 48,
+						"h": 25
+					}
+				},
+				{
+					"filename": "slime/dead-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 37,
+						"y": 91,
+						"w": 48,
+						"h": 5
+					},
+					"frame": {
+						"x": 276,
+						"y": 0,
+						"w": 48,
+						"h": 5
+					}
+				},
+				{
+					"filename": "slime/attack-C4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 60,
+						"w": 43,
+						"h": 36
+					},
+					"frame": {
+						"x": 324,
+						"y": 0,
+						"w": 43,
+						"h": 36
+					}
+				},
+				{
+					"filename": "slime/attack-A4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 61,
+						"w": 40,
+						"h": 35
+					},
+					"frame": {
+						"x": 276,
+						"y": 5,
+						"w": 40,
+						"h": 35
+					}
+				},
+				{
+					"filename": "slime/dead-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 89,
+						"w": 40,
+						"h": 7
+					},
+					"frame": {
+						"x": 228,
+						"y": 25,
+						"w": 40,
+						"h": 7
+					}
+				},
+				{
+					"filename": "slime/attack-A5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 48,
+						"w": 39,
+						"h": 48
+					},
+					"frame": {
+						"x": 228,
+						"y": 32,
+						"w": 39,
+						"h": 48
+					}
+				},
+				{
+					"filename": "slime/attack-A10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 67,
+						"w": 39,
+						"h": 29
+					},
+					"frame": {
+						"x": 148,
+						"y": 45,
+						"w": 39,
+						"h": 29
+					}
+				},
+				{
+					"filename": "slime/attack-A3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 67,
+						"w": 39,
+						"h": 29
+					},
+					"frame": {
+						"x": 187,
+						"y": 45,
+						"w": 39,
+						"h": 29
+					}
+				},
+				{
+					"filename": "slime/attack-A2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 73,
+						"w": 39,
+						"h": 23
+					},
+					"frame": {
+						"x": 187,
+						"y": 74,
+						"w": 39,
+						"h": 23
+					}
+				},
+				{
+					"filename": "slime/attack-A1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 81,
+						"w": 39,
+						"h": 15
+					},
+					"frame": {
+						"x": 93,
+						"y": 58,
+						"w": 39,
+						"h": 15
+					}
+				},
+				{
+					"filename": "slime/attack-B1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 81,
+						"w": 39,
+						"h": 15
+					},
+					"frame": {
+						"x": 93,
+						"y": 73,
+						"w": 39,
+						"h": 15
+					}
+				},
+				{
+					"filename": "slime/attack-C1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 81,
+						"w": 39,
+						"h": 15
+					},
+					"frame": {
+						"x": 132,
+						"y": 74,
+						"w": 39,
+						"h": 15
+					}
+				},
+				{
+					"filename": "slime/dead-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 81,
+						"w": 39,
+						"h": 15
+					},
+					"frame": {
+						"x": 93,
+						"y": 88,
+						"w": 39,
+						"h": 15
+					}
+				},
+				{
+					"filename": "slime/idle-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 81,
+						"w": 39,
+						"h": 15
+					},
+					"frame": {
+						"x": 132,
+						"y": 89,
+						"w": 39,
+						"h": 15
+					}
+				},
+				{
+					"filename": "slime/walk-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 81,
+						"w": 39,
+						"h": 15
+					},
+					"frame": {
+						"x": 93,
+						"y": 103,
+						"w": 39,
+						"h": 15
+					}
+				},
+				{
+					"filename": "slime/walk-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 81,
+						"w": 39,
+						"h": 15
+					},
+					"frame": {
+						"x": 50,
+						"y": 105,
+						"w": 39,
+						"h": 15
+					}
+				},
+				{
+					"filename": "slime/attack-B4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 66,
+						"w": 37,
+						"h": 30
+					},
+					"frame": {
+						"x": 0,
+						"y": 108,
+						"w": 37,
+						"h": 30
+					}
+				},
+				{
+					"filename": "slime/attack-B10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 88,
+						"w": 37,
+						"h": 8
+					},
+					"frame": {
+						"x": 367,
+						"y": 0,
+						"w": 37,
+						"h": 8
+					}
+				},
+				{
+					"filename": "slime/dead-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 42,
+						"y": 82,
+						"w": 36,
+						"h": 14
+					},
+					"frame": {
+						"x": 404,
+						"y": 0,
+						"w": 36,
+						"h": 14
+					}
+				},
+				{
+					"filename": "slime/walk-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 78,
+						"w": 35,
+						"h": 18
+					},
+					"frame": {
+						"x": 367,
+						"y": 8,
+						"w": 35,
+						"h": 18
+					}
+				},
+				{
+					"filename": "slime/attack-B11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 44,
+						"y": 83,
+						"w": 35,
+						"h": 13
+					},
+					"frame": {
+						"x": 440,
+						"y": 0,
+						"w": 35,
+						"h": 13
+					}
+				},
+				{
+					"filename": "slime/attack-C8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 44,
+						"y": 83,
+						"w": 35,
+						"h": 13
+					},
+					"frame": {
+						"x": 475,
+						"y": 0,
+						"w": 35,
+						"h": 13
+					}
+				},
+				{
+					"filename": "slime/idle-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 44,
+						"y": 82,
+						"w": 34,
+						"h": 14
+					},
+					"frame": {
+						"x": 510,
+						"y": 0,
+						"w": 34,
+						"h": 14
+					}
+				},
+				{
+					"filename": "slime/idle-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 45,
+						"y": 83,
+						"w": 34,
+						"h": 13
+					},
+					"frame": {
+						"x": 440,
+						"y": 13,
+						"w": 34,
+						"h": 13
+					}
+				},
+				{
+					"filename": "slime/idle-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 45,
+						"y": 83,
+						"w": 34,
+						"h": 13
+					},
+					"frame": {
+						"x": 474,
+						"y": 13,
+						"w": 34,
+						"h": 13
+					}
+				},
+				{
+					"filename": "slime/walk-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 45,
+						"y": 77,
+						"w": 33,
+						"h": 19
+					},
+					"frame": {
+						"x": 402,
+						"y": 14,
+						"w": 33,
+						"h": 19
+					}
+				},
+				{
+					"filename": "slime/attack-C2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 44,
+						"y": 78,
+						"w": 33,
+						"h": 18
+					},
+					"frame": {
+						"x": 367,
+						"y": 26,
+						"w": 33,
+						"h": 18
+					}
+				},
+				{
+					"filename": "slime/attack-C7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 44,
+						"y": 78,
+						"w": 33,
+						"h": 18
+					},
+					"frame": {
+						"x": 316,
+						"y": 36,
+						"w": 33,
+						"h": 18
+					}
+				},
+				{
+					"filename": "slime/dead-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 50,
+						"y": 94,
+						"w": 33,
+						"h": 2
+					},
+					"frame": {
+						"x": 267,
+						"y": 40,
+						"w": 33,
+						"h": 2
+					}
+				},
+				{
+					"filename": "slime/attack-B2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 45,
+						"y": 78,
+						"w": 32,
+						"h": 18
+					},
+					"frame": {
+						"x": 267,
+						"y": 42,
+						"w": 32,
+						"h": 18
+					}
+				},
+				{
+					"filename": "slime/hit-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 49,
+						"y": 76,
+						"w": 31,
+						"h": 20
+					},
+					"frame": {
+						"x": 544,
+						"y": 0,
+						"w": 31,
+						"h": 20
+					}
+				},
+				{
+					"filename": "slime/attack-B9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 46,
+						"y": 84,
+						"w": 31,
+						"h": 12
+					},
+					"frame": {
+						"x": 508,
+						"y": 14,
+						"w": 31,
+						"h": 12
+					}
+				},
+				{
+					"filename": "slime/hit-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 48,
+						"y": 79,
+						"w": 29,
+						"h": 17
+					},
+					"frame": {
+						"x": 575,
+						"y": 0,
+						"w": 29,
+						"h": 17
+					}
+				},
+				{
+					"filename": "slime/hit-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 48,
+						"y": 79,
+						"w": 29,
+						"h": 17
+					},
+					"frame": {
+						"x": 604,
+						"y": 0,
+						"w": 29,
+						"h": 17
+					}
+				},
+				{
+					"filename": "slime/attack-C6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 47,
+						"y": 67,
+						"w": 28,
+						"h": 29
+					},
+					"frame": {
+						"x": 633,
+						"y": 0,
+						"w": 28,
+						"h": 29
+					}
+				},
+				{
+					"filename": "slime/attack-B7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 52,
+						"y": 72,
+						"w": 28,
+						"h": 22
+					},
+					"frame": {
+						"x": 575,
+						"y": 17,
+						"w": 28,
+						"h": 22
+					}
+				},
+				{
+					"filename": "slime/attack-C3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 47,
+						"y": 75,
+						"w": 28,
+						"h": 21
+					},
+					"frame": {
+						"x": 603,
+						"y": 17,
+						"w": 28,
+						"h": 21
+					}
+				},
+				{
+					"filename": "slime/attack-B8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 54,
+						"y": 76,
+						"w": 26,
+						"h": 20
+					},
+					"frame": {
+						"x": 539,
+						"y": 20,
+						"w": 26,
+						"h": 20
+					}
+				},
+				{
+					"filename": "slime/attack-B3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 50,
+						"y": 70,
+						"w": 23,
+						"h": 26
+					},
+					"frame": {
+						"x": 435,
+						"y": 26,
+						"w": 23,
+						"h": 26
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}

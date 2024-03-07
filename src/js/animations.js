@@ -48,15 +48,15 @@ export default class Animations extends Phaser.Scene{
             frameHeight:330
           });
         this.load.atlas('battlemage', "src/assets/battlemage.png" ,"src/assets/battlemage.json");
-        this.load.atlas('run_hero', "src/assets/ennemis/Martial Hero 2/run.png");
-
-
-        this.load.spritesheet("walk_squelette_1", "src/assets/ennemis/squelette1/walk_squelette_1.png",{
-        frameWidth: 128,
-        frameHeight: 96
-    });
-    }
-    
+        this.load.atlas('viking',"src/assets/ennemis/viking/viking.png","src/assets/ennemis/viking/viking.json");
+        this.load.atlas('archer',"src/assets/ennemis/archer/archer.png","src/assets/ennemis/archer/archer.json");
+        this.load.atlas('hache_rouge',"src/assets/ennemis/hache_rouge/hache_rouge.png","src/assets/ennemis/hache_rouge/hache_rouge.json");
+        this.load.atlas('petit_squelette',"src/assets/ennemis/petit_squelette/petit_squelette.png","src/assets/ennemis/petit_squelette/petit_squelette.json");
+        this.load.atlas('slime',"src/assets/ennemis/slime/slime.png","src/assets/ennemis/slime/slime.json");
+        this.load.atlas('squelette_epee',"src/assets/ennemis/squelette_epee/squelette_epee.png","src/assets/ennemis/squelette_epee/squelette_epee.json");
+        this.load.atlas('squelette_hache',"src/assets/ennemis/squelette_hache/squelette_hache.png","src/assets/ennemis/squelette_hache/squelette_hache.json");
+        this.load.atlas('squelette_lance',"src/assets/ennemis/squelette_lance/squelette_lance.png","src/assets/ennemis/squelette_lance/squelette_lance.json");
+    } 
     create(){
         this.anims.create({
             key: 'walk',
@@ -247,42 +247,345 @@ export default class Animations extends Phaser.Scene{
             repeat: 0
           }); 
           this.anims.create({
-            key:'squelet_walk1',
-            frames: this.anims.generateFrameNames('walk_squelette_1', { start:0, end: 5}),
-            frameRate: 15,
-            repeat: 0
+            key:'slime_idle',
+            frames: this.anims.generateFrameNames('slime', {start:1, end:4,prefix:'slime/idle-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
           });
           this.anims.create({
-            key:'squelet_walk2',
-            frames: this.anims.generateFrameNames('walk_squelette_2', { start:0, end: 5}),
-            frameRate: 15,
-            repeat: 0
+            key:'slime_attackA',
+            frames: this.anims.generateFrameNames('slime', {start:1, end:10,prefix:'slime/attack-A', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
           });
-    
-    this.anims.create({
-      key:'squelet_walk3',
-      frames: this.anims.generateFrameNames('walk_squelette_3', { start:0, end: 5}),
-      frameRate: 15,
-      repeat: 0
-    });
-    this.anims.create({
-      key:'heroM',
-      frames: this.anims.generateFrameNames('Run_hero', { start:0, end: 5}),
-      frameRate: 15,
-      repeat: 0
-    });
-  
           this.anims.create({
-           key:'squelet_walk3',
-            frames: this.anims.generateFrameNames('walk_squelette_3', { start:0, end: 5}),
-            frameRate: 15,
-            repeat: 0
+            key:'slime_attackB',
+            frames: this.anims.generateFrameNames('slime', {start:1, end:11,prefix:'slime/attack-B', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
           });
-         }
-
-
-    
+          this.anims.create({
+            key:'slime_attackC',
+            frames: this.anims.generateFrameNames('slime', {start:1, end:8,prefix:'slime/attack-C', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'slime_walk',
+            frames: this.anims.generateFrameNames('slime', {start:1, end:4,prefix:'slime/walk-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'slime_death',
+            frames: this.anims.generateFrameNames('slime', {start:1, end:4,prefix:'slime/dead-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'slime_hit',
+            frames: this.anims.generateFrameNames('slime', {start:1, end:3,prefix:'slime/hit-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'viking_attack1',
+            frames: this.anims.generateFrameNames('viking', {start:1, end:6,prefix:'viking/attack1_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'viking_attack2',
+            frames: this.anims.generateFrameNames('viking', {start:1, end:6,prefix:'viking/attack2_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'viking_fall',
+            frames: this.anims.generateFrameNames('viking', {start:1, end:5,prefix:'viking/fall_back_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'viking_standUp',
+            frames: this.anims.generateFrameNames('viking', {start:1, end:5,prefix:'viking/viking/stand_up_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'viking_hit',
+            frames: this.anims.generateFrameNames('viking', {start:1, end:3,prefix:'viking/hit_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'viking_jump',
+            frames: this.anims.generateFrameNames('viking', {start:1, end:5,prefix:'viking/jump_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'viking_ready',
+            frames: this.anims.generateFrameNames('viking', {start:1, end:6,prefix:'viking/ready_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'viking_walk',
+            frames: this.anims.generateFrameNames('viking', {start:1, end:6,prefix:'viking/walk_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'hache_rouge_attack1',
+            frames: this.anims.generateFrameNames('hache_rouge', {start:1, end:6,prefix:'hache_rouge/attack1_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'hache_rouge_attack2',
+            frames: this.anims.generateFrameNames('hache_rouge', {start:1, end:6,prefix:'hache_rouge/attack2_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'hache_rouge_dead',
+            frames: this.anims.generateFrameNames('hache_rouge', {start:1, end:4,prefix:'hache_rouge/dead_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'hache_rouge_fall',
+            frames: this.anims.generateFrameNames('hache_rouge', {start:1, end:4,prefix:'hache_rouge/fall_back_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'hache_rouge_hit',
+            frames: this.anims.generateFrameNames('hache_rouge', {start:1, end:3,prefix:'hache_rouge/hit_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'hache_rouge_jump',
+            frames: this.anims.generateFrameNames('hache_rouge', {start:1, end:5,prefix:'hache_rouge/jump_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'hache_rouge_ready',
+            frames: this.anims.generateFrameNames('hache_rouge', {start:1, end:6,prefix:'hache_rouge/ready_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'hache_rouge_run',
+            frames: this.anims.generateFrameNames('hache_rouge', {start:1, end:6,prefix:'hache_rouge/run_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'hache_rouge_walk',
+            frames: this.anims.generateFrameNames('hache_rouge', {start:1, end:6,prefix:'hache_rouge/walk_', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'archer_attackA',
+            frames: this.anims.generateFrameNames('archer', {start:1, end:6,prefix:'archer/attack-A', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'archer_attackB',
+            frames: this.anims.generateFrameNames('archer', {start:1, end:6,prefix:'archer/attack-B', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'archer_hit',
+            frames: this.anims.generateFrameNames('archer', {start:1, end:4,prefix:'archer/hit-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'archer_dead',
+            frames: this.anims.generateFrameNames('archer', {start:1, end:4,prefix:'archer/dead-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'archer_idle',
+            frames: this.anims.generateFrameNames('archer', {start:1, end:2,prefix:'archer/idle-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'archer_jump',
+            frames: this.anims.generateFrameNames('archer', {start:1, end:6,prefix:'archer/jump-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'archer_run',
+            frames: this.anims.generateFrameNames('archer', {start:1, end:12,prefix:'archer/run-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_lance_attackA',
+            frames: this.anims.generateFrameNames('squelette_lance', {start:1, end:6,prefix:'squelette_lance/attack-A', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_lance_attackB',
+            frames: this.anims.generateFrameNames('squelette_lance', {start:1, end:10,prefix:'squelette_lance/attack-B', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_lance_dead',
+            frames: this.anims.generateFrameNames('squelette_lance', {start:1, end:4,prefix:'squelette_lance/dead-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_lance_hit',
+            frames: this.anims.generateFrameNames('squelette_lance', {start:1, end:3,prefix:'squelette_lance/hit-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_lance_idle',
+            frames: this.anims.generateFrameNames('squelette_lance', {start:1, end:2,prefix:'squelette_lance/idle-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_lance_jump',
+            frames: this.anims.generateFrameNames('squelette_lance', {start:1, end:5,prefix:'squelette_lance/jump-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_lance_walk',
+            frames: this.anims.generateFrameNames('squelette_lance', {start:1, end:6,prefix:'squelette_lance/walk-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_hache_walk',
+            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:6,prefix:'squelette_hache/walk-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_hache_attackA',
+            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:6,prefix:'squelette_hache/attack-A', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_hache_attackA',
+            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:12,prefix:'squelette_hache/attack-A', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_hache_attackB',
+            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:7,prefix:'squelette_hache/attack-B', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_hache_jump',
+            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:5,prefix:'squelette_hache/jump-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_hache_idle',
+            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:4,prefix:'squelette_hache/idle-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'squelette_hache_shieldBlock',
+            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:2,prefix:'squelette_hache/shield-block-', suffix:'.png'}),
+            repeat:-1,
+            frameRate:15
+          });
+         
+        
+       this.anims.create({
+        key:'petit_squelette/attack2',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/attack2_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/dead_far',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/dead_far_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/attack1',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/attack1_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/dead_near',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/dead_near_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/run',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/run_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/corpse',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:2,prefix:'petit_squelette/corpse_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/jump',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:5,prefix:'petit_squelette/jump_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/hit',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:3,prefix:'petit_squelette/hit_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/walk',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/walk_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'petit_squelette/ready',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:3,prefix:'petit_squelette/ready_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+      this.anims.create({
+        key:'squelette_épée/attack-A',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:8,prefix:'squelette_épée/attack-A/_', suffix:'.png'}),
+        repeat:-1,
+        frameRate:15
+      });
+    }
     update(){
-        this.scene.start("niveau3");
+        this.scene.start("niveau1");
     }
 }

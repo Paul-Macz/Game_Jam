@@ -5,7 +5,7 @@ import Flying from "/src/js/Beings/flying.js"
 import Terrestre from "/src/js/Beings/terrestre.js";
 import Player from "/src/js/Beings/player.js";
 
-
+var porte_ouvrante2;
 var Calque_background; 
 var calque_volant;
 var calque_grotte;
@@ -84,6 +84,9 @@ export default class niveau2 extends Phaser.Scene {
   calque_grotte.setCollisionByProperty({ estSolide: true });  
   this.cursors = this.input.keyboard.createCursorKeys();
 
+  this.porte_ouvrante2 = this.physics.add.staticSprite(40, 2500, "porte_ouvrante"); 
+  this.porte_ouvrante2.ouverte = false; 
+
   // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
   const tab_points = carteDuNiveau.getObjectLayer("calque_figth"); 
   this.groupe_ennemis = this.physics.add.group();
@@ -120,7 +123,7 @@ export default class niveau2 extends Phaser.Scene {
     // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
     tab_points.objects.forEach(point => {
       if (point.name == "figther") { 
-        var nouvel_ennemi = new Terrestre(this,"walk_squelette_1",point.x, point.y,Calque_background);
+        var nouvel_ennemi = new Terrestre(this,"battlemage_run",point.x, point.y,Calque_background);
         nouvel_ennemi.sprite.setCollideWorldBounds(true);
         nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
         this.groupe_ennemis.add(nouvel_ennemi.sprite);
@@ -144,7 +147,7 @@ export default class niveau2 extends Phaser.Scene {
       this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
         un_ennemi.setVelocityX(-90);
         un_ennemi.direction = "left";
-        un_ennemi.anims.play("turn_left", true);
+        un_ennemi.anims.play('squelet_walk1', true);
       }); 
   }
 
@@ -167,7 +170,25 @@ export default class niveau2 extends Phaser.Scene {
     un_ennemi.ennemiObject.update();
    
   }); 
-  }
+
+  if ( Phaser.Input.Keyboard.JustDown(this.cursors.space) == true &&
+  this.physics.overlap(this.player.sprite, this.porte_ouvrante2) == true) {
+ // le personnage est sur la porte et vient d'appuyer sur espace
+ if (this.porte_ouvrante2.ouverte == false) {
+  this.porte_ouvrante2.anims.play("anim_ouvreporte");
+  this.porte_ouvrante2.ouverte = true;
+  this.time.delayedCall(1000,this.openDoor,[],this)
+  
+} else {
+  this.porte_ouvrante2.anims.play("anim_fermeporte");
+  this.porte_ouvrante2.ouverte = false;
+}
+} 
+
+}
+openDoor(){
+  this.scene.start("menu");
+}
   handlePlayerEnnemiCollision(player, ennemiSp) {
 
     const dx = this.player.sprite.x - ennemiSp.x;

@@ -152,15 +152,14 @@ export default class Player extends Character{
             }
         }
         var coords = this.sprite.getBottomLeft();
-        if (((this.zKey.isDown && this.sprite.body.touching.down)|| (this.zKey.isDown && this.sprite.body.blocked.down)) ||
-            this.jumpState==1 ) {
+        // if(Phaser.Input.Keyboard.JustDown(this.zKey)){
+        //     console.log("hi")
+        // }
+        if (((this.zKey.isDown && this.sprite.body.touching.down)|| (this.zKey.isDown && this.sprite.body.blocked.down)) &&
+            this.jumpState<2 ) {
+                
             this.sprite.setVelocityY(-speedy);
-            if(this.jumpState==1){
-                this.jumpState=1;
-            }
-            else{
-                this.jumpState=2;
-            }
+            this.jumpState++;
             
             if(velocityX==0){
                 this.jumpNeutral=true;

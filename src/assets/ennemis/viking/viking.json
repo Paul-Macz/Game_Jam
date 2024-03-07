@@ -1,0 +1,1027 @@
+{
+	"textures": [
+		{
+			"image": "viking",
+			"format": "RGBA8888",
+			"size": {
+				"w": 241,
+				"h": 224
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "viking/attack2_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 29,
+						"w": 61,
+						"h": 30
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 61,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/attack1_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 21,
+						"w": 60,
+						"h": 38
+					},
+					"frame": {
+						"x": 61,
+						"y": 0,
+						"w": 60,
+						"h": 38
+					}
+				},
+				{
+					"filename": "viking/fall_back_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 33,
+						"w": 41,
+						"h": 10
+					},
+					"frame": {
+						"x": 0,
+						"y": 30,
+						"w": 41,
+						"h": 10
+					}
+				},
+				{
+					"filename": "viking/run_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 11,
+						"w": 20,
+						"h": 31
+					},
+					"frame": {
+						"x": 41,
+						"y": 30,
+						"w": 20,
+						"h": 31
+					}
+				},
+				{
+					"filename": "viking/fall_back_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 37,
+						"w": 41,
+						"h": 6
+					},
+					"frame": {
+						"x": 0,
+						"y": 40,
+						"w": 41,
+						"h": 6
+					}
+				},
+				{
+					"filename": "viking/stand_up_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 37,
+						"w": 41,
+						"h": 6
+					},
+					"frame": {
+						"x": 0,
+						"y": 46,
+						"w": 41,
+						"h": 6
+					}
+				},
+				{
+					"filename": "viking/stand_up_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 30,
+						"w": 35,
+						"h": 13
+					},
+					"frame": {
+						"x": 0,
+						"y": 52,
+						"w": 35,
+						"h": 13
+					}
+				},
+				{
+					"filename": "viking/attack1_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 26,
+						"w": 33,
+						"h": 33
+					},
+					"frame": {
+						"x": 121,
+						"y": 0,
+						"w": 33,
+						"h": 33
+					}
+				},
+				{
+					"filename": "viking/attack2_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 29,
+						"w": 31,
+						"h": 30
+					},
+					"frame": {
+						"x": 154,
+						"y": 0,
+						"w": 31,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/fall_back_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 19,
+						"w": 29,
+						"h": 23
+					},
+					"frame": {
+						"x": 185,
+						"y": 0,
+						"w": 29,
+						"h": 23
+					}
+				},
+				{
+					"filename": "viking/attack1_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 29,
+						"w": 27,
+						"h": 30
+					},
+					"frame": {
+						"x": 214,
+						"y": 0,
+						"w": 27,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/attack2_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 29,
+						"w": 27,
+						"h": 30
+					},
+					"frame": {
+						"x": 185,
+						"y": 23,
+						"w": 27,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/stand_up_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 22,
+						"w": 23,
+						"h": 21
+					},
+					"frame": {
+						"x": 154,
+						"y": 30,
+						"w": 23,
+						"h": 21
+					}
+				},
+				{
+					"filename": "viking/fall_back_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 11,
+						"w": 22,
+						"h": 31
+					},
+					"frame": {
+						"x": 121,
+						"y": 33,
+						"w": 22,
+						"h": 31
+					}
+				},
+				{
+					"filename": "viking/run_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 10,
+						"w": 21,
+						"h": 32
+					},
+					"frame": {
+						"x": 143,
+						"y": 51,
+						"w": 21,
+						"h": 32
+					}
+				},
+				{
+					"filename": "viking/jump_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 10,
+						"w": 21,
+						"h": 30
+					},
+					"frame": {
+						"x": 164,
+						"y": 51,
+						"w": 21,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/run_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 12,
+						"w": 21,
+						"h": 30
+					},
+					"frame": {
+						"x": 164,
+						"y": 81,
+						"w": 21,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/run_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 12,
+						"w": 21,
+						"h": 30
+					},
+					"frame": {
+						"x": 164,
+						"y": 111,
+						"w": 21,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/hit_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 14,
+						"w": 21,
+						"h": 28
+					},
+					"frame": {
+						"x": 61,
+						"y": 38,
+						"w": 21,
+						"h": 28
+					}
+				},
+				{
+					"filename": "viking/hit_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 12,
+						"w": 20,
+						"h": 30
+					},
+					"frame": {
+						"x": 35,
+						"y": 64,
+						"w": 20,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/attack1_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 32,
+						"w": 20,
+						"h": 27
+					},
+					"frame": {
+						"x": 0,
+						"y": 65,
+						"w": 20,
+						"h": 27
+					}
+				},
+				{
+					"filename": "viking/run_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 12,
+						"h": 32
+					},
+					"frame": {
+						"x": 20,
+						"y": 65,
+						"w": 12,
+						"h": 32
+					}
+				},
+				{
+					"filename": "viking/fall_back_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 12,
+						"w": 19,
+						"h": 30
+					},
+					"frame": {
+						"x": 0,
+						"y": 92,
+						"w": 19,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/jump_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 12,
+						"w": 19,
+						"h": 30
+					},
+					"frame": {
+						"x": 82,
+						"y": 38,
+						"w": 19,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/stand_up_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 12,
+						"w": 19,
+						"h": 30
+					},
+					"frame": {
+						"x": 101,
+						"y": 38,
+						"w": 19,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/attack1_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 23,
+						"w": 18,
+						"h": 36
+					},
+					"frame": {
+						"x": 120,
+						"y": 64,
+						"w": 18,
+						"h": 36
+					}
+				},
+				{
+					"filename": "viking/jump_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 10,
+						"w": 18,
+						"h": 32
+					},
+					"frame": {
+						"x": 120,
+						"y": 100,
+						"w": 18,
+						"h": 32
+					}
+				},
+				{
+					"filename": "viking/jump_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 10,
+						"w": 18,
+						"h": 32
+					},
+					"frame": {
+						"x": 138,
+						"y": 100,
+						"w": 18,
+						"h": 32
+					}
+				},
+				{
+					"filename": "viking/ready_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 11,
+						"w": 18,
+						"h": 31
+					},
+					"frame": {
+						"x": 138,
+						"y": 132,
+						"w": 18,
+						"h": 31
+					}
+				},
+				{
+					"filename": "viking/ready_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 11,
+						"w": 18,
+						"h": 31
+					},
+					"frame": {
+						"x": 55,
+						"y": 66,
+						"w": 18,
+						"h": 31
+					}
+				},
+				{
+					"filename": "viking/run_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 11,
+						"w": 18,
+						"h": 31
+					},
+					"frame": {
+						"x": 32,
+						"y": 94,
+						"w": 18,
+						"h": 31
+					}
+				},
+				{
+					"filename": "viking/attack1_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 29,
+						"w": 18,
+						"h": 30
+					},
+					"frame": {
+						"x": 0,
+						"y": 122,
+						"w": 18,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/ready_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 12,
+						"w": 18,
+						"h": 30
+					},
+					"frame": {
+						"x": 73,
+						"y": 68,
+						"w": 18,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/walk_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 12,
+						"w": 18,
+						"h": 30
+					},
+					"frame": {
+						"x": 50,
+						"y": 97,
+						"w": 18,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/attack2_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 30,
+						"w": 18,
+						"h": 29
+					},
+					"frame": {
+						"x": 50,
+						"y": 127,
+						"w": 18,
+						"h": 29
+					}
+				},
+				{
+					"filename": "viking/jump_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 16,
+						"w": 18,
+						"h": 26
+					},
+					"frame": {
+						"x": 91,
+						"y": 68,
+						"w": 18,
+						"h": 26
+					}
+				},
+				{
+					"filename": "viking/stand_up_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 16,
+						"w": 18,
+						"h": 26
+					},
+					"frame": {
+						"x": 91,
+						"y": 94,
+						"w": 18,
+						"h": 26
+					}
+				},
+				{
+					"filename": "viking/walk_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 10,
+						"w": 17,
+						"h": 32
+					},
+					"frame": {
+						"x": 68,
+						"y": 98,
+						"w": 17,
+						"h": 32
+					}
+				},
+				{
+					"filename": "viking/walk_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 10,
+						"w": 17,
+						"h": 32
+					},
+					"frame": {
+						"x": 68,
+						"y": 130,
+						"w": 17,
+						"h": 32
+					}
+				},
+				{
+					"filename": "viking/walk_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 11,
+						"w": 17,
+						"h": 31
+					},
+					"frame": {
+						"x": 68,
+						"y": 162,
+						"w": 17,
+						"h": 31
+					}
+				},
+				{
+					"filename": "viking/walk_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 11,
+						"w": 17,
+						"h": 31
+					},
+					"frame": {
+						"x": 68,
+						"y": 193,
+						"w": 17,
+						"h": 31
+					}
+				},
+				{
+					"filename": "viking/attack2_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 29,
+						"w": 17,
+						"h": 30
+					},
+					"frame": {
+						"x": 18,
+						"y": 125,
+						"w": 17,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/walk_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 12,
+						"w": 17,
+						"h": 30
+					},
+					"frame": {
+						"x": 0,
+						"y": 152,
+						"w": 17,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/attack2_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 29,
+						"w": 18,
+						"h": 30
+					},
+					"frame": {
+						"x": 0,
+						"y": 122,
+						"w": 18,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/hit_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 12,
+						"w": 19,
+						"h": 30
+					},
+					"frame": {
+						"x": 0,
+						"y": 92,
+						"w": 19,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/ready_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 12,
+						"w": 18,
+						"h": 30
+					},
+					"frame": {
+						"x": 73,
+						"y": 68,
+						"w": 18,
+						"h": 30
+					}
+				},
+				{
+					"filename": "viking/ready_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 11,
+						"w": 18,
+						"h": 31
+					},
+					"frame": {
+						"x": 138,
+						"y": 132,
+						"w": 18,
+						"h": 31
+					}
+				},
+				{
+					"filename": "viking/ready_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 50,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 11,
+						"w": 18,
+						"h": 31
+					},
+					"frame": {
+						"x": 55,
+						"y": 66,
+						"w": 18,
+						"h": 31
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}
