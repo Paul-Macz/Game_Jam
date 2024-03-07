@@ -26,7 +26,7 @@ export default class niveau1 extends Phaser.Scene {
         this.load.image("Phaser_tuilesdejeu2", "src/assets/neige.png");
 
 
-        this.load.tilemapTiledJSON("Iced", "src/assets/niveauIced.json");
+        this.load.tilemapTiledJSON("Iced", "src/assets/niveauIce.json");
     }
 
     create() {
@@ -46,7 +46,7 @@ export default class niveau1 extends Phaser.Scene {
 
 
         const fond = carteDuNiveau.createLayer("fond",[tileset1, tileset2]);
-        fond.setTint(0x6b6b6b)
+       fond.setTint(0x6b6b6b)
         const fond_blanc = carteDuNiveau.createLayer("fond_blanc",[ tileset,tileset1,tileset2]);
         const object = carteDuNiveau.createLayer("object", [tileset,tileset1,tileset2]);
         const ice = carteDuNiveau.createLayer("ice", [tileset,tileset1,tileset2]);
@@ -83,19 +83,29 @@ export default class niveau1 extends Phaser.Scene {
         this.physics.world.setBounds(this.boundx,this.boundy,this.boundWidth,this.boundHeight)
         tab_points.objects.forEach(point => {
             const randomNumber = Math.random();
+            // console.log(randomNumber)
+            var image;
             // Distribution aléatoire de l'item
-            if (randomNumber < 0.33 && point.name == "ennemi") {
-              var nouvel_ennemi = new Terrestre(this,"slime",point.x, point.y,Calque_background);
-            } else if (randomNumber > 0.33 && randomNumber < 0.66 && point.name == "ennemi") {
-              var nouvel_ennemi = new Terrestre(this,"viking",point.x, point.y,Calque_background);
-            } else if (randomNumber > 0.66 && randomNumber < 1 &&  point.name == "ennemi") {
-              var nouvel_ennemi = new Terrestre(this,"hache_rouge",point.x, point.y,Calque_background);
+            if (randomNumber < 0.33 && point.name == "ennemi_sol") {
+                image="slime"
+                
+            //   nouvel_ennemi = new Terrestre(this,"slime",point.x, point.y,Calque_background);
+            } else if (randomNumber > 0.33 && randomNumber < 0.66 && point.name == "ennemi_sol") {
+                image="viking"
+            //   nouvel_ennemi = new Terrestre(this,"viking",point.x, point.y,Calque_background);
+            } else if (randomNumber > 0.66 && randomNumber < 1 &&  point.name == "ennemi_sol") {
+                image="hache_rouge"
+            //   nouvel_ennemi = new Terrestre(this,"hache_rouge",point.x, point.y,Calque_background);
             }
+            console.log(image)
+            var nouvel_ennemi = new Terrestre(this,image,point.x, point.y,ice);
+            // console.log(nouvel_ennemi)
             nouvel_ennemi.sprite.setCollideWorldBounds(true);
+            console.log(nouvel_ennemi.image)
             nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
             this.groupe_ennemis.add(nouvel_ennemi.sprite);
       });
-
+      this.cameras.main.setZoom(0.5)
        this.player.inventory.forEach(element => {
         if(element instanceof Range){
         this.physics.add.collider(element.Bullets,Calque_background,element.erase, null, element);

@@ -81,7 +81,7 @@ export default class niveau2 extends Phaser.Scene {
   calque_grotte.setCollisionByProperty({ estSolide: true });  
   this.cursors = this.input.keyboard.createCursorKeys();
 
-  this.porte_ouvrante2 = this.physics.add.staticSprite(40, 2500, "porte_ouvrante"); 
+  this.porte_ouvrante2 = this.physics.add.staticSprite(60, 2280, "porte_ouvrante"); 
   this.porte_ouvrante2.ouverte = false; 
 
   // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
@@ -121,19 +121,29 @@ export default class niveau2 extends Phaser.Scene {
       
     // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
     tab_points.objects.forEach(point => {
-        const randomNumber = Math.random();
-        // Distribution aléatoire de l'item
-        if (randomNumber < 0.33 && point.name == "fighter") {
-          var nouvel_ennemi = new Terrestre(this,"slime",point.x, point.y,Calque_background);
-        } else if (randomNumber > 0.33 && randomNumber < 0.66 && point.name == "fighter") {
-          var nouvel_ennemi = new Terrestre(this,"viking",point.x, point.y,Calque_background);
-        } else if (randomNumber > 0.66 && randomNumber < 1 &&  point.name == "fighter") {
-          var nouvel_ennemi = new Terrestre(this,"hache_rouge",point.x, point.y,Calque_background);
-        }
-        nouvel_ennemi.sprite.setCollideWorldBounds(true);
-        nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
-        this.groupe_ennemis.add(nouvel_ennemi.sprite);
-  }); 
+      const randomNumber = Math.random();
+      // console.log(randomNumber)
+      var image;
+      // Distribution aléatoire de l'item
+      if (randomNumber < 0.33 && point.name == "figther") {
+          image="slime"
+          
+      //   nouvel_ennemi = new Terrestre(this,"slime",point.x, point.y,Calque_background);
+      } else if (randomNumber > 0.33 && randomNumber < 0.66 && point.name == "figther") {
+          image="viking"
+      //   nouvel_ennemi = new Terrestre(this,"viking",point.x, point.y,Calque_background);
+      } else if (randomNumber > 0.66 && randomNumber < 1 &&  point.name == "figther") {
+          image="hache_rouge"
+      //   nouvel_ennemi = new Terrestre(this,"hache_rouge",point.x, point.y,Calque_background);
+      }
+      console.log(image)
+      var nouvel_ennemi = new Terrestre(this,image,point.x, point.y,Calque_background);
+      // console.log(nouvel_ennemi)
+      nouvel_ennemi.sprite.setCollideWorldBounds(true);
+      console.log(nouvel_ennemi.image)
+      nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
+      this.groupe_ennemis.add(nouvel_ennemi.sprite);
+});
 
   
   this.player.inventory.forEach(element => {
