@@ -83,8 +83,6 @@ export default class tutomap extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, carteDuNiveau.widthInPixels, carteDuNiveau.heightInPixels);
     this.cameras.main.startFollow(this.player.sprite);
 
-    
-
         // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
         tab_points.objects.forEach(point => {
           if (point.name == "ennemi") { 
@@ -97,8 +95,6 @@ export default class tutomap extends Phaser.Scene {
               this.groupe_ennemis.add(nouvel_ennemi2.sprite);
               }
           });   
- 
-         
       /*****************************************************
        *  ajout du modele de mobilite des ennemis *
        ******************************************************/
@@ -109,27 +105,38 @@ export default class tutomap extends Phaser.Scene {
         un_ennemi.anims.play("hache_rouge_walk", true); // Joue l'animation de marche
         // Inverse l'échelle horizontale pour retourner l'animation
     });
-    
-    
+    this.player.inventory.forEach(element => {
+      if(element instanceof Range){
+      this.physics.add.collider(element.Bullets,Calque_background,element.erase, null, element);
+      this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
+      }
+    });
+
+    this.physics.add.collider(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);
+    this.physics.add.overlap(this.player.swordHitbox,this.groupe_ennemis,this.handleSwordEnnemiCollision,null,this);
+
       
   }
-  handlePlayerEnnemiCollision(ennemiSp, player) {
-    if (ennemiSp.ennemiObject instanceof Character) {
-        console.log("check")
-    }
+  handlePlayerEnnemiCollision(player, ennemiSp) {
+
     const dx = this.player.sprite.x - ennemiSp.x;
     const dy = this.player.sprite.y - ennemiSp.y;
+    // console.log(dx,dy)
     const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
     this.player.sprite.setVelocity(dir.x, dir.y)
-    this.hit = 1
     this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
 
-    this.eKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
-
-    this.physics.add.collider(this.groupe_ennemis, calque_nature);
-    this.physics.add.collider(this.groupe_ennemis, calque_rochers);
-
 }
+  handleSwordEnnemiCollision(sword,ennemiSp){
+    if(!(ennemiSp.ennemiObject instanceof Flying)){
+    const dx = ennemiSp.x - sword.x;
+    const dy = ennemiSp.y - sword.y;
+    
+    const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
+    ennemiSp.setVelocity(dir.x, dir.y)
+    ennemiSp.ennemiObject.getHit(this.player.equippedWeapon.damage)
+    }
+  }
   update() {
     this.player.update()
 
