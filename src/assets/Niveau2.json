@@ -341,7 +341,6 @@
         {
          "draworder":"topdown",
          "id":13,
-         "locked":true,
          "name":"calque_ennemis",
          "objects":[
                 {
@@ -353,8 +352,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":572,
-                 "y":1102.67
+                 "x":577.333333333333,
+                 "y":1053.33666666667
                 }, 
                 {
                  "height":0,
@@ -365,8 +364,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":1547,
-                 "y":1260
+                 "x":1587,
+                 "y":1213
                 }, 
                 {
                  "height":0,
@@ -377,8 +376,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":1393,
-                 "y":1256
+                 "x":1462,
+                 "y":1215
                 }, 
                 {
                  "height":0,
@@ -389,8 +388,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":1667,
-                 "y":1260
+                 "x":1711,
+                 "y":1216
                 }, 
                 {
                  "height":0,
@@ -401,8 +400,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":147,
-                 "y":972
+                 "x":149.666666666667,
+                 "y":886.666666666667
                 }, 
                 {
                  "height":0,
@@ -485,8 +484,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2474,
-                 "y":1389
+                 "x":2503,
+                 "y":1357
                 }, 
                 {
                  "height":0,
@@ -1372,7 +1371,7 @@
         {
          "columns":32,
          "firstgid":1,
-         "image":"..\/..\/..\/assets (1)\/assets\/tiles.png",
+         "image":"..\/..\/..\/..\/..\/..\/..\/..\/Users\/Evan1204\/Desktop\/niveau2\/tiles.png",
          "imageheight":640,
          "imagewidth":1024,
          "margin":0,
@@ -6970,7 +6969,7 @@
         {
          "columns":21,
          "firstgid":641,
-         "image":"..\/..\/..\/assets (1)\/assets\/miscellaneous.png",
+         "image":"..\/..\/..\/..\/..\/..\/..\/..\/Users\/Evan1204\/Desktop\/niveau2\/miscellaneous.png",
          "imageheight":348,
          "imagewidth":688,
          "margin":0,

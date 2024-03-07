@@ -19,12 +19,10 @@ export default class niveau2 extends Phaser.Scene {
     });
   }
   preload() {
-    
-    this.load.spritesheet("img_ennemi", "src/assets/ennemi.png", {
-      frameWidth: 32,
-      frameHeight: 48
-    });  
-    this.load.image("Phaser_tuilesdejeu1", "src/assets/tiles.png");
+  
+  this.load.atlas('petit_squelette',"src/assets/ennemis/petit_squelette/petit_squelette.png","src/assets/ennemis/petit_squelette/petit_squelette.json");
+  this.load.atlas('squelette_hache',"src/assets/ennemis/squelette_hache/squelette_hache.png","src/assets/ennemis/squelette_hache/squelette_hache.json");
+  this.load.image("Phaser_tuilesdejeu1", "src/assets/tiles.png");
   this.load.image("Phaser_tuilesdejeu2", "src/assets/miscellaneous.png");
   this.load.tilemapTiledJSON("carte", "src/assets/Niveau2.json"); 
   
@@ -123,10 +121,14 @@ export default class niveau2 extends Phaser.Scene {
     // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
     tab_points.objects.forEach(point => {
       if (point.name == "figther") { 
-        var nouvel_ennemi = new Terrestre(this,"battlemage_run",point.x, point.y,Calque_background);
+        var nouvel_ennemi = new Terrestre(this,"squelette_hache",point.x, point.y,Calque_background);
         nouvel_ennemi.sprite.setCollideWorldBounds(true);
         nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
         this.groupe_ennemis.add(nouvel_ennemi.sprite);
+      }else if (point.name == "figther2"){
+        var nouvel_ennemi2 = new Terrestre(this,"petit_squelette",point.x, point.y,Calque_background);
+        nouvel_ennemi2.sprite.setCollideWorldBounds(true);
+        nouvel_ennemi2.sprite.ennemiObject = nouvel_ennemi2;
       }
   });  
   
@@ -140,15 +142,16 @@ export default class niveau2 extends Phaser.Scene {
 
   this.physics.add.overlap(this.player.swordHitbox,this.groupe_ennemis,this.handleSwordEnnemiCollision,null,this);
 
-/*****************************************************
+      /*****************************************************
        *  ajout du modele de mobilite des ennemis *
        ******************************************************/
       // par défaut, on va a gauche en utilisant la meme animation que le personnage
-      //this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
-      //  un_ennemi.setVelocityX(-90);
-      //  un_ennemi.direction = "left";
-     //   un_ennemi.anims.play('squelet_walk1', true);
-    //  }); 
+    this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
+        un_ennemi.setVelocityX(-30);
+        un_ennemi.direction = "left";
+        un_ennemi.anims.play('squelette_hache_walk', true);
+        un_ennemi.anims.play
+      }); 
 
       this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
         if(this.player.sprite.x < un_ennemi.x) {
