@@ -9,6 +9,7 @@ var porte_ouvrante2;
 var Calque_background; 
 var calque_volant;
 var calque_grotte;
+var pics;
 var light;
 
 export default class niveau2 extends Phaser.Scene {
@@ -64,7 +65,7 @@ export default class niveau2 extends Phaser.Scene {
     "calque_grotte",
     tileset1
   )
-  const pics = carteDuNiveau.createLayer(
+   pics = carteDuNiveau.createLayer(
     "pics",
     tileset1
   )
@@ -79,10 +80,12 @@ export default class niveau2 extends Phaser.Scene {
   );
   Calque_background.setCollisionByProperty({ estSolide: true });
   calque_volant.setCollisionByProperty({ estSolide: true });
-  calque_grotte.setCollisionByProperty({ estSolide: true });  
+  calque_grotte.setCollisionByProperty({ estSolide: true }); 
+  pics.setCollisionByProperty({ estSolide: true});
+  pics.setCollisionByProperty({estMort: true});
   this.cursors = this.input.keyboard.createCursorKeys();
 
-  this.porte_ouvrante2 = this.physics.add.staticSprite(40, 2500, "porte_ouvrante"); 
+  this.porte_ouvrante2 = this.physics.add.staticSprite(60, 2270, "porte_ouvrante"); 
   this.porte_ouvrante2.ouverte = false; 
 
   // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
@@ -93,28 +96,28 @@ export default class niveau2 extends Phaser.Scene {
   this.player = new Player(this,"battlemage",90,1360, Calque_background);
       this.physics.add.collider(this.player.sprite, calque_volant);
       this.physics.add.collider(this.player.sprite, calque_grotte); 
-      this.physics.add.collider(this.player.sprite, Calque_background);  
+      this.physics.add.collider(this.player.sprite, Calque_background);
+      this.physics.add.collider(this.player.sprite, pics, function(player, tile) {
+        // Récupérer la tuile avec ses propriétés
+    const properties = tile.properties;
+    console.log("hi")
+        // Si la tuile avec laquelle le joueur entre en collision est mortelle
+        if (properties && properties.estMort) {
+            gameOver(); // Appeler la fonction de fin de jeu
+        }
+    });
+    
       this.player.sprite.setCollideWorldBounds(true);
       // this.player.sprite.setBounce(0.2);
       this.player.sprite.body.onWorldBounds = true; 
 
-      this.player.sprite.body.world.on(
-        "worldbounds", // evenement surveillé
-        function (body, up, down, left, right) {
-          // on verifie si la hitbox qui est rentrée en collision est celle du player,
-          // et si la collision a eu lieu sur le bord inférieur du player
-          if (body.gameObject === this.player.sprite && down == true) {
-            // si oui : GAME OVER on arrete la physique et on colorie le personnage en rouge
-            this.player.gameOver=true;
-          }
-        },
-      ); 
+      
       
     
 
       this.weap = new Melee(this, "bull", 2, 10, 1, "bullet",true,10);
       this.player.pickWeapon(this.weap);
-      
+      this.cameras.main.setZoom(0.2);
 
       this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundHeight);
       
@@ -239,7 +242,7 @@ openDoor(){
   // resetSpeed(entity){
   //   entity.sprite.setVelocity(0,0)
   // }
-
+  
   
   restartScene() {
     this.scene.stop('niveau2');
