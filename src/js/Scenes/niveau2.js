@@ -9,6 +9,7 @@ import Player from "/src/js/Beings/player.js";
 var Calque_background; 
 var calque_volant;
 var calque_grotte;
+var light;
 
 export default class niveau2 extends Phaser.Scene {
   // constructeur de la classe
@@ -18,6 +19,7 @@ export default class niveau2 extends Phaser.Scene {
     });
   }
   preload() {
+    
     this.load.spritesheet("img_ennemi", "src/assets/ennemi.png", {
       frameWidth: 32,
       frameHeight: 48
@@ -107,6 +109,7 @@ export default class niveau2 extends Phaser.Scene {
         },
       ); 
       
+    
 
       this.weap = new Melee(this, "bull", 2, 10, 1, "bullet",true,10);
       this.player.pickWeapon(this.weap);
@@ -117,7 +120,7 @@ export default class niveau2 extends Phaser.Scene {
     // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
     tab_points.objects.forEach(point => {
       if (point.name == "figther") { 
-        var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,Calque_background);
+        var nouvel_ennemi = new Terrestre(this,"walk_squelette_1",point.x, point.y,Calque_background);
         nouvel_ennemi.sprite.setCollideWorldBounds(true);
         nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
         this.groupe_ennemis.add(nouvel_ennemi.sprite);
