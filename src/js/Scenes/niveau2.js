@@ -11,7 +11,7 @@ var calque_volant;
 var calque_grotte;
 var pics;
 var light;
-
+var niv2;
 export default class niveau2 extends Phaser.Scene {
   // constructeur de la classe
   constructor() {
@@ -28,6 +28,8 @@ export default class niveau2 extends Phaser.Scene {
   
 
   create() {
+   niv2 = this.sound.add('niv2')
+   niv2.play();
     this.boundx=0;
       this.boundy=0;
       this.boundWidth=4800;
@@ -202,7 +204,9 @@ export default class niveau2 extends Phaser.Scene {
 
 }
 openDoor(){
+  niv2.stop();
   this.scene.start("fin_niveau2");
+ 
 }
   handlePlayerEnnemiCollision(player, ennemiSp) {
 

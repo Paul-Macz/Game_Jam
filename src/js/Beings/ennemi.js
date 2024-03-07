@@ -3,7 +3,7 @@ import Weapon from "/src/js/Items/weapon.js";
 import Items from "/src/js/Items/item.js";
 
 export default class Ennemi extends Character{
-    constructor(scene, image,x, y, calque, velocity) {
+     constructor(scene, image,x, y, calque, velocity) {
         super(scene,image,x,y,calque);
         this.speedx = 100;
         if (velocity != undefined) {
@@ -30,7 +30,7 @@ export default class Ennemi extends Character{
             this.sprite.destroy();
             this.ennemi_dead.play();
         }
-    }
+  }
     dropItem() {
          // Générer un nombre aléatoire pour déterminer le type d'item
         const randomNumber = Math.random();

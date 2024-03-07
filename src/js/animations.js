@@ -73,7 +73,13 @@ export default class Animations extends Phaser.Scene{
         this.load.audio('heal_bonus',"src/assets/audio/heal_bonus.mp3");
         this.load.audio('jump',"src/assets/audio/jump.mp3");
         this.load.audio('slash',"src/assets/audio/slash.mp3");
-        this.load.audio('tuto_ost',"src/assets/audio/Dofus 2.0_Incarnam.mp3");
+        this.load.audio('tuto_ost',"src/assets/audio/dofus.mp3");
+        this.load.audio('menu_ost',"src/assets/audio/Deep.mp3");
+        this.load.audio('niv2',"src/assets/audio/Gerudo.mp3");
+        this.load.audio('niv3',"src/assets/audio/Eldenring.mp3");
+
+
+
         
     } 
     create(){
@@ -633,7 +639,7 @@ export default class Animations extends Phaser.Scene{
       });
     }
     update(){
-        this.scene.start("menu");
+        this.scene.start("tutomap");
     }
 }
 //a toi
