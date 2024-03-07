@@ -17,12 +17,12 @@ export default class Terrestre extends Ennemi{
     }
     update(){
         //ennemi touching the floor
-       // if(this.direction == 'left'){
-         //   this.sprite.flipX=true;
-       // }
-       // else{
-          //  this.sprite.flipX=false;
-       // }
+        if(this.direction == 'left'){
+            this.sprite.flipX=true;
+        }
+       else{
+            this.sprite.flipX=false;
+        }
         if(this.sprite.body.blocked.down){
             
             if (this.direction == "left") {
