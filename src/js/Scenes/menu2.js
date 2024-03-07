@@ -14,7 +14,8 @@ export default class menu2 extends Phaser.Scene {
 
 
     create() {
-
+    deep_ost=this.sound;add(menu_ost)
+    deep_ost.play();
         this.add.image(0, 0, "menu_fond").setOrigin(0).setDepth(0).setScale(5,3);
 
        this.planet1 = this.add.sprite(100,450, "planetes_rouge");
@@ -74,14 +75,20 @@ export default class menu2 extends Phaser.Scene {
 
 
       bouton_nv1.on("pointerup", () => {
+        deep_ost.stop()
+
         this.scene.start("niveau1");
        });
    
        bouton_nv2.on("pointerup", () => {
+        deep_ost.stop()
+
          this.scene.start("niveau3");
        });
 
        bouton_nv3.on("pointerup", () => {
+        deep_ost.stop()
+
         this.scene.start("niveau2");
        });
     
