@@ -167,7 +167,7 @@ if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
         this.sprite.setVelocityY(-speedy);
         this.jumpState++;
     }
-    this.jumpForward.play();
+    this.jump.play();
     
             if(velocityX==0){
                 this.jumpNeutral=true;
