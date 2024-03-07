@@ -1,0 +1,859 @@
+{
+	"textures": [
+		{
+			"image": "archer",
+			"format": "RGBA8888",
+			"size": {
+				"w": 569,
+				"h": 275
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "archer/dead-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 86,
+						"w": 70,
+						"h": 10
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 70,
+						"h": 10
+					}
+				},
+				{
+					"filename": "archer/attack-A4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 39,
+						"y": 35,
+						"w": 57,
+						"h": 61
+					},
+					"frame": {
+						"x": 70,
+						"y": 0,
+						"w": 57,
+						"h": 61
+					}
+				},
+				{
+					"filename": "archer/dead-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 68,
+						"w": 52,
+						"h": 28
+					},
+					"frame": {
+						"x": 0,
+						"y": 10,
+						"w": 52,
+						"h": 28
+					}
+				},
+				{
+					"filename": "archer/attack-A2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 41,
+						"w": 50,
+						"h": 55
+					},
+					"frame": {
+						"x": 0,
+						"y": 38,
+						"w": 50,
+						"h": 55
+					}
+				},
+				{
+					"filename": "archer/attack-A3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 36,
+						"y": 40,
+						"w": 43,
+						"h": 56
+					},
+					"frame": {
+						"x": 127,
+						"y": 0,
+						"w": 43,
+						"h": 56
+					}
+				},
+				{
+					"filename": "archer/attack-A5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 38,
+						"w": 40,
+						"h": 58
+					},
+					"frame": {
+						"x": 170,
+						"y": 0,
+						"w": 40,
+						"h": 58
+					}
+				},
+				{
+					"filename": "archer/dead-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 54,
+						"w": 38,
+						"h": 42
+					},
+					"frame": {
+						"x": 127,
+						"y": 56,
+						"w": 38,
+						"h": 42
+					}
+				},
+				{
+					"filename": "archer/attack-B5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 41,
+						"w": 36,
+						"h": 55
+					},
+					"frame": {
+						"x": 50,
+						"y": 61,
+						"w": 36,
+						"h": 55
+					}
+				},
+				{
+					"filename": "archer/attack-B2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 42,
+						"w": 36,
+						"h": 54
+					},
+					"frame": {
+						"x": 86,
+						"y": 61,
+						"w": 36,
+						"h": 54
+					}
+				},
+				{
+					"filename": "archer/run-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 39,
+						"w": 35,
+						"h": 57
+					},
+					"frame": {
+						"x": 0,
+						"y": 93,
+						"w": 35,
+						"h": 57
+					}
+				},
+				{
+					"filename": "archer/run-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 40,
+						"w": 35,
+						"h": 56
+					},
+					"frame": {
+						"x": 210,
+						"y": 0,
+						"w": 35,
+						"h": 56
+					}
+				},
+				{
+					"filename": "archer/attack-B4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 43,
+						"w": 35,
+						"h": 53
+					},
+					"frame": {
+						"x": 245,
+						"y": 0,
+						"w": 35,
+						"h": 53
+					}
+				},
+				{
+					"filename": "archer/run-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 42,
+						"y": 39,
+						"w": 34,
+						"h": 57
+					},
+					"frame": {
+						"x": 280,
+						"y": 0,
+						"w": 34,
+						"h": 57
+					}
+				},
+				{
+					"filename": "archer/run-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 39,
+						"w": 33,
+						"h": 57
+					},
+					"frame": {
+						"x": 245,
+						"y": 53,
+						"w": 33,
+						"h": 57
+					}
+				},
+				{
+					"filename": "archer/dead-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 42,
+						"y": 40,
+						"w": 33,
+						"h": 56
+					},
+					"frame": {
+						"x": 210,
+						"y": 56,
+						"w": 33,
+						"h": 56
+					}
+				},
+				{
+					"filename": "archer/idle-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 42,
+						"y": 40,
+						"w": 33,
+						"h": 56
+					},
+					"frame": {
+						"x": 165,
+						"y": 58,
+						"w": 33,
+						"h": 56
+					}
+				},
+				{
+					"filename": "archer/attack-A1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 42,
+						"y": 41,
+						"w": 33,
+						"h": 55
+					},
+					"frame": {
+						"x": 122,
+						"y": 98,
+						"w": 33,
+						"h": 55
+					}
+				},
+				{
+					"filename": "archer/attack-A6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 42,
+						"y": 41,
+						"w": 33,
+						"h": 55
+					},
+					"frame": {
+						"x": 86,
+						"y": 115,
+						"w": 33,
+						"h": 55
+					}
+				},
+				{
+					"filename": "archer/attack-B3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 38,
+						"y": 43,
+						"w": 33,
+						"h": 53
+					},
+					"frame": {
+						"x": 35,
+						"y": 116,
+						"w": 33,
+						"h": 53
+					}
+				},
+				{
+					"filename": "archer/run-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 39,
+						"w": 32,
+						"h": 57
+					},
+					"frame": {
+						"x": 0,
+						"y": 150,
+						"w": 32,
+						"h": 57
+					}
+				},
+				{
+					"filename": "archer/run-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 42,
+						"y": 39,
+						"w": 32,
+						"h": 57
+					},
+					"frame": {
+						"x": 32,
+						"y": 169,
+						"w": 32,
+						"h": 57
+					}
+				},
+				{
+					"filename": "archer/idle-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 40,
+						"w": 32,
+						"h": 56
+					},
+					"frame": {
+						"x": 0,
+						"y": 207,
+						"w": 32,
+						"h": 56
+					}
+				},
+				{
+					"filename": "archer/jump-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 40,
+						"w": 32,
+						"h": 56
+					},
+					"frame": {
+						"x": 314,
+						"y": 0,
+						"w": 32,
+						"h": 56
+					}
+				},
+				{
+					"filename": "archer/jump-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 40,
+						"w": 32,
+						"h": 56
+					},
+					"frame": {
+						"x": 346,
+						"y": 0,
+						"w": 32,
+						"h": 56
+					}
+				},
+				{
+					"filename": "archer/run-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 40,
+						"w": 32,
+						"h": 56
+					},
+					"frame": {
+						"x": 378,
+						"y": 0,
+						"w": 32,
+						"h": 56
+					}
+				},
+				{
+					"filename": "archer/hit-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 41,
+						"w": 32,
+						"h": 55
+					},
+					"frame": {
+						"x": 410,
+						"y": 0,
+						"w": 32,
+						"h": 55
+					}
+				},
+				{
+					"filename": "archer/hit-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 41,
+						"w": 32,
+						"h": 55
+					},
+					"frame": {
+						"x": 442,
+						"y": 0,
+						"w": 32,
+						"h": 55
+					}
+				},
+				{
+					"filename": "archer/run-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 42,
+						"y": 41,
+						"w": 32,
+						"h": 55
+					},
+					"frame": {
+						"x": 474,
+						"y": 0,
+						"w": 32,
+						"h": 55
+					}
+				},
+				{
+					"filename": "archer/jump-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 42,
+						"w": 32,
+						"h": 54
+					},
+					"frame": {
+						"x": 506,
+						"y": 0,
+						"w": 32,
+						"h": 54
+					}
+				},
+				{
+					"filename": "archer/run-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 39,
+						"w": 31,
+						"h": 57
+					},
+					"frame": {
+						"x": 538,
+						"y": 0,
+						"w": 31,
+						"h": 57
+					}
+				},
+				{
+					"filename": "archer/hit-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 40,
+						"w": 31,
+						"h": 56
+					},
+					"frame": {
+						"x": 506,
+						"y": 54,
+						"w": 31,
+						"h": 56
+					}
+				},
+				{
+					"filename": "archer/run-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 40,
+						"w": 31,
+						"h": 56
+					},
+					"frame": {
+						"x": 410,
+						"y": 55,
+						"w": 31,
+						"h": 56
+					}
+				},
+				{
+					"filename": "archer/attack-B1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 42,
+						"y": 41,
+						"w": 31,
+						"h": 55
+					},
+					"frame": {
+						"x": 441,
+						"y": 55,
+						"w": 31,
+						"h": 55
+					}
+				},
+				{
+					"filename": "archer/attack-B6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 42,
+						"y": 41,
+						"w": 31,
+						"h": 55
+					},
+					"frame": {
+						"x": 472,
+						"y": 55,
+						"w": 31,
+						"h": 55
+					}
+				},
+				{
+					"filename": "archer/run-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 39,
+						"w": 30,
+						"h": 57
+					},
+					"frame": {
+						"x": 314,
+						"y": 56,
+						"w": 30,
+						"h": 57
+					}
+				},
+				{
+					"filename": "archer/jump-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 45,
+						"y": 40,
+						"w": 30,
+						"h": 56
+					},
+					"frame": {
+						"x": 278,
+						"y": 57,
+						"w": 30,
+						"h": 56
+					}
+				},
+				{
+					"filename": "archer/hit-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 41,
+						"w": 30,
+						"h": 55
+					},
+					"frame": {
+						"x": 243,
+						"y": 111,
+						"w": 30,
+						"h": 55
+					}
+				},
+				{
+					"filename": "archer/run-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 41,
+						"w": 30,
+						"h": 55
+					},
+					"frame": {
+						"x": 273,
+						"y": 113,
+						"w": 30,
+						"h": 55
+					}
+				},
+				{
+					"filename": "archer/jump-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 42,
+						"y": 42,
+						"w": 30,
+						"h": 54
+					},
+					"frame": {
+						"x": 273,
+						"y": 168,
+						"w": 30,
+						"h": 54
+					}
+				},
+				{
+					"filename": "archer/jump-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 44,
+						"y": 40,
+						"w": 30,
+						"h": 53
+					},
+					"frame": {
+						"x": 273,
+						"y": 222,
+						"w": 30,
+						"h": 53
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}

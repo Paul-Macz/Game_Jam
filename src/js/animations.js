@@ -48,7 +48,15 @@ export default class Animations extends Phaser.Scene{
             frameHeight:330
           });
         this.load.atlas('battlemage', "src/assets/battlemage.png" ,"src/assets/battlemage.json");
-    }
+        this.load.atlas('viking',"src/assets/ennemis/viking.png","src/assets/ennemis/viking.json");
+        this.load.atlas('archer',"src/assets/ennemis/archer.png","src/assets/ennemis/archer.json");
+        this.load.atlas('hache_rouge',"src/assets/ennemis/hache_rouge.png","src/assets/ennemis/hache_rouge.json");
+        this.load.atlas('petit_squelette',"src/assets/ennemis/petit_squelette.png","src/assets/ennemis/petit_squelette.json");
+        this.load.atlas('slime',"src/assets/ennemis/slime.png","src/assets/ennemis/slime.json");
+        this.load.atlas('squelette_epee',"src/assets/ennemis/squelette_epee.png","src/assets/ennemis/squelette_epee.json");
+        this.load.atlas('squelette_hache',"src/assets/ennemis/squelette_hache.png","src/assets/ennemis/squelette_hache.json");
+        this.load.atlas('squelette_lance',"src/assets/ennemis/squelette_lance.png","src/assets/ennemis/squelette_lance.json");
+    } 
     create(){
         this.anims.create({
             key: 'walk',
@@ -241,6 +249,6 @@ export default class Animations extends Phaser.Scene{
           }); 
     }
     update(){
-        this.scene.start("menu2");
+        this.scene.start("niveau2");
     }
 }

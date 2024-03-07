@@ -1,0 +1,901 @@
+{
+	"textures": [
+		{
+			"image": "squelette_epee",
+			"format": "RGBA8888",
+			"size": {
+				"w": 322,
+				"h": 788
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "squelette_épée/attack-A4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 53,
+						"h": 96
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 53,
+						"h": 96
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-A5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 37,
+						"y": 16,
+						"w": 74,
+						"h": 80
+					},
+					"frame": {
+						"x": 0,
+						"y": 96,
+						"w": 74,
+						"h": 80
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-B8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 37,
+						"y": 18,
+						"w": 73,
+						"h": 78
+					},
+					"frame": {
+						"x": 53,
+						"y": 0,
+						"w": 73,
+						"h": 78
+					}
+				},
+				{
+					"filename": "squelette_épée/dead-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 87,
+						"w": 65,
+						"h": 9
+					},
+					"frame": {
+						"x": 53,
+						"y": 78,
+						"w": 65,
+						"h": 9
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-B5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 21,
+						"w": 52,
+						"h": 75
+					},
+					"frame": {
+						"x": 0,
+						"y": 176,
+						"w": 52,
+						"h": 75
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-B4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 38,
+						"y": 32,
+						"w": 59,
+						"h": 64
+					},
+					"frame": {
+						"x": 0,
+						"y": 251,
+						"w": 59,
+						"h": 64
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-B7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 32,
+						"w": 41,
+						"h": 64
+					},
+					"frame": {
+						"x": 52,
+						"y": 176,
+						"w": 41,
+						"h": 64
+					}
+				},
+				{
+					"filename": "squelette_épée/walk-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 36,
+						"w": 55,
+						"h": 60
+					},
+					"frame": {
+						"x": 74,
+						"y": 87,
+						"w": 55,
+						"h": 60
+					}
+				},
+				{
+					"filename": "squelette_épée/dead-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 70,
+						"w": 57,
+						"h": 26
+					},
+					"frame": {
+						"x": 74,
+						"y": 147,
+						"w": 57,
+						"h": 26
+					}
+				},
+				{
+					"filename": "squelette_épée/walk-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 36,
+						"w": 51,
+						"h": 60
+					},
+					"frame": {
+						"x": 126,
+						"y": 0,
+						"w": 51,
+						"h": 60
+					}
+				},
+				{
+					"filename": "squelette_épée/walk-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 36,
+						"w": 51,
+						"h": 60
+					},
+					"frame": {
+						"x": 129,
+						"y": 60,
+						"w": 51,
+						"h": 60
+					}
+				},
+				{
+					"filename": "squelette_épée/idle-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 36,
+						"w": 50,
+						"h": 60
+					},
+					"frame": {
+						"x": 177,
+						"y": 0,
+						"w": 50,
+						"h": 60
+					}
+				},
+				{
+					"filename": "squelette_épée/idle-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 36,
+						"w": 49,
+						"h": 60
+					},
+					"frame": {
+						"x": 0,
+						"y": 315,
+						"w": 49,
+						"h": 60
+					}
+				},
+				{
+					"filename": "squelette_épée/jump-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 36,
+						"w": 47,
+						"h": 60
+					},
+					"frame": {
+						"x": 0,
+						"y": 375,
+						"w": 47,
+						"h": 60
+					}
+				},
+				{
+					"filename": "squelette_épée/walk-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 37,
+						"w": 51,
+						"h": 59
+					},
+					"frame": {
+						"x": 0,
+						"y": 435,
+						"w": 51,
+						"h": 59
+					}
+				},
+				{
+					"filename": "squelette_épée/walk-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 37,
+						"w": 51,
+						"h": 59
+					},
+					"frame": {
+						"x": 47,
+						"y": 375,
+						"w": 51,
+						"h": 59
+					}
+				},
+				{
+					"filename": "squelette_épée/walk-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 37,
+						"w": 51,
+						"h": 59
+					},
+					"frame": {
+						"x": 49,
+						"y": 315,
+						"w": 51,
+						"h": 59
+					}
+				},
+				{
+					"filename": "squelette_épée/idle-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 37,
+						"w": 49,
+						"h": 59
+					},
+					"frame": {
+						"x": 59,
+						"y": 240,
+						"w": 49,
+						"h": 59
+					}
+				},
+				{
+					"filename": "squelette_épée/jump-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 37,
+						"w": 49,
+						"h": 59
+					},
+					"frame": {
+						"x": 100,
+						"y": 173,
+						"w": 49,
+						"h": 59
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-A8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 45,
+						"w": 43,
+						"h": 51
+					},
+					"frame": {
+						"x": 131,
+						"y": 120,
+						"w": 43,
+						"h": 51
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-A1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 37,
+						"w": 48,
+						"h": 59
+					},
+					"frame": {
+						"x": 0,
+						"y": 494,
+						"w": 48,
+						"h": 59
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-B1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 37,
+						"w": 48,
+						"h": 59
+					},
+					"frame": {
+						"x": 0,
+						"y": 553,
+						"w": 48,
+						"h": 59
+					}
+				},
+				{
+					"filename": "squelette_épée/idle-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 37,
+						"w": 48,
+						"h": 59
+					},
+					"frame": {
+						"x": 0,
+						"y": 612,
+						"w": 48,
+						"h": 59
+					}
+				},
+				{
+					"filename": "squelette_épée/jump-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 37,
+						"w": 47,
+						"h": 59
+					},
+					"frame": {
+						"x": 0,
+						"y": 671,
+						"w": 47,
+						"h": 59
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-A3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 38,
+						"w": 51,
+						"h": 58
+					},
+					"frame": {
+						"x": 0,
+						"y": 730,
+						"w": 51,
+						"h": 58
+					}
+				},
+				{
+					"filename": "squelette_épée/hit-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 38,
+						"w": 51,
+						"h": 58
+					},
+					"frame": {
+						"x": 47,
+						"y": 671,
+						"w": 51,
+						"h": 58
+					}
+				},
+				{
+					"filename": "squelette_épée/hit-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 38,
+						"w": 50,
+						"h": 58
+					},
+					"frame": {
+						"x": 48,
+						"y": 494,
+						"w": 50,
+						"h": 58
+					}
+				},
+				{
+					"filename": "squelette_épée/jump-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 38,
+						"w": 50,
+						"h": 58
+					},
+					"frame": {
+						"x": 51,
+						"y": 434,
+						"w": 50,
+						"h": 58
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-A2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 38,
+						"w": 49,
+						"h": 58
+					},
+					"frame": {
+						"x": 98,
+						"y": 374,
+						"w": 49,
+						"h": 58
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-B2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 38,
+						"y": 38,
+						"w": 48,
+						"h": 58
+					},
+					"frame": {
+						"x": 101,
+						"y": 299,
+						"w": 48,
+						"h": 58
+					}
+				},
+				{
+					"filename": "squelette_épée/hit-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 39,
+						"w": 50,
+						"h": 57
+					},
+					"frame": {
+						"x": 108,
+						"y": 232,
+						"w": 50,
+						"h": 57
+					}
+				},
+				{
+					"filename": "squelette_épée/jump-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 39,
+						"w": 50,
+						"h": 57
+					},
+					"frame": {
+						"x": 149,
+						"y": 171,
+						"w": 50,
+						"h": 57
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-B11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 45,
+						"w": 43,
+						"h": 51
+					},
+					"frame": {
+						"x": 174,
+						"y": 120,
+						"w": 43,
+						"h": 51
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-B3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 38,
+						"y": 40,
+						"w": 67,
+						"h": 56
+					},
+					"frame": {
+						"x": 199,
+						"y": 60,
+						"w": 67,
+						"h": 56
+					}
+				},
+				{
+					"filename": "squelette_épée/jump-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 37,
+						"w": 44,
+						"h": 55
+					},
+					"frame": {
+						"x": 266,
+						"y": 60,
+						"w": 44,
+						"h": 55
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-B6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 42,
+						"w": 41,
+						"h": 54
+					},
+					"frame": {
+						"x": 227,
+						"y": 0,
+						"w": 41,
+						"h": 54
+					}
+				},
+				{
+					"filename": "squelette_épée/dead-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 47,
+						"w": 54,
+						"h": 49
+					},
+					"frame": {
+						"x": 268,
+						"y": 0,
+						"w": 54,
+						"h": 49
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-A6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 48,
+						"w": 70,
+						"h": 48
+					},
+					"frame": {
+						"x": 48,
+						"y": 552,
+						"w": 70,
+						"h": 48
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-B9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 48,
+						"w": 70,
+						"h": 48
+					},
+					"frame": {
+						"x": 98,
+						"y": 492,
+						"w": 70,
+						"h": 48
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-A7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 48,
+						"w": 65,
+						"h": 48
+					},
+					"frame": {
+						"x": 101,
+						"y": 432,
+						"w": 65,
+						"h": 48
+					}
+				},
+				{
+					"filename": "squelette_épée/attack-B10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 48,
+						"w": 65,
+						"h": 48
+					},
+					"frame": {
+						"x": 48,
+						"y": 600,
+						"w": 65,
+						"h": 48
+					}
+				},
+				{
+					"filename": "squelette_épée/dead-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 52,
+						"w": 55,
+						"h": 44
+					},
+					"frame": {
+						"x": 147,
+						"y": 357,
+						"w": 55,
+						"h": 44
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}

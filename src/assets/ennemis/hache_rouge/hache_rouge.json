@@ -1,0 +1,1090 @@
+{
+	"textures": [
+		{
+			"image": "hache_rouge",
+			"format": "RGBA8888",
+			"size": {
+				"w": 400,
+				"h": 187
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "hache_rouge/attack1_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 21,
+						"w": 80,
+						"h": 51
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 80,
+						"h": 51
+					}
+				},
+				{
+					"filename": "hache_rouge/attack2_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 33,
+						"w": 79,
+						"h": 39
+					},
+					"frame": {
+						"x": 80,
+						"y": 0,
+						"w": 79,
+						"h": 39
+					}
+				},
+				{
+					"filename": "hache_rouge/stand_up_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 67,
+						"w": 53,
+						"h": 5
+					},
+					"frame": {
+						"x": 159,
+						"y": 0,
+						"w": 53,
+						"h": 5
+					}
+				},
+				{
+					"filename": "hache_rouge/fall_back_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 67,
+						"w": 52,
+						"h": 5
+					},
+					"frame": {
+						"x": 212,
+						"y": 0,
+						"w": 52,
+						"h": 5
+					}
+				},
+				{
+					"filename": "hache_rouge/attack2_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 35,
+						"w": 51,
+						"h": 37
+					},
+					"frame": {
+						"x": 264,
+						"y": 0,
+						"w": 51,
+						"h": 37
+					}
+				},
+				{
+					"filename": "hache_rouge/stand_up_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 29,
+						"y": 51,
+						"w": 48,
+						"h": 21
+					},
+					"frame": {
+						"x": 159,
+						"y": 5,
+						"w": 48,
+						"h": 21
+					}
+				},
+				{
+					"filename": "hache_rouge/attack1_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 28,
+						"w": 47,
+						"h": 44
+					},
+					"frame": {
+						"x": 207,
+						"y": 5,
+						"w": 47,
+						"h": 44
+					}
+				},
+				{
+					"filename": "hache_rouge/dead_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 67,
+						"w": 46,
+						"h": 5
+					},
+					"frame": {
+						"x": 159,
+						"y": 37,
+						"w": 46,
+						"h": 5
+					}
+				},
+				{
+					"filename": "hache_rouge/attack2_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 32,
+						"w": 41,
+						"h": 40
+					},
+					"frame": {
+						"x": 80,
+						"y": 39,
+						"w": 41,
+						"h": 40
+					}
+				},
+				{
+					"filename": "hache_rouge/attack1_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 32,
+						"w": 38,
+						"h": 40
+					},
+					"frame": {
+						"x": 121,
+						"y": 39,
+						"w": 38,
+						"h": 40
+					}
+				},
+				{
+					"filename": "hache_rouge/fall_back_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 27,
+						"y": 45,
+						"w": 39,
+						"h": 26
+					},
+					"frame": {
+						"x": 159,
+						"y": 42,
+						"w": 39,
+						"h": 26
+					}
+				},
+				{
+					"filename": "hache_rouge/dead_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 47,
+						"w": 36,
+						"h": 25
+					},
+					"frame": {
+						"x": 0,
+						"y": 51,
+						"w": 36,
+						"h": 25
+					}
+				},
+				{
+					"filename": "hache_rouge/attack2_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 35,
+						"w": 35,
+						"h": 37
+					},
+					"frame": {
+						"x": 36,
+						"y": 51,
+						"w": 35,
+						"h": 37
+					}
+				},
+				{
+					"filename": "hache_rouge/dead_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 38,
+						"y": 40,
+						"w": 32,
+						"h": 33
+					},
+					"frame": {
+						"x": 0,
+						"y": 76,
+						"w": 32,
+						"h": 33
+					}
+				},
+				{
+					"filename": "hache_rouge/stand_up_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 47,
+						"w": 31,
+						"h": 25
+					},
+					"frame": {
+						"x": 315,
+						"y": 0,
+						"w": 31,
+						"h": 25
+					}
+				},
+				{
+					"filename": "hache_rouge/fall_back_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 34,
+						"w": 30,
+						"h": 38
+					},
+					"frame": {
+						"x": 346,
+						"y": 0,
+						"w": 30,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/jump_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 35,
+						"w": 28,
+						"h": 39
+					},
+					"frame": {
+						"x": 315,
+						"y": 25,
+						"w": 28,
+						"h": 39
+					}
+				},
+				{
+					"filename": "hache_rouge/attack1_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 35,
+						"w": 27,
+						"h": 37
+					},
+					"frame": {
+						"x": 254,
+						"y": 38,
+						"w": 27,
+						"h": 37
+					}
+				},
+				{
+					"filename": "hache_rouge/jump_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 39,
+						"w": 27,
+						"h": 35
+					},
+					"frame": {
+						"x": 281,
+						"y": 38,
+						"w": 27,
+						"h": 35
+					}
+				},
+				{
+					"filename": "hache_rouge/jump_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 35,
+						"w": 26,
+						"h": 39
+					},
+					"frame": {
+						"x": 198,
+						"y": 49,
+						"w": 26,
+						"h": 39
+					}
+				},
+				{
+					"filename": "hache_rouge/jump_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 35,
+						"w": 26,
+						"h": 39
+					},
+					"frame": {
+						"x": 224,
+						"y": 49,
+						"w": 26,
+						"h": 39
+					}
+				},
+				{
+					"filename": "hache_rouge/run_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 35,
+						"w": 26,
+						"h": 39
+					},
+					"frame": {
+						"x": 159,
+						"y": 68,
+						"w": 26,
+						"h": 39
+					}
+				},
+				{
+					"filename": "hache_rouge/hit_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 35,
+						"w": 26,
+						"h": 38
+					},
+					"frame": {
+						"x": 71,
+						"y": 79,
+						"w": 26,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/hit_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 38,
+						"w": 26,
+						"h": 37
+					},
+					"frame": {
+						"x": 32,
+						"y": 88,
+						"w": 26,
+						"h": 37
+					}
+				},
+				{
+					"filename": "hache_rouge/attack2_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 39,
+						"y": 33,
+						"w": 25,
+						"h": 39
+					},
+					"frame": {
+						"x": 0,
+						"y": 109,
+						"w": 25,
+						"h": 39
+					}
+				},
+				{
+					"filename": "hache_rouge/walk_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 35,
+						"w": 25,
+						"h": 39
+					},
+					"frame": {
+						"x": 97,
+						"y": 79,
+						"w": 25,
+						"h": 39
+					}
+				},
+				{
+					"filename": "hache_rouge/run_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 33,
+						"w": 24,
+						"h": 39
+					},
+					"frame": {
+						"x": 122,
+						"y": 79,
+						"w": 24,
+						"h": 39
+					}
+				},
+				{
+					"filename": "hache_rouge/run_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 33,
+						"w": 24,
+						"h": 39
+					},
+					"frame": {
+						"x": 58,
+						"y": 117,
+						"w": 24,
+						"h": 39
+					}
+				},
+				{
+					"filename": "hache_rouge/run_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 35,
+						"w": 24,
+						"h": 39
+					},
+					"frame": {
+						"x": 25,
+						"y": 125,
+						"w": 24,
+						"h": 39
+					}
+				},
+				{
+					"filename": "hache_rouge/walk_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 33,
+						"w": 24,
+						"h": 39
+					},
+					"frame": {
+						"x": 0,
+						"y": 148,
+						"w": 24,
+						"h": 39
+					}
+				},
+				{
+					"filename": "hache_rouge/walk_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 35,
+						"w": 24,
+						"h": 39
+					},
+					"frame": {
+						"x": 376,
+						"y": 0,
+						"w": 24,
+						"h": 39
+					}
+				},
+				{
+					"filename": "hache_rouge/walk_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 33,
+						"w": 24,
+						"h": 39
+					},
+					"frame": {
+						"x": 343,
+						"y": 38,
+						"w": 24,
+						"h": 39
+					}
+				},
+				{
+					"filename": "hache_rouge/attack1_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 35,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 308,
+						"y": 64,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/ready_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 34,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 281,
+						"y": 73,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/ready_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 34,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 250,
+						"y": 75,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/run_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 34,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 185,
+						"y": 102,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/run_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 34,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 146,
+						"y": 107,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/walk_3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 34,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 209,
+						"y": 88,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/walk_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 34,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 82,
+						"y": 118,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/attack1_2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 38,
+						"y": 25,
+						"w": 21,
+						"h": 47
+					},
+					"frame": {
+						"x": 106,
+						"y": 118,
+						"w": 21,
+						"h": 47
+					}
+				},
+				{
+					"filename": "hache_rouge/attack2_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 35,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 308,
+						"y": 64,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/dead_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 35,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 308,
+						"y": 64,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/fall_back_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 35,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 308,
+						"y": 64,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/hit_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 35,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 308,
+						"y": 64,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/jump_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 35,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 308,
+						"y": 64,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/ready_1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 35,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 308,
+						"y": 64,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/ready_6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 35,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 308,
+						"y": 64,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/stand_up_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 35,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 308,
+						"y": 64,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/stand_up_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 39,
+						"w": 27,
+						"h": 35
+					},
+					"frame": {
+						"x": 281,
+						"y": 38,
+						"w": 27,
+						"h": 35
+					}
+				},
+				{
+					"filename": "hache_rouge/ready_5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 34,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 281,
+						"y": 73,
+						"w": 24,
+						"h": 38
+					}
+				},
+				{
+					"filename": "hache_rouge/ready_4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 34,
+						"w": 24,
+						"h": 38
+					},
+					"frame": {
+						"x": 250,
+						"y": 75,
+						"w": 24,
+						"h": 38
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}
