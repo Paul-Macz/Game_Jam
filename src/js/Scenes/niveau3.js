@@ -7,6 +7,7 @@ import Player from "/src/js/Beings/player.js";
 
 var calque_nature;
 var calque_rochers;
+var playground;
 
 export default class niveau3 extends Phaser.Scene {
   constructor(){
@@ -17,7 +18,7 @@ export default class niveau3 extends Phaser.Scene {
         this.load.image("Phaser_tuilesDeJEU1", "src/assets/castle.png");
         this.load.image("Phaser_tuilesDeJEU2", "src/assets/greencastle.png");
 
-        this.load.tilemapTiledJSON("carteT", "src/assets/niveau4.json");
+        this.load.tilemapTiledJSON("carte3", "src/assets/niveau4.json");
        
   }
   create() {
@@ -34,7 +35,7 @@ export default class niveau3 extends Phaser.Scene {
       grey_background.setTint(0x4a4a4a)
       const ground = carteDuNiveau.createLayer("ground", [tileset, tileset1]);
 
-      const playground = carteDuNiveau.createLayer("playground", [tileset, tileset1]); 
+       playground = carteDuNiveau.createLayer("playground", [tileset, tileset1]); 
 
       
       
