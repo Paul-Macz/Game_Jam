@@ -53,6 +53,18 @@ export default class tutomap extends Phaser.Scene {
     this.porte_ouvrante = this.physics.add.staticSprite(4540, 740, "porte_ouvrante"); 
     this.porte_ouvrante.ouverte = false; 
     this.cursors = this.input.keyboard.createCursorKeys();
+    this.add.text(38,1254,"Bienvenue dans notre jeu Ekho Expanse ! ").setDepth(2)
+    this.add.text(415,1218,"Voici les commandes :").setDepth(2)
+    this.add.text(945,1140,"Attention des ennemis en approche !").setDepth(2)
+    this.add.text(1221,1061,"Pour attaquer, vous pouvez utiliser la souris ou le pad").setDepth(2)
+    this.add.text(1314,1112,"Tuez les !!!").setDepth(2)
+    this.add.text(1850,970,"Grimpez la montagne en sautant !").setDepth(2)
+    this.add.text(2111,767,"Aller vous y êtes presque !").setDepth(2)
+    this.add.text(2354,634,"Encore un petit effort !").setDepth(2)
+    this.add.text(2788,500,"Attention de ne pas tomber vous risqueriez de devoir recommencer...").setDepth(2)
+    this.add.text(3099,466,"Voici d'autres ennemis plus puissants ! Dechaînez vous sur eux !").setDepth(2)
+    this.add.text(4024,490,"Encore un saut et le tutoriel sera fini !").setDepth(2)
+    this.add.text(4264,670,"Appuyez sur la barre d'espace pour ouvrir la porte !").setDepth(2)
     
     // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
     const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis"); 

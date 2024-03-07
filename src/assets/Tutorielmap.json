@@ -315,7 +315,6 @@
         {
          "draworder":"topdown",
          "id":14,
-         "locked":true,
          "name":"calque_ennemis",
          "objects":[
                 {
@@ -327,8 +326,32 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":1507.03,
-                 "y":1198.91
+                 "x":1497.69666666667,
+                 "y":1178.91
+                }, 
+                {
+                 "height":0,
+                 "id":20,
+                 "name":"ennemi",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1171.03,
+                 "y":1229.57666666667
+                }, 
+                {
+                 "height":0,
+                 "id":21,
+                 "name":"ennemi",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1005.69666666667,
+                 "y":1229.57666666667
                 }, 
                 {
                  "height":0,
@@ -340,7 +363,19 @@
                  "visible":true,
                  "width":0,
                  "x":3403.33,
-                 "y":563.333
+                 "y":539.333
+                }, 
+                {
+                 "height":0,
+                 "id":19,
+                 "name":"ennemi2 ",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":3273.99666666667,
+                 "y":539.333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -432,8 +467,8 @@
                  "type":"",
                  "visible":true,
                  "width":285.027,
-                 "x":1344.03,
-                 "y":1054.47
+                 "x":1221.36333333333,
+                 "y":1061.13666666667
                 }, 
                 {
                  "height":17.9874,
@@ -451,8 +486,8 @@
                  "type":"",
                  "visible":true,
                  "width":95.0246,
-                 "x":1437.05,
-                 "y":1100.44
+                 "x":1314.38333333333,
+                 "y":1112.44
                 }, 
                 {
                  "height":86.3333,
@@ -651,7 +686,7 @@
          "y":0
         }],
  "nextlayerid":16,
- "nextobjectid":19,
+ "nextobjectid":22,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
