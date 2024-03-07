@@ -52,19 +52,63 @@ export default class tutomap extends Phaser.Scene {
 
     this.porte_ouvrante = this.physics.add.staticSprite(4540, 740, "porte_ouvrante"); 
     this.porte_ouvrante.ouverte = false; 
+    this.Z = this.physics.add.staticSprite(600, 1180, "Z");
+    this.Q = this.physics.add.staticSprite(520, 1180, "Q");
+    this.D = this.physics.add.staticSprite(680, 1180, "D");
+    this.one = this.physics.add.staticSprite(520, 1240, "1");
+    this.two = this.physics.add.staticSprite(600, 1240, "2");
+    this.three = this.physics.add.staticSprite(680, 1240, "3");
+    this.Left = this.physics.add.staticSprite(600, 1300, "Left_click");
     this.cursors = this.input.keyboard.createCursorKeys();
-    this.add.text(38,1254,"Bienvenue dans notre jeu Ekho Expanse ! ").setDepth(2)
-    this.add.text(415,1218,"Voici les commandes :").setDepth(2)
-    this.add.text(945,1140,"Attention des ennemis en approche !").setDepth(2)
-    this.add.text(1221,1061,"Pour attaquer, vous pouvez utiliser la souris ou le pad").setDepth(2)
-    this.add.text(1314,1112,"Tuez les !!!").setDepth(2)
-    this.add.text(1850,970,"Grimpez la montagne en sautant !").setDepth(2)
-    this.add.text(2111,767,"Aller vous y êtes presque !").setDepth(2)
-    this.add.text(2354,634,"Encore un petit effort !").setDepth(2)
-    this.add.text(2788,500,"Attention de ne pas tomber vous risqueriez de devoir recommencer...").setDepth(2)
-    this.add.text(3099,466,"Voici d'autres ennemis plus puissants ! Dechaînez vous sur eux !").setDepth(2)
-    this.add.text(4024,490,"Encore un saut et le tutoriel sera fini !").setDepth(2)
-    this.add.text(4264,670,"Appuyez sur la barre d'espace pour ouvrir la porte !").setDepth(2)
+    this.add.text(20,1254,"Bienvenue dans Ekho Expanse ! ",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(500,1120,"Voici les commandes :",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+
+    this.add.text(470,1540,"Attention des ennemis en approche !",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(900,1061,"Pour attaquer, vous pouvez utiliser la souris ou le pad",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(1070,1112,"Tuez les !!!",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(1800,920,"Grimpez la montagne en double sautant !",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(2111,767,"Aller vous y êtes presque !",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(2354,634,"Encore un petit effort !",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(2600,500,"Attention de ne pas tomber ! Vous risqueriez de devoir recommencer...",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "16pt"
+    }).setTint(0x000000);
+    this.add.text(3300,466,"Voici d'autres ennemis plus puissants ! Dechaînez vous sur eux !",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(4024,490,"Encore un saut et le tutoriel sera fini !",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(4280,630,"Appuyez sur la barre d'espace pour ouvrir la porte !",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
     
     // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
     const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis"); 
