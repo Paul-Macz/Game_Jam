@@ -96,7 +96,6 @@ export default class niveau2 extends Phaser.Scene {
       this.physics.add.collider(this.player.sprite, pics);
     
       this.player.sprite.setCollideWorldBounds(true);
-      // this.player.sprite.setBounce(0.2);
       this.player.sprite.body.onWorldBounds = true; 
 
       this.player.sprite.body.world.on(
@@ -152,8 +151,7 @@ export default class niveau2 extends Phaser.Scene {
     this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
     }
   });
-  this.physics.add.overlap(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);
-
+  this.physics.add.collider(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);
   this.physics.add.overlap(this.player.swordHitbox,this.groupe_ennemis,this.handleSwordEnnemiCollision,null,this);
 
       /*****************************************************
@@ -195,6 +193,7 @@ export default class niveau2 extends Phaser.Scene {
 
     if (this.player.gameOver) {
       this.player.death++;
+      niv2.stop();
       if(this.player.death==1){
         this.physics.pause();
         this.player.deathState=true

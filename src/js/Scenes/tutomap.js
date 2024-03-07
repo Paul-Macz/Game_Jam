@@ -52,7 +52,63 @@ export default class tutomap extends Phaser.Scene {
 
     this.porte_ouvrante = this.physics.add.staticSprite(4540, 740, "porte_ouvrante"); 
     this.porte_ouvrante.ouverte = false; 
+    this.Z = this.physics.add.staticSprite(600, 1180, "Z");
+    this.Q = this.physics.add.staticSprite(520, 1180, "Q");
+    this.D = this.physics.add.staticSprite(680, 1180, "D");
+    this.one = this.physics.add.staticSprite(520, 1240, "1");
+    this.two = this.physics.add.staticSprite(600, 1240, "2");
+    this.three = this.physics.add.staticSprite(680, 1240, "3");
+    this.Left = this.physics.add.staticSprite(600, 1300, "Left_click");
     this.cursors = this.input.keyboard.createCursorKeys();
+    this.add.text(20,1254,"Bienvenue dans Ekho Expanse ! ",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(500,1120,"Voici les commandes :",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+
+    this.add.text(470,1540,"Attention des ennemis en approche !",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(900,1061,"Pour attaquer, vous pouvez utiliser la souris ou le pad",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(1070,1112,"Tuez les !!!",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(1800,920,"Grimpez la montagne en double sautant !",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(2111,767,"Aller vous y êtes presque !",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(2354,634,"Encore un petit effort !",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(2600,500,"Attention de ne pas tomber ! Vous risqueriez de devoir recommencer...",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "16pt"
+    }).setTint(0x000000);
+    this.add.text(3300,466,"Voici d'autres ennemis plus puissants ! Dechaînez vous sur eux !",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(4024,490,"Encore un saut et le tutoriel sera fini !",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
+    this.add.text(4280,630,"Appuyez sur la barre d'espace pour ouvrir la porte !",{
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    }).setTint(0x000000);
     
     // extraction des poitns depuis le calque calque_ennemis, stockage dans tab_points
     const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis"); 
@@ -83,8 +139,6 @@ export default class tutomap extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, carteDuNiveau.widthInPixels, carteDuNiveau.heightInPixels);
     this.cameras.main.startFollow(this.player.sprite);
 
-    
-
         // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
         tab_points.objects.forEach(point => {
           if (point.name == "ennemi") { 
@@ -97,8 +151,6 @@ export default class tutomap extends Phaser.Scene {
               this.groupe_ennemis.add(nouvel_ennemi2.sprite);
               }
           });   
- 
-         
       /*****************************************************
        *  ajout du modele de mobilite des ennemis *
        ******************************************************/
@@ -109,27 +161,38 @@ export default class tutomap extends Phaser.Scene {
         un_ennemi.anims.play("hache_rouge_walk", true); // Joue l'animation de marche
         // Inverse l'échelle horizontale pour retourner l'animation
     });
-    
-    
+    this.player.inventory.forEach(element => {
+      if(element instanceof Range){
+      this.physics.add.collider(element.Bullets,Calque_background,element.erase, null, element);
+      this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
+      }
+    });
+
+    this.physics.add.collider(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);
+    this.physics.add.overlap(this.player.swordHitbox,this.groupe_ennemis,this.handleSwordEnnemiCollision,null,this);
+
       
   }
-  handlePlayerEnnemiCollision(ennemiSp, player) {
-    if (ennemiSp.ennemiObject instanceof Character) {
-        console.log("check")
-    }
+  handlePlayerEnnemiCollision(player, ennemiSp) {
+
     const dx = this.player.sprite.x - ennemiSp.x;
     const dy = this.player.sprite.y - ennemiSp.y;
+    // console.log(dx,dy)
     const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
     this.player.sprite.setVelocity(dir.x, dir.y)
-    this.hit = 1
     this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
 
-    this.eKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
-
-    this.physics.add.collider(this.groupe_ennemis, calque_nature);
-    this.physics.add.collider(this.groupe_ennemis, calque_rochers);
-
 }
+  handleSwordEnnemiCollision(sword,ennemiSp){
+    if(!(ennemiSp.ennemiObject instanceof Flying)){
+    const dx = ennemiSp.x - sword.x;
+    const dy = ennemiSp.y - sword.y;
+    
+    const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
+    ennemiSp.setVelocity(dir.x, dir.y)
+    ennemiSp.ennemiObject.getHit(this.player.equippedWeapon.damage)
+    }
+  }
   update() {
     this.player.update()
 

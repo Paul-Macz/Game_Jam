@@ -341,6 +341,7 @@
         {
          "draworder":"topdown",
          "id":13,
+         "locked":true,
          "name":"calque_ennemis",
          "objects":[
                 {

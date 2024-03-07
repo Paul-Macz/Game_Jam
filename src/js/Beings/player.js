@@ -161,11 +161,13 @@ export default class Player extends Character{
 
 // Logique de saut
 if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
+
     if ((this.sprite.body.touching.down || this.sprite.body.blocked.down) || this.jumpState==1) {
         // Le joueur est au sol ou bloqué vers le bas, il peut sauter
         this.sprite.setVelocityY(-speedy);
         this.jumpState++;
     }
+    this.jumpForward.play();
     
             if(velocityX==0){
                 this.jumpNeutral=true;
@@ -207,6 +209,8 @@ if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
                     this.attack(adjustedMouseX,adjustedMouseY);
                 }
                 else{
+                    this.slash.play();
+
                     //Melee attack
                     var currentTime = this.scene.time.now;
                     // this.sprite.anims.play("battlemage_jumpFowardUP", true);
