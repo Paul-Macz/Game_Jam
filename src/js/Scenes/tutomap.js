@@ -71,7 +71,8 @@ export default class tutomap extends Phaser.Scene {
 
     this.player.sprite.body.world.on("worldbounds", function(body, up, down, left, right) {
       if (body.gameObject === this.player.sprite && down == true) {
-          this.player.gameOver = true;
+          this.player.deaths();
+
       }
   }, this);
     
