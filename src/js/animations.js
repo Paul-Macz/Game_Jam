@@ -602,44 +602,8 @@ export default class Animations extends Phaser.Scene{
         frameRate:15
       });
       this.anims.create({
-        key:'squelette_épée/attack-A',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:8,prefix:'squelette_épée/attack-A', suffix:'.png'}),
-        repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_épée/attack-B',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:11,prefix:'squelette_épée/attack-B', suffix:'.png'}),
-        repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_épée/walk-',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:6,prefix:'squelette_épée/walk-', suffix:'.png'}),
-        repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_épée/dead-',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:4,prefix:'squelette_épée/dead-', suffix:'.png'}),
-        repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_épée/idle-',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:4,prefix:'squelette_épée/dead-', suffix:'.png'}),
-        repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_épée/jump-',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:6,prefix:'squelette_épée/jump-', suffix:'.png'}),
-        repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_épée/hit-',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:3,prefix:'squelette_épée/hit-', suffix:'.png'}),
+        key:'squelette_epee/attack-A',
+        frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:8,prefix:'squelette_epee/attack-A/_', suffix:'.png'}),
         repeat:-1,
         frameRate:15
       });
