@@ -15,15 +15,11 @@ export default class Ennemi extends Character{
         this.givenPV=5;
         this.givenAttackSpeed=3;
         this.givenDamage=2;
+        this.ennemi_dead=this.sound.add('ennemi_death')
+        // this.createdamage_speed=this.sound.add('damage_speed')
     }
     preload(){
-        this.load.audio('ennemi_death',"src/assets/audio/ennemi_death.mp3");
-        this.load.audio('damage_speed',"src/assets/audio/damage_and_speed_bonus.mp3");
-
-    }
-    create(){
-        ennemi_dead=this.sound.add('ennemi_death')
-        damage_speed=this.sound.add('damage_speed')
+        
     }
 
     getHit(damage){
@@ -32,7 +28,7 @@ export default class Ennemi extends Character{
         if(this.PV==0){
             this.validforDeletion=true;
             this.sprite.destroy();
-            ennemi_dead.play();
+            this.ennemi_dead.play();
         }
     }
     dropItem() {

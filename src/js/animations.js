@@ -73,6 +73,8 @@ export default class Animations extends Phaser.Scene{
         this.load.audio('heal_bonus',"src/assets/audio/heal_bonus.mp3");
         this.load.audio('jump',"src/assets/audio/jump.mp3");
         this.load.audio('slash',"src/assets/audio/slash.mp3");
+        this.load.audio('tuto_ost',"src/assets/audio/Dofus 2.0_Incarnam.mp3");
+        
     } 
     create(){
         this.anims.create({
@@ -631,7 +633,7 @@ export default class Animations extends Phaser.Scene{
       });
     }
     update(){
-        this.scene.start("niveau2");
+        this.scene.start("menu");
     }
 }
 //a toi

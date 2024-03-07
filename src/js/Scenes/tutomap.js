@@ -8,6 +8,7 @@ import Player from "/src/js/Beings/player.js";
 var calque_rochers;
 var calque_nature;
 var porte_ouvrante; 
+var tuto_ost
 export default class tutomap extends Phaser.Scene {
   constructor() {
     super({ key: "tutomap" });
@@ -22,7 +23,6 @@ export default class tutomap extends Phaser.Scene {
     this.load.image("Phaser_tuiles3", "src/assets/sky2.png");
     this.load.image("Phaser_tuiles4", "src/assets/sea2.png");
     this.load.image("Phaser_tuiles5", "src/assets/far-grounds2.png");
-
     this.load.tilemapTiledJSON("carte_tuto", "src/assets/Tutorielmap.json"); 
   }
 
@@ -32,7 +32,8 @@ export default class tutomap extends Phaser.Scene {
       this.boundWidth=4800;
       this.boundHeight=3200;
 
-
+      tuto_ost = this.sound.add('tuto_ost');
+      tuto_ost.play(); 
 
     const carteDuNiveau = this.make.tilemap({ key: "carte_tuto" });
 
