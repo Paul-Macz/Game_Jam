@@ -48,7 +48,13 @@ export default class Animations extends Phaser.Scene{
             frameHeight:330
           });
         this.load.atlas('battlemage', "src/assets/battlemage.png" ,"src/assets/battlemage.json");
+
+        this.load.spritesheet("walk_squelette_1", "src/assets/ennemis/squelette1/walk_squelette_1.png",{
+        frameWidth: 128,
+        frameHeight: 96
+    });
     }
+    
     create(){
         this.anims.create({
             key: 'walk',
@@ -250,13 +256,13 @@ export default class Animations extends Phaser.Scene{
             frameRate: 15,
             repeat: 0
           });
-    }this.anims.create({
-      key:'squelet_walk3',
-      frames: this.anims.generateFrameNames('walk_squelette_3', { start:0, end: 5}),
-      frameRate: 15,
-      repeat: 0
-    });
-
+          this.anims.create({
+           key:'squelet_walk3',
+            frames: this.anims.generateFrameNames('walk_squelette_3', { start:0, end: 5}),
+            frameRate: 15,
+            repeat: 0
+          });
+         }
 
 
     
