@@ -172,6 +172,7 @@ export default class niveau2 extends Phaser.Scene {
 
     if (this.player.gameOver) {
       this.player.death++;
+      niv2.stop();
       if(this.player.death==1){
         this.physics.pause();
         this.player.deathState=true

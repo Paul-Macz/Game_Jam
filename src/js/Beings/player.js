@@ -207,6 +207,8 @@ if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
                     this.attack(adjustedMouseX,adjustedMouseY);
                 }
                 else{
+                    this.slash.play();
+
                     //Melee attack
                     var currentTime = this.scene.time.now;
                     // this.sprite.anims.play("battlemage_jumpFowardUP", true);

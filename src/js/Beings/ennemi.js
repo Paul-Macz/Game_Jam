@@ -24,7 +24,6 @@ export default class Ennemi extends Character{
 
     getHit(damage){
         super.getHit(damage);
-        this.damage_speed.play();
         if(this.PV==0){
             this.validforDeletion=true;
             this.sprite.destroy();

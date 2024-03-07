@@ -82,7 +82,9 @@ export default class Animations extends Phaser.Scene{
         this.load.audio('tuto_ost',"src/assets/audio/dofus.mp3");
         this.load.audio('menu_ost',"src/assets/audio/Deep.mp3");
         this.load.audio('niv2',"src/assets/audio/Gerudo.mp3");
-        this.load.audio('niv3',"src/assets/audio/Eldenring.mp3");
+        this.load.audio('niv1',"src/assets/audio/Eldenring.mp3");
+        this.load.audio('niv3',"src/assets/audio/hyrule.mp3");
+
 
 
 
