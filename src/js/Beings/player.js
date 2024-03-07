@@ -21,7 +21,7 @@ export default class Player extends Character{
         this.jumpForward=false;
         this.jumpNeutral=false;
         this.animState=false;
-        
+        this.hurtState=false;
 
         this.sprite.setScale(this.scale);
         this.sprite.setSize(this.width*(2.9-this.scale),this.height*(2.9-this.scale),true);
@@ -43,6 +43,8 @@ export default class Player extends Character{
         this.qKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Q);
         this.sKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         this.dKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+        this.ONEKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
+        this.TWOKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TWO);
 
         if(this.calque!=undefined){
             this.scene.cameras.main.setBounds(this.scene.boundx, this.scene.boundy, this.scene.boundWidth, this.scene.boundHeight);
@@ -63,6 +65,7 @@ export default class Player extends Character{
         
     }
     update(velocity) {
+
         if(!this.deathState){
         let velocityX = this.sprite.body.velocity.x; // Get the velocity along the x-axis
         let velocityY = this.sprite.body.velocity.y; // Get the velocity along the y-axis
@@ -92,12 +95,16 @@ export default class Player extends Character{
             this.sprite.setVelocityX(-speedx);
             this.direction = 'left';
             if(velocityY==0){
-                this.sprite.anims.play("battlemage_run", true);
+                if(!this.attackState){
+                    this.sprite.anims.play("battlemage_run", true);
+                }
             }
             else{
                 // this.jumpState=1;
                 if(!this.jumpForward){
+                    if(!this.attackState){
                     this.sprite.anims.play("battlemage_jumpForwardUp", true);
+                    }
                 }
                 this.jumpForward=true;
                 this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_jumpForwardUp",()=>{
@@ -109,12 +116,16 @@ export default class Player extends Character{
             this.sprite.setVelocityX(speedx);
             this.direction = 'right';
             if(velocityY==0){
-                this.sprite.anims.play("battlemage_run", true);
+                if(!this.attackState){
+                    this.sprite.anims.play("battlemage_run", true);
+                }
             }
             else{
                 // this.jumpState=1;
                 if(!this.jumpForward){
-                    this.sprite.anims.play("battlemage_jumpForwardUp", true);
+                    if(!this.attackState){
+                        this.sprite.anims.play("battlemage_jumpForwardUp", true);
+                    }
                 }
                 this.jumpForward=true;
                 this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_jumpForwardUp",()=>{
@@ -128,11 +139,15 @@ export default class Player extends Character{
             if (!this.attackState && (this.sprite.body.touching.down || this.sprite.body.blocked.down)) {
                 if(velocityX==0 && velocityY==0){
                     if(this.jumpState==0 && !this.animState){
-                        this.sprite.anims.play("battlemage_idle", true);
+                        if(!this.attackState){
+                            this.sprite.anims.play("battlemage_idle", true);
+                        }
                     }
                     else{
                         if(this.jumpNeutral){
-                            this.sprite.anims.play("battlemage_jumpNeutralGround", true);
+                            if(!this.attackState){
+                                this.sprite.anims.play("battlemage_jumpNeutralGround", true);
+                            }
                             this.jumpNeutral=false
                             this.animState=true
                             this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_jumpNeutralGround",()=>{
@@ -141,13 +156,16 @@ export default class Player extends Character{
                             })
                         }
                         else{
-                            this.sprite.anims.play("battlemage_jumpForwardGround", true);
+                            if(!this.attackState){
+                                this.sprite.anims.play("battlemage_jumpForwardGround", true);
+                            }
                             this.jumpForward=false
                             this.animState=true
-                            this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_jumpForwardGround",()=>{
+                                this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_jumpForwardGround",()=>{
 
-                                this.animState=false
-                            })
+                                    this.animState=false
+                                })
+                           
                         }
                         
                     }
@@ -171,14 +189,18 @@ if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
     
             if(velocityX==0){
                 this.jumpNeutral=true;
+                if(!this.attackState){
                 this.sprite.anims.play("battlemage_jumpNeutralUp", true);
+                }
                 this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_jumpNeutralUp",()=>{
                     this.sprite.anims.play("battlemage_jumpNeutralDown", true);
                 })
             }
             else{
                 this.jumpForward=true;
-                this.sprite.anims.play("battlemage_jumpForwardUp", true);
+                if(!this.attackState){
+                    this.sprite.anims.play("battlemage_jumpForwardUp", true);
+                }
                 this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_jumpForwardUp",()=>{
                     this.sprite.anims.play("battlemage_jumpForwardDown", true);
                 })
@@ -186,35 +208,49 @@ if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
         }
  
 
-        if (this.aKey.isDown){
-            //this.getHit(1);
+        if (Phaser.Input.Keyboard.JustDown(this.ONEKey)){
+            this.equipWeapon(0)
         }
-        if(this.eKey.isDown){
-            //this.resetPV();
+        if(Phaser.Input.Keyboard.JustDown(this.TWOKey)){
+            this.equipWeapon(1)
         }
-        // if(this.fKey.isDown){
-        //     this.attack();
-        // }
+
         
             //attack
             if(this.scene.input.mousePointer.isDown){
                 //Range attack
                 if(this.equippedWeapon instanceof Range){
+                    
                     if(this.calque!=undefined){
-                        const adjustedMouseX = this.scene.input.mousePointer.x + this.scene.cameras.main.scrollX;
-                        const adjustedMouseY = this.scene.input.mousePointer.y + this.scene.cameras.main.scrollY;
+                        this.adjustedMouseX = this.scene.input.mousePointer.x + this.scene.cameras.main.scrollX;
+                        this.adjustedMouseY = this.scene.input.mousePointer.y + this.scene.cameras.main.scrollY;
                     }
-                    const adjustedMouseX = this.scene.input.mousePointer.x
-                    const adjustedMouseY = this.scene.input.mousePointer.y
-                    this.attack(adjustedMouseX,adjustedMouseY);
+                    else{
+                        this.adjustedMouseX = this.scene.input.mousePointer.x
+                        this.adjustedMouseY = this.scene.input.mousePointer.y
+                    }
+                    this.attack(this.adjustedMouseX,this.adjustedMouseY);
                 }
                 else{
                     this.slash.play();
 
                     //Melee attack
                     var currentTime = this.scene.time.now;
-                    // this.sprite.anims.play("battlemage_jumpFowardUP", true);
-                    this.sprite.anims.play("battlemage_crouchAttack", true);
+
+                    var rand = Math.random();
+                    var anim;
+                    if(rand<0.33){
+                        anim="battlemage_attack1"
+                    }
+                    else if (rand>0.33 && rand<0.66){
+                        anim="battlemage_attack2"
+                    }
+                    else{
+                        anim="battlemage_attack3"
+                    }
+                    if(!this.attackState){
+                        this.sprite.anims.play(anim, true);
+                    }
                     if ((currentTime - this.timeLastAttack)*this.equippedWeapon.atSpeed >= 1000 || this.timeLastAttack==0) {
                         this.scene.physics.world.add(this.swordHitbox.body)
                         this.attackState=true;
@@ -226,12 +262,18 @@ if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
                             this.swordHitbox.x=this.sprite.x+1.8*this.width
                             this.swordHitbox.y=this.sprite.y+0.5*this.height 
                         }
-                        this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +"battlemage_crouchAttack",()=>{
-                            // this.sprite.anims.play("battlemage_idle", true);
-                            this.attackState=false;
+                        if(!this.hurtState){
+                            this.sprite.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +anim,()=>{
+                                this.attackState=false;
+                                this.swordHitbox.x=0;
+                                this.swordHitbox.y=0
+                            })
+                        }
+                        else{
+                            this.attackState=false
                             this.swordHitbox.x=0;
                             this.swordHitbox.y=0
-                        })
+                        }
                         this.timeLastAttack=currentTime;
                     }
                     
@@ -250,12 +292,16 @@ if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
     getHit(damage){
 
         if(!this.gameOver){
+            this.attackState=false
+            this.hurtState=true
+            this.sprite.anims.play("battlemage_hit", true);
+            this.sprite.anims.stop()
             super.getHit(damage);
             this.update_txt_PV();
+            this.hurtState=false;
+
             if(this.PV == 0){
                 this.deaths();
-
-
             }
         }
     }
