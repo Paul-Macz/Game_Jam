@@ -73,7 +73,7 @@ export default class niveau3 extends Phaser.Scene {
       ); 
       this.weap = new Melee(this, "bull", 2, 10, 1, "bullet",true,10);
       this.player.pickWeapon(this.weap);
-
+        this.cameras.main.setZoom(1);
 
       this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundsHeight);
               // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
