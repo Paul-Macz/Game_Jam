@@ -5,9 +5,9 @@ import Flying from "/src/js/Beings/flying.js"
 import Terrestre from "/src/js/Beings/terrestre.js";
 import Player from "/src/js/Beings/player.js";
 
-var calque_nature;
-var calque_rochers;
+
 var playground;
+var porte_ouvrante3;
 
 export default class niveau3 extends Phaser.Scene {
   constructor(){
@@ -18,7 +18,7 @@ export default class niveau3 extends Phaser.Scene {
         this.load.image("Phaser_tuilesDeJEU1", "src/assets/castle.png");
         this.load.image("Phaser_tuilesDeJEU2", "src/assets/greencastle.png");
 
-        this.load.tilemapTiledJSON("carte3", "src/assets/niveau4.json");
+        this.load.tilemapTiledJSON("carte3", "src/assets/niveau3.json");
        
   }
   create() {
@@ -41,6 +41,10 @@ export default class niveau3 extends Phaser.Scene {
       
 
       playground.setCollisionByProperty({ estSolide: true });
+
+      this.porte_ouvrante3 = this.physics.add.staticSprite(4500, 580, "porte_ouvrante"); 
+      this.porte_ouvrante3.ouverte = false; 
+
   
       this.cursors = this.input.keyboard.createCursorKeys();
       this.boundx=0;
@@ -52,7 +56,7 @@ export default class niveau3 extends Phaser.Scene {
       const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis"); 
       this.groupe_ennemis = this.physics.add.group();
 
-      this.player = new Player(this,"battlemage", 170, 30, playground);
+      this.player = new Player(this,"battlemage", 170, 40, playground);
       this.physics.add.collider(this.player.sprite, playground);
       this.player.sprite.setCollideWorldBounds(true);
       // this.player.sprite.setBounce(0.2);
@@ -67,12 +71,15 @@ export default class niveau3 extends Phaser.Scene {
           }
         },
       ); 
+      this.weap = new Melee(this, "bull", 2, 10, 1, "bullet",true,10);
+      this.player.pickWeapon(this.weap);
+
 
       this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundsHeight);
               // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
               tab_points.objects.forEach(point => {
                 if (point.name == "terrestre") { 
-                  var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,calque_nature,calque_rochers);
+                  var nouvel_ennemi = new Terrestre(this,"img_perso",point.x, point.y,playground);
                   nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
                   this.groupe_ennemis.add(nouvel_ennemi.sprite);
                     }
@@ -131,6 +138,24 @@ export default class niveau3 extends Phaser.Scene {
     un_ennemi.ennemiObject.update();
    
   }); 
+
+  if ( Phaser.Input.Keyboard.JustDown(this.cursors.space) == true &&
+  this.physics.overlap(this.player.sprite, this.porte_ouvrante3) == true) {
+ // le personnage est sur la porte et vient d'appuyer sur espace
+ if (this.porte_ouvrante3.ouverte == false) {
+  this.porte_ouvrante3.anims.play("anim_ouvreporte");
+  this.porte_ouvrante3.ouverte = true;
+  this.time.delayedCall(1000,this.openDoor,[],this)
+  
+} else {
+  this.porte_ouvrante3.anims.play("anim_fermeporte");
+  this.porte_ouvrante3.ouverte = false;
+}
+} 
+
+}
+openDoor(){
+  this.scene.start("menu");
 }
 handlePlayerEnnemiCollision(player, ennemiSp) {
 
