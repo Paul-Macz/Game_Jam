@@ -1,4 +1,4 @@
-
+var deep_ost;
 export default class menu2 extends Phaser.Scene {
     constructor() {
       super({key : "menu2"});
@@ -14,7 +14,7 @@ export default class menu2 extends Phaser.Scene {
 
 
     create() {
-    deep_ost=this.sound;add(menu_ost)
+    deep_ost=this.sound.add('menu_ost')
     deep_ost.play();
         this.add.image(0, 0, "menu_fond").setOrigin(0).setDepth(0).setScale(5,3);
 

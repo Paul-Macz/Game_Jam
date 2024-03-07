@@ -8,7 +8,7 @@ import Player from "/src/js/Beings/player.js";
 
 var playground;
 var porte_ouvrante3;
-
+var niv3;
 export default class niveau3 extends Phaser.Scene {
   constructor(){
       super({key: "niveau3" })
@@ -22,6 +22,8 @@ export default class niveau3 extends Phaser.Scene {
        
   }
   create() {
+    niv3=this.sound.add('niv3')
+    niv3.play()
       const carteDuNiveau = this.make.tilemap({ key: "carte3" });
 
       const tileset = carteDuNiveau.addTilesetImage("castle", "Phaser_tuilesDeJEU1");
@@ -155,6 +157,7 @@ export default class niveau3 extends Phaser.Scene {
 
 }
 openDoor(){
+  niv3.stop()
   this.scene.start("fin_niveau3");
 }
 handlePlayerEnnemiCollision(player, ennemiSp) {
