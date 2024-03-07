@@ -48,6 +48,8 @@ export default class Animations extends Phaser.Scene{
             frameHeight:330
           });
         this.load.atlas('battlemage', "src/assets/battlemage.png" ,"src/assets/battlemage.json");
+        this.load.atlas('run_hero', "src/assets/ennemis/Martial Hero 2/run.png");
+
     }
     create(){
         this.anims.create({
@@ -250,14 +252,20 @@ export default class Animations extends Phaser.Scene{
             frameRate: 15,
             repeat: 0
           });
-    }this.anims.create({
+    
+    this.anims.create({
       key:'squelet_walk3',
       frames: this.anims.generateFrameNames('walk_squelette_3', { start:0, end: 5}),
       frameRate: 15,
       repeat: 0
     });
-
-
+    this.anims.create({
+      key:'heroM',
+      frames: this.anims.generateFrameNames('Run_hero', { start:0, end: 5}),
+      frameRate: 15,
+      repeat: 0
+    });
+  }
 
     
     update(){
