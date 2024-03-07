@@ -15,9 +15,6 @@ export default class tutomap extends Phaser.Scene {
   }
 
   preload() {
-
-    this.load.atlas('hache_rouge',"src/assets/ennemis/hache_rouge/hache_rouge.png","src/assets/ennemis/hache_rouge/hache_rouge.json");
-    this.load.atlas('petit_squelette',"src/assets/ennemis/petit_squelette/petit_squelette.png","src/assets/ennemis/petit_squelette/petit_squelette.json");
     this.load.image("Phaser_tuiles1", "src/assets/tileset2.png");
     this.load.image("Phaser_tuiles2", "src/assets/clouds2.png");
     this.load.image("Phaser_tuiles3", "src/assets/sky2.png");
