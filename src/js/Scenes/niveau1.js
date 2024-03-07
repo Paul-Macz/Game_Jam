@@ -136,23 +136,26 @@ export default class niveau1 extends Phaser.Scene {
           }
         }
         if ( Phaser.Input.Keyboard.JustDown(this.cursors.space) == true &&
-        this.physics.overlap(this.player.sprite, this.porte_ouvrante) == true) {
+        this.physics.overlap(this.player.sprite, this.porte_ouvrante1) == true) {
        // le personnage est sur la porte et vient d'appuyer sur espace
-       if (this.porte_ouvrante.ouverte == false) {
-        this.porte_ouvrante.anims.play("anim_ouvreporte");
-        this.porte_ouvrante.ouverte = true;
-        this.scene.start("niveau2");
+       if (this.porte_ouvrante1.ouverte == false) {
+        this.porte_ouvrante1.anims.play("anim_ouvreporte");
+        this.porte_ouvrante1.ouverte = true;
+        this.time.delayedCall(1000,this.openDoor,[],this)
+        
       } else {
-        this.porte_ouvrante.anims.play("anim_fermeporte");
-        this.porte_ouvrante.ouverte = false;
+        this.porte_ouvrante1.anims.play("anim_fermeporte");
+        this.porte_ouvrante1.ouverte = false;
       }
       } 
 
         this.groupe_ennemis.children.iterate(function (un_ennemi, iterateur) {
             un_ennemi.ennemiObject.update();
         });
+    }openDoor(){
+    this.scene.start("niveau2");
     }
- 
+    
     handlePlayerEnnemiCollision(player, ennemiSp) {
 
         const dx = this.player.sprite.x - ennemiSp.x;
