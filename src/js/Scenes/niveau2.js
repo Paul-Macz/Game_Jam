@@ -141,7 +141,7 @@ export default class niveau2 extends Phaser.Scene {
     this.physics.add.overlap(element.Bullets,this.groupe_ennemis,element.hit,null,element);
     }
   });
-  this.physics.add.overlap(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);
+  this.physics.add.collider(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);
 
   this.physics.add.overlap(this.player.swordHitbox,this.groupe_ennemis,this.handleSwordEnnemiCollision,null,this);
 

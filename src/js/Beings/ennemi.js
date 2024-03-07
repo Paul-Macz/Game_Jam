@@ -15,7 +15,7 @@ export default class Ennemi extends Character{
         this.givenPV=5;
         this.givenAttackSpeed=3;
         this.givenDamage=2;
-        this.ennemi_dead=this.sound.add('ennemi_death')
+        this.ennemi_dead=this.scene.sound.add('ennemi_death')
         // this.createdamage_speed=this.sound.add('damage_speed')
     }
     preload(){
@@ -24,7 +24,7 @@ export default class Ennemi extends Character{
 
     getHit(damage){
         super.getHit(damage);
-        damage_speed.play();
+        this.damage_speed.play();
         if(this.PV==0){
             this.validforDeletion=true;
             this.sprite.destroy();
