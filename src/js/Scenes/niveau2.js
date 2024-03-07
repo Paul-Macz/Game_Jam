@@ -11,7 +11,7 @@ var calque_volant;
 var calque_grotte;
 var pics;
 var light;
-
+var niv2;
 export default class niveau2 extends Phaser.Scene {
   // constructeur de la classe
   constructor() {
@@ -20,9 +20,6 @@ export default class niveau2 extends Phaser.Scene {
     });
   }
   preload() {
-  
-  this.load.atlas('petit_squelette',"src/assets/ennemis/petit_squelette/petit_squelette.png","src/assets/ennemis/petit_squelette/petit_squelette.json");
-  this.load.atlas('squelette_hache',"src/assets/ennemis/squelette_hache/squelette_hache.png","src/assets/ennemis/squelette_hache/squelette_hache.json");
   this.load.image("Phaser_tuilesdejeu1", "src/assets/tiles.png");
   this.load.image("Phaser_tuilesdejeu2", "src/assets/miscellaneous.png");
   this.load.tilemapTiledJSON("carte", "src/assets/Niveau2.json"); 
@@ -31,6 +28,8 @@ export default class niveau2 extends Phaser.Scene {
   
 
   create() {
+   niv2 = this.sound.add('niv2')
+   niv2.play();
     this.boundx=0;
       this.boundy=0;
       this.boundWidth=4800;
@@ -97,18 +96,9 @@ export default class niveau2 extends Phaser.Scene {
       this.physics.add.collider(this.player.sprite, calque_volant);
       this.physics.add.collider(this.player.sprite, calque_grotte); 
       this.physics.add.collider(this.player.sprite, Calque_background);
-      this.physics.add.collider(this.player.sprite, pics, function(player, tile) {
-        // Récupérer la tuile avec ses propriétés
-    const properties = tile.properties;
-    console.log("hi")
-        // Si la tuile avec laquelle le joueur entre en collision est mortelle
-        if (properties && properties.estMort) {
-            gameOver(); // Appeler la fonction de fin de jeu
-        }
-    });
+      this.physics.add.collider(this.player.sprite, pics);
     
       this.player.sprite.setCollideWorldBounds(true);
-      // this.player.sprite.setBounce(0.2);
       this.player.sprite.body.onWorldBounds = true; 
 
       
@@ -117,14 +107,13 @@ export default class niveau2 extends Phaser.Scene {
 
       this.weap = new Melee(this, "bull", 2, 10, 1, "bullet",true,10);
       this.player.pickWeapon(this.weap);
-      //this.cameras.main.setZoom(0.2);
 
       this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundHeight);
       
     // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
     tab_points.objects.forEach(point => {
       if (point.name == "figther") { 
-        var nouvel_ennemi = new Terrestre(this,"squelette_hache",point.x, point.y,Calque_background);
+        var nouvel_ennemi = new Terrestre(this,"slime",point.x, point.y,Calque_background);
         nouvel_ennemi.sprite.setCollideWorldBounds(true);
         nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
         this.groupe_ennemis.add(nouvel_ennemi.sprite);
@@ -142,7 +131,6 @@ export default class niveau2 extends Phaser.Scene {
     }
   });
   this.physics.add.collider(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);
-
   this.physics.add.overlap(this.player.swordHitbox,this.groupe_ennemis,this.handleSwordEnnemiCollision,null,this);
 
       /*****************************************************
@@ -152,17 +140,15 @@ export default class niveau2 extends Phaser.Scene {
     this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
         un_ennemi.setVelocityX(-30);
         un_ennemi.direction = "left";
-        un_ennemi.anims.play('squelette_hache_walk', true);
-        un_ennemi.anims.play
       }); 
 
       this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
         if(this.player.sprite.x < un_ennemi.x) {
           un_ennemi.setVelocityX(-60);
-          un_ennemi.anims.play("squelet_walk1",true)
+          // un_ennemi.anims.play("squelet_walk1",true)
         } else if(this.player.sprite.x > un_ennemi.x) {
           un_ennemi.setVelocityX(60);
-          un_ennemi.anims.play("squelet_walk2",true)
+          // un_ennemi.anims.play("squelet_walk2",true)
         } else {
           un_ennemi.setVelocityX(0);
         }
@@ -216,7 +202,9 @@ export default class niveau2 extends Phaser.Scene {
 
 }
 openDoor(){
+  niv2.stop();
   this.scene.start("fin_niveau2");
+ 
 }
   handlePlayerEnnemiCollision(player, ennemiSp) {
 

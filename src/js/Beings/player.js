@@ -28,7 +28,7 @@ export default class Player extends Character{
         this.sprite.setOffset((this.width-1)*(this.scale+0.1),this.oheight/(this.scale-0.1));
         this.gameOver=false;
         this.sprite.setCollideWorldBounds(true);
-        this.swordHitbox =this.scene.add.rectangle(x,y,this.width*1.75,this.height*2,"0xffffff",0)
+        this.swordHitbox =this.scene.add.rectangle(0,0,this.width*1.75,this.height*2,"0xffffff",0)
         this.scene.physics.add.existing(this.swordHitbox)
         // this.swordHitbox.body.setBounce(0);
         this.scene.physics.world.enable(this.swordHitbox);
@@ -46,14 +46,12 @@ export default class Player extends Character{
 
         if(this.calque!=undefined){
             this.scene.cameras.main.setBounds(this.scene.boundx, this.scene.boundy, this.scene.boundWidth, this.scene.boundHeight);
-            this.scene.cameras.main.setZoom(1.5);
+            this.scene.cameras.main.setZoom(1);
             this.scene.cameras.main.startFollow(this.sprite); 
         }
         this.death=0;
         this.sprite.anims.play("battlemage_idle", true);
 
-        this.tuto_ost = this.scene.sound.add('tuto_ost');
-        // this.tuto_ost.play(); 
         this.ekho_death=this.scene.sound.add('ekho_death')
     }
     freeze() {
