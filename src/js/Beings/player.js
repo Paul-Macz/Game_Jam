@@ -318,18 +318,21 @@ if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
         let halfHeartTexture = "heart_half";
         let fullHeartTexture = "heart_full";
 
-// Calculate the number of children needed to represent the player's PV
-let numChildrenToUpdate = Math.min(this.maxPV, this.PV);
-for (let i = 0; i < children.length; i++) {
-    // Determine the texture to assign based on the player's PV
-    let textureKey = (i < numChildrenToUpdate) ? fullHeartTexture : emptyHeartTexture;
-    if (this.PV < this.maxPV && i === numChildrenToUpdate - 1) {
-        textureKey = halfHeartTexture;
-    }
-    // Set the texture for the child
-    children[i].setTexture(textureKey);
-}
+        let numChildrenToUpdate = Math.ceil(this.PV / 2);
 
+for (let i = 0; i < children.length; i++) {
+    if (i >= numChildrenToUpdate) {
+        // Set texture for empty hearts
+        children[i].setTexture(emptyHeartTexture);
+    } else if (i === numChildrenToUpdate - 1 && this.PV % 2 !== 0) {
+        // Set texture for half heart
+        children[i].setTexture(halfHeartTexture);
+    } else {
+        // Set texture for full hearts
+        children[i].setTexture(fullHeartTexture);
+    }
+}
+console.log(this.PV)
     } 
 
     getHit(damage){
@@ -340,55 +343,16 @@ for (let i = 0; i < children.length; i++) {
             this.sprite.anims.play("battlemage_hit", true);
             this.sprite.anims.stop()
             super.getHit(damage);
-            this.hurtState=false;
+            this.scene.time.delayedCall(500,this.resetHurtState,[],this);
 
-            // switch (this.player.PV){
-            //     case 19:
-            //         break;
-            //     case 18: 
-            //         break;
-            //     case 17: 
-            //         break;
-            //     case 16: 
-            //         break;
-            //     case 15: 
-            //         break;
-            //     case 14: 
-            //         break;
-            //     case 13: 
-            //         break;
-            //     case 12: 
-            //         break;
-            //     case 11: 
-            //         break;
-            //     case 10: 
-            //         break;
-            //     case 9: 
-            //         break;
-            //     case 8: 
-            //         break;
-            //     case 7: 
-            //         break;
-            //     case 6: 
-            //         break;
-            //     case 5: 
-            //         break;
-            //     case 4: 
-            //         break;
-            //     case 3: 
-            //         break;
-            //     case 2: 
-            //         break;
-            //     case 1: 
-            //         break;
-
-            // }
-
-            if(this.PV == 0){
+            if(this.PV <= 0){
                 this.deaths();
             }
             
         }
+    }
+    resetHurtState(){
+        this.hurtState=false;
     }
     resetPV(){
         super.resetPV();

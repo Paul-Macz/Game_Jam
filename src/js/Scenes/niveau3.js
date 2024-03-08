@@ -164,12 +164,23 @@ openDoor(){
   this.scene.start("fin_niveau3");
 }
 handlePlayerEnnemiCollision(player, ennemiSp) {
-  const dx = this.player.sprite.x - ennemiSp.x;
-  const dy = this.player.sprite.y - ennemiSp.y;
-  const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
-  this.player.sprite.setVelocity(dir.x, dir.y)
-  this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
+  const knockbackForce = 200; // Adjust as needed
 
+  // Calculate the direction from the enemy to the player
+  const dx = player.x - ennemiSp.x;
+  const dy = player.y - ennemiSp.y;
+
+  // Normalize the direction vector
+  const dir = new Phaser.Math.Vector2(dx, dy).normalize();
+
+  // Apply a knockback force to both the player and enemy sprites
+  player.setVelocity(dir.x * 2*knockbackForce, dir.y * knockbackForce);
+  ennemiSp.setVelocity(-dir.x * knockbackForce, -dir.y * knockbackForce);
+
+  // Damage the player
+  if(!this.player.hurtState){
+    this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage);
+  }
 }
 handleSwordEnnemiCollision(sword,ennemiSp){
   if(!(ennemiSp.ennemiObject instanceof Flying)){

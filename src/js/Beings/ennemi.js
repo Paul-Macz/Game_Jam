@@ -11,7 +11,16 @@ export default class Ennemi extends Character{
         } 
         this.direction='left';
         
-        this.pickWeapon(new Weapon(this.scene,"Hands",2,2,1,"",false));
+        if(this.image=="slime"){
+            this.pickWeapon(new Weapon(this.scene,"Hands",1,2,1,"",false));
+        }
+        if(this.image=="viking"){
+            this.pickWeapon(new Weapon(this.scene,"Hands",2,2,1,"",false));
+        }
+        if(this.image=="hache_rouge"){
+            this.pickWeapon(new Weapon(this.scene,"Hands",3,2,1,"",false));
+        }
+        // this.pickWeapon(new Weapon(this.scene,"Hands",2,2,1,"",false));
         this.givenPV=5;
         this.givenAttackSpeed=3;
         this.givenDamage=2;
