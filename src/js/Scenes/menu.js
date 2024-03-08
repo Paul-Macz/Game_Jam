@@ -25,23 +25,46 @@
       this.add.image(0, 0, "menu_fond").setOrigin(0).setDepth(0).setScale(5,3);
     
       this.planet = this.add.sprite(100,450, "planetes");
-      this.planet.setScale(3.5,3.5);
-      this.planet.setX(300);
-      this.planet.setY(300);
+      this.planet.setScale(7,7);
+      this.planet.setX(170);
+      this.planet.setY(250);
 
       //on ajoute un bouton de clic, nommé bouton_play
     
-    var bouton_play = this.add.image(650, 400, "imageBoutonPlay").setDepth(1);
-    bouton_play.setScale(0.2,0.3);
+    var bouton_play = this.add.image(650, 300, "imageBoutonFond").setDepth(1);
+    bouton_play.setScale(0.6,0.5);
     bouton_play.setInteractive();
     
-    var bouton_option = this.add.image(650,470,"imageBoutonOption").setDepth(1);
-    bouton_option.setScale(0.2,0.3);
-    bouton_option.setInteractive();
+    var bouton_tutorial = this.add.image(650,400,"imageBoutonFond").setDepth(1);
+    bouton_tutorial.setScale(0.6,0.5);
+    bouton_tutorial.setInteractive();
 
-    var bouton_quit = this.add.image(650,540,"imageBoutonQuit").setDepth(1);
-    bouton_quit.setScale(0.2,0.3);
+    var bouton_quit = this.add.image(650,500,"imageBoutonFond").setDepth(1);
+    bouton_quit.setScale(0.6,0.5);
     bouton_quit.setInteractive();
+    var bouton_titre = this.add.image(400,70,"imageBoutonFond2").setDepth(1);
+    bouton_titre.setScale(1.5,0.7);
+
+    this.add.text(240,50,"EKHO EXPANSE",{
+      fontFamily: 'ROG Fonts',
+      fontSize: "25pt"
+    }).setTint(0x000000).setDepth(2);
+    this.add.text(565,280,"TUTORIAL",{
+      fontFamily: 'ROG Fonts',
+      fontSize: "25pt"
+    }).setTint(0x000000).setDepth(2).setScale(0.8);
+    
+    this.add.text(610,380,"PLAY",{
+      fontFamily: 'ROG Fonts',
+      fontSize: "25pt"
+    }).setTint(0x000000).setDepth(2).setScale(0.8);
+    
+    this.add.text(610,480,"QUIT",{
+      fontFamily: 'ROG Fonts',
+      fontSize: "25pt"
+    }).setTint(0x000000).setDepth(2).setScale(0.8);
+    
+    
 
     //Cas ou la souris passe sur les boutons 
     
@@ -49,8 +72,8 @@
       bouton_play.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
     });
 
-    bouton_option.on("pointerover", () => {
-      bouton_option.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
+    bouton_tutorial.on("pointerover", () => {
+      bouton_tutorial.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
     });
     bouton_quit.on("pointerover", () => {
       bouton_quit.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
@@ -61,8 +84,8 @@
     bouton_play.on("pointerout", () => {
       bouton_play.clearTint(); // Réinitialise la teinte du bouton
     });
-    bouton_option.on("pointerout", () => {
-      bouton_option.clearTint(); // Réinitialise la teinte du bouton
+    bouton_tutorial.on("pointerout", () => {
+      bouton_tutorial.clearTint(); // Réinitialise la teinte du bouton
     });
     bouton_quit.on("pointerout", () => {
       bouton_quit.clearTint(); // Réinitialise la teinte du bouton
@@ -72,7 +95,10 @@
     // on lance la selection
     
     bouton_play.on("pointerup", () => {
-     this.scene.start("tutomap");
+     this.scene.start("menu2");
+    });
+    bouton_tutorial.on("pointerup", () => {
+      this.scene.start("tutomap")
     });
 
     bouton_quit.on("pointerup", () => {

@@ -5,16 +5,18 @@ export default class Animations extends Phaser.Scene{
         super({ key: "animations" });
     }
     preload(){
-        this.load.image("menu_fond", "src/assets/fond_galaxy.png");
-        this.load.image("imageBoutonPlay", "src/assets/boutonplay.png");
-        this.load.image("imageBoutonOption", "src/assets/OptionButton.png");
-        this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
-        this.load.image("imageBoutonContinuer", "src/assets/ContinueButton.png");
-        this.load.image("imageBoutonMenu", "src/assets/MenuButton.png");
-        this.load.image("imageBoutonNewGame", "src/assets/NewGameButton.png");
-        this.load.image("imageBoutonBack", "src/assets/BackButton.png");
+         this.load.image("menu_fond", "src/assets/fond_galaxy.png");
+         this.load.image("imageBoutonPlay", "src/assets/boutonplay.png");
+         this.load.image("imageBoutonOption", "src/assets/OptionButton.png");
+         this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
+         this.load.image("imageBoutonContinuer", "src/assets/ContinueButton.png");
+         this.load.image("imageBoutonMenu", "src/assets/MenuButton.png");
+         this.load.image("imageBoutonNewGame", "src/assets/NewGameButton.png");
+         this.load.image("imageBoutonBack", "src/assets/BackButton.png");
         this.load.image("imageBoutonPause", "src/assets/PauseSquareButton.png");
-        this.load.image("imageBoutonSon", "src/assets/AudioSquareButton.png");
+         this.load.image("imageBoutonSon", "src/assets/AudioSquareButton.png");
+        this.load.image("imageBoutonFond","src/assets/fond_bouton2.png");
+        this.load.image("imageBoutonFond2","src/assets/fond_bouton3.png");
 
         this.load.image("bouton_niv1", "src/assets/bouton_niv1.png");
         this.load.image("bouton_niv2", "src/assets/bouton_niv2.png");
@@ -673,6 +675,6 @@ export default class Animations extends Phaser.Scene{
       });
     }
     update(){
-        this.scene.start("menu2");
+        this.scene.start("menu");
     }
 }
