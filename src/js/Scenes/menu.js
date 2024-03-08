@@ -95,10 +95,10 @@
     // on lance la selection
     
     bouton_play.on("pointerup", () => {
-     this.scene.start("menu2");
+     this.scene.start("tutomap");
     });
     bouton_tutorial.on("pointerup", () => {
-      this.scene.start("tutomap")
+      this.scene.start("menu2")
     });
 
     bouton_quit.on("pointerup", () => {
