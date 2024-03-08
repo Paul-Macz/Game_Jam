@@ -23,7 +23,7 @@ var deep_ost;
     
     create() {
      // on place les éléments de fond
-     let isSoundPlaying = false;
+     let isSoundPlaying = true;
      deep_ost=this.sound.add('menu_ost')
     deep_ost.play();
       this.add.image(0, 0, "menu_fond1").setOrigin(0).setDepth(0).setScale(1,1);
@@ -109,9 +109,11 @@ var deep_ost;
     
     bouton_play.on("pointerup", () => {
      this.scene.start("tutomap");
+     deep_ost.stop();
     });
     
     bouton_tutorial.on("pointerup", () => {
+      deep_ost.stop();
       this.scene.start("menu2")
     });
   
@@ -126,6 +128,7 @@ var deep_ost;
     });
     bouton_quit.on("pointerup", () => {
       this.scene.stop("menu");
+      deep_ost.stop();
       window.close();
     });
 

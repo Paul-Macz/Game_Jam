@@ -14,9 +14,10 @@ export default class menu2 extends Phaser.Scene {
 
 
     create() {
+      let isSoundPlaying = true;
     deep_ost=this.sound.add('menu_ost')
     deep_ost.play();
-        this.add.image(0, 0, "menu_fond").setOrigin(0).setDepth(0).setScale(5,3);
+        this.add.image(0, 0, "menu_fond1").setOrigin(0).setDepth(0).setScale(2,2);
 
        this.planet1 = this.add.sprite(100,450, "planetes_rouge");
      this.planet1.setScale(0.5,0.5);
@@ -32,6 +33,11 @@ export default class menu2 extends Phaser.Scene {
         this.planet3.setScale(0.5,0.5);
         this.planet3.setX(200);
         this.planet3.setY(250);
+
+        var bouton_son = this.add.image(740,65,"imageBoutonSon").setDepth(1);
+    bouton_son.setScale(0.3,0.3);
+    bouton_son.setInteractive();
+
 
         var bouton_nv1 = this.add.image(200, 400, "bouton_niv1").setDepth(1);
         bouton_nv1.setScale(0.3,0.3);
@@ -60,6 +66,9 @@ export default class menu2 extends Phaser.Scene {
       bouton_nv3.on("pointerover", () => {
         bouton_nv3.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
       });
+      bouton_son.on("pointerover", () => {
+        bouton_son.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
+      });
   
       //Cas ou la souris ne passe plus sur les boutons 
       
@@ -71,6 +80,9 @@ export default class menu2 extends Phaser.Scene {
       });
       bouton_nv3.on("pointerout", () => {
         bouton_nv3.clearTint(); // Réinitialise la teinte du bouton
+      });
+      bouton_son.on("pointerout", () => {
+        bouton_son.clearTint(); // Réinitialise la teinte du bouton
       });
 
 
@@ -91,6 +103,15 @@ export default class menu2 extends Phaser.Scene {
 
         this.scene.start("niveau2");
        });
+       bouton_son.on("pointerup", () => {
+        if (isSoundPlaying) {
+          deep_ost.pause();
+          deep_ost.currentTime = 0;
+        } else {
+          deep_ost.play();
+        }
+        isSoundPlaying = !isSoundPlaying;
+      });
     
     }
 

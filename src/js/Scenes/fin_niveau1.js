@@ -13,7 +13,7 @@ export default class fin_niveau1 extends Phaser.Scene {
 
     create() {
         // on place les éléments de fond
-         this.add.image(0, 0, "menu_fond").setOrigin(0).setDepth(0).setScale(5,3);
+         this.add.image(0, 0, "menu_fond1").setOrigin(0).setDepth(0).setScale(2,2);
        
          
    
