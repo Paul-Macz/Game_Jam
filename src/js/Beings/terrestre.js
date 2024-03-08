@@ -50,7 +50,27 @@ export default class Terrestre extends Ennemi{
        else{
             this.sprite.flipX=false;
         }
-     
+        if(this.image=="slime"){
+            this.health.x=this.sprite.x
+            this.health.y=this.sprite.y+35
+            this.health2.x=this.sprite.x
+            this.health2.y=this.sprite.y+35
+        }
+        else if(this.image=="viking"){
+            this.health.x=this.sprite.x-5
+            this.health.y=this.sprite.y-30
+            this.health2.x=this.sprite.x-5
+            this.health2.y=this.sprite.y-30
+        }
+        else if(this.image=="hache_rouge"){
+            this.health.x=this.sprite.x-3
+            this.health.y=this.sprite.y-15
+            this.health2.x=this.sprite.x-3
+            this.health2.y=this.sprite.y-15
+        }
+        else if(this.image=="archer"){
+        }
+        
        
 
         if(this.sprite.body.blocked.down){
@@ -150,7 +170,6 @@ export default class Terrestre extends Ennemi{
         }
     }
     attackAnim(){
-        console.log("pitie")
         var rand = Math.random()
         if(this.image=="battlemage"){
             this.sprite.anims.play("battlemage_run", true);
@@ -203,33 +222,5 @@ export default class Terrestre extends Ennemi{
             this.sprite.anims.play("squelette_epee_/walk", true);
         }
     }
-    deathAnim(){
-        if(this.image=="battlemage"){
-            this.sprite.anims.play("battlemage_death", true);
-        }
-        if(this.image=="slime"){
-            this.sprite.anims.play("slime_death", true);
-        }
-        if(this.image=="viking"){
-            this.sprite.anims.play("viking_dead", true);
-        }
-        if(this.image=="hache_rouge"){
-            this.sprite.anims.play("hache_rouge_dead", true);
-        }
-        if(this.image=="archer"){
-            this.sprite.anims.play("archer_dead", true);
-        }
-        if(this.image=="squelette_lance"){
-            this.sprite.anims.play("squelette_lance_dead", true);
-        }
-        if(this.image=="squelette_hache"){
-            this.sprite.anims.play("squelette_hache_dead",true);
-        }
-        if(this.image=="petit_squelette"){
-            this.sprite.anims.play("petit_squelette/dead_near", true);
-        }
-        if(this.image=="squelette_epee"){
-           this.sprite.anims.play("squelette_epee_/dead", true);
-        }  
-    }
+    
 }

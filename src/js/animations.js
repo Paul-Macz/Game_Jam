@@ -5,16 +5,20 @@ export default class Animations extends Phaser.Scene{
         super({ key: "animations" });
     }
     preload(){
-        this.load.image("menu_fond", "src/assets/fond_galaxy.png");
-        this.load.image("imageBoutonPlay", "src/assets/boutonplay.png");
-        this.load.image("imageBoutonOption", "src/assets/OptionButton.png");
-        this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
-        this.load.image("imageBoutonContinuer", "src/assets/ContinueButton.png");
-        this.load.image("imageBoutonMenu", "src/assets/MenuButton.png");
-        this.load.image("imageBoutonNewGame", "src/assets/NewGameButton.png");
-        this.load.image("imageBoutonBack", "src/assets/BackButton.png");
+         this.load.image("menu_fond", "src/assets/fond_galaxy.png");
+         this.load.image("menu_fond2", "src/assets/fond_galaxy2.png");
+         this.load.image("menu_fond1", "src/assets/fond_galaxy1.png");
+         this.load.image("imageBoutonPlay", "src/assets/boutonplay.png");
+         this.load.image("imageBoutonOption", "src/assets/OptionButton.png");
+         this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
+         this.load.image("imageBoutonContinuer", "src/assets/ContinueButton.png");
+         this.load.image("imageBoutonMenu", "src/assets/MenuButton.png");
+         this.load.image("imageBoutonNewGame", "src/assets/NewGameButton.png");
+         this.load.image("imageBoutonBack", "src/assets/BackButton.png");
         this.load.image("imageBoutonPause", "src/assets/PauseSquareButton.png");
-        this.load.image("imageBoutonSon", "src/assets/AudioSquareButton.png");
+         this.load.image("imageBoutonSon", "src/assets/AudioSquareButton.png");
+        this.load.image("imageBoutonFond","src/assets/fond_bouton2.png");
+        this.load.image("imageBoutonFond2","src/assets/fond_bouton3.png");
 
         this.load.image("bouton_niv1", "src/assets/bouton_niv1.png");
         this.load.image("bouton_niv2", "src/assets/bouton_niv2.png");
@@ -23,6 +27,11 @@ export default class Animations extends Phaser.Scene{
         this.load.spritesheet("planetes","src/assets/planetes.png" ,{
           frameWidth: 88,
           frameHeight: 88
+        });
+
+        this.load.spritesheet("planete","src/assets/planete.png" ,{
+          frameWidth: 325,
+          frameHeight: 325
         });
         this.load.spritesheet("planetes_rouge","src/assets/planetes_rouge.png" ,{
             frameWidth: 325,
@@ -143,7 +152,7 @@ export default class Animations extends Phaser.Scene{
         });
         this.anims.create({
             key: "anim_planet",
-            frames: this.anims.generateFrameNumbers("planetes",{  start: 0 , end: 49  }),
+            frames: this.anims.generateFrameNumbers("planete",{  start: 0 , end: 49  }),
             frameRate : 12,
             repeat : -1
           });
@@ -338,7 +347,7 @@ export default class Animations extends Phaser.Scene{
           this.anims.create({
             key:'slime_death',
             frames: this.anims.generateFrameNames('slime', {start:1, end:4,prefix:'slime/dead-', suffix:'.png'}),
-            repeat:-1,
+            repeat:0,
             frameRate:10
           });
           this.anims.create({
@@ -362,7 +371,7 @@ export default class Animations extends Phaser.Scene{
           this.anims.create({
             key:'viking_fall',
             frames: this.anims.generateFrameNames('viking', {start:1, end:5,prefix:'viking/fall_back_', suffix:'.png'}),
-            repeat:-1,
+            repeat:0,
             frameRate:15
           });
           this.anims.create({
@@ -395,6 +404,7 @@ export default class Animations extends Phaser.Scene{
             repeat:-1,
             frameRate:15
           });
+          
           this.anims.create({
             key:'hache_rouge_attack1',
             frames: this.anims.generateFrameNames('hache_rouge', {start:1, end:6,prefix:'hache_rouge/attack1_', suffix:'.png'}),
@@ -410,13 +420,13 @@ export default class Animations extends Phaser.Scene{
           this.anims.create({
             key:'hache_rouge_dead',
             frames: this.anims.generateFrameNames('hache_rouge', {start:1, end:4,prefix:'hache_rouge/dead_', suffix:'.png'}),
-            repeat:-1,
+            repeat:0,
             frameRate:15
           });
           this.anims.create({
             key:'hache_rouge_fall',
             frames: this.anims.generateFrameNames('hache_rouge', {start:1, end:4,prefix:'hache_rouge/fall_back_', suffix:'.png'}),
-            repeat:-1,
+            repeat:0,
             frameRate:15
           });
           this.anims.create({
@@ -470,7 +480,7 @@ export default class Animations extends Phaser.Scene{
           this.anims.create({
             key:'archer_dead',
             frames: this.anims.generateFrameNames('archer', {start:1, end:4,prefix:'archer/dead-', suffix:'.png'}),
-            repeat:-1,
+            repeat:0,
             frameRate:15
           });
           this.anims.create({
@@ -506,7 +516,7 @@ export default class Animations extends Phaser.Scene{
           this.anims.create({
             key:'squelette_lance_dead',
             frames: this.anims.generateFrameNames('squelette_lance', {start:1, end:4,prefix:'squelette_lance/dead-', suffix:'.png'}),
-            repeat:-1,
+            repeat:0,
             frameRate:15
           });
           this.anims.create({
@@ -578,7 +588,7 @@ export default class Animations extends Phaser.Scene{
           this.anims.create({
             key:'squelette_hache_dead',
             frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:4,prefix:'squelette_hache/dead-', suffix:'.png'}),
-            repeat:-1,
+            repeat:0,
             frameRate:15
           });
        this.anims.create({
@@ -590,7 +600,7 @@ export default class Animations extends Phaser.Scene{
       this.anims.create({
         key:'petit_squelette/dead_far',
         frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/dead_far_', suffix:'.png'}),
-        repeat:-1,
+        repeat:0,
         frameRate:15
       });
       this.anims.create({
@@ -602,7 +612,7 @@ export default class Animations extends Phaser.Scene{
       this.anims.create({
         key:'petit_squelette/dead_near',
         frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:6,prefix:'petit_squelette/dead_near_', suffix:'.png'}),
-        repeat:-1,
+        repeat:0,
         frameRate:15
       });
       this.anims.create({
@@ -668,11 +678,11 @@ export default class Animations extends Phaser.Scene{
       this.anims.create({
         key:'squelette_epee/death',
         frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:4,prefix:'squelette_epee/dead-', suffix:'.png'}),
-        repeat:-1,
+        repeat:0,
         frameRate:15
       });
     }
     update(){
-        this.scene.start("niveau3");
+        this.scene.start("menu");
     }
 }
