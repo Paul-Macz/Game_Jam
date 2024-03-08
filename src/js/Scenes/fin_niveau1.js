@@ -18,22 +18,46 @@ export default class fin_niveau1 extends Phaser.Scene {
          
    
          //on ajoute un bouton de clic, nommé bouton_play
-       
-       var bouton_continuer = this.add.image(400, 250, "imageBoutonContinuer").setDepth(1);
-       bouton_continuer.setScale(0.2,0.3);
+         var bouton_titre = this.add.image(400,70,"imageBoutonFond2").setDepth(1);
+         bouton_titre.setScale(1.5,0.7);
+       var bouton_continuer = this.add.image(400, 250, "imageBoutonFond").setDepth(1);
+       bouton_continuer.setScale(0.6,0.5);
        bouton_continuer.setInteractive();
        
-       var bouton_menu = this.add.image(400,320,"imageBoutonMenu").setDepth(1);
-       bouton_menu.setScale(0.2,0.3);
+       var bouton_menu = this.add.image(400,340,"imageBoutonFond").setDepth(1);
+       bouton_menu.setScale(0.6,0.5);
        bouton_menu.setInteractive();
    
-       var bouton_newgame = this.add.image(400,390,"imageBoutonNewGame").setDepth(1);
-       bouton_newgame.setScale(0.2,0.3);
+       var bouton_newgame = this.add.image(400,430,"imageBoutonFond").setDepth(1);
+       bouton_newgame.setScale(0.6,0.5);
        bouton_newgame.setInteractive();
 
-       var bouton_quit = this.add.image(400,460,"imageBoutonQuit").setDepth(1);
-        bouton_quit.setScale(0.2,0.3);
+       var bouton_quit = this.add.image(400,520,"imageBoutonFond").setDepth(1);
+        bouton_quit.setScale(0.6,0.5);
         bouton_quit.setInteractive();
+
+        this.add.text(200,50,"CONGRATULATIONS",{
+          fontFamily: 'ROG Fonts',
+          fontSize: "25pt"
+        }).setTint(0x000000).setDepth(2);
+        this.add.text(315,240,"CONTINUE",{
+          fontFamily: 'ROG Fonts',
+          fontSize: "25pt"
+        }).setTint(0x000000).setDepth(2).setScale(0.8);
+        this.add.text(354,325,"MENU",{
+          fontFamily: 'ROG Fonts',
+          fontSize: "25pt"
+        }).setTint(0x000000).setDepth(2).setScale(0.8);
+        
+        this.add.text(315,415,"NEW GAME",{
+          fontFamily: 'ROG Fonts',
+          fontSize: "25pt"
+        }).setTint(0x000000).setDepth(2).setScale(0.8);
+        
+        this.add.text(358,505,"QUIT",{
+          fontFamily: 'ROG Fonts',
+          fontSize: "25pt"
+        }).setTint(0x000000).setDepth(2).setScale(0.8);
 
        
    
