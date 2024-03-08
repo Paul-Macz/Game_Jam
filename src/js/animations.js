@@ -15,10 +15,25 @@ export default class Animations extends Phaser.Scene{
         this.load.image("imageBoutonBack", "src/assets/BackButton.png");
         this.load.image("imageBoutonPause", "src/assets/PauseSquareButton.png");
         this.load.image("imageBoutonSon", "src/assets/AudioSquareButton.png");
-
         this.load.image("bouton_niv1", "src/assets/bouton_niv1.png");
         this.load.image("bouton_niv2", "src/assets/bouton_niv2.png");
         this.load.image("bouton_niv3", "src/assets/bouton_niv3.png");
+        this.load.image("Z","src/assets/keyboard_z_outline.png");
+        this.load.image("D","src/assets/keyboard_d_outline.png");
+        this.load.image("Q","src/assets/keyboard_q_outline.png");
+        this.load.image("1","src/assets/keyboard_1_outline.png");
+        this.load.image("2","src/assets/keyboard_2_outline.png");
+        this.load.image("3","src/assets/keyboard_3_outline.png");
+        this.load.image("Left_click","src/assets/mouse_left_outline.png")
+        this.load.image("img_ciel", "src/assets/sky.png");
+        this.load.image("img_porte1", "src/assets/door1.png");
+        this.load.image("img_porte2", "src/assets/door2.png");
+        this.load.image("img_porte3", "src/assets/door3.png");
+        this.load.image("bullet", "src/assets/balle.png");
+        this.load.image("img_plateforme", "src/assets/platform.png");
+        this.load.image("heart_empty","src/assets/ui_heart_empty.png")
+        this.load.image("heart_full","src/assets/ui_heart_full.png")
+        this.load.image("heart_half","src/assets/ui_heart_half.png")
 
         this.load.spritesheet("planetes","src/assets/planetes.png" ,{
           frameWidth: 88,
@@ -37,27 +52,17 @@ export default class Animations extends Phaser.Scene{
             frameHeight: 325
           });
 
-        this.load.image("Z","src/assets/keyboard_z_outline.png");
-        this.load.image("D","src/assets/keyboard_d_outline.png");
-        this.load.image("Q","src/assets/keyboard_q_outline.png");
-        this.load.image("1","src/assets/keyboard_1_outline.png");
-        this.load.image("2","src/assets/keyboard_2_outline.png");
-        this.load.image("3","src/assets/keyboard_3_outline.png");
-        this.load.image("Left_click","src/assets/mouse_left_outline.png")
-        this.load.image("img_ciel", "src/assets/sky.png");
+        
         this.load.spritesheet("porte_ouvrante" , "src/assets/porte_ouvrante.png", {
         frameWidth: 96,
         frameHeight: 120
             }); 
-        this.load.image("img_plateforme", "src/assets/platform.png");
+        
         this.load.spritesheet("img_perso", "src/assets/dude.png", {
         frameWidth: 32,
         frameHeight: 48
         });
-        this.load.image("img_porte1", "src/assets/door1.png");
-        this.load.image("img_porte2", "src/assets/door2.png");
-        this.load.image("img_porte3", "src/assets/door3.png");
-        this.load.image("bullet", "src/assets/balle.png");
+        
         this.load.spritesheet("test", "src/assets/walk.png",{
             frameWidth:440,
             frameHeight:330
@@ -93,10 +98,6 @@ export default class Animations extends Phaser.Scene{
         this.load.audio('niv1',"src/assets/audio/Eldenring.mp3");
         this.load.audio('niv3',"src/assets/audio/hyrule.mp3");
 
-
-
-
-        
     } 
     create(){
       this.anims.create({
@@ -674,6 +675,6 @@ export default class Animations extends Phaser.Scene{
       });
     }
     update(){
-        this.scene.start("menu2");
+        this.scene.start("menu");
     }
 }

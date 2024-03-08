@@ -88,7 +88,6 @@ export default class niveau1 extends Phaser.Scene {
         this.physics.world.setBounds(this.boundx,this.boundy,this.boundWidth,this.boundHeight)
         tab_points.objects.forEach(point => {
             const randomNumber = Math.random();
-            // console.log(randomNumber)
             var image;
             // Distribution aléatoire de l'item
             if (randomNumber < 0.33 && point.name == "ennemi_sol") {
@@ -99,11 +98,8 @@ export default class niveau1 extends Phaser.Scene {
             } else if (randomNumber > 0.66 && randomNumber < 1 &&  point.name == "ennemi_sol") {
                 image="hache_rouge"
             }
-            console.log(image)
             var nouvel_ennemi = new Terrestre(this,image,point.x, point.y,ice);
-            // console.log(nouvel_ennemi)
             nouvel_ennemi.sprite.setCollideWorldBounds(true);
-            console.log(nouvel_ennemi.image)
             nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
             this.groupe_ennemis.add(nouvel_ennemi.sprite);
       });
@@ -126,16 +122,13 @@ export default class niveau1 extends Phaser.Scene {
     }
 
     handlePlayerEnnemiCollision(player, ennemiSp) {
-        if (ennemiSp.ennemiObject instanceof Character) {
-            console.log("check")
-        }
-        console.log(ennemiSp)
         const dx = this.player.sprite.x - ennemiSp.x;
         const dy = this.player.sprite.y - ennemiSp.y;
         const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
         this.player.sprite.setVelocity(dir.x, dir.y)
-        this.player.getHit(ennemiSp.ennemiObject.equipWeapon.damage)
-    }
+        this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
+      
+      }
 
     update() {
         this.player.update()
@@ -177,7 +170,6 @@ export default class niveau1 extends Phaser.Scene {
 
         const dx = this.player.sprite.x - ennemiSp.x;
         const dy = this.player.sprite.y - ennemiSp.y;
-        // console.log(dx,dy)
         const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
         this.player.sprite.setVelocity(dir.x, dir.y)
         this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)

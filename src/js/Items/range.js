@@ -7,7 +7,7 @@ export default class Range extends Weapon{
         this.range=range;
         this.lastShotTime=0;
         this.bulSpeed=bulSpeed;
-        this.Bullets = scene.physics.add.group(); 
+        this.Bullets = this.scene.physics.add.group(); 
         this.pierce=pierce; 
 
         // Use an arrow function to retain the 'this' context

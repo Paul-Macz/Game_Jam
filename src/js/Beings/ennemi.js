@@ -26,8 +26,10 @@ export default class Ennemi extends Character{
 
 
     getHit(damage){
-        super.getHit(damage);
-        this.health2.width=this.health.width*(this.PV/this.maxPV)
+        if(this.PV>0){
+            super.getHit(damage);
+            this.health2.width=this.health.width*(this.PV/this.maxPV)
+        }
         if(this.PV<this.maxPV*0.5 && this.PV>this.maxPV*0.25){
             this.health2.setFillStyle(0xffff00); // Set fill color to red
         }

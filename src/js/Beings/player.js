@@ -5,13 +5,10 @@ import Melee from "/src/js/Items/melee.js";
 export default class Player extends Character{
     constructor(scene,image, x, y,calque) {
         super(scene, image,x,y,calque)
-        this.txt_PV = this.scene.add.text(20, 15, "PV: "+this.PV+"/"+this.maxPV, {
-            fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif',
-            fontSize: "14pt"
-        });
         this.owidth=10;
         this.oheight=16;
         this.scale=1.3;
+        this.heartscale=this.scale*this.scale
         this.width=this.owidth*this.scale;
         this.height=this.oheight*this.scale;
         this.timeLastAttack=0;
@@ -22,6 +19,7 @@ export default class Player extends Character{
         this.jumpNeutral=false;
         this.animState=false;
         this.hurtState=false;
+        
 
         this.sprite.setScale(this.scale);
         this.sprite.setSize(this.width*(2.9-this.scale),this.height*(2.9-this.scale),true);
@@ -57,6 +55,21 @@ export default class Player extends Character{
 
         this.ekho_death=this.scene.sound.add('ekho_death')
         this.jump=this.scene.sound.add("jump")
+        this.hearts=this.scene.add.group({
+            classType: Phaser.GameObjects.Image
+        })
+        this.hearts.createMultiple({
+            key:"heart_full",
+            setXY:{
+                x:this.scene.boundx+20,
+                y:this.scene.boundy+20,
+                stepX:16*this.heartscale
+            },
+            quantity:10
+        })
+        this.hearts.children.iterate(child=>{
+            child.setScale(this.heartscale)
+        })
     }
     freeze() {
         this.sprite.body.moves = false;
@@ -221,6 +234,7 @@ if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
         }
 
         
+        
             //attack
             if(this.scene.input.mousePointer.isDown){
                 //Range attack
@@ -286,6 +300,36 @@ if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
                 }
             }
         }
+        const cameraScrollX = this.scene.cameras.main.scrollX+20;
+        const cameraScrollY = this.scene.cameras.main.scrollY+20;
+        let offsetX = cameraScrollX;
+        // Set the position of the hearts group relative to the camera's scroll position
+        // this.hearts.setX(cameraScrollX + desiredOffsetX);
+        // this.hearts.setY(cameraScrollY + desiredOffsetY);
+        this.hearts.children.iterate(child => {
+            // Set the position of the child relative to the previous one
+            child.setX(offsetX);
+            child.setY(cameraScrollY);
+            // Increment the position for the next child
+            offsetX += 16*this.heartscale;
+        });
+        let children = this.hearts.getChildren();
+        let emptyHeartTexture = "heart_empty";
+        let halfHeartTexture = "heart_half";
+        let fullHeartTexture = "heart_full";
+
+// Calculate the number of children needed to represent the player's PV
+let numChildrenToUpdate = Math.min(this.maxPV, this.PV);
+for (let i = 0; i < children.length; i++) {
+    // Determine the texture to assign based on the player's PV
+    let textureKey = (i < numChildrenToUpdate) ? fullHeartTexture : emptyHeartTexture;
+    if (this.PV < this.maxPV && i === numChildrenToUpdate - 1) {
+        textureKey = halfHeartTexture;
+    }
+    // Set the texture for the child
+    children[i].setTexture(textureKey);
+}
+
     } 
 
     getHit(damage){
@@ -296,23 +340,60 @@ if (Phaser.Input.Keyboard.JustDown(this.zKey) && this.jumpState < 2) {
             this.sprite.anims.play("battlemage_hit", true);
             this.sprite.anims.stop()
             super.getHit(damage);
-            this.update_txt_PV();
             this.hurtState=false;
+
+            // switch (this.player.PV){
+            //     case 19:
+            //         break;
+            //     case 18: 
+            //         break;
+            //     case 17: 
+            //         break;
+            //     case 16: 
+            //         break;
+            //     case 15: 
+            //         break;
+            //     case 14: 
+            //         break;
+            //     case 13: 
+            //         break;
+            //     case 12: 
+            //         break;
+            //     case 11: 
+            //         break;
+            //     case 10: 
+            //         break;
+            //     case 9: 
+            //         break;
+            //     case 8: 
+            //         break;
+            //     case 7: 
+            //         break;
+            //     case 6: 
+            //         break;
+            //     case 5: 
+            //         break;
+            //     case 4: 
+            //         break;
+            //     case 3: 
+            //         break;
+            //     case 2: 
+            //         break;
+            //     case 1: 
+            //         break;
+
+            // }
 
             if(this.PV == 0){
                 this.deaths();
             }
+            
         }
     }
     resetPV(){
-
         super.resetPV();
-        this.update_txt_PV();
     }
-    update_txt_PV(){
 
-        this.txt_PV.setText("PV: " + this.PV+'/'+this.maxPV);
-    }
     
     
   }
