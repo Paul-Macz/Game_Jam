@@ -1,12 +1,12 @@
 
 export default class Items {
     constructor(scene, image, givenAttackSpeed, givenDamage, givenPV) {
-        this.scene = scene;
+        this.scene=scene
         this.image = image;
         this.givenAttackSpeed = givenAttackSpeed;
         this.givenDamage = givenDamage;
         this.givenPV = givenPV;
-        this.item = this.scene.add.rectangle(x, y, this.width * 1.75, this.height * 2, 0xffffff, 0);
+        //this.item = this.scene.add.rectangle(x, y, this.width * 1.75, this.height * 2, 0xffffff, 0);
 
     }
 
@@ -24,7 +24,7 @@ export default class Items {
 
     spawnItem(x, y) {
         this.sprite = this.scene.physics.add.sprite(x, y, this.image);
-
+        this.sprite.anims.play("bonus_anim", true);
     }
 
     removeItem() {

@@ -22,30 +22,36 @@ export default class Ennemi extends Character{
         
     }
 
-    getHit(damage){
+    getHit(damage) {
         super.getHit(damage);
-        if(this.PV==0){
-            this.validforDeletion=true;
+        if (this.PV == 0) {
+            this.validforDeletion = true;
             this.sprite.destroy();
             this.ennemi_dead.play();
+            // Faire apparaître l'objet bonus à la position de l'ennemi
+            this.dropItem(this.x, this.y);
         }
-  }
-    dropItem() {
-         // Générer un nombre aléatoire pour déterminer le type d'item
+    }
+
+    dropItem(x, y) {
+        // Générer un nombre aléatoire pour déterminer le type d'item
         const randomNumber = Math.random();
         // Distribution aléatoire de l'item
         if (randomNumber < 0.1) {
             // Donner un boost de PV
-            this.drop=new Items(scene, image, 0, 0, this.givenPV)
+            this.drop = new Items(this.scene, "bonus", 0, 0, this.givenPV);
+            this.drop.spawnItem(this.sprite.x, this.sprite.y);
         } else if (randomNumber > 0.1 && randomNumber < 0.2) {
             // Donner un boost de vitesse d'attaque
-            this.drop=new Items(scene, image, this.givenAttackSpeed, 0, 0)
+            this.drop = new Items(this.scene, "bonus", this.givenAttackSpeed, 0, 0);
+            this.drop.spawnItem(this.sprite.x, this.sprite.y);        
         } else if (randomNumber > 0.2 && randomNumber < 0.3) {
             // Donner un boost de dégâts
-            this.drop=new Items(scene, image, 0, this.givenDamage, 0)
-        } else {
-            // Aucun boost donné
-            }
-        }
+            this.drop = new Items(this.scene, "bonus", 0, this.givenDamage, 0);
+            this.drop.spawnItem(this.sprite.x, this.sprite.y);        
+        } 
+        //this.drop = new Items(this.scene, "bonus", 0, 0, this.givenPV);
+        //this.drop.spawnItem(this.sprite.x, this.sprite.y);
     }
+}
     

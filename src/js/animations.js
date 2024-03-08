@@ -92,13 +92,23 @@ export default class Animations extends Phaser.Scene{
         this.load.audio('niv2',"src/assets/audio/Gerudo.mp3");
         this.load.audio('niv1',"src/assets/audio/Eldenring.mp3");
         this.load.audio('niv3',"src/assets/audio/hyrule.mp3");
+        
 
-
+      this.load.spritesheet("bonus", 'src/assets/bonus.png',{
+        frameWidth:32,
+        frameHeight:32
+      });
 
 
         
     } 
     create(){
+      this.anims.create({
+        key: 'bonus_anim',
+        frames: this.anims.generateFrameNumbers('bonus', { start:0, end: 4}), // Frames for walk animation
+        frameRate: 10,
+        repeat: -1
+      });
       this.anims.create({
         key: 'fireball',
         frames: this.anims.generateFrameNumbers('fire-ball', { start:0, end: 6}), // Frames for walk animation
@@ -673,6 +683,6 @@ export default class Animations extends Phaser.Scene{
       });
     }
     update(){
-        this.scene.start("menu2");
-    }
+        this.scene.start("menu");
+    } 
 }
