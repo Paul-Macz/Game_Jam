@@ -147,11 +147,7 @@ export default class tutomap extends Phaser.Scene {
             var nouvel_ennemi1 = new Terrestre(this,"hache_rouge",point.x, point.y,calque_nature,calque_rochers);
             nouvel_ennemi1.sprite.ennemiObject = nouvel_ennemi1;
             this.groupe_ennemis.add(nouvel_ennemi1.sprite);
-          } else if (point.name == "ennemi2") { 
-              var nouvel_ennemi2 = new Terrestre(this,"petit_squelette",point.x, point.y,calque_nature,calque_rochers);
-              nouvel_ennemi2.sprite.ennemiObject = nouvel_ennemi2;
-              this.groupe_ennemis.add(nouvel_ennemi2.sprite);
-              }
+          }
           });   
       /*****************************************************
        *  ajout du modele de mobilite des ennemis *

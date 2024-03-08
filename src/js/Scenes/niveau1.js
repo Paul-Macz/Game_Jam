@@ -33,6 +33,10 @@ export default class niveau1 extends Phaser.Scene {
 
     create() {
 
+        var bouton_son = this.add.image(740,65,"imageBoutonSon").setDepth(2);
+        bouton_son.setScale(0.3,0.3);
+        bouton_son.setInteractive();
+
        
 
         this.boundx = 0;
