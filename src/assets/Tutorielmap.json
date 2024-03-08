@@ -315,7 +315,6 @@
         {
          "draworder":"topdown",
          "id":14,
-         "locked":true,
          "name":"calque_ennemis",
          "objects":[
                 {
@@ -327,7 +326,7 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":1497.69666666667,
+                 "x":1497.7,
                  "y":1178.91
                 }, 
                 {
@@ -340,7 +339,7 @@
                  "visible":true,
                  "width":0,
                  "x":1171.03,
-                 "y":1229.57666666667
+                 "y":1229.58
                 }, 
                 {
                  "height":0,
@@ -351,32 +350,32 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":1005.69666666667,
-                 "y":1229.57666666667
+                 "x":1005.7,
+                 "y":1229.58
                 }, 
                 {
                  "height":0,
                  "id":5,
-                 "name":"ennemi2 ",
+                 "name":"ennemi",
                  "point":true,
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":3403.33,
-                 "y":539.333
+                 "x":3404.66333333333,
+                 "y":504.666333333333
                 }, 
                 {
                  "height":0,
                  "id":19,
-                 "name":"ennemi2 ",
+                 "name":"ennemi",
                  "point":true,
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":3273.99666666667,
-                 "y":539.333
+                 "x":3275.33333333333,
+                 "y":506.666333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -449,6 +448,7 @@
         {
          "draworder":"topdown",
          "id":15,
+         "locked":true,
          "name":"calque_texte",
          "objects":[
                 {
@@ -467,8 +467,8 @@
                  "type":"",
                  "visible":true,
                  "width":285.027,
-                 "x":1221.36333333333,
-                 "y":1061.13666666667
+                 "x":1221.36,
+                 "y":1061.14
                 }, 
                 {
                  "height":17.9874,
@@ -486,7 +486,7 @@
                  "type":"",
                  "visible":true,
                  "width":95.0246,
-                 "x":1314.38333333333,
+                 "x":1314.38,
                  "y":1112.44
                 }, 
                 {
@@ -534,7 +534,7 @@
                  "rotation":0,
                  "text":
                     {
-                     "fontfamily":"Gill Sans Ultra Bold Condensed",
+                     "fontfamily":"Gill Sans Ultra Bold",
                      "halign":"center",
                      "text":"Attention un ennemi en approche ! ",
                      "valign":"center",

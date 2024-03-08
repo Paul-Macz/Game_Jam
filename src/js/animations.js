@@ -6,6 +6,8 @@ export default class Animations extends Phaser.Scene{
     }
     preload(){
          this.load.image("menu_fond", "src/assets/fond_galaxy.png");
+         this.load.image("menu_fond2", "src/assets/fond_galaxy2.png");
+         this.load.image("menu_fond1", "src/assets/fond_galaxy1.png");
          this.load.image("imageBoutonPlay", "src/assets/boutonplay.png");
          this.load.image("imageBoutonOption", "src/assets/OptionButton.png");
          this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
@@ -25,6 +27,11 @@ export default class Animations extends Phaser.Scene{
         this.load.spritesheet("planetes","src/assets/planetes.png" ,{
           frameWidth: 88,
           frameHeight: 88
+        });
+
+        this.load.spritesheet("planete","src/assets/planete.png" ,{
+          frameWidth: 325,
+          frameHeight: 325
         });
         this.load.spritesheet("planetes_rouge","src/assets/planetes_rouge.png" ,{
             frameWidth: 325,
@@ -145,7 +152,7 @@ export default class Animations extends Phaser.Scene{
         });
         this.anims.create({
             key: "anim_planet",
-            frames: this.anims.generateFrameNumbers("planetes",{  start: 0 , end: 49  }),
+            frames: this.anims.generateFrameNumbers("planete",{  start: 0 , end: 49  }),
             frameRate : 12,
             repeat : -1
           });

@@ -1,8 +1,9 @@
 
+var deep_ost;
  export default class menu extends Phaser.Scene {
     constructor() {
       super({key : "menu"});
-      this.planet;
+       this.planet;
     }
     
     preload() {
@@ -22,15 +23,21 @@
     
     create() {
      // on place les éléments de fond
-      this.add.image(0, 0, "menu_fond").setOrigin(0).setDepth(0).setScale(5,3);
+     let isSoundPlaying = false;
+     deep_ost=this.sound.add('menu_ost')
+    deep_ost.play();
+      this.add.image(0, 0, "menu_fond1").setOrigin(0).setDepth(0).setScale(1,1);
     
-      this.planet = this.add.sprite(100,450, "planetes");
-      this.planet.setScale(7,7);
-      this.planet.setX(170);
-      this.planet.setY(250);
+       this.planet = this.add.sprite(100,450, "planete");
+       this.planet.setScale(2,2);
+       this.planet.setX(170);
+       this.planet.setY(250);
 
       //on ajoute un bouton de clic, nommé bouton_play
-    
+    var bouton_son = this.add.image(740,65,"imageBoutonSon").setDepth(1);
+    bouton_son.setScale(0.3,0.3);
+    bouton_son.setInteractive();
+
     var bouton_play = this.add.image(650, 300, "imageBoutonFond").setDepth(1);
     bouton_play.setScale(0.6,0.5);
     bouton_play.setInteractive();
@@ -78,6 +85,9 @@
     bouton_quit.on("pointerover", () => {
       bouton_quit.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
     });
+    bouton_son.on("pointerover", () => {
+      bouton_son.setTint(0xff0000); // Change la teinte du bouton (rouge dans cet exemple)
+    });
 
     //Cas ou la souris ne passe plus sur les boutons 
     
@@ -90,6 +100,9 @@
     bouton_quit.on("pointerout", () => {
       bouton_quit.clearTint(); // Réinitialise la teinte du bouton
     });
+    bouton_son.on("pointerout", () => {
+      bouton_son.clearTint(); // Réinitialise la teinte du bouton
+    });
 
     //Cas ou la sourris clique sur le bouton play :
     // on lance la selection
@@ -97,10 +110,20 @@
     bouton_play.on("pointerup", () => {
      this.scene.start("tutomap");
     });
+    
     bouton_tutorial.on("pointerup", () => {
       this.scene.start("menu2")
     });
-
+  
+    bouton_son.on("pointerup", () => {
+      if (isSoundPlaying) {
+        deep_ost.pause();
+        deep_ost.currentTime = 0;
+      } else {
+        deep_ost.play();
+      }
+      isSoundPlaying = !isSoundPlaying;
+    });
     bouton_quit.on("pointerup", () => {
       this.scene.stop("menu");
       window.close();
@@ -114,7 +137,7 @@
         
     update() {
  
-    this.planet.anims.play("anim_planet", true);
+     this.planet.anims.play("anim_planet", true);
 
     } 
 }
