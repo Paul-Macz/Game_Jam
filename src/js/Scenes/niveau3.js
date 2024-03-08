@@ -73,14 +73,14 @@ export default class niveau3 extends Phaser.Scene {
           // }
         },
       ); 
-      this.weap = new Melee(this, "bull", 20, 20, 1, "fire-ball",true,10);
-      this.magic = new Range(this, "magic", 2, 10, 1, "fire-ball", true, 1, 500, false);
-      this.player.pickWeapon(this.weap);
-      this.player.pickWeapon(this.magic);
-        this.cameras.main.setZoom(1);
-        this.magic2 = new Range(this, "magic2", 5,50, 1, "holy-ball", true, 1, 700, false);
+        this.weap = new Melee(this, "bull", 20, 20, 1, "fire-ball",true,10);
+        this.magic = new Range(this, "magic", 4, 5, 1, "fire-ball", true, 1, 500, false);
+        this.player.pickWeapon(this.weap);
+        this.player.pickWeapon(this.magic);
+        this.magic2 = new Range(this, "magic2", 2,10, 1, "holy-ball", true, 1, 600, false);
         this.player.pickWeapon(this.magic2);
 
+        this.cameras.main.setZoom(1);
       this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundsHeight);
               // on fait une boucle foreach, qui parcours chaque élements du tableau tab_points  
               tab_points.objects.forEach(point => {

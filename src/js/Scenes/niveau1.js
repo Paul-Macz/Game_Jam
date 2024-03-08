@@ -77,11 +77,11 @@ export default class niveau1 extends Phaser.Scene {
         }, this);
 
         this.weap = new Melee(this, "bull", 20, 20, 1, "fire-ball",true,10);
-      this.magic = new Range(this, "magic", 2, 10, 1, "fire-ball", true, 1, 500, false);
-      this.player.pickWeapon(this.weap);
-      this.player.pickWeapon(this.magic);
-      this.magic2 = new Range(this, "magic2", 5,50, 1, "holy-ball", true, 1, 700, false);
-      this.player.pickWeapon(this.magic2);
+        this.magic = new Range(this, "magic", 4, 5, 1, "fire-ball", true, 1, 500, false);
+        this.player.pickWeapon(this.weap);
+        this.player.pickWeapon(this.magic);
+        this.magic2 = new Range(this, "magic2", 2,10, 1, "holy-ball", true, 1, 600, false);
+        this.player.pickWeapon(this.magic2);
 
         const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");
 
