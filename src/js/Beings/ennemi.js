@@ -29,7 +29,7 @@ export default class Ennemi extends Character{
         
         this.health=this.scene.add.rectangle(this.sprite.x,this.sprite.y,50,6,"0xffffff")
         this.health2=this.scene.add.rectangle(this.sprite.x,this.sprite.y,50,6,"0x00ff00")
-
+        this.Drops = this.scene.physics.add.group(); 
         
     }
 
@@ -37,7 +37,9 @@ export default class Ennemi extends Character{
     getHit(damage){
         if(this.PV>0){
             super.getHit(damage);
-            this.health2.width=this.health.width*(this.PV/this.maxPV)
+            if(this.PV>=0){
+                this.health2.width=this.health.width*(this.PV/this.maxPV)
+            }
         }
         if(this.PV<this.maxPV*0.5 && this.PV>this.maxPV*0.25){
             this.health2.setFillStyle(0xffff00); // Set fill color to red
@@ -45,7 +47,7 @@ export default class Ennemi extends Character{
         else if(this.PV<this.maxPV*0.25){
             this.health2.setFillStyle(0xff0000); // Set fill color to red
         }
-        if(this.PV==0){
+        if(this.PV<=0){
             
             this.validforDeletion=true;
             this.ennemi_dead.play();
@@ -58,6 +60,7 @@ export default class Ennemi extends Character{
         }
     }
     kill(){
+        this.dropItem()
         this.sprite.destroy();
         this.health.setAlpha(0);
         this.health2.setAlpha(0);
@@ -95,18 +98,42 @@ export default class Ennemi extends Character{
          // Générer un nombre aléatoire pour déterminer le type d'item
         const randomNumber = Math.random();
         // Distribution aléatoire de l'item
+        var drop;
         if (randomNumber < 0.1) {
             // Donner un boost de PV
-            this.drop=new Items(scene, image, 0, 0, this.givenPV)
+            drop=new Items(this.scene, "item", 0, 0, this.givenPV, this.sprite.x, this.sprite.y)
+            drop.spawnItem(this.sprite.x, this.sprite.y)
+            drop.sprite.item=drop
+            this.Drops.add(drop.sprite)
+            this.Drops.children.iterate(function iterateur(drop) {
+                drop.body.onWorldBounds = true;  
+                drop.body.allowGravity = false;
+            })
         } else if (randomNumber > 0.1 && randomNumber < 0.2) {
             // Donner un boost de vitesse d'attaque
-            this.drop=new Items(scene, image, this.givenAttackSpeed, 0, 0)
+            drop=new Items(this.scene, "item", this.givenAttackSpeed, 0, 0, this.sprite.x, this.sprite.y)
+            drop.spawnItem(this.sprite.x, this.sprite.y)
+            drop.sprite.item=drop
+            this.Drops.add(drop.sprite)
+            this.Drops.children.iterate(function iterateur(drop) {
+                drop.body.onWorldBounds = true;  
+                drop.body.allowGravity = false;
+            })
         } else if (randomNumber > 0.2 && randomNumber < 0.3) {
             // Donner un boost de dégâts
-            this.drop=new Items(scene, image, 0, this.givenDamage, 0)
+            drop=new Items(this.scene, "item", 0, this.givenDamage, 0, this.sprite.x, this.sprite.y)
+            drop.spawnItem(this.sprite.x, this.sprite.y)
+            drop.sprite.item=drop
+            this.Drops.add(drop.sprite)
+            this.Drops.children.iterate(function iterateur(drop) {
+                drop.body.onWorldBounds = true;  
+                drop.body.allowGravity = false;
+            })
         } else {
             // Aucun boost donné
             }
+
+
         }
     }
     

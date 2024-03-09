@@ -73,11 +73,11 @@ export default class niveau3 extends Phaser.Scene {
           // }
         },
       ); 
-        this.weap = new Melee(this, "bull", 20, 20, 1, "fire-ball",true,10);
-        this.magic = new Range(this, "magic", 4, 5, 1, "fire-ball", true, 1, 500, false);
+        this.weap = new Melee(this, "bull", 2, 5, 1, "fire-ball",true,10);
+        this.magic = new Range(this, "magic", 2, 5, 1, "fire-ball", true, 1, 500, false);
         this.player.pickWeapon(this.weap);
         this.player.pickWeapon(this.magic);
-        this.magic2 = new Range(this, "magic2", 2,10, 1, "holy-ball", true, 1, 600, false);
+        this.magic2 = new Range(this, "magic2", 1,10, 1, "holy-ball", true, 1, 600, false);
         this.player.pickWeapon(this.magic2);
 
         this.cameras.main.setZoom(1);
@@ -164,7 +164,7 @@ openDoor(){
   this.scene.start("fin_niveau3");
 }
 handlePlayerEnnemiCollision(player, ennemiSp) {
-  const knockbackForce = 200; // Adjust as needed
+    const knockbackForce = 200; // Adjust as needed
 
   // Calculate the direction from the enemy to the player
   const dx = player.x - ennemiSp.x;
@@ -181,6 +181,7 @@ handlePlayerEnnemiCollision(player, ennemiSp) {
   if(!this.player.hurtState){
     this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage);
   }
+
 }
 handleSwordEnnemiCollision(sword,ennemiSp){
   if(!(ennemiSp.ennemiObject instanceof Flying)){

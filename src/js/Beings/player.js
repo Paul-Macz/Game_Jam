@@ -332,7 +332,6 @@ for (let i = 0; i < children.length; i++) {
         children[i].setTexture(fullHeartTexture);
     }
 }
-console.log(this.PV)
     } 
 
     getHit(damage){

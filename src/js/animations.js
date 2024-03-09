@@ -85,6 +85,11 @@ export default class Animations extends Phaser.Scene{
           frameWidth:32,
           frameHeight:32
         });
+        this.load.spritesheet("item", "src/assets/Holy VFX 01 Impact.png",{
+          frameWidth:32,
+          frameHeight:32
+        });
+
         this.load.atlas('battlemage', "src/assets/battlemage.png" ,"src/assets/battlemage.json");
         this.load.atlas('viking',"src/assets/ennemis/viking/viking.png","src/assets/ennemis/viking/viking.json");
         this.load.atlas('archer',"src/assets/ennemis/archer/archer.png","src/assets/ennemis/archer/archer.json");
@@ -111,14 +116,20 @@ export default class Animations extends Phaser.Scene{
     } 
     create(){
       this.anims.create({
+        key: 'item_anim',
+        frames: this.anims.generateFrameNumbers('item', { start:0, end: 5}), // Frames for walk animation
+        frameRate: 10,
+        repeat: -1
+      });
+      this.anims.create({
         key: 'fireball',
-        frames: this.anims.generateFrameNumbers('fire-ball', { start:0, end: 6}), // Frames for walk animation
+        frames: this.anims.generateFrameNumbers('fire-ball', { start:0, end: 5}), // Frames for walk animation
         frameRate: 10,
         repeat: -1
       });
       this.anims.create({
         key: 'holyball',
-        frames: this.anims.generateFrameNumbers('holy-ball', { start:0, end: 8}), // Frames for walk animation
+        frames: this.anims.generateFrameNumbers('holy-ball', { start:0, end: 7}), // Frames for walk animation
         frameRate: 10,
         repeat: -1
       });
@@ -128,30 +139,7 @@ export default class Animations extends Phaser.Scene{
             frameRate: 10,
             repeat: -1
           });
-          this.anims.create({
-            key: "turn_left",
-            frames: this.anims.generateFrameNumbers("img_perso", {
-                start: 0,
-                end: 3
-            }),
-            frameRate: 10, // vitesse de défilement des frames
-            repeat: -1 
-        });
-  
-        this.anims.create({
-            key: "turn_right",
-            frames: this.anims.generateFrameNumbers("battlemage", {
-                start: 5,
-                end: 8
-            }),
-            frameRate: 8,
-            repeat: -1
-        });
-        this.anims.create({
-            key: "stand",
-            frames: [{ key: "battlemage", frame: 4 }],
-            frameRate: 20
-        });
+
         this.anims.create({
             key: "anim_planet",
             frames: this.anims.generateFrameNumbers("planete",{  start: 0 , end: 49  }),
@@ -378,7 +366,7 @@ export default class Animations extends Phaser.Scene{
           });
           this.anims.create({
             key:'viking_standUp',
-            frames: this.anims.generateFrameNames('viking', {start:1, end:5,prefix:'viking/viking/stand_up_', suffix:'.png'}),
+            frames: this.anims.generateFrameNames('viking', {start:1, end:5,prefix:'viking/stand_up_', suffix:'.png'}),
             repeat:-1,
             frameRate:15
           });
@@ -558,12 +546,6 @@ export default class Animations extends Phaser.Scene{
             frameRate:15
           });
           this.anims.create({
-            key:'squelette_hache_attackA',
-            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:12,prefix:'squelette_hache/attack-A', suffix:'.png'}),
-            repeat:-1,
-            frameRate:15
-          });
-          this.anims.create({
             key:'squelette_hache_attackB',
             frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:7,prefix:'squelette_hache/attack-B', suffix:'.png'}),
             repeat:-1,
@@ -583,7 +565,7 @@ export default class Animations extends Phaser.Scene{
           });
           this.anims.create({
             key:'squelette_hache_shieldBlock',
-            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:4,prefix:'squelette_hache/shield-block-', suffix:'.png'}),
+            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:2,prefix:'squelette_hache/shield-block-', suffix:'.png'}),
             repeat:-1,
             frameRate:15
           });
@@ -651,36 +633,6 @@ export default class Animations extends Phaser.Scene{
         key:'petit_squelette/ready',
         frames: this.anims.generateFrameNames('petit_squelette', {start:1, end:3,prefix:'petit_squelette/ready_', suffix:'.png'}),
         repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_epee/attack-A',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:8,prefix:'squelette_epee/attack-A', suffix:'.png'}),
-        repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_epee/attack-B',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:8,prefix:'squelette_epee/attack-B', suffix:'.png'}),
-        repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_epee/walk',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:6,prefix:'squelette_epee/walk-', suffix:'.png'}),
-        repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_epee/idle',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:4,prefix:'squelette_epee/idle-', suffix:'.png'}),
-        repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_epee/death',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:4,prefix:'squelette_epee/dead-', suffix:'.png'}),
-        repeat:0,
         frameRate:15
       });
     }
