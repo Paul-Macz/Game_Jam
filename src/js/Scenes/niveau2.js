@@ -170,7 +170,10 @@ export default class niveau2 extends Phaser.Scene {
 
         }
       },this);
-      
+      let self=this
+    this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
+      self.physics.add.overlap(self.player.sprite, un_ennemi.ennemiObject.Drops, self.handlePlayerItemCollision, null, self);
+  });
   }
 
   update() {
@@ -244,7 +247,16 @@ handlePlayerEnnemiCollision(player, ennemiSp) {
     ennemiSp.ennemiObject.getHit(this.player.equippedWeapon.damage)
     }
   }
-
+  handlePlayerItemCollision(playerSp, drop){
+    if(!drop.item.used){ 
+      drop.item.applyHealthBoost(this.player)
+      if(this.player.PV>this.player.maxPV){
+        this.player.PV=this.player.maxPV
+      }
+      drop.item.applyAttackSpeedBoost(this.player.equippedWeapon)
+      drop.item.applyDamageBoost(this.player.equippedWeapon)
+    }
+  }
   // resetSpeed(entity){
   //   entity.sprite.setVelocity(0,0)
   // }

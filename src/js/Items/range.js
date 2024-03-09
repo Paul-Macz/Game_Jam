@@ -44,13 +44,20 @@ export default class Range extends Weapon{
         
     }}
     hit (uneBalle, target){
-
-        
         if(target!=undefined){
             if(target.ennemiObject instanceof Character){
                 super.hit(target.ennemiObject);
                 if(!this.pierce){
                     uneBalle.destroy();
+                }
+                var animBox =this.scene.physics.add.sprite(uneBalle.x, uneBalle.y, this.image);
+                animBox.body.onWorldBounds = true;  
+                animBox.body.allowGravity = false;
+                if(this.image=="fire-ball"){
+                    animBox.anims.play("fire_impact")
+                }
+                else{
+                    animBox.anims.play("lightning_impact")
                 }
             }
             else{

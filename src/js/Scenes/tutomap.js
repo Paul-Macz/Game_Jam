@@ -233,8 +233,8 @@ export default class tutomap extends Phaser.Scene {
 
     if (this.player.gameOver) {
       this.physics.pause();
-      this.player.sprite.setTint(0x444444);
-      this.player.sprite.anims.play("stand");
+      // this.player.sprite.setTint(0x444444);
+      this.player.sprite.anims.play("battlemage_death",true);
       this.time.delayedCall(3000,this.restartScene,[],this);
   } 
   this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {

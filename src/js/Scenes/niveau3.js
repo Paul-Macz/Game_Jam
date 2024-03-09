@@ -120,7 +120,10 @@ export default class niveau3 extends Phaser.Scene {
                 });
         this.physics.add.overlap(this.player.sprite, this.groupe_ennemis, this.handlePlayerEnnemiCollision, null, this);    
         this.physics.add.overlap(this.player.swordHitbox,this.groupe_ennemis,this.handleSwordEnnemiCollision,null,this);
-
+        let self=this
+    this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
+      self.physics.add.overlap(self.player.sprite, un_ennemi.ennemiObject.Drops, self.handlePlayerItemCollision, null, self);
+  });
     }
   
     update() {
@@ -193,6 +196,17 @@ handleSwordEnnemiCollision(sword,ennemiSp){
   ennemiSp.ennemiObject.getHit(this.player.equippedWeapon.damage)
   }
 }
+handlePlayerItemCollision(playerSp, drop){
+  if(!drop.item.used){ 
+    drop.item.applyHealthBoost(this.player)
+    if(this.player.PV>this.player.maxPV){
+      this.player.PV=this.player.maxPV
+    }
+    drop.item.applyAttackSpeedBoost(this.player.equippedWeapon)
+    drop.item.applyDamageBoost(this.player.equippedWeapon)
+  }
+}
+
 restartScene() {
   this.scene.stop('niveau3');
   this.scene.start('niveau3');

@@ -99,6 +99,7 @@ export default class Animations extends Phaser.Scene{
         this.load.atlas('squelette_epee',"src/assets/ennemis/squelette_epee/squelette_epee.png","src/assets/ennemis/squelette_epee/squelette_epee.json");
         this.load.atlas('squelette_hache',"src/assets/ennemis/squelette_hache/squelette_hache.png","src/assets/ennemis/squelette_hache/squelette_hache.json");
         this.load.atlas('squelette_lance',"src/assets/ennemis/squelette_lance/squelette_lance.png","src/assets/ennemis/squelette_lance/squelette_lance.json");
+        this.load.atlas('bullet_anim',"src/assets/bullet_impact.png","src/assets/bullet_impact.json")
 
         this.load.audio('damage_speed',"src/assets/audio/damage_and_speed_bonus.mp3");
         this.load.audio('ekho_death',"src/assets/audio/ekho_death.mp3");
@@ -166,6 +167,18 @@ export default class Animations extends Phaser.Scene{
              frameRate : 12,
              repeat : -1
            });
+           this.anims.create({
+            key:'fire_impact',
+            frames: this.anims.generateFrameNames('bullet_anim', {start:1, end:15,prefix:"FireBomb/Fire-bomb", suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'lightning_impact',
+            frames: this.anims.generateFrameNames('bullet_anim', {start:1, end:11,prefix:"Lightning/Lightning", suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
           this.anims.create({
             key:'battlemage_death',
             frames: this.anims.generateFrameNames('battlemage', {start:1, end:12,prefix:"Battlemage (Separeted Frames)/Death/Battlemage Death", suffix:'.png'}),

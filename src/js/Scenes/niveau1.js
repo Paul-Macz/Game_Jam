@@ -122,7 +122,10 @@ export default class niveau1 extends Phaser.Scene {
           un_ennemi.direction = "left";
         //    un_ennemi.anims.play("turn_left", true);
        });
-
+       let self=this
+        this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
+            self.physics.add.overlap(self.player.sprite, un_ennemi.ennemiObject.Drops, self.handlePlayerItemCollision, null, self);
+        });
     }
 
     handlePlayerEnnemiCollision(player, ennemiSp) {
@@ -134,6 +137,16 @@ export default class niveau1 extends Phaser.Scene {
       
       }
 
+      handlePlayerItemCollision(playerSp, drop){
+        if(!drop.item.used){ 
+          drop.item.applyHealthBoost(this.player)
+          if(this.player.PV>this.player.maxPV){
+            this.player.PV=this.player.maxPV
+          }
+          drop.item.applyAttackSpeedBoost(this.player.equippedWeapon)
+          drop.item.applyDamageBoost(this.player.equippedWeapon)
+        }
+      }
     update() {
         this.player.update()
 
