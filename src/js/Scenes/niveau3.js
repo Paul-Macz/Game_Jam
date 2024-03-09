@@ -95,11 +95,8 @@ export default class niveau3 extends Phaser.Scene {
                 } else if (randomNumber > 0.66 && randomNumber < 1 &&  point.name == "terrestre") {
                     image="hache_rouge"
                 }
-                //console.log(image)
                 var nouvel_ennemi = new Terrestre(this,image,point.x, point.y,playground);
-                // console.log(nouvel_ennemi)
                 nouvel_ennemi.sprite.setCollideWorldBounds(true);
-                console.log(nouvel_ennemi.image)
                 nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
                 this.groupe_ennemis.add(nouvel_ennemi.sprite);
           });
@@ -167,10 +164,8 @@ openDoor(){
   this.scene.start("fin_niveau3");
 }
 handlePlayerEnnemiCollision(player, ennemiSp) {
-
   const dx = this.player.sprite.x - ennemiSp.x;
   const dy = this.player.sprite.y - ennemiSp.y;
-  // console.log(dx,dy)
   const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
   this.player.sprite.setVelocity(dir.x, dir.y)
   this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
