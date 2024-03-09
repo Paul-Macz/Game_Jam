@@ -73,13 +73,20 @@ export default class tutomap extends Phaser.Scene {
       fontFamily: 'Gill Sans Ultra Bold',
       fontSize: "18pt"
     }).setTint(0x000000);
-    this.add.text(900,1061,"Pour attaquer, vous pouvez utiliser la souris ou le pad",{
+    this.add.text(900, 1061, "Pour attaquer, vous pouvez utiliser la souris ou le pad.", {
       fontFamily: 'Gill Sans Ultra Bold',
       fontSize: "18pt"
     }).setTint(0x000000);
-    this.add.text(1070,1112,"Tuez les !!!",{
+    
+    this.add.text(900, 1112, "En mourant les ennemis peuvent lâcher des bonus (dégâts, vitesse ou PV)", {
       fontFamily: 'Gill Sans Ultra Bold',
       fontSize: "18pt"
+    }).setTint(0x000000);
+    
+    this.add.text(1070, 1163, "Tuez les !!!", {
+      fontFamily: 'Gill Sans Ultra Bold',
+      fontSize: "18pt"
+    
     }).setTint(0x000000);
     this.add.text(1800,920,"Grimpez la montagne en double sautant !",{
       fontFamily: 'Gill Sans Ultra Bold',
