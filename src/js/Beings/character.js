@@ -6,7 +6,7 @@ export default class Character{
         this.maxPV = 20;
         this.inventory=[];
         this.equippedWeapon = null;
-        this.damage = 10;
+        this.damage = 1;
         this.defense = 0.1;
         this.inventory=[];
         this.direction = 'right';
@@ -20,7 +20,7 @@ export default class Character{
     }
 
     getHit(damage){
-this.slash.play()
+        this.slash.play()
         this.PV -= damage;
         this.sprite.setTint(0xff0000);
         this.scene.time.delayedCall(500,() => this.resetColor());

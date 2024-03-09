@@ -101,12 +101,12 @@ export default class niveau2 extends Phaser.Scene {
       
     
 
-      this.weap = new Melee(this, "bull", 20, 20, 1, "fire-ball",true,10);
-      this.magic = new Range(this, "magic", 2, 10, 1, "fire-ball", true, 1, 500, false);
-      this.player.pickWeapon(this.weap);
-      this.player.pickWeapon(this.magic);
-      this.magic2 = new Range(this, "magic2", 5,50, 1, "holy-ball", true, 1, 700, false);
-      this.player.pickWeapon(this.magic2);
+      this.weap = new Melee(this, "bull", 2, 5, 1, "fire-ball",true,10);
+        this.magic = new Range(this, "magic", 2, 5, 1, "fire-ball", true, 1, 500, false);
+        this.player.pickWeapon(this.weap);
+        this.player.pickWeapon(this.magic);
+        this.magic2 = new Range(this, "magic2", 1,10, 1, "holy-ball", true, 1, 600, false);
+        this.player.pickWeapon(this.magic2);
 
       this.physics.world.setBounds(this.boundx, this.boundy, this.boundWidth, this.boundHeight);
       
@@ -170,7 +170,10 @@ export default class niveau2 extends Phaser.Scene {
 
         }
       },this);
-      
+      let self=this
+    this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
+      self.physics.add.overlap(self.player.sprite, un_ennemi.ennemiObject.Drops, self.handlePlayerItemCollision, null, self);
+  });
   }
 
   update() {
@@ -215,14 +218,24 @@ openDoor(){
   this.scene.start("fin_niveau2");
  
 }
-  handlePlayerEnnemiCollision(player, ennemiSp) {
+handlePlayerEnnemiCollision(player, ennemiSp) {
+  const knockbackForce = 200; // Adjust as needed
 
-    const dx = this.player.sprite.x - ennemiSp.x;
-    const dy = this.player.sprite.y - ennemiSp.y;
-    const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
-    this.player.sprite.setVelocity(dir.x, dir.y)
-    this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
+  // Calculate the direction from the enemy to the player
+  const dx = player.x - ennemiSp.x;
+  const dy = player.y - ennemiSp.y;
 
+  // Normalize the direction vector
+  const dir = new Phaser.Math.Vector2(dx, dy).normalize();
+
+  // Apply a knockback force to both the player and enemy sprites
+  player.setVelocity(dir.x * 2*knockbackForce, dir.y * knockbackForce);
+  ennemiSp.setVelocity(-dir.x * knockbackForce, -dir.y * knockbackForce);
+
+  // Damage the player
+  if(!this.player.hurtState){
+    this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage);
+  }
 }
   handleSwordEnnemiCollision(sword,ennemiSp){
     if(!(ennemiSp.ennemiObject instanceof Flying)){
@@ -234,7 +247,16 @@ openDoor(){
     ennemiSp.ennemiObject.getHit(this.player.equippedWeapon.damage)
     }
   }
-
+  handlePlayerItemCollision(playerSp, drop){
+    if(!drop.item.used){ 
+      drop.item.applyHealthBoost(this.player)
+      if(this.player.PV>this.player.maxPV){
+        this.player.PV=this.player.maxPV
+      }
+      drop.item.applyAttackSpeedBoost(this.player.equippedWeapon)
+      drop.item.applyDamageBoost(this.player.equippedWeapon)
+    }
+  }
   // resetSpeed(entity){
   //   entity.sprite.setVelocity(0,0)
   // }

@@ -5,24 +5,49 @@ export default class Animations extends Phaser.Scene{
         super({ key: "animations" });
     }
     preload(){
-        this.load.image("menu_fond", "src/assets/fond_galaxy.png");
-        this.load.image("imageBoutonPlay", "src/assets/boutonplay.png");
-        this.load.image("imageBoutonOption", "src/assets/OptionButton.png");
-        this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
-        this.load.image("imageBoutonContinuer", "src/assets/ContinueButton.png");
-        this.load.image("imageBoutonMenu", "src/assets/MenuButton.png");
-        this.load.image("imageBoutonNewGame", "src/assets/NewGameButton.png");
-        this.load.image("imageBoutonBack", "src/assets/BackButton.png");
+         this.load.image("menu_fond", "src/assets/fond_galaxy.png");
+         this.load.image("menu_fond2", "src/assets/fond_galaxy2.png");
+         this.load.image("menu_fond1", "src/assets/fond_galaxy1.png");
+         this.load.image("imageBoutonPlay", "src/assets/boutonplay.png");
+         this.load.image("imageBoutonOption", "src/assets/OptionButton.png");
+         this.load.image("imageBoutonQuit", "src/assets/QuitButton.png");
+         this.load.image("imageBoutonContinuer", "src/assets/ContinueButton.png");
+         this.load.image("imageBoutonMenu", "src/assets/MenuButton.png");
+         this.load.image("imageBoutonNewGame", "src/assets/NewGameButton.png");
+         this.load.image("imageBoutonBack", "src/assets/BackButton.png");
         this.load.image("imageBoutonPause", "src/assets/PauseSquareButton.png");
-        this.load.image("imageBoutonSon", "src/assets/AudioSquareButton.png");
+         this.load.image("imageBoutonSon", "src/assets/AudioSquareButton.png");
+        this.load.image("imageBoutonFond","src/assets/fond_bouton2.png");
+        this.load.image("imageBoutonFond2","src/assets/fond_bouton3.png");
 
         this.load.image("bouton_niv1", "src/assets/bouton_niv1.png");
         this.load.image("bouton_niv2", "src/assets/bouton_niv2.png");
         this.load.image("bouton_niv3", "src/assets/bouton_niv3.png");
+        this.load.image("Z","src/assets/keyboard_z_outline.png");
+        this.load.image("D","src/assets/keyboard_d_outline.png");
+        this.load.image("Q","src/assets/keyboard_q_outline.png");
+        this.load.image("1","src/assets/keyboard_1_outline.png");
+        this.load.image("2","src/assets/keyboard_2_outline.png");
+        this.load.image("3","src/assets/keyboard_3_outline.png");
+        this.load.image("Left_click","src/assets/mouse_left_outline.png")
+        this.load.image("img_ciel", "src/assets/sky.png");
+        this.load.image("img_porte1", "src/assets/door1.png");
+        this.load.image("img_porte2", "src/assets/door2.png");
+        this.load.image("img_porte3", "src/assets/door3.png");
+        this.load.image("bullet", "src/assets/balle.png");
+        this.load.image("img_plateforme", "src/assets/platform.png");
+        this.load.image("heart_empty","src/assets/ui_heart_empty.png")
+        this.load.image("heart_full","src/assets/ui_heart_full.png")
+        this.load.image("heart_half","src/assets/ui_heart_half.png")
 
         this.load.spritesheet("planetes","src/assets/planetes.png" ,{
           frameWidth: 88,
           frameHeight: 88
+        });
+
+        this.load.spritesheet("planete","src/assets/planete.png" ,{
+          frameWidth: 325,
+          frameHeight: 325
         });
         this.load.spritesheet("planetes_rouge","src/assets/planetes_rouge.png" ,{
             frameWidth: 325,
@@ -37,27 +62,17 @@ export default class Animations extends Phaser.Scene{
             frameHeight: 325
           });
 
-        this.load.image("Z","src/assets/keyboard_z_outline.png");
-        this.load.image("D","src/assets/keyboard_d_outline.png");
-        this.load.image("Q","src/assets/keyboard_q_outline.png");
-        this.load.image("1","src/assets/keyboard_1_outline.png");
-        this.load.image("2","src/assets/keyboard_2_outline.png");
-        this.load.image("3","src/assets/keyboard_3_outline.png");
-        this.load.image("Left_click","src/assets/mouse_left_outline.png")
-        this.load.image("img_ciel", "src/assets/sky.png");
+        
         this.load.spritesheet("porte_ouvrante" , "src/assets/porte_ouvrante.png", {
         frameWidth: 96,
         frameHeight: 120
             }); 
-        this.load.image("img_plateforme", "src/assets/platform.png");
+        
         this.load.spritesheet("img_perso", "src/assets/dude.png", {
         frameWidth: 32,
         frameHeight: 48
         });
-        this.load.image("img_porte1", "src/assets/door1.png");
-        this.load.image("img_porte2", "src/assets/door2.png");
-        this.load.image("img_porte3", "src/assets/door3.png");
-        this.load.image("bullet", "src/assets/balle.png");
+        
         this.load.spritesheet("test", "src/assets/walk.png",{
             frameWidth:440,
             frameHeight:330
@@ -70,6 +85,11 @@ export default class Animations extends Phaser.Scene{
           frameWidth:32,
           frameHeight:32
         });
+        this.load.spritesheet("item", "src/assets/Holy VFX 01 Impact.png",{
+          frameWidth:32,
+          frameHeight:32
+        });
+
         this.load.atlas('battlemage', "src/assets/battlemage.png" ,"src/assets/battlemage.json");
         this.load.atlas('viking',"src/assets/ennemis/viking/viking.png","src/assets/ennemis/viking/viking.json");
         this.load.atlas('archer',"src/assets/ennemis/archer/archer.png","src/assets/ennemis/archer/archer.json");
@@ -79,6 +99,7 @@ export default class Animations extends Phaser.Scene{
         this.load.atlas('squelette_epee',"src/assets/ennemis/squelette_epee/squelette_epee.png","src/assets/ennemis/squelette_epee/squelette_epee.json");
         this.load.atlas('squelette_hache',"src/assets/ennemis/squelette_hache/squelette_hache.png","src/assets/ennemis/squelette_hache/squelette_hache.json");
         this.load.atlas('squelette_lance',"src/assets/ennemis/squelette_lance/squelette_lance.png","src/assets/ennemis/squelette_lance/squelette_lance.json");
+        this.load.atlas('bullet_anim',"src/assets/bullet_impact.png","src/assets/bullet_impact.json")
 
         this.load.audio('damage_speed',"src/assets/audio/damage_and_speed_bonus.mp3");
         this.load.audio('ekho_death',"src/assets/audio/ekho_death.mp3");
@@ -92,32 +113,24 @@ export default class Animations extends Phaser.Scene{
         this.load.audio('niv2',"src/assets/audio/Gerudo.mp3");
         this.load.audio('niv1',"src/assets/audio/Eldenring.mp3");
         this.load.audio('niv3',"src/assets/audio/hyrule.mp3");
-        
 
-      this.load.spritesheet("bonus", 'src/assets/bonus.png',{
-        frameWidth:32,
-        frameHeight:32
-      });
-
-
-        
     } 
     create(){
       this.anims.create({
-        key: 'bonus_anim',
-        frames: this.anims.generateFrameNumbers('bonus', { start:0, end: 4}), // Frames for walk animation
+        key: 'item_anim',
+        frames: this.anims.generateFrameNumbers('item', { start:0, end: 5}), // Frames for walk animation
         frameRate: 10,
         repeat: -1
       });
       this.anims.create({
         key: 'fireball',
-        frames: this.anims.generateFrameNumbers('fire-ball', { start:0, end: 6}), // Frames for walk animation
+        frames: this.anims.generateFrameNumbers('fire-ball', { start:0, end: 5}), // Frames for walk animation
         frameRate: 10,
         repeat: -1
       });
       this.anims.create({
         key: 'holyball',
-        frames: this.anims.generateFrameNumbers('holy-ball', { start:0, end: 8}), // Frames for walk animation
+        frames: this.anims.generateFrameNumbers('holy-ball', { start:0, end: 7}), // Frames for walk animation
         frameRate: 10,
         repeat: -1
       });
@@ -127,33 +140,10 @@ export default class Animations extends Phaser.Scene{
             frameRate: 10,
             repeat: -1
           });
-          this.anims.create({
-            key: "turn_left",
-            frames: this.anims.generateFrameNumbers("img_perso", {
-                start: 0,
-                end: 3
-            }),
-            frameRate: 10, // vitesse de défilement des frames
-            repeat: -1 
-        });
-  
-        this.anims.create({
-            key: "turn_right",
-            frames: this.anims.generateFrameNumbers("battlemage", {
-                start: 5,
-                end: 8
-            }),
-            frameRate: 8,
-            repeat: -1
-        });
-        this.anims.create({
-            key: "stand",
-            frames: [{ key: "battlemage", frame: 4 }],
-            frameRate: 20
-        });
+
         this.anims.create({
             key: "anim_planet",
-            frames: this.anims.generateFrameNumbers("planetes",{  start: 0 , end: 49  }),
+            frames: this.anims.generateFrameNumbers("planete",{  start: 0 , end: 49  }),
             frameRate : 12,
             repeat : -1
           });
@@ -177,6 +167,18 @@ export default class Animations extends Phaser.Scene{
              frameRate : 12,
              repeat : -1
            });
+           this.anims.create({
+            key:'fire_impact',
+            frames: this.anims.generateFrameNames('bullet_anim', {start:1, end:15,prefix:"FireBomb/Fire-bomb", suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
+          this.anims.create({
+            key:'lightning_impact',
+            frames: this.anims.generateFrameNames('bullet_anim', {start:1, end:11,prefix:"Lightning/Lightning", suffix:'.png'}),
+            repeat:0,
+            frameRate:15
+          });
           this.anims.create({
             key:'battlemage_death',
             frames: this.anims.generateFrameNames('battlemage', {start:1, end:12,prefix:"Battlemage (Separeted Frames)/Death/Battlemage Death", suffix:'.png'}),
@@ -377,7 +379,7 @@ export default class Animations extends Phaser.Scene{
           });
           this.anims.create({
             key:'viking_standUp',
-            frames: this.anims.generateFrameNames('viking', {start:1, end:5,prefix:'viking/viking/stand_up_', suffix:'.png'}),
+            frames: this.anims.generateFrameNames('viking', {start:1, end:5,prefix:'viking/stand_up_', suffix:'.png'}),
             repeat:-1,
             frameRate:15
           });
@@ -557,12 +559,6 @@ export default class Animations extends Phaser.Scene{
             frameRate:15
           });
           this.anims.create({
-            key:'squelette_hache_attackA',
-            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:12,prefix:'squelette_hache/attack-A', suffix:'.png'}),
-            repeat:-1,
-            frameRate:15
-          });
-          this.anims.create({
             key:'squelette_hache_attackB',
             frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:7,prefix:'squelette_hache/attack-B', suffix:'.png'}),
             repeat:-1,
@@ -582,7 +578,7 @@ export default class Animations extends Phaser.Scene{
           });
           this.anims.create({
             key:'squelette_hache_shieldBlock',
-            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:4,prefix:'squelette_hache/shield-block-', suffix:'.png'}),
+            frames: this.anims.generateFrameNames('squelette_hache', {start:1, end:2,prefix:'squelette_hache/shield-block-', suffix:'.png'}),
             repeat:-1,
             frameRate:15
           });
@@ -652,38 +648,8 @@ export default class Animations extends Phaser.Scene{
         repeat:-1,
         frameRate:15
       });
-      this.anims.create({
-        key:'squelette_epee/attack-A',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:8,prefix:'squelette_epee/attack-A', suffix:'.png'}),
-        repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_epee/attack-B',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:8,prefix:'squelette_epee/attack-B', suffix:'.png'}),
-        repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_epee/walk',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:6,prefix:'squelette_epee/walk-', suffix:'.png'}),
-        repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_epee/idle',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:4,prefix:'squelette_epee/idle-', suffix:'.png'}),
-        repeat:-1,
-        frameRate:15
-      });
-      this.anims.create({
-        key:'squelette_epee/death',
-        frames: this.anims.generateFrameNames('squelette_epee', {start:1, end:4,prefix:'squelette_epee/dead-', suffix:'.png'}),
-        repeat:0,
-        frameRate:15
-      });
     }
     update(){
         this.scene.start("menu");
-    } 
+    }
 }

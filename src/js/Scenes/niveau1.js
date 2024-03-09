@@ -33,6 +33,10 @@ export default class niveau1 extends Phaser.Scene {
 
     create() {
 
+        var bouton_son = this.add.image(740,65,"imageBoutonSon").setDepth(2);
+        bouton_son.setScale(0.3,0.3);
+        bouton_son.setInteractive();
+
        
 
         this.boundx = 0;
@@ -72,12 +76,12 @@ export default class niveau1 extends Phaser.Scene {
             }
         }, this);
 
-        this.weap = new Melee(this, "bull", 20, 20, 1, "fire-ball",true,10);
-      this.magic = new Range(this, "magic", 2, 10, 1, "fire-ball", true, 1, 500, false);
-      this.player.pickWeapon(this.weap);
-      this.player.pickWeapon(this.magic);
-      this.magic2 = new Range(this, "magic2", 5,50, 1, "holy-ball", true, 1, 700, false);
-      this.player.pickWeapon(this.magic2);
+        this.weap = new Melee(this, "bull", 2, 5, 1, "fire-ball",true,10);
+        this.magic = new Range(this, "magic", 2, 5, 1, "fire-ball", true, 1, 500, false);
+        this.player.pickWeapon(this.weap);
+        this.player.pickWeapon(this.magic);
+        this.magic2 = new Range(this, "magic2", 1,10, 1, "holy-ball", true, 1, 600, false);
+        this.player.pickWeapon(this.magic2);
 
         const tab_points = carteDuNiveau.getObjectLayer("calque_ennemis");
 
@@ -88,7 +92,6 @@ export default class niveau1 extends Phaser.Scene {
         this.physics.world.setBounds(this.boundx,this.boundy,this.boundWidth,this.boundHeight)
         tab_points.objects.forEach(point => {
             const randomNumber = Math.random();
-            // console.log(randomNumber)
             var image;
             // Distribution aléatoire de l'item
             if (randomNumber < 0.33 && point.name == "ennemi_sol") {
@@ -99,11 +102,8 @@ export default class niveau1 extends Phaser.Scene {
             } else if (randomNumber > 0.66 && randomNumber < 1 &&  point.name == "ennemi_sol") {
                 image="hache_rouge"
             }
-            console.log(image)
             var nouvel_ennemi = new Terrestre(this,image,point.x, point.y,ice);
-            // console.log(nouvel_ennemi)
             nouvel_ennemi.sprite.setCollideWorldBounds(true);
-            console.log(nouvel_ennemi.image)
             nouvel_ennemi.sprite.ennemiObject = nouvel_ennemi;
             this.groupe_ennemis.add(nouvel_ennemi.sprite);
       });
@@ -122,21 +122,31 @@ export default class niveau1 extends Phaser.Scene {
           un_ennemi.direction = "left";
         //    un_ennemi.anims.play("turn_left", true);
        });
-
+       let self=this
+        this.groupe_ennemis.children.iterate(function iterateur(un_ennemi) {
+            self.physics.add.overlap(self.player.sprite, un_ennemi.ennemiObject.Drops, self.handlePlayerItemCollision, null, self);
+        });
     }
 
     handlePlayerEnnemiCollision(player, ennemiSp) {
-        if (ennemiSp.ennemiObject instanceof Character) {
-            console.log("check")
-        }
-        console.log(ennemiSp)
         const dx = this.player.sprite.x - ennemiSp.x;
         const dy = this.player.sprite.y - ennemiSp.y;
         const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
         this.player.sprite.setVelocity(dir.x, dir.y)
-        this.player.getHit(ennemiSp.ennemiObject.equipWeapon.damage)
-    }
+        this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
+      
+      }
 
+      handlePlayerItemCollision(playerSp, drop){
+        if(!drop.item.used){ 
+          drop.item.applyHealthBoost(this.player)
+          if(this.player.PV>this.player.maxPV){
+            this.player.PV=this.player.maxPV
+          }
+          drop.item.applyAttackSpeedBoost(this.player.equippedWeapon)
+          drop.item.applyDamageBoost(this.player.equippedWeapon)
+        }
+      }
     update() {
         this.player.update()
 
@@ -174,14 +184,23 @@ export default class niveau1 extends Phaser.Scene {
     }
     
     handlePlayerEnnemiCollision(player, ennemiSp) {
-
-        const dx = this.player.sprite.x - ennemiSp.x;
-        const dy = this.player.sprite.y - ennemiSp.y;
-        // console.log(dx,dy)
-        const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(200)
-        this.player.sprite.setVelocity(dir.x, dir.y)
-        this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage)
+        const knockbackForce = 200; // Adjust as needed
     
+        // Calculate the direction from the enemy to the player
+        const dx = player.x - ennemiSp.x;
+        const dy = player.y - ennemiSp.y;
+    
+        // Normalize the direction vector
+        const dir = new Phaser.Math.Vector2(dx, dy).normalize();
+    
+        // Apply a knockback force to both the player and enemy sprites
+        player.setVelocity(dir.x * 2*knockbackForce, dir.y * knockbackForce);
+        ennemiSp.setVelocity(-dir.x * knockbackForce, -dir.y * knockbackForce);
+    
+        // Damage the player
+        if(!this.player.hurtState){
+          this.player.getHit(ennemiSp.ennemiObject.equippedWeapon.damage);
+        }
     }
       handleSwordEnnemiCollision(sword,ennemiSp){
         if(!(ennemiSp.ennemiObject instanceof Flying)){
