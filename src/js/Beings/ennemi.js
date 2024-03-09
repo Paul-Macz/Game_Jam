@@ -121,7 +121,7 @@ export default class Ennemi extends Character{
             })
         } else if (randomNumber > 0.2 && randomNumber < 0.3) {
             // Donner un boost de dégâts
-            this.drop=new Items(scene, image, 0, this.givenDamage, 0)
+            this.drop=new Items(this.scene, "item", 0, this.givenDamage, 0)
         } else {
             // Aucun boost donné
             }
